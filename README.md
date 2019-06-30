@@ -23,8 +23,8 @@
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
-* [Oracle VM VirtualBox - 6.0.8 (Dpkg)](https://www.virtualbox.org/)
-* [Oracle VM VirtualBox Extension Pack - 6.0.8](https://www.virtualbox.org/)
+* [Oracle VM VirtualBox - [6.0.8=amd64, 5.2.30=i386] (Dpkg)](https://www.virtualbox.org/)
+* [Oracle VM VirtualBox Extension Pack - [6.0.8=amd64, 5.2.30=i386]](https://www.virtualbox.org/)
 * Remmina - Latest
 * Remmina Plugin - Latest
   * RDP
