@@ -61,21 +61,14 @@ sudo apt install gparted -y
 sudo flatpak install flathub com.obsproject.Studio -y
 
 # Oracle VM VirtualBox
-virtualbox_installer="https://download.virtualbox.org/virtualbox/6.0.8/virtualbox-6.0_6.0.8-130520~Ubuntu~bionic_$arch.deb"
-virtualbox_extension="https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack"
-if [ "$arch" == "i386" ]
-then
-  virtualbox_installer="https://download.virtualbox.org/virtualbox/5.2.30/virtualbox-5.2_5.2.30-130521~Ubuntu~xenial_$arch.deb"
-  virtualbox_extension="https://download.virtualbox.org/virtualbox/5.2.30/Oracle_VM_VirtualBox_Extension_Pack-5.2.30.vbox-extpack"
-fi
 if [ -z "$(vboxmanage --version)" ]
 then
-  dpkgInstall "oracle-vm-virtualbox.deb" "$virtualbox_installer"
+  dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.8/virtualbox-6.0_6.0.8-130520~Ubuntu~bionic_$arch.deb"
 fi
 if [ -z "$(vboxmanage list extpacks | grep -i 'version')" ]
 then
   file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
-  wget -O "$file" "$virtualbox_extension"
+  wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack"
   echo y | sudo vboxmanage extpack install "$file"
   rm -fv "$file"
 fi
