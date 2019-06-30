@@ -4,8 +4,14 @@
 * [Linux Mint - 19.1](https://linuxmint.com/)
   * Cinnamon - 4.0.10
 
+### Supported Architectures
+* Fully Supported
+  * amd64 (64-bit)
+* Partially Supported
+  * i386 (32-bit)
+
 ### Install Applications
-* Base - Latest
+* Base Applications - Latest
   * Snap
   * Flatpak
   * Curl
@@ -37,23 +43,23 @@
 # Cinnamon Add-ons
 
 ### Install Spices
-  * Cinnamon Applets - Latest
-    * [Num Lock/Caps Lock indicator with notifications](https://cinnamon-spices.linuxmint.com/applets/view/83)
-    * [Simple CPU Monitor](https://cinnamon-spices.linuxmint.com/applets/view/8)
-    * [Simple Memory Monitor](https://cinnamon-spices.linuxmint.com/applets/view/34)
-    * [Weather](https://cinnamon-spices.linuxmint.com/applets/view/17)
-  * Cinnamon Extensions - Latest
-    * [Transparent panels](https://cinnamon-spices.linuxmint.com/extensions/view/42)
+* Cinnamon Applets - Latest
+  * [Num Lock/Caps Lock indicator with notifications](https://cinnamon-spices.linuxmint.com/applets/view/83)
+  * [Simple CPU Monitor](https://cinnamon-spices.linuxmint.com/applets/view/8)
+  * [Simple Memory Monitor](https://cinnamon-spices.linuxmint.com/applets/view/34)
+  * [Weather](https://cinnamon-spices.linuxmint.com/applets/view/17)
+* Cinnamon Extensions - Latest
+  * [Transparent panels](https://cinnamon-spices.linuxmint.com/extensions/view/42)
 
 ### Install Themes
-  * Cinnamon Skins
-    * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/Mojave-gtk-theme)
-  * Cinnamon Icons
-    * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
-  * Cinnamon Cursors
-    * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
-  * Cinnamon Backgrounds
-    * [Wallhaven (Dark)](https://wallhaven.cc/)
+* Cinnamon Skins
+  * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/Mojave-gtk-theme)
+* Cinnamon Icons
+  * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
+* Cinnamon Cursors
+  * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
+* Cinnamon Backgrounds
+  * [Wallhaven (Dark)](https://wallhaven.cc/)
 
 ### Add Dconf Values
 * Cinnamon Panels
@@ -104,6 +110,7 @@
 <br/>
 
 # Execution Examples
+
 ```bash
 sudo curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash
 ```

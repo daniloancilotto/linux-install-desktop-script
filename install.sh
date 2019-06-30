@@ -300,7 +300,7 @@ then
   # Themes
   echo "Adding themes dconf..."
   dconf write /org/cinnamon/desktop/background/picture-uri "'file://$cinnamon_background_items_dir/$cinnamon_background_item_file'"
-  dconf write /org/cinnamon/desktop/background/slideshow/delay "5"
+  dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
   dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"
   dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
   dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
