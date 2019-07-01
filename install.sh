@@ -1,7 +1,7 @@
 #!/bin/bash
 args=("$@")
 arch="amd64"
-if [ "$(uname -m)" != "x86_64" ]
+if [ "`uname -m`" != "x86_64" ]
 then
   arch="i386"
 fi
@@ -25,7 +25,7 @@ dpkgInstall() {
 
 # Base
 sudo apt update
-sudo apt install snapd flatpak curl wget git unzip tar neofetch htop -y
+sudo apt install snapd flatpak curl wget git unzip tar jq neofetch htop -y
 sudo systemctl enable --now snapd.socket
 sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
@@ -35,8 +35,8 @@ then
   dpkgInstall "angry-ip-scanner.deb" "https://github.com/angryip/ipscan/releases/download/3.5.5/ipscan_3.5.5_$arch.deb"
 fi
 
-# Dconf Editor
-sudo apt install dconf-editor -y
+# Dconf Tools
+sudo apt install dconf-tools -y
 
 # Discord
 echo "Installing discord snap..."
@@ -49,7 +49,7 @@ sudo apt install dropbox -y
 sudo apt install furiusisomount -y
 
 # Google Chrome
-if [ -z "$(google-chrome --version)" ]
+if [ -z "`google-chrome --version`" ]
 then
   dpkgInstall "google-chrome.deb" "https://dl.google.com/linux/direct/google-chrome-stable_current_$arch.deb"
 fi
@@ -61,11 +61,11 @@ sudo apt install gparted -y
 sudo flatpak install flathub com.obsproject.Studio -y
 
 # Oracle VM VirtualBox
-if [ -z "$(vboxmanage --version)" ]
+if [ -z "`vboxmanage --version`" ]
 then
   dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.8/virtualbox-6.0_6.0.8-130520~Ubuntu~bionic_$arch.deb"
 fi
-if [ -z "$(vboxmanage list extpacks | grep -i 'version')" ]
+if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
 then
   file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
   wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack"
@@ -84,11 +84,11 @@ sudo snap install spotify
 # Steam
 sudo apt install steam -y
 
-# Cinnamon Add-ons
 if [ "$DESKTOP_SESSION" == "cinnamon" ] && [[ "${args[@]}" =~ "--with-add-ons" ]]
 then
-  # Panels
-  echo "Adding panels dconf..."
+  # Cinnamon Panels
+  echo "Changing panels configuration..."
+  
   dconf write /org/cinnamon/desktop/interface/clock-show-date "true"
   dconf write /org/cinnamon/desktop/interface/clock-show-seconds "true"
   dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
@@ -108,29 +108,34 @@ then
     '2:52'
   ]"
   dconf write /org/cinnamon/panel-zone-icon-sizes "'"'[{"panelId": 1, "left": 16, "center": 16, "right": 16}, {"panelId": 2, "left": 32, "center": 32, "right": 32}]'"'"
-  echo "panels dconf added"
 
-  # Windows
-  echo "Adding windows dconf..."
+  file="`ls -1 "$HOME/.cinnamon/configs/menu@cinnamon.org/*.json" | tail -n1`"
+  json="`cat "$file"`"
+  json="`jq '."menu-icon"."value"="linuxmint-logo-flat-3-symbolic"' "$json"`"
+  echo "$json" > "$file"
+
+  echo "panels configuration changed"
+
+  # Cinnamon Windows
+  echo "Changing windows configuration..."
   dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
   dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
   dconf write /org/cinnamon/alttab-switcher-style "'timeline'"
   dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
   dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
   dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
-  echo "windows dconf added"
+  echo "windows configuration changed"
 
-  # Plugins
-  echo "Adding plugins dconf..."
+  # Cinnamon Plugins
+  echo "Changing plugins configuration..."
   dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
   dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
-  echo "plugins dconf added"
+  echo "plugins configuration changed"
 
-  # Spices
-  echo "Adding nexts dconf..."
+  # Cinnamon Spices
+  echo "Changing spices configuration..."
   dconf write /org/cinnamon/next-applet-id "0"
   dconf write /org/cinnamon/next-desklet-id "0"
-  echo "nexts dconf added"
 
   cinnamon_spices_dir="$HOME/.local/share/cinnamon"
   cinnamon_spices=( \
@@ -138,6 +143,7 @@ then
     "desklets" \
     "extensions" \
   )
+
   i=0
   while [ $i != ${#cinnamon_spices[@]} ]
   do
@@ -159,6 +165,7 @@ then
         "https://cinnamon-spices.linuxmint.com/files/extensions/transparent-panels@germanfr.zip" \
       )
     fi
+
     j=0
     while [ $j != ${#cinnamon_spice_items[@]} ]
     do
@@ -198,6 +205,7 @@ then
         'panel1:right:10:sound@cinnamon.org',
         'panel1:right:11:power@cinnamon.org',
         'panel1:right:12:calendar@cinnamon.org',
+        'panel1:right:13:show-desktop@cinnamon.org',
         'panel2:left:0:grouped-window-list@cinnamon.org'
       ]"
     elif [ "$cinnamon_spice" == "extensions" ]
@@ -207,14 +215,16 @@ then
       ]"
     fi
 
-    echo "Adding $cinnamon_spice dconf..."
     dconf write /org/cinnamon/enabled-$cinnamon_spice "$cinnamon_spice_dconf"
-    echo "$cinnamon_spice dconf added"
 
     let "i++"
   done
 
-  # Skins
+  echo "spices configuration changed"
+
+  # Cinnamon Themes
+  echo "Changing themes configuration..."
+
   cinnamon_skins_dir="$HOME/.themes"
   cinnamon_skin_name="Mojave-2019-06-23-Dark"
   if [ ! -d "$cinnamon_skins_dir/$cinnamon_skin_name" ]
@@ -227,7 +237,6 @@ then
     rm -fv "$file"
   fi
 
-  # Icons
   cinnamon_icons_dir="$HOME/.icons"
   cinnamon_icon_name="Korla-1.1.4-Dark"
   if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
@@ -241,7 +250,6 @@ then
     rm -fv "$file"
   fi
 
-  # Cursors
   cinnamon_cursors_dir="$HOME/.icons"
   cinnamon_cursor_name="Capitaine-Cursors-R3-Light"
   if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
@@ -254,15 +262,16 @@ then
     rm -fv "$file"
   fi
 
-  # Backgrounds
   cinnamon_backgrounds_dir="$HOME/.cinnamon/backgrounds"
   cinnamon_backgrounds=( \
     "Light" \
     "Dark" \
   )
-  cinnamon_backgrounds_userlist="$cinnamon_backgrounds_dir/user-folders.lst"
+
+  cinnamon_backgrounds_list="$cinnamon_backgrounds_dir/user-folders.lst"
   mkdir -pv "$cinnamon_backgrounds_dir"
-  cp /dev/null "$cinnamon_backgrounds_userlist"
+  cp /dev/null "$cinnamon_backgrounds_list"
+
   i=0
   while [ $i != ${#cinnamon_backgrounds[@]} ]
   do
@@ -278,8 +287,10 @@ then
         "https://w.wallhaven.cc/full/0q/wallhaven-0qk8qr.jpg" \
       )
     fi
+
     mkdir -pv "$cinnamon_background_items_dir"
-    echo "$cinnamon_background_items_dir" >> "$cinnamon_backgrounds_userlist"
+    echo "$cinnamon_background_items_dir" >> "$cinnamon_backgrounds_list"
+
     j=0
     while [ $j != ${#cinnamon_background_items[@]} ]
     do
@@ -297,8 +308,6 @@ then
     let "i++"
   done
 
-  # Themes
-  echo "Adding themes dconf..."
   dconf write /org/cinnamon/desktop/background/picture-uri "'file://$cinnamon_background_items_dir/$cinnamon_background_item_file'"
   dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
   dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"
@@ -318,7 +327,8 @@ then
   #dconf write /org/cinnamon/theme/name-backup "'Mint-Y-Dark-Blue'"
   dconf write /org/cinnamon/theme/symbolic-relative-size "1.0"
   dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
-  echo "themes dconf added"
+
+  echo "themes configuration changed"
 fi
 
 # Reboot

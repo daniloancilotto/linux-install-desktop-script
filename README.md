@@ -2,7 +2,7 @@
 
 ### Supported Systems
 * [Linux Mint - 19.1](https://linuxmint.com/)
-  * Cinnamon - 4.0.10
+  * Cinnamon - 4.0
 
 ### Supported Architectures
 * Fully Supported
@@ -19,10 +19,11 @@
   * Git
   * Unzip
   * Tar
+  * Jq
   * Neofetch
   * Htop
 * [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
-* Dconf Editor - Latest
+* Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * Dropbox - Latest
 * Furius ISO Mount - Latest
@@ -61,51 +62,60 @@
 * Cinnamon Backgrounds
   * [Wallhaven (Dark)](https://wallhaven.cc/)
 
-### Add Dconf Values
+### Change Configurations
 * Cinnamon Panels
-  * /org/cinnamon/desktop/interface/clock-show-date
-  * /org/cinnamon/desktop/interface/clock-show-seconds
-  * /org/cinnamon/desktop/screensaver/date-format
-  * /org/cinnamon/desktop/screensaver/time-format
-  * /org/cinnamon/desktop/screensaver/use-custom-format
-  * /org/cinnamon/favorite-apps
-  * /org/cinnamon/panels-enabled
-  * /org/cinnamon/panels-height
-  * /org/cinnamon/panel-zone-icon-sizes
+  * Dconf
+    * /org/cinnamon/desktop/interface/clock-show-date
+    * /org/cinnamon/desktop/interface/clock-show-seconds
+    * /org/cinnamon/desktop/screensaver/date-format
+    * /org/cinnamon/desktop/screensaver/time-format
+    * /org/cinnamon/desktop/screensaver/use-custom-format
+    * /org/cinnamon/favorite-apps
+    * /org/cinnamon/panels-enabled
+    * /org/cinnamon/panels-height
+    * /org/cinnamon/panel-zone-icon-sizes
+  * Json
+    * ~/.cinnamon/configs/menu@cinnamon.org/*.json
 * Cinnamon Windows
-  * /org/cinnamon/alttab-switcher-enforce-primary-monitor
-  * /org/cinnamon/alttab-switcher-show-all-workspaces
-  * /org/cinnamon/alttab-switcher-style
-  * /org/cinnamon/bring-windows-to-current-workspace
-  * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
-  * /org/cinnamon/muffin/attach-modal-dialogs
+  * Dconf
+    * /org/cinnamon/alttab-switcher-enforce-primary-monitor
+    * /org/cinnamon/alttab-switcher-show-all-workspaces
+    * /org/cinnamon/alttab-switcher-style
+    * /org/cinnamon/bring-windows-to-current-workspace
+    * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
+    * /org/cinnamon/muffin/attach-modal-dialogs
 * Cinnamon Plugins
-  * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
-  * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
+  * Dconf
+    * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
+    * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
 * Cinnamon Spices
-  * /org/cinnamon/next-applet-id
-  * /org/cinnamon/next-desklet-id
-  * /org/cinnamon/enabled-applets
-  * /org/cinnamon/enabled-desklets
-  * /org/cinnamon/enabled-extensions
+  * Dconf
+    * /org/cinnamon/next-applet-id
+    * /org/cinnamon/next-desklet-id
+    * /org/cinnamon/enabled-applets
+    * /org/cinnamon/enabled-desklets
+    * /org/cinnamon/enabled-extensions
 * Cinnamon Themes
-  * /org/cinnamon/desktop/background/picture-uri
-  * /org/cinnamon/desktop/background/slideshow/delay
-  * /org/cinnamon/desktop/background/slideshow/image-source
-  * /org/cinnamon/desktop/background/slideshow/random-order
-  * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
-  * /org/cinnamon/desktop/interface/cursor-theme
-  * /org/cinnamon/desktop/interface/gtk-theme
-  * /org/cinnamon/desktop/interface/gtk-theme-backup
-  * /org/cinnamon/desktop/interface/icon-theme
-  * /org/cinnamon/desktop/interface/icon-theme-backup
-  * /org/cinnamon/desktop/wm/preferences/button-layout
-  * /org/cinnamon/desktop/wm/preferences/theme
-  * /org/cinnamon/desktop/wm/preferences/theme-backup
-  * /org/cinnamon/desktop/wm/preferences/titlebar-font
-  * /org/cinnamon/theme/name
-  * /org/cinnamon/theme/symbolic-relative-size
-  * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
+  * Dconf
+    * /org/cinnamon/desktop/background/picture-uri
+    * /org/cinnamon/desktop/background/slideshow/delay
+    * /org/cinnamon/desktop/background/slideshow/image-source
+    * /org/cinnamon/desktop/background/slideshow/random-order
+    * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
+    * /org/cinnamon/desktop/interface/cursor-theme
+    * /org/cinnamon/desktop/interface/gtk-theme
+    * /org/cinnamon/desktop/interface/gtk-theme-backup
+    * /org/cinnamon/desktop/interface/icon-theme
+    * /org/cinnamon/desktop/interface/icon-theme-backup
+    * /org/cinnamon/desktop/wm/preferences/button-layout
+    * /org/cinnamon/desktop/wm/preferences/theme
+    * /org/cinnamon/desktop/wm/preferences/theme-backup
+    * /org/cinnamon/desktop/wm/preferences/titlebar-font
+    * /org/cinnamon/theme/name
+    * /org/cinnamon/theme/symbolic-relative-size
+    * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
+  * List
+    * ~/.cinnamon/backgrounds/user-folders.lst
 
 <br/>
 
