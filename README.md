@@ -67,15 +67,10 @@
   * Dconf
     * /org/cinnamon/desktop/interface/clock-show-date
     * /org/cinnamon/desktop/interface/clock-show-seconds
-    * /org/cinnamon/desktop/screensaver/date-format
-    * /org/cinnamon/desktop/screensaver/time-format
-    * /org/cinnamon/desktop/screensaver/use-custom-format
     * /org/cinnamon/favorite-apps
     * /org/cinnamon/panels-enabled
     * /org/cinnamon/panels-height
     * /org/cinnamon/panel-zone-icon-sizes
-  * Json
-    * ~/.cinnamon/configs/menu@cinnamon.org/*.json
 * Cinnamon Windows
   * Dconf
     * /org/cinnamon/alttab-switcher-enforce-primary-monitor
@@ -86,6 +81,9 @@
     * /org/cinnamon/muffin/attach-modal-dialogs
 * Cinnamon Plugins
   * Dconf
+    * /org/cinnamon/desktop/screensaver/date-format
+    * /org/cinnamon/desktop/screensaver/time-format
+    * /org/cinnamon/desktop/screensaver/use-custom-format
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
 * Cinnamon Spices
@@ -95,6 +93,16 @@
     * /org/cinnamon/enabled-applets
     * /org/cinnamon/enabled-desklets
     * /org/cinnamon/enabled-extensions
+  * Json
+    * ~/.cinnamon/configs/menu@cinnamon.org/*.json
+    * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
+    * ~/.cinnamon/configs/weather@mockturtl/*.json
+    * ~/.cinnamon/configs/sound@cinnamon.org/*.json
+    * ~/.cinnamon/configs/power@cinnamon.org/*.json
+    * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
+    * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
+    * ~/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json
+    * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
 * Cinnamon Themes
   * Dconf
     * /org/cinnamon/desktop/background/picture-uri

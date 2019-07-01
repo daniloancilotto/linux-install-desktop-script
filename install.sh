@@ -88,12 +88,8 @@ if [ "$DESKTOP_SESSION" == "cinnamon" ] && [[ "${args[@]}" =~ "--with-add-ons" ]
 then
   # Cinnamon Panels
   echo "Changing panels configuration..."
-
   dconf write /org/cinnamon/desktop/interface/clock-show-date "true"
   dconf write /org/cinnamon/desktop/interface/clock-show-seconds "true"
-  dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
-  dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
-  dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
   dconf write /org/cinnamon/favorite-apps "[
     'cinnamon-settings.desktop',
     'mintinstall.desktop',
@@ -108,12 +104,6 @@ then
     '2:52'
   ]"
   dconf write /org/cinnamon/panel-zone-icon-sizes "'"'[{"panelId": 1, "left": 16, "center": 16, "right": 16}, {"panelId": 2, "left": 32, "center": 32, "right": 32}]'"'"
-
-  file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
-  json="`cat "$file"`"
-  json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-3-symbolic"'`"
-  echo "$json" > "$file"
-
   echo "panels configuration changed"
 
   # Cinnamon Windows
@@ -128,6 +118,9 @@ then
 
   # Cinnamon Plugins
   echo "Changing plugins configuration..."
+  dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
+  dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
+  dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
   dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
   dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
   echo "plugins configuration changed"
@@ -219,6 +212,107 @@ then
 
     let "i++"
   done
+
+  file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."menu-custom"."value"=true'`"
+    json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-3-symbolic"'`"
+    json="`echo "$json" | jq '."menu-label"."value"=" Menu"'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/notifications@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."showEmptyTray"."value"=true'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/weather@mockturtl/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."manualLocation"."value"=true'`"
+    json="`echo "$json" | jq '."location"."value"="Mirand\u00f3polis,BR"'`"
+    json="`echo "$json" | jq '."show24Hours"."value"=true'`"
+    json="`echo "$json" | jq '."forecastDays"."value"=5'`"
+    json="`echo "$json" | jq '."useSymbolicIcons"."value"=true'`"
+    json="`echo "$json" | jq '."showCommentInPanel"."value"=false'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/sound@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."extendedPlayerControl"."value"=true'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/power@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."labelinfo"."value"="percentage"'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/calendar@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
+    json="`echo "$json" | jq '."custom-format"."value"="  %H:%M:%S\n%d/%m/%Y"'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/show-desktop@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."peek-at-desktop"."value"=true'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."middle-click-action"."value"=2'`"
+    json="`echo "$json" | jq '."pinned-apps"."value"=[
+      "org.gnome.Terminal.desktop",
+      "nemo.desktop",
+      "skypeforlinux.desktop",
+      "google-chrome.desktop",
+      "spotify.desktop",
+      "steam.desktop",
+      "virtualbox.desktop",
+      "org.remmina.Remmina.desktop",
+      "org.gnome.Screenshot.desktop",
+      "org.gnome.Calculator.desktop",
+      "code_code.desktop",
+      "postman_postman.desktop"
+    ]'`"
+    json="`echo "$json" | jq '."show-all-workspaces"."value"=true'`"
+    json="`echo "$json" | jq '."enable-app-button-dragging"."value"=false'`"
+    json="`echo "$json" | jq '."launcher-animation-effect"."value"=3'`"
+    json="`echo "$json" | jq '."list-monitor-windows"."value"=false'`"
+    json="`echo "$json" | jq '."thumbnail-size"."value"=12'`"
+    json="`echo "$json" | jq '."animate-thumbnails"."value"=true'`"
+    json="`echo "$json" | jq '."vertical-thumbnails"."value"=true'`"
+    echo "$json" > "$file"
+  fi
+
+  file="`ls -1 $HOME/.cinnamon/configs/transparent-panels@germanfr/*.json | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
+    echo "$json" > "$file"
+  fi
 
   echo "spices configuration changed"
 
