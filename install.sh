@@ -88,7 +88,7 @@ if [ "$DESKTOP_SESSION" == "cinnamon" ] && [[ "${args[@]}" =~ "--with-add-ons" ]
 then
   # Cinnamon Panels
   echo "Changing panels configuration..."
-  
+
   dconf write /org/cinnamon/desktop/interface/clock-show-date "true"
   dconf write /org/cinnamon/desktop/interface/clock-show-seconds "true"
   dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
@@ -109,9 +109,9 @@ then
   ]"
   dconf write /org/cinnamon/panel-zone-icon-sizes "'"'[{"panelId": 1, "left": 16, "center": 16, "right": 16}, {"panelId": 2, "left": 32, "center": 32, "right": 32}]'"'"
 
-  file="`ls -1 "$HOME/.cinnamon/configs/menu@cinnamon.org/*.json" | tail -n1`"
+  file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
   json="`cat "$file"`"
-  json="`jq '."menu-icon"."value"="linuxmint-logo-flat-3-symbolic"' "$json"`"
+  json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-3-symbolic"'`"
   echo "$json" > "$file"
 
   echo "panels configuration changed"
