@@ -39,7 +39,7 @@ fi
 sudo apt install dconf-tools -y
 
 # Discord
-sudo snap install discord | tee echo
+sudo snap install discord
 
 # Dropbox
 sudo apt install dropbox -y
@@ -77,7 +77,7 @@ sudo usermod -aG vboxusers $USER
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
 # Spotify
-sudo snap install spotify | tee echo
+sudo snap install spotify
 
 # Steam
 sudo apt install steam -y
@@ -284,7 +284,7 @@ then
       "org.gnome.Terminal.desktop",
       "nemo.desktop",
       "google-chrome.desktop",
-      "spotify.desktop",
+      "spotify_spotify.desktop",
       "steam.desktop",
       "virtualbox.desktop",
       "org.remmina.Remmina.desktop",
