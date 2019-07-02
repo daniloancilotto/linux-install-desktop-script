@@ -39,8 +39,7 @@ fi
 sudo apt install dconf-tools -y
 
 # Discord
-echo "Installing discord snap..."
-sudo snap install discord
+sudo snap install discord | tee echo
 
 # Dropbox
 sudo apt install dropbox -y
@@ -78,8 +77,7 @@ sudo usermod -aG vboxusers $USER
 sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
 # Spotify
-echo "Installing spotify snap..."
-sudo snap install spotify
+sudo snap install spotify | tee echo
 
 # Steam
 sudo apt install steam -y
@@ -285,7 +283,6 @@ then
     json="`echo "$json" | jq '."pinned-apps"."value"=[
       "org.gnome.Terminal.desktop",
       "nemo.desktop",
-      "skypeforlinux.desktop",
       "google-chrome.desktop",
       "spotify.desktop",
       "steam.desktop",
@@ -293,6 +290,7 @@ then
       "org.remmina.Remmina.desktop",
       "org.gnome.Screenshot.desktop",
       "org.gnome.Calculator.desktop",
+      "skypeforlinux.desktop",
       "code_code.desktop",
       "postman_postman.desktop"
     ]'`"
@@ -416,7 +414,7 @@ then
   dconf write /org/cinnamon/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
   dconf write /org/cinnamon/desktop/wm/preferences/theme "'$cinnamon_skin_name'"
   dconf write /org/cinnamon/desktop/wm/preferences/theme-backup "'Mint-Y-Dark'"
-  dconf write /org/cinnamon/desktop/wm/preferences/titlebar-font "'Noto Sans 10'"
+  #dconf write /org/cinnamon/desktop/wm/preferences/titlebar-font "'Noto Sans 10'"
   dconf write /org/cinnamon/theme/name "'$cinnamon_skin_name'"
   #dconf write /org/cinnamon/theme/name-backup "'Mint-Y-Dark-Blue'"
   dconf write /org/cinnamon/theme/symbolic-relative-size "1.0"
