@@ -79,6 +79,14 @@
     * /org/cinnamon/bring-windows-to-current-workspace
     * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
     * /org/cinnamon/muffin/attach-modal-dialogs
+    * /org/nemo/icon-view/default-zoom-level
+    * /org/nemo/preferences/date-format
+    * /org/nemo/preferences/ignore-view-metadata
+    * /org/nemo/preferences/show-advanced-permissions
+    * /org/nemo/preferences/show-home-icon-toolbar
+    * /org/nemo/preferences/show-open-in-terminal-toolbar
+    * /org/nemo/preferences/show-reload-icon-toolbar
+    * /org/nemo/window-state/sidebar-width
 * Cinnamon Plugins
   * Dconf
     * /org/cinnamon/desktop/screensaver/date-format
@@ -122,6 +130,9 @@
     * /org/cinnamon/theme/name
     * /org/cinnamon/theme/symbolic-relative-size
     * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
+    * /org/nemo/desktop/computer-icon-visible
+    * /org/nemo/desktop/network-icon-visible
+    * /org/nemo/desktop/trash-icon-visible
   * List
     * ~/.cinnamon/backgrounds/user-folders.lst
 
@@ -130,7 +141,7 @@
 # Execution Examples
 
 ```bash
-sudo curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash
 ```
 
 <br/>
@@ -139,5 +150,5 @@ sudo curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/da
 > **Caution:**  This script change your panels, windows, plugins and theme configurations.
 
 ```bash
-sudo curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash -s -- --with-add-ons
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash -s -- --with-add-ons
 ```
