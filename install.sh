@@ -221,13 +221,6 @@ then
     dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
     dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
     dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
-    dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
-    dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
-    dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
-    dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
-    dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
-    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
-    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
 
     file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
     if [ -f "$file" ]
@@ -329,6 +322,8 @@ then
       json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
       echo "$json" > "$file"
     fi
+
+    echo "spices have been configured"
 
     printLine "Cinnamon Themes"
 
@@ -463,6 +458,20 @@ then
     dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
     dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
     dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
+
+    echo "themes have been configured"
+
+    printLine "Cinnamon Actions"
+
+    dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
+    dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
+    dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
+    dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
+    dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
+    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
+    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
+
+    echo "actions have been configured"
   fi
 fi
 

@@ -67,13 +67,6 @@
       * /org/cinnamon/desktop/screensaver/date-format
       * /org/cinnamon/desktop/screensaver/time-format
       * /org/cinnamon/desktop/screensaver/use-custom-format
-      * /org/cinnamon/alttab-switcher-enforce-primary-monitor
-      * /org/cinnamon/alttab-switcher-show-all-workspaces
-      * /org/cinnamon/bring-windows-to-current-workspace
-      * /org/cinnamon/muffin/attach-modal-dialogs
-      * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
-      * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
-      * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
     * Json
       * ~/.cinnamon/configs/menu@cinnamon.org/*.json
       * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
@@ -123,6 +116,16 @@
       * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
     * List
       * ~/.cinnamon/backgrounds/user-folders.lst
+* Cinnamon Actions
+  * User Configurations
+    * Dconf
+      * /org/cinnamon/alttab-switcher-enforce-primary-monitor
+      * /org/cinnamon/alttab-switcher-show-all-workspaces
+      * /org/cinnamon/bring-windows-to-current-workspace
+      * /org/cinnamon/muffin/attach-modal-dialogs
+      * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
+      * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
+      * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
 
 <br/>
 
