@@ -5,15 +5,15 @@
   * Cinnamon - 4.0
 
 ### Supported Architectures
-* Fully Supported
-  * amd64 (64-bit)
-* Partially Supported
-  * i386 (32-bit)
+* amd64 (64-bit)
+* i386 (32-bit) - PARTIALLY SUPPORTED
 
-### Install Applications
-* Base Applications - Latest
-  * Snap
-  * Flatpak
+### Install Apps
+* Base Apps - Latest
+  * [Snap](https://snapcraft.io/store)
+  * [Flatpak](https://flathub.org/home)
+    * Repositories
+      * Flathub
   * Curl
   * Wget
   * Git
@@ -31,110 +31,101 @@
 * GParted - Latest
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
 * [Oracle VM VirtualBox - 6.0.8 (Dpkg)](https://www.virtualbox.org/)
-* [Oracle VM VirtualBox Extension Pack - 6.0.8](https://www.virtualbox.org/)
+  * Extension Pack - 6.0.8
+  * User Groups
+    * vboxusers
 * Remmina - Latest
-* Remmina Plugin - Latest
-  * RDP
-  * VNC
+  * Plugins - Latest
+    * RDP
+    * VNC
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
 
-<br/>
-
-# Cinnamon Add-ons
-
-### Install Spices
-* Cinnamon Applets - Latest
-  * [Num Lock/Caps Lock indicator with notifications](https://cinnamon-spices.linuxmint.com/applets/view/83)
-  * [Simple CPU Monitor](https://cinnamon-spices.linuxmint.com/applets/view/8)
-  * [Simple Memory Monitor](https://cinnamon-spices.linuxmint.com/applets/view/34)
-  * [Weather](https://cinnamon-spices.linuxmint.com/applets/view/17)
-* Cinnamon Extensions - Latest
-  * [Transparent panels](https://cinnamon-spices.linuxmint.com/extensions/view/42)
-
-### Install Themes
-* Cinnamon Skins
-  * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/Mojave-gtk-theme)
-* Cinnamon Icons
-  * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
-* Cinnamon Cursors
-  * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
-* Cinnamon Backgrounds
-  * [Wallhaven (Dark)](https://wallhaven.cc/)
-
-### Change Configurations
-* Cinnamon Panels
-  * Dconf
-    * /org/cinnamon/desktop/interface/clock-show-date
-    * /org/cinnamon/desktop/interface/clock-show-seconds
-    * /org/cinnamon/favorite-apps
-    * /org/cinnamon/panels-enabled
-    * /org/cinnamon/panels-height
-    * /org/cinnamon/panel-zone-icon-sizes
-* Cinnamon Windows
-  * Dconf
-    * /org/cinnamon/alttab-switcher-enforce-primary-monitor
-    * /org/cinnamon/alttab-switcher-show-all-workspaces
-    * /org/cinnamon/alttab-switcher-style
-    * /org/cinnamon/bring-windows-to-current-workspace
-    * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
-    * /org/cinnamon/muffin/attach-modal-dialogs
-    * /org/nemo/icon-view/default-zoom-level
-    * /org/nemo/preferences/date-format
-    * /org/nemo/preferences/ignore-view-metadata
-    * /org/nemo/preferences/show-advanced-permissions
-    * /org/nemo/preferences/show-home-icon-toolbar
-    * /org/nemo/preferences/show-open-in-terminal-toolbar
-    * /org/nemo/preferences/show-reload-icon-toolbar
-    * /org/nemo/window-state/sidebar-width
-* Cinnamon Plugins
-  * Dconf
-    * /org/cinnamon/desktop/screensaver/date-format
-    * /org/cinnamon/desktop/screensaver/time-format
-    * /org/cinnamon/desktop/screensaver/use-custom-format
-    * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
-    * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
-* Cinnamon Spices
-  * Dconf
-    * /org/cinnamon/next-applet-id
-    * /org/cinnamon/next-desklet-id
-    * /org/cinnamon/enabled-applets
-    * /org/cinnamon/enabled-desklets
-    * /org/cinnamon/enabled-extensions
-  * Json
-    * ~/.cinnamon/configs/menu@cinnamon.org/*.json
-    * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
-    * ~/.cinnamon/configs/weather@mockturtl/*.json
-    * ~/.cinnamon/configs/sound@cinnamon.org/*.json
-    * ~/.cinnamon/configs/power@cinnamon.org/*.json
-    * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
-    * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
-    * ~/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json
-    * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
+### Install Add-ons (Conditional)
+* [Cinnamon Spices](https://cinnamon-spices.linuxmint.com/)
+  * Applets - Latest
+    * [Num Lock/Caps Lock indicator with notifications](https://cinnamon-spices.linuxmint.com/applets/view/83)
+    * [Simple CPU Monitor](https://cinnamon-spices.linuxmint.com/applets/view/8)
+    * [Simple Memory Monitor](https://cinnamon-spices.linuxmint.com/applets/view/34)
+    * [Weather](https://cinnamon-spices.linuxmint.com/applets/view/17)
+  * Extensions - Latest
+    * [Transparent panels](https://cinnamon-spices.linuxmint.com/extensions/view/42)
+  * User Configurations
+    * Dconf
+      * /org/cinnamon/next-applet-id
+      * /org/cinnamon/next-desklet-id
+      * /org/cinnamon/enabled-applets
+      * /org/cinnamon/enabled-desklets
+      * /org/cinnamon/enabled-extensions
+      * /org/cinnamon/favorite-apps
+      * /org/cinnamon/panels-enabled
+      * /org/cinnamon/panels-height
+      * /org/cinnamon/panel-zone-icon-sizes
+      * /org/cinnamon/theme/symbolic-relative-size
+      * /org/cinnamon/desktop/interface/clock-show-date
+      * /org/cinnamon/desktop/interface/clock-show-seconds
+      * /org/cinnamon/desktop/screensaver/date-format
+      * /org/cinnamon/desktop/screensaver/time-format
+      * /org/cinnamon/desktop/screensaver/use-custom-format
+    * Json
+      * ~/.cinnamon/configs/menu@cinnamon.org/*.json
+      * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
+      * ~/.cinnamon/configs/weather@mockturtl/*.json
+      * ~/.cinnamon/configs/sound@cinnamon.org/*.json
+      * ~/.cinnamon/configs/power@cinnamon.org/*.json
+      * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
+      * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
+      * ~/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json
+      * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
 * Cinnamon Themes
-  * Dconf
-    * /org/cinnamon/desktop/background/picture-uri
-    * /org/cinnamon/desktop/background/slideshow/delay
-    * /org/cinnamon/desktop/background/slideshow/image-source
-    * /org/cinnamon/desktop/background/slideshow/random-order
-    * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
-    * /org/cinnamon/desktop/interface/cursor-theme
-    * /org/cinnamon/desktop/interface/gtk-theme
-    * /org/cinnamon/desktop/interface/gtk-theme-backup
-    * /org/cinnamon/desktop/interface/icon-theme
-    * /org/cinnamon/desktop/interface/icon-theme-backup
-    * /org/cinnamon/desktop/wm/preferences/button-layout
-    * /org/cinnamon/desktop/wm/preferences/theme
-    * /org/cinnamon/desktop/wm/preferences/theme-backup
-    * /org/cinnamon/desktop/wm/preferences/titlebar-font
-    * /org/cinnamon/theme/name
-    * /org/cinnamon/theme/symbolic-relative-size
-    * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
-    * /org/nemo/desktop/computer-icon-visible
-    * /org/nemo/desktop/network-icon-visible
-    * /org/nemo/desktop/trash-icon-visible
-  * List
-    * ~/.cinnamon/backgrounds/user-folders.lst
+  * Windows
+    * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/Mojave-gtk-theme)
+  * Icons
+    * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
+  * Cursors
+    * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
+  * Backgrounds
+    * [Wallhaven (Dark)](https://wallhaven.cc/)
+  * User Configurations
+    * Dconf
+      * /org/cinnamon/theme/name
+      * /org/cinnamon/desktop/interface/gtk-theme
+      * /org/cinnamon/desktop/interface/gtk-theme-backup
+      * /org/cinnamon/desktop/wm/preferences/theme
+      * /org/cinnamon/desktop/wm/preferences/theme-backup
+      * /org/cinnamon/desktop/wm/preferences/button-layout
+      * /org/nemo/window-state/sidebar-width
+      * /org/nemo/icon-view/default-zoom-level
+      * /org/nemo/preferences/date-format
+      * /org/nemo/preferences/show-advanced-permissions
+      * /org/nemo/preferences/ignore-view-metadata
+      * /org/cinnamon/desktop/interface/icon-theme
+      * /org/cinnamon/desktop/interface/icon-theme-backup
+      * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
+      * /org/nemo/desktop/computer-icon-visible
+      * /org/nemo/desktop/network-icon-visible
+      * /org/nemo/desktop/trash-icon-visible
+      * /org/nemo/preferences/show-home-icon-toolbar
+      * /org/nemo/preferences/show-reload-icon-toolbar
+      * /org/nemo/preferences/show-open-in-terminal-toolbar
+      * /org/cinnamon/desktop/interface/cursor-theme
+      * /org/cinnamon/desktop/background/picture-uri
+      * /org/cinnamon/desktop/background/slideshow/image-source
+      * /org/cinnamon/desktop/background/slideshow/delay
+      * /org/cinnamon/desktop/background/slideshow/random-order
+      * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
+    * List
+      * ~/.cinnamon/backgrounds/user-folders.lst
+* Cinnamon Actions
+  * User Configurations
+    * Dconf
+      * /org/cinnamon/alttab-switcher-enforce-primary-monitor
+      * /org/cinnamon/alttab-switcher-show-all-workspaces
+      * /org/cinnamon/bring-windows-to-current-workspace
+      * /org/cinnamon/muffin/attach-modal-dialogs
+      * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
+      * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
+      * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
 
 <br/>
 
