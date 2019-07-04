@@ -7,12 +7,12 @@ then
 fi
 
 echo "DESKTOP ENVIRONMENT SCRIPT"
+echo "Author: Danilo Ancilotto"
 echo "Arguments: [$args]"
 echo "Architecture: $arch"
 echo "Interface: $DESKTOP_SESSION"
 echo "User: $USER"
 echo "Home: $HOME"
-echo "Author: Danilo Ancilotto"
 
 printLine() {
   text="$1"
@@ -160,6 +160,8 @@ then
           wget -O "$file" "$cinnamon_spice_item"
           unzip -q "$file" -d "$cinnamon_spice_items_dir"
           rm -fv "$file"
+        else
+          echo "$cinnamon_spice_item_name is already installed"
         fi
 
         let "j++"
@@ -219,6 +221,13 @@ then
     dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
     dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
     dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
+    dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
+    dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
+    dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
+    dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
+    dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
+    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
+    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
 
     file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
     if [ -f "$file" ]
@@ -333,6 +342,8 @@ then
       tar -xf "$file" -C "$cinnamon_windows_dir"
       mv -fv "$cinnamon_windows_dir/Mojave-dark" "$cinnamon_windows_dir/$cinnamon_window_name"
       rm -fv "$file"
+    else
+      echo "$cinnamon_window_name is already installed"
     fi
     cinnamon_window_name_backup="Mint-Y-Dark"
     if [ ! -d "$cinnamon_windows_dir/$cinnamon_window_name" ]
@@ -351,7 +362,7 @@ then
     dconf write /org/nemo/preferences/date-format "'iso'"
     dconf write /org/nemo/preferences/show-advanced-permissions "true"
     dconf write /org/nemo/preferences/ignore-view-metadata "true"
-    
+
     cinnamon_icons_dir="$HOME/.icons"
     cinnamon_icon_name="Korla-1.1.4-Dark"
     if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
@@ -361,8 +372,10 @@ then
       wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.4.zip"
       unzip -q "$file" -d "$cinnamon_icons_dir"
       mv -fv "$cinnamon_icons_dir/korla-1.1.4/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
-      rm -rfv "$cinnamon_icons_dir/korla-1.1.4"
+      rm -rf "$cinnamon_icons_dir/korla-1.1.4"
       rm -fv "$file"
+    else
+      echo "$cinnamon_icon_name is already installed"
     fi
     cinnamon_icon_name_backup="Mint-Y"
     if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
@@ -390,6 +403,8 @@ then
       tar -xf "$file" -C "$cinnamon_cursors_dir"
       mv -fv "$cinnamon_cursors_dir/dist-white" "$cinnamon_cursors_dir/$cinnamon_cursor_name"
       rm -fv "$file"
+    else
+      echo "$cinnamon_cursor_name is already installed"
     fi
     cinnamon_cursor_name_backup="DMZ-White"
     if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
@@ -433,6 +448,8 @@ then
         if [ ! -f "$cinnamon_background_items_dir/$cinnamon_background_item_file" ]
         then
           wget -O "$cinnamon_background_items_dir/$cinnamon_background_item_file" "$cinnamon_background_item"
+        else
+          echo "$cinnamon_background_item_file is already installed"
         fi
 
         let "j++"
@@ -442,19 +459,10 @@ then
     done
 
     dconf write /org/cinnamon/desktop/background/picture-uri "'file://$cinnamon_background_items_dir/$cinnamon_background_item_file'"
-    dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"-
+    dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"
     dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
     dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
     dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
-
-    printLine "Cinnamon Actions"
-    dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
-    dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
-    dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
-    dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
-    dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
-    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
-    dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
   fi
 fi
 
