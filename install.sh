@@ -11,8 +11,8 @@ echo "Author: Danilo Ancilotto"
 echo "Arguments: [$args]"
 echo "Architecture: $arch"
 echo "Interface: $DESKTOP_SESSION"
-echo "User: $USER"
 echo "Home: $HOME"
+echo "User: $USER"
 
 printLine() {
   text="$1"
@@ -222,105 +222,249 @@ then
     dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
     dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
 
-    file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/menu@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."menu-custom"."value"=true'`"
+        json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-4-symbolic"'`"
+        json="`echo "$json" | jq '."menu-label"."value"=" Menu"'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for menu@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."menu-custom"."value"=true'`"
-      json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-4-symbolic"'`"
-      json="`echo "$json" | jq '."menu-label"."value"=" Menu"'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/notifications@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/notifications@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."showEmptyTray"."value"=true'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for notifications@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."showEmptyTray"."value"=true'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/weather@mockturtl/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/weather@mockturtl/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."manualLocation"."value"=true'`"
+        json="`echo "$json" | jq '."location"."value"="Mirand\u00f3polis,BR"'`"
+        json="`echo "$json" | jq '."show24Hours"."value"=true'`"
+        json="`echo "$json" | jq '."forecastDays"."value"=5'`"
+        json="`echo "$json" | jq '."useSymbolicIcons"."value"=true'`"
+        json="`echo "$json" | jq '."showCommentInPanel"."value"=false'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for weather@mockturtl..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."manualLocation"."value"=true'`"
-      json="`echo "$json" | jq '."location"."value"="Mirand\u00f3polis,BR"'`"
-      json="`echo "$json" | jq '."show24Hours"."value"=true'`"
-      json="`echo "$json" | jq '."forecastDays"."value"=5'`"
-      json="`echo "$json" | jq '."useSymbolicIcons"."value"=true'`"
-      json="`echo "$json" | jq '."showCommentInPanel"."value"=false'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/sound@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/sound@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."extendedPlayerControl"."value"=true'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for sound@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."extendedPlayerControl"."value"=true'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/power@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/power@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."labelinfo"."value"="percentage"'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for power@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."labelinfo"."value"="percentage"'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/calendar@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/calendar@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
+        json="`echo "$json" | jq '."custom-format"."value"="  %H:%M:%S\n%d/%m/%Y"'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for calendar@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
-      json="`echo "$json" | jq '."custom-format"."value"="  %H:%M:%S\n%d/%m/%Y"'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/show-desktop@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/show-desktop@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."peek-at-desktop"."value"=true'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for show-desktop@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."peek-at-desktop"."value"=true'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."middle-click-action"."value"=2'`"
+        json="`echo "$json" | jq '."pinned-apps"."value"=[
+          "org.gnome.Terminal.desktop",
+          "nemo.desktop",
+          "google-chrome.desktop",
+          "spotify_spotify.desktop",
+          "steam.desktop",
+          "virtualbox.desktop",
+          "org.remmina.Remmina.desktop",
+          "org.gnome.Screenshot.desktop",
+          "org.gnome.Calculator.desktop",
+          "skypeforlinux.desktop",
+          "code_code.desktop",
+          "postman_postman.desktop"
+        ]'`"
+        json="`echo "$json" | jq '."show-all-workspaces"."value"=true'`"
+        json="`echo "$json" | jq '."enable-app-button-dragging"."value"=false'`"
+        json="`echo "$json" | jq '."launcher-animation-effect"."value"=3'`"
+        json="`echo "$json" | jq '."list-monitor-windows"."value"=false'`"
+        json="`echo "$json" | jq '."thumbnail-size"."value"=12'`"
+        json="`echo "$json" | jq '."animate-thumbnails"."value"=true'`"
+        json="`echo "$json" | jq '."vertical-thumbnails"."value"=true'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for grouped-window-list@cinnamon.org..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."middle-click-action"."value"=2'`"
-      json="`echo "$json" | jq '."pinned-apps"."value"=[
-        "org.gnome.Terminal.desktop",
-        "nemo.desktop",
-        "google-chrome.desktop",
-        "spotify_spotify.desktop",
-        "steam.desktop",
-        "virtualbox.desktop",
-        "org.remmina.Remmina.desktop",
-        "org.gnome.Screenshot.desktop",
-        "org.gnome.Calculator.desktop",
-        "skypeforlinux.desktop",
-        "code_code.desktop",
-        "postman_postman.desktop"
-      ]'`"
-      json="`echo "$json" | jq '."show-all-workspaces"."value"=true'`"
-      json="`echo "$json" | jq '."enable-app-button-dragging"."value"=false'`"
-      json="`echo "$json" | jq '."launcher-animation-effect"."value"=3'`"
-      json="`echo "$json" | jq '."list-monitor-windows"."value"=false'`"
-      json="`echo "$json" | jq '."thumbnail-size"."value"=12'`"
-      json="`echo "$json" | jq '."animate-thumbnails"."value"=true'`"
-      json="`echo "$json" | jq '."vertical-thumbnails"."value"=true'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
-    file="`ls -1 $HOME/.cinnamon/configs/transparent-panels@germanfr/*.json | tail -n1`"
-    if [ -f "$file" ]
+    for i in {1..10}
+    do
+      file="`ls -1 $HOME/.cinnamon/configs/transparent-panels@germanfr/*.json 2> /dev/null | tail -n1`"
+      if [ -f "$file" ]
+      then
+        json="`cat "$file"`"
+        json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
+        echo "$json" > "$file"
+        break
+      else
+        if [ $i == 1 ]
+        then
+          echo -n "Waiting for transparent-panels@germanfr..."
+        else
+          echo -n "."
+        fi
+        sleep 1
+      fi
+    done
+    if [ $i != 1 ]
     then
-      json="`cat "$file"`"
-      json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
-      echo "$json" > "$file"
+      echo ""
     fi
 
     echo "spices have been configured"
