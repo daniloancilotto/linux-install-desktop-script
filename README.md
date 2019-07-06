@@ -6,14 +6,10 @@
 
 ### Supported Architectures
 * amd64 (64-bit)
-* i386 (32-bit) - PARTIALLY SUPPORTED
+* i386 (32-bit) - Partially
 
 ### Install Apps
 * Base Apps - Latest
-  * [Snap](https://snapcraft.io/store)
-  * [Flatpak](https://flathub.org/home)
-    * Repositories
-      * Flathub
   * Curl
   * Wget
   * Git
@@ -22,6 +18,11 @@
   * Jq
   * Neofetch
   * Htop
+* App Hubs - Latest
+  * [Snap](https://snapcraft.io/store)
+  * [Flatpak](https://flathub.org/home)
+    * Repositories
+      * Flathub
 * [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
 * Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)

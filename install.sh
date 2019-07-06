@@ -43,12 +43,15 @@ dpkgInstall() {
 
 printLine "Base Apps"
 sudo apt update
-sudo apt install snapd flatpak curl wget git unzip tar jq neofetch htop -y
-sudo systemctl enable --now snapd.socket
-sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
+sudo apt install curl wget git unzip tar jq neofetch htop -y
 
 if ! [[ "${args[@]}" =~ "--only-add-ons" ]]
 then
+  printLine "App Hubs"
+  sudo apt install snapd flatpak -y
+  sudo systemctl enable --now snapd.socket
+  sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
+
   printLine "Angry IP Scanner"
   if [ ! -f "/usr/bin/ipscan" ]
   then
