@@ -156,3 +156,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 ```bash
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash -s -- --only-add-ons
 ```
+
+<br/>
+
+# Screenshots
+
+![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/60760588-f19b0c00-a00d-11e9-92d5-32fbfa243ebb.png)

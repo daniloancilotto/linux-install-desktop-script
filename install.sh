@@ -577,9 +577,9 @@ then
       if [ "$cinnamon_background" == "Dark" ]
       then
         cinnamon_background_items=( \
-          "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
           "https://w.wallhaven.cc/full/nk/wallhaven-nkmjyq.jpg" \
           "https://w.wallhaven.cc/full/0q/wallhaven-0qk8qr.jpg" \
+          "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
         )
       fi
       mkdir -pv "$cinnamon_background_items_dir"
