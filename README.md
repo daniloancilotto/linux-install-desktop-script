@@ -114,6 +114,9 @@
       * /org/cinnamon/desktop/background/slideshow/delay
       * /org/cinnamon/desktop/background/slideshow/random-order
       * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
+    * Conf
+      * /etc/lightdm/slick-greeter.conf
+      * ~/.config/nemo/desktop-metadata
     * List
       * ~/.cinnamon/backgrounds/user-folders.lst
 * Cinnamon Actions
@@ -138,8 +141,17 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 <br/>
 
 ### With Add-ons
-> **Caution:**  This script change your panels, windows, plugins and theme configurations.
+> **Caution:** This script changes your settings of applets, desklets, extensions, icons, cursors, backgrounds, and actions.
 
 ```bash
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash -s -- --with-add-ons
+```
+
+<br/>
+
+### Only Add-ons
+> **Caution:** This script changes your settings of applets, desklets, extensions, icons, cursors, backgrounds, and actions.
+
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/install.sh | bash -s -- --only-add-ons
 ```
