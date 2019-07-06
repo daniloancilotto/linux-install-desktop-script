@@ -525,16 +525,6 @@ then
       cinnamon_icon_name="$cinnamon_icon_name_backup"
     fi
 
-    echo "[Greeter]
-          show-hostname=true
-          draw-grid=false
-          theme-name=Mint-Y-Dark-Blue
-          icon-theme-name=Mint-Y-Blue" | sudo tee "/etc/lightdm/slick-greeter.conf"
-
-    echo "[desktop-monitor-0]
-          desktop-horizontal=true
-          desktop-grid-adjust=107;75;" > "$HOME/.config/nemo/desktop-metadata"
-
     dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
     dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
     dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
@@ -615,6 +605,18 @@ then
     dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
     dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
     dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
+
+    conf=$'[Greeter]\n'
+    conf+=$'show-hostname=true\n'
+    conf+=$'draw-grid=false\n'
+    conf+=$'theme-name=Mint-Y-Dark-Blue\n'
+    conf+=$'icon-theme-name=Mint-Y-Blue\n'
+    echo "$conf" | sudo tee "/etc/lightdm/slick-greeter.conf"
+
+    conf=$'[desktop-monitor-0]\n'
+    conf+=$'desktop-horizontal=true\n'
+    conf+=$'desktop-grid-adjust=107;75;\n'
+    echo "$conf" > "$HOME/.config/nemo/desktop-metadata"
 
     echo "themes have been configured"
 
