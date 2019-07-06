@@ -41,14 +41,14 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
+printLine "Base Apps"
+sudo apt update
+sudo apt install snapd flatpak curl wget git unzip tar jq neofetch htop -y
+sudo systemctl enable --now snapd.socket
+sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
+
 if ! [[ "${args[@]}" =~ "--only-add-ons" ]]
 then
-  printLine "Base Apps"
-  sudo apt update
-  sudo apt install snapd flatpak curl wget git unzip tar jq neofetch htop -y
-  sudo systemctl enable --now snapd.socket
-  sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
-
   printLine "Angry IP Scanner"
   if [ ! -f "/usr/bin/ipscan" ]
   then
@@ -525,16 +525,6 @@ then
       cinnamon_icon_name="$cinnamon_icon_name_backup"
     fi
 
-    dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
-    dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
-    dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
-    dconf write /org/nemo/desktop/computer-icon-visible "false"
-    dconf write /org/nemo/desktop/network-icon-visible "true"
-    dconf write /org/nemo/desktop/trash-icon-visible "true"
-    dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
-    dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
-    dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
-
     echo "[Greeter]
           show-hostname=true
           draw-grid=false
@@ -544,6 +534,16 @@ then
     echo "[desktop-monitor-0]
           desktop-horizontal=true
           desktop-grid-adjust=107;75;" > "$HOME/.config/nemo/desktop-metadata"
+
+    dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
+    dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
+    dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
+    dconf write /org/nemo/desktop/computer-icon-visible "false"
+    dconf write /org/nemo/desktop/network-icon-visible "true"
+    dconf write /org/nemo/desktop/trash-icon-visible "true"
+    dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
+    dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
+    dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
 
     cinnamon_cursors_dir="$HOME/.icons"
     cinnamon_cursor_name="Capitaine-Cursors-R3-Light"
