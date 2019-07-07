@@ -490,7 +490,7 @@ then
     printLine "Cinnamon Themes"
 
     cinnamon_windows_dir="$HOME/.themes"
-    cinnamon_window_name="Mojave-2019-06-23-Dark"
+    cinnamon_window_name="Mojave-2019-07-04-Dark"
     if [ ! -d "$cinnamon_windows_dir/$cinnamon_window_name" ]
     then
       mkdir -pv "$cinnamon_windows_dir"
