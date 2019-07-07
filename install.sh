@@ -509,7 +509,7 @@ then
     fi
 
     IFS=$'\n'
-    cinnamon_bookmark_desktop="`xdg-user-dir DESKTOP`"
+    cinnamon_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/snap")
     cinnamon_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
     cinnamon_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
     cinnamon_bookmarks_count=0
@@ -519,7 +519,7 @@ then
     do
       cinnamon_bookmark=${cinnamon_bookmarks[$i]%/*}
 
-      if [ "$cinnamon_bookmark" != "$cinnamon_bookmark_desktop" ]
+      if ! [[ "${cinnamon_bookmarks_ignored[@]}" =~ "$cinnamon_bookmark" ]]
       then
         cinnamon_bookmark=${cinnamon_bookmark##*/}
         cinnamon_bookmark="file://$HOME/`urlEncode "$cinnamon_bookmark"` $cinnamon_bookmark"
