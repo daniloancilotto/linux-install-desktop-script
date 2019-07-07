@@ -41,6 +41,18 @@ dpkgInstall() {
   sudo apt install -fy
 }
 
+urlEncode() {
+  local length="${#1}"
+  for (( i = 0; i < length; i++ ))
+  do
+    local c="${1:i:1}"
+    case $c in
+      [a-zA-Z0-9.~_-]) printf "$c" ;;
+      *) printf '%%%02X' "'$c"
+    esac
+  done
+}
+
 printLine "Base Apps"
 sudo apt update
 sudo apt install curl wget git unzip tar jq neofetch htop -y
@@ -496,12 +508,37 @@ then
       cinnamon_window_name="$cinnamon_window_name_backup"
     fi
 
+    IFS=$'\n'
+    cinnamon_bookmark_desktop="`xdg-user-dir DESKTOP`"
+    cinnamon_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
+    cinnamon_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
+    cinnamon_bookmarks_count=0
+    cp /dev/null "$cinnamon_bookmarks_list"
+    i=0
+    while [ $i != ${#cinnamon_bookmarks[@]} ]
+    do
+      cinnamon_bookmark=${cinnamon_bookmarks[$i]%/*}
+
+      if [ "$cinnamon_bookmark" != "$cinnamon_bookmark_desktop" ]
+      then
+        cinnamon_bookmark=${cinnamon_bookmark##*/}
+        cinnamon_bookmark="file://$HOME/`urlEncode "$cinnamon_bookmark"` $cinnamon_bookmark"
+
+        echo "$cinnamon_bookmark" >> "$cinnamon_bookmarks_list"
+        let "cinnamon_bookmarks_count++"
+      fi
+
+      let "i++"
+    done
+    unset $IFS
+
     dconf write /org/cinnamon/theme/name "'$cinnamon_window_name'"
     dconf write /org/cinnamon/desktop/interface/gtk-theme "'$cinnamon_window_name'"
     dconf write /org/cinnamon/desktop/interface/gtk-theme-backup "'$cinnamon_window_name_backup'"
     dconf write /org/cinnamon/desktop/wm/preferences/theme "'$cinnamon_window_name'"
     dconf write /org/cinnamon/desktop/wm/preferences/theme-backup "'$cinnamon_window_name_backup'"
     dconf write /org/cinnamon/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
+    dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
     dconf write /org/nemo/window-state/sidebar-width "210"
     dconf write /org/nemo/icon-view/default-zoom-level "'small'"
     dconf write /org/nemo/preferences/date-format "'iso'"

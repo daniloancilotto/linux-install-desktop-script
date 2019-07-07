@@ -95,6 +95,7 @@
       * /org/cinnamon/desktop/wm/preferences/theme
       * /org/cinnamon/desktop/wm/preferences/theme-backup
       * /org/cinnamon/desktop/wm/preferences/button-layout
+      * /org/nemo/window-state/sidebar-bookmark-breakpoint
       * /org/nemo/window-state/sidebar-width
       * /org/nemo/icon-view/default-zoom-level
       * /org/nemo/preferences/date-format
@@ -119,6 +120,7 @@
       * /etc/lightdm/slick-greeter.conf
       * ~/.config/nemo/desktop-metadata
     * List
+      * ~/.config/gtk-3.0/bookmarks
       * ~/.cinnamon/backgrounds/user-folders.lst
 * Cinnamon Actions
   * User Configurations
