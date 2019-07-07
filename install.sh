@@ -297,7 +297,7 @@ then
       then
         json="`cat "$file"`"
         json="`echo "$json" | jq '."manualLocation"."value"=true'`"
-        json="`echo "$json" | jq '."location"."value"="Mirand\u00f3polis,BR"'`"
+        json="`echo "$json" | jq '."location"."value"="Mirandópolis,BR"'`"
         json="`echo "$json" | jq '."show24Hours"."value"=true'`"
         json="`echo "$json" | jq '."forecastDays"."value"=5'`"
         json="`echo "$json" | jq '."useSymbolicIcons"."value"=true'`"
@@ -495,7 +495,7 @@ then
     then
       mkdir -pv "$cinnamon_windows_dir"
       file="$cinnamon_windows_dir/mojave-dark.tar.xz"
-      wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-06-23/Mojave-dark.tar.xz"
+      wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-07-04/Mojave-dark.tar.xz"
       tar -xf "$file" -C "$cinnamon_windows_dir"
       mv -fv "$cinnamon_windows_dir/Mojave-dark" "$cinnamon_windows_dir/$cinnamon_window_name"
       rm -fv "$file"
