@@ -545,6 +545,11 @@ then
     dconf write /org/nemo/preferences/date-format "'iso'"
     dconf write /org/nemo/preferences/show-advanced-permissions "true"
     dconf write /org/nemo/preferences/ignore-view-metadata "true"
+    dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
+    dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
+    dconf write /org/gnome/nautilus/list-view/default-zoom-level "'small'"
+    dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
+    dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
     cinnamon_icons_dir="$HOME/.icons"
     cinnamon_icon_name="Korla-1.1.4-Dark"

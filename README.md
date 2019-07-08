@@ -102,6 +102,11 @@
       * /org/nemo/preferences/date-format
       * /org/nemo/preferences/show-advanced-permissions
       * /org/nemo/preferences/ignore-view-metadata
+      * /org/gnome/nautilus/window-state/sidebar-width
+      * /org/gnome/nautilus/icon-view/default-zoom-level
+      * /org/gnome/nautilus/list-view/default-zoom-level
+      * /org/gnome/nautilus/compression/default-compression-format
+      * /org/gnome/terminal/legacy/menu-accelerator-enabled
       * /org/cinnamon/desktop/interface/icon-theme
       * /org/cinnamon/desktop/interface/icon-theme-backup
       * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
