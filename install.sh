@@ -510,7 +510,7 @@ then
     fi
 
     IFS=$'\n'
-    cinnamon_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/snap")
+    cinnamon_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
     cinnamon_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
     cinnamon_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
     cinnamon_bookmarks_count=0
