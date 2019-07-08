@@ -62,6 +62,7 @@
       * /org/cinnamon/panels-enabled
       * /org/cinnamon/panels-height
       * /org/cinnamon/panel-zone-icon-sizes
+      * /org/cinnamon/no-adjacent-panel-barriers
       * /org/cinnamon/theme/symbolic-relative-size
       * /org/cinnamon/desktop/interface/clock-show-date
       * /org/cinnamon/desktop/interface/clock-show-seconds
@@ -80,7 +81,7 @@
       * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
 * Cinnamon Themes
   * Windows
-    * [Mojave - 2019-07-04 (Dark)](https://github.com/daniloancilotto/mojave-gtk-theme)
+    * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/mojave-gtk-theme)
   * Icons
     * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
   * Cursors

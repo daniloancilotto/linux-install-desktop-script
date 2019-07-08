@@ -233,6 +233,7 @@ then
       '2:52'
     ]"
     dconf write /org/cinnamon/panel-zone-icon-sizes "'"'[{"panelId": 1, "left": 20, "center": 20, "right": 20}, {"panelId": 2, "left": 32, "center": 32, "right": 32}]'"'"
+    dconf write /org/cinnamon/no-adjacent-panel-barriers "true"
     dconf write /org/cinnamon/theme/symbolic-relative-size "1.0"
     dconf write /org/cinnamon/desktop/interface/clock-show-date "true"
     dconf write /org/cinnamon/desktop/interface/clock-show-seconds "true"
@@ -490,12 +491,12 @@ then
     printLine "Cinnamon Themes"
 
     cinnamon_windows_dir="$HOME/.themes"
-    cinnamon_window_name="Mojave-2019-07-04-Dark"
+    cinnamon_window_name="Mojave-2019-06-23-Dark"
     if [ ! -d "$cinnamon_windows_dir/$cinnamon_window_name" ]
     then
       mkdir -pv "$cinnamon_windows_dir"
       file="$cinnamon_windows_dir/mojave-dark.tar.xz"
-      wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-07-04/Mojave-dark.tar.xz"
+      wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-06-23/Mojave-dark.tar.xz"
       tar -xf "$file" -C "$cinnamon_windows_dir"
       mv -fv "$cinnamon_windows_dir/Mojave-dark" "$cinnamon_windows_dir/$cinnamon_window_name"
       rm -fv "$file"
