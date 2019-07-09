@@ -435,6 +435,7 @@ then
           "org.gnome.Screenshot.desktop",
           "org.gnome.Calculator.desktop",
           "skypeforlinux.desktop",
+          "com.slack.Slack.desktop",
           "code_code.desktop",
           "postman_postman.desktop"
         ]'`"
@@ -549,6 +550,7 @@ then
     dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
     dconf write /org/gnome/nautilus/list-view/default-zoom-level "'small'"
     dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
+    dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
     dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
     cinnamon_icons_dir="$HOME/.icons"

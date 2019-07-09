@@ -106,6 +106,7 @@
       * /org/gnome/nautilus/icon-view/default-zoom-level
       * /org/gnome/nautilus/list-view/default-zoom-level
       * /org/gnome/nautilus/compression/default-compression-format
+      * /org/gnome/nautilus/preferences/executable-text-activation
       * /org/gnome/terminal/legacy/menu-accelerator-enabled
       * /org/cinnamon/desktop/interface/icon-theme
       * /org/cinnamon/desktop/interface/icon-theme-backup
