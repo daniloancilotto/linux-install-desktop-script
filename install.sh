@@ -434,10 +434,9 @@ then
           "org.remmina.Remmina.desktop",
           "org.gnome.Screenshot.desktop",
           "org.gnome.Calculator.desktop",
-          "skypeforlinux.desktop",
-          "com.slack.Slack.desktop",
           "code_code.desktop",
-          "postman_postman.desktop"
+          "postman_postman.desktop",
+          "mysql-workbench.desktop"
         ]'`"
         json="`echo "$json" | jq '."show-all-workspaces"."value"=true'`"
         json="`echo "$json" | jq '."enable-app-button-dragging"."value"=false'`"
