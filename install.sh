@@ -76,7 +76,7 @@ then
   sudo apt install dconf-tools -y
 
   printLine "Discord"
-  echo "Running snap..."
+  echo "Running snap, please wait..."
   sudo snap install discord
 
   printLine "Dropbox"
@@ -121,7 +121,7 @@ then
   sudo apt install remmina remmina-plugin-rdp remmina-plugin-vnc -y
 
   printLine "Spotify"
-  echo "Running snap..."
+  echo "Running snap, please wait..."
   sudo snap install spotify
 
   printLine "Steam"
@@ -429,11 +429,13 @@ then
           "nemo.desktop",
           "google-chrome.desktop",
           "spotify_spotify.desktop",
+          "discord_discord.desktop",
           "steam.desktop",
           "virtualbox.desktop",
           "org.remmina.Remmina.desktop",
           "org.gnome.Screenshot.desktop",
           "org.gnome.Calculator.desktop",
+          "slack.desktop",
           "code_code.desktop",
           "postman_postman.desktop",
           "mysql-workbench.desktop"
