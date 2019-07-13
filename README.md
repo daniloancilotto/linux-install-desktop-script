@@ -23,6 +23,7 @@
   * [Flatpak](https://flathub.org/home)
     * Repositories
       * Flathub
+* [4K Video Downloader - 4.8.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
 * Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)

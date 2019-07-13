@@ -64,12 +64,20 @@ then
   sudo systemctl enable --now snapd.socket
   sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
+  printLine "4K Video Downloader"
+  if [ ! -f "/usr/bin/4kvideodownloader" ]
+  then
+    dpkgInstall "4kvideodownloader.deb" "https://dl.4kdownload.com/app/4kvideodownloader_4.8.0-1_$arch.deb"
+  else
+    echo "4kvideodownloader is already installed"
+  fi
+
   printLine "Angry IP Scanner"
   if [ ! -f "/usr/bin/ipscan" ]
   then
-    dpkgInstall "angry-ip-scanner.deb" "https://github.com/angryip/ipscan/releases/download/3.5.5/ipscan_3.5.5_$arch.deb"
+    dpkgInstall "angryipscanner.deb" "https://github.com/angryip/ipscan/releases/download/3.5.5/ipscan_3.5.5_$arch.deb"
   else
-    echo "angry-ip-scanner is already installed"
+    echo "angryipscanner is already installed"
   fi
 
   printLine "Dconf Tools"
@@ -423,6 +431,7 @@ then
       if [ -f "$file" ]
       then
         json="`cat "$file"`"
+        json="`echo "$json" | jq '."left-click-action"."value"=3'`"
         json="`echo "$json" | jq '."middle-click-action"."value"=2'`"
         json="`echo "$json" | jq '."pinned-apps"."value"=[
           "org.gnome.Terminal.desktop",
