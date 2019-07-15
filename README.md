@@ -28,6 +28,7 @@
 * Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * Dropbox - Latest
+* [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
 * Furius ISO Mount - Latest
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
@@ -180,4 +181,4 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Screenshots
 
-![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/60760588-f19b0c00-a00d-11e9-92d5-32fbfa243ebb.png)
+![Linux Mint 19.1 Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)

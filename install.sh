@@ -10,7 +10,7 @@ echo "DESKTOP ENVIRONMENT SCRIPT"
 echo "Author: Danilo Ancilotto"
 echo "Arguments: [$args]"
 echo "Architecture: $arch"
-echo "Interface: $DESKTOP_SESSION"
+echo "Desktop: $DESKTOP_SESSION"
 echo "Home: $HOME"
 echo "User: $USER"
 
@@ -89,6 +89,21 @@ then
 
   printLine "Dropbox"
   sudo apt install dropbox -y
+
+  printLine "FreeRapid Downloader"
+  portable_dir="$HOME/portable"
+  portable_name="freerapiddownloader"
+  if [ ! -d "$portable_dir/$portable_name" ]
+  then
+    mkdir -pv "$portable_dir"
+    file="$portable_dir/freerapiddownloader.zip"
+    wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-0.9u4.zip"
+    unzip -q "$file" -d "$portable_dir"
+    mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_dir/$portable_name"
+    rm -fv "$file"
+  else
+    echo "$portable_name is already installed"
+  fi
 
   printLine "Furius ISO Mount"
   sudo apt install furiusisomount -y
