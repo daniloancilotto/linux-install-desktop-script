@@ -100,13 +100,22 @@
       * /org/nemo/window-state/sidebar-bookmark-breakpoint
       * /org/nemo/window-state/sidebar-width
       * /org/nemo/icon-view/default-zoom-level
+      * /org/nemo/list-view/default-zoom-level
+      * /org/nemo/list-view/default-column-order
+      * /org/nemo/list-view/default-visible-columns
+      * /org/nemo/list-view/search-visible-columns
       * /org/nemo/preferences/date-format
+      * /org/nemo/preferences/default-folder-viewer
       * /org/nemo/preferences/show-advanced-permissions
       * /org/nemo/preferences/ignore-view-metadata
       * /org/gnome/nautilus/window-state/sidebar-width
       * /org/gnome/nautilus/icon-view/default-zoom-level
       * /org/gnome/nautilus/list-view/default-zoom-level
+      * /org/gnome/nautilus/list-view/default-column-order
+      * /org/gnome/nautilus/list-view/default-visible-columns
+      * /org/gnome/nautilus/list-view/use-tree-view
       * /org/gnome/nautilus/compression/default-compression-format
+      * /org/gnome/nautilus/preferences/default-folder-viewer
       * /org/gnome/nautilus/preferences/executable-text-activation
       * /org/gnome/terminal/legacy/menu-accelerator-enabled
       * /org/cinnamon/desktop/interface/icon-theme

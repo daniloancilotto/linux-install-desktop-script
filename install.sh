@@ -544,6 +544,10 @@ then
     done
     unset $IFS
 
+    cinnamon_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
+    cinnamon_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
+    cinnamon_nautilus_columns="['name', 'size', 'type', 'group', 'permissions', 'date_modified']"
+
     dconf write /org/cinnamon/theme/name "'$cinnamon_window_name'"
     dconf write /org/cinnamon/desktop/interface/gtk-theme "'$cinnamon_window_name'"
     dconf write /org/cinnamon/desktop/interface/gtk-theme-backup "'$cinnamon_window_name_backup'"
@@ -553,13 +557,22 @@ then
     dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
     dconf write /org/nemo/window-state/sidebar-width "210"
     dconf write /org/nemo/icon-view/default-zoom-level "'small'"
+    dconf write /org/nemo/list-view/default-zoom-level "'small'"
+    dconf write /org/nemo/list-view/default-column-order "$cinnamon_nemo_columns"
+    dconf write /org/nemo/list-view/default-visible-columns "$cinnamon_nemo_columns"
+    dconf write /org/nemo/list-view/search-visible-columns "$cinnamon_nemo_search_columns"
     dconf write /org/nemo/preferences/date-format "'iso'"
+    dconf write /org/nemo/preferences/default-folder-viewer "'list-view'"
     dconf write /org/nemo/preferences/show-advanced-permissions "true"
     dconf write /org/nemo/preferences/ignore-view-metadata "true"
     dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
     dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
     dconf write /org/gnome/nautilus/list-view/default-zoom-level "'small'"
+    dconf write /org/gnome/nautilus/list-view/default-column-order "$cinnamon_nautilus_columns"
+    dconf write /org/gnome/nautilus/list-view/default-visible-columns "$cinnamon_nautilus_columns"
+    dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
     dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
+    dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
     dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
     dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
