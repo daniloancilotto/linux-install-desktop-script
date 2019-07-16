@@ -91,6 +91,7 @@ then
   sudo apt install dropbox -y
 
   printLine "FreeRapid Downloader"
+
   portable_dir="$HOME/portable"
   portable_name="freerapiddownloader"
   if [ ! -d "$portable_dir/$portable_name" ]
@@ -214,7 +215,8 @@ then
         cinnamon_spice_dconf="[
           'panel1:left:0:menu@cinnamon.org',
           'panel1:center:0:cpu-monitor-text@gnemonix',
-          'panel1:center:1:mem-monitor-text@datanom.net',
+          'panel1:center:1:spacer@cinnamon.org',
+          'panel1:center:2:mem-monitor-text@datanom.net',
           'panel1:right:0:notifications@cinnamon.org',
           'panel1:right:1:weather@mockturtl',
           'panel1:right:2:trash@cinnamon.org',
@@ -660,8 +662,7 @@ then
       if [ "$cinnamon_background" == "Dark" ]
       then
         cinnamon_background_items=( \
-          "https://w.wallhaven.cc/full/nk/wallhaven-nkmjyq.jpg" \
-          "https://w.wallhaven.cc/full/0q/wallhaven-0qk8qr.jpg" \
+          "https://w.wallhaven.cc/full/mp/wallhaven-mpx2z8.jpg" \
           "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
         )
       fi
