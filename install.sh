@@ -112,14 +112,15 @@ then
   file="$HOME/.local/share/applications/$portable_name.desktop"
   if [ ! -f "$file" ]
   then
+    mkdir -pv "$HOME/.local/share/applications"
     conf=$'[Desktop Entry]\n'
     conf+=$'Name=FreeRapid Downloader\n'
     conf+=$'GenericName=FreeRapid Downloader\n'
-    conf+=$'Comment=Download online file\n'
-    conf+=$'Exec=/usr/lib/jvm/java-8-openjdk-$arch -jar $portable_dir/$portable_name/frd.jar\n'
+    conf+=$'Comment=Download from file-sharing services\n'
+    conf+=$'Exec=' && conf+="/usr/lib/jvm/java-8-openjdk-$arch/bin/java -jar $portable_dir/$portable_name/frd.jar" && conf+=$'\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
-    conf+=$'Icon=$portable_dir/$portable_name/frd.png\n'
+    conf+=$'Icon=' && conf+="$portable_dir/$portable_name/frd.png" && conf+=$'\n'
     conf+=$'Categories=Network;\n'
     echo "$conf" > "$file"
   fi
@@ -683,6 +684,7 @@ then
       then
         cinnamon_background_items=( \
           "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
+          "https://w.wallhaven.cc/full/0q/wallhaven-0q8p37.png" \
         )
       fi
       mkdir -pv "$cinnamon_background_items_dir"
