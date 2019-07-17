@@ -37,8 +37,8 @@
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest
 * [OBS Studio - Latest (Flatpak)](https://flathub.org/apps/details/com.obsproject.Studio)
-* [Oracle VM VirtualBox - 6.0.8 (Dpkg)](https://www.virtualbox.org/)
-  * Extension Pack - 6.0.8
+* [Oracle VM VirtualBox - 6.0.10 (Dpkg)](https://www.virtualbox.org/)
+  * Extension Pack - 6.0.10
   * User Groups
     * vboxusers
 * Remmina - Latest
@@ -185,4 +185,4 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Screenshots
 
-![Linux Mint 19.1 Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)
+![Linux Mint 19.1 - Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)

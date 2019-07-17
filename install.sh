@@ -117,10 +117,10 @@ then
     conf+=$'Name=FreeRapid Downloader\n'
     conf+=$'GenericName=FreeRapid Downloader\n'
     conf+=$'Comment=Download from file-sharing services\n'
-    conf+=$'Exec=' && conf+="/usr/lib/jvm/java-8-openjdk-$arch/bin/java -jar $portable_dir/$portable_name/frd.jar" && conf+=$'\n'
+    conf+=$'Exec=/usr/lib/jvm/java-8-openjdk-'$arch$'/bin/java -jar '$portable_dir$'/'$portable_name$'/frd.jar\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
-    conf+=$'Icon=' && conf+="$portable_dir/$portable_name/frd.png" && conf+=$'\n'
+    conf+=$'Icon='$portable_dir$'/'$portable_name$'/frd.png\n'
     conf+=$'Categories=Network;\n'
     echo "$conf" > "$file"
   fi
@@ -147,14 +147,14 @@ then
   printLine "Oracle VM VirtualBox"
   if [ -z "`vboxmanage --version`" ]
   then
-    dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.8/virtualbox-6.0_6.0.8-130520~Ubuntu~bionic_$arch.deb"
+    dpkgInstall "oracle-vm-virtualbox.deb" "https://download.virtualbox.org/virtualbox/6.0.10/virtualbox-6.0_6.0.10-132072~Ubuntu~bionic_$arch.deb"
   else
     echo "vbox is already installed"
   fi
   if [ -z "`vboxmanage list extpacks | grep -i 'version'`" ]
   then
     file="$HOME/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack"
-    wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.8/Oracle_VM_VirtualBox_Extension_Pack-6.0.8.vbox-extpack"
+    wget -O "$file" "https://download.virtualbox.org/virtualbox/6.0.10/Oracle_VM_VirtualBox_Extension_Pack-6.0.10.vbox-extpack"
     echo y | sudo vboxmanage extpack install "$file"
     rm -fv "$file"
   else
