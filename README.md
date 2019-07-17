@@ -23,12 +23,16 @@
   * [Flatpak](https://flathub.org/home)
     * Repositories
       * Flathub
+* OpenJDK - 8
 * [4K Video Downloader - 4.8.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
 * Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * Dropbox - Latest
 * [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
+  * User Configurations
+    * Desktop
+      * ~/.local/share/applications/freerapiddownloader.desktop
 * Furius ISO Mount - Latest
 * [Google Chrome - Latest (Dpkg)](https://www.google.com/chrome/)
 * GParted - Latest

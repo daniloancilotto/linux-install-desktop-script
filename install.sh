@@ -64,6 +64,9 @@ then
   sudo systemctl enable --now snapd.socket
   sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
+  printLine "OpenJDK"
+  sudo apt install openjdk-8-jdk -y
+
   printLine "4K Video Downloader"
   if [ ! -f "/usr/bin/4kvideodownloader" ]
   then
@@ -105,6 +108,23 @@ then
   else
     echo "$portable_name is already installed"
   fi
+
+  file="$HOME/.local/share/applications/$portable_name.desktop"
+  if [ ! -f "$file" ]
+  then
+    conf=$'[Desktop Entry]\n'
+    conf+=$'Name=FreeRapid Downloader\n'
+    conf+=$'GenericName=FreeRapid Downloader\n'
+    conf+=$'Comment=Download online file\n'
+    conf+=$'Exec=/usr/lib/jvm/java-8-openjdk-$arch -jar $portable_dir/$portable_name/frd.jar\n'
+    conf+=$'Terminal=false\n'
+    conf+=$'Type=Application\n'
+    conf+=$'Icon=$portable_dir/$portable_name/frd.png\n'
+    conf+=$'Categories=Network;\n'
+    echo "$conf" > "$file"
+  fi
+
+  echo "$portable_name have been configured"
 
   printLine "Furius ISO Mount"
   sudo apt install furiusisomount -y
@@ -662,7 +682,6 @@ then
       if [ "$cinnamon_background" == "Dark" ]
       then
         cinnamon_background_items=( \
-          "https://w.wallhaven.cc/full/mp/wallhaven-mpx2z8.jpg" \
           "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
         )
       fi
