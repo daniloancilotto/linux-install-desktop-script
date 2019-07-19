@@ -83,6 +83,39 @@ then
     echo "angryipscanner is already installed"
   fi
 
+  portable_dir="$HOME/portable"
+  portable_name="cpu-x"
+  if [ ! -d "$portable_dir/$portable_name" ]
+  then
+    mkdir -pv "$portable_dir"
+    file="$portable_dir/cpu-x.tar.gz"
+    wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_portable.tar.gz"
+    tar -xf "$file" -C "$portable_dir"
+    mv -fv "$portable_dir/CPU-X_v3.2.4_portable" "$portable_dir/$portable_name"
+    ln -sv "$portable_dir/$portable_name/CPU-X_v3.2.4_portable.linux64" "$portable_dir/$portable_name/cpu-x.bin"
+    rm -fv "$file"
+  else
+    echo "$portable_name is already installed"
+  fi
+
+  file="$HOME/.local/share/applications/$portable_name.desktop"
+  if [ ! -f "$file" ]
+  then
+    mkdir -pv "$HOME/.local/share/applications"
+    conf=$'[Desktop Entry]\n'
+    conf+=$'Name=CPU-X\n'
+    conf+=$'GenericName=CPU-X\n'
+    conf+=$'Comment=Check your hardware\n'
+    conf+=$'Exec=sudo '$portable_dir$'/'$portable_name$'/cpu-x.bin\n'
+    conf+=$'Terminal=false\n'
+    conf+=$'Type=Application\n'
+    conf+=$'Icon=\n'
+    conf+=$'Categories=System;\n'
+    echo "$conf" > "$file"
+  fi
+
+  echo "$portable_name have been configured"
+
   printLine "Dconf Tools"
   sudo apt install dconf-tools -y
 

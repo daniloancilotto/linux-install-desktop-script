@@ -1,11 +1,13 @@
 # Desktop Environment Script
 
 ### Supported Systems
-* [Linux Mint - (19.1 ~ 19.2)](https://linuxmint.com/)
-  * Cinnamon - (4.0 ~ 4.2)
+* [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
+
+### Supported Desktops
+* Cinnamon - 4.0 ~ 4.2
 
 ### Supported Architectures
-* amd64 (64-bit)
+* amd64 (64-bit) - Fully
 * i386 (32-bit) - Partially
 
 ### Install Apps
@@ -26,6 +28,10 @@
 * OpenJDK - 8
 * [4K Video Downloader - 4.8.0 (Dpkg)](https://www.4kdownload.com/products/product-videodownloader)
 * [Angry IP Scanner - 3.5.5 (Dpkg)](https://angryip.org/)
+* [CPU-X - 3.2.4 (Portable)](https://github.com/X0rg/CPU-X)
+  * User Configurations
+    * Desktop
+      * ~/.local/share/applications/cpu-x.desktop
 * Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * Dropbox - Latest
