@@ -96,7 +96,7 @@ then
     wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_portable.tar.gz"
     mkdir -pv "$portable_subdir"
     tar -xf "$file" -C "$portable_subdir"
-    ln -sv -T "$portable_subdir/CPU-X_v3.2.4_portable.linux64" "$portable_subdir/cpu-x.bin"
+    ln -sv -T "$portable_subdir/CPU-X_v3.2.4_portable.linux64" "$portable_subdir/cpu-x.linux"
     rm -fv "$file"
   else
     echo "$portable_name is already installed"
@@ -109,11 +109,12 @@ then
     conf=$'[Desktop Entry]\n'
     conf+=$'Name=CPU-X\n'
     conf+=$'GenericName=CPU-X\n'
-    conf+=$'Comment=Check your hardware\n'
-    conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.bin\n'
+    conf+=$'Comment=CPU, motherboard and more information\n'
+    conf+=$'Comment[pt_BR]=CPU, placa-mãe e mais informações\n'
+    conf+=$'Exec='$portable_subdir$'/cpu-x.linux\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
-    conf+=$'Icon=\n'
+    conf+=$'Icon=cpuinfo\n'
     conf+=$'Categories=System;\n'
     echo "$conf" > "$file"
   fi
@@ -155,6 +156,7 @@ then
     conf+=$'Name=FreeRapid Downloader\n'
     conf+=$'GenericName=FreeRapid Downloader\n'
     conf+=$'Comment=Download from file-sharing services\n'
+    conf+=$'Comment[pt_BR]=Download de serviços de compartilhamento de arquivos\n'
     conf+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
