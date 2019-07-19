@@ -4,7 +4,7 @@
 * [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
 
 ### Supported Desktops
-* Cinnamon - 4.0 ~ 4.2
+* [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
 
 ### Supported Architectures
 * amd64 (64-bit) - Fully

@@ -66,6 +66,7 @@ then
 
   printLine "OpenJDK"
   sudo apt install openjdk-8-jdk -y
+  java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
 
   printLine "4K Video Downloader"
   if [ ! -f "/usr/bin/4kvideodownloader" ]
@@ -83,16 +84,19 @@ then
     echo "angryipscanner is already installed"
   fi
 
+  printLine "CPU-X"
+
   portable_dir="$HOME/portable"
   portable_name="cpu-x"
-  if [ ! -d "$portable_dir/$portable_name" ]
+  portable_subdir="$portable_dir/$portable_name"
+  if [ ! -d "$portable_subdir" ]
   then
     mkdir -pv "$portable_dir"
     file="$portable_dir/cpu-x.tar.gz"
     wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_portable.tar.gz"
-    tar -xf "$file" -C "$portable_dir"
-    mv -fv "$portable_dir/CPU-X_v3.2.4_portable" "$portable_dir/$portable_name"
-    ln -sv "$portable_dir/$portable_name/CPU-X_v3.2.4_portable.linux64" "$portable_dir/$portable_name/cpu-x.bin"
+    mkdir -pv "$portable_subdir"
+    tar -xf "$file" -C "$portable_subdir"
+    ln -sv -T "$portable_subdir/CPU-X_v3.2.4_portable.linux64" "$portable_subdir/cpu-x.bin"
     rm -fv "$file"
   else
     echo "$portable_name is already installed"
@@ -106,7 +110,7 @@ then
     conf+=$'Name=CPU-X\n'
     conf+=$'GenericName=CPU-X\n'
     conf+=$'Comment=Check your hardware\n'
-    conf+=$'Exec=sudo '$portable_dir$'/'$portable_name$'/cpu-x.bin\n'
+    conf+=$'Exec=sudo '$portable_subdir$'/cpu-x.bin\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
     conf+=$'Icon=\n'
@@ -130,13 +134,14 @@ then
 
   portable_dir="$HOME/portable"
   portable_name="freerapiddownloader"
-  if [ ! -d "$portable_dir/$portable_name" ]
+  portable_subdir="$portable_dir/$portable_name"
+  if [ ! -d "$portable_subdir" ]
   then
     mkdir -pv "$portable_dir"
     file="$portable_dir/freerapiddownloader.zip"
     wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-0.9u4.zip"
     unzip -q "$file" -d "$portable_dir"
-    mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_dir/$portable_name"
+    mv -fv "$portable_dir/FreeRapid-0.9u4" "$portable_subdir"
     rm -fv "$file"
   else
     echo "$portable_name is already installed"
@@ -150,10 +155,10 @@ then
     conf+=$'Name=FreeRapid Downloader\n'
     conf+=$'GenericName=FreeRapid Downloader\n'
     conf+=$'Comment=Download from file-sharing services\n'
-    conf+=$'Exec=/usr/lib/jvm/java-8-openjdk-'$arch$'/bin/java -jar '$portable_dir$'/'$portable_name$'/frd.jar\n'
+    conf+=$'Exec='$java_dir$'/bin/java -jar '$portable_subdir$'/frd.jar\n'
     conf+=$'Terminal=false\n'
     conf+=$'Type=Application\n'
-    conf+=$'Icon='$portable_dir$'/'$portable_name$'/frd.png\n'
+    conf+=$'Icon='$portable_subdir$'/frd.png\n'
     conf+=$'Categories=Network;\n'
     echo "$conf" > "$file"
   fi
@@ -328,8 +333,8 @@ then
       then
         json="`cat "$file"`"
         json="`echo "$json" | jq '."menu-custom"."value"=true'`"
-        json="`echo "$json" | jq '."menu-icon"."value"="linuxmint-logo-flat-4-symbolic"'`"
-        json="`echo "$json" | jq '."menu-label"."value"=" Menu"'`"
+        json="`echo "$json" | jq '."menu-icon"."value"="cinnamon-symbolic"'`"
+        json="`echo "$json" | jq '."menu-label"."value"=" Cinnamon "'`"
         echo "$json" > "$file"
         break
       else
