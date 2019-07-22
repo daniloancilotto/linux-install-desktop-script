@@ -81,6 +81,8 @@
       * /org/cinnamon/desktop/screensaver/date-format
       * /org/cinnamon/desktop/screensaver/time-format
       * /org/cinnamon/desktop/screensaver/use-custom-format
+      * /org/cinnamon/desktop/privacy/remember-recent-files
+      * /org/gnome/desktop/privacy/remember-recent-files
     * Json
       * ~/.cinnamon/configs/menu@cinnamon.org/*.json
       * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
@@ -95,7 +97,7 @@
   * Windows
     * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/mojave-gtk-theme)
   * Icons
-    * [Korla - 1.1.4 (Dark)](https://github.com/bikass/korla)
+    * [Korla - 1.1.5 (Dark)](https://github.com/bikass/korla)
   * Cursors
     * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
   * Backgrounds

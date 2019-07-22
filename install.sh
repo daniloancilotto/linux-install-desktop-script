@@ -64,6 +64,9 @@ then
   sudo systemctl enable --now snapd.socket
   sudo flatpak remote-add --if-not-exists flathub "https://dl.flathub.org/repo/flathub.flatpakrepo"
 
+  portable_dir="$HOME/portable"
+  mkdir -pv "$portable_dir"
+
   printLine "OpenJDK"
   sudo apt install openjdk-8-jdk -y
   java_dir="/usr/lib/jvm/java-8-openjdk-$arch"
@@ -86,12 +89,10 @@ then
 
   printLine "CPU-X"
 
-  portable_dir="$HOME/portable"
   portable_name="cpu-x"
   portable_subdir="$portable_dir/$portable_name"
   if [ ! -d "$portable_subdir" ]
   then
-    mkdir -pv "$portable_dir"
     file="$portable_dir/cpu-x.tar.gz"
     wget -O "$file" "https://github.com/X0rg/CPU-X/releases/download/v3.2.4/CPU-X_v3.2.4_portable.tar.gz"
     mkdir -pv "$portable_subdir"
@@ -133,12 +134,10 @@ then
 
   printLine "FreeRapid Downloader"
 
-  portable_dir="$HOME/portable"
   portable_name="freerapiddownloader"
   portable_subdir="$portable_dir/$portable_name"
   if [ ! -d "$portable_subdir" ]
   then
-    mkdir -pv "$portable_dir"
     file="$portable_dir/freerapiddownloader.zip"
     wget -O "$file" "https://www.dropbox.com/s/swyleflcmtqxpch/FreeRapid-0.9u4.zip"
     unzip -q "$file" -d "$portable_dir"
@@ -327,6 +326,8 @@ then
     dconf write /org/cinnamon/desktop/screensaver/date-format "' %A   %d/%m/%Y'"
     dconf write /org/cinnamon/desktop/screensaver/time-format "'%H:%M:%S'"
     dconf write /org/cinnamon/desktop/screensaver/use-custom-format "true"
+    dconf write /org/cinnamon/desktop/privacy/remember-recent-files "false"
+    dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
     for i in {1..10}
     do
@@ -552,30 +553,6 @@ then
       echo ""
     fi
 
-    for i in {1..10}
-    do
-      file="`ls -1 $HOME/.cinnamon/configs/transparent-panels@germanfr/*.json 2> /dev/null | tail -n1`"
-      if [ -f "$file" ]
-      then
-        json="`cat "$file"`"
-        json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
-        echo "$json" > "$file"
-        break
-      else
-        if [ $i == 1 ]
-        then
-          echo -n "Waiting for transparent-panels@germanfr..."
-        else
-          echo -n "."
-        fi
-        sleep 1
-      fi
-    done
-    if [ $i != 1 ]
-    then
-      echo ""
-    fi
-
     echo "spices have been configured"
 
     printLine "Cinnamon Themes"
@@ -656,15 +633,15 @@ then
     dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
     cinnamon_icons_dir="$HOME/.icons"
-    cinnamon_icon_name="Korla-1.1.4-Dark"
+    cinnamon_icon_name="Korla-1.1.5-Dark"
     if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
     then
       mkdir -pv "$cinnamon_icons_dir"
       file="$cinnamon_icons_dir/korla-dark.zip"
-      wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.4.zip"
+      wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.5.zip"
       unzip -q "$file" -d "$cinnamon_icons_dir"
-      mv -fv "$cinnamon_icons_dir/korla-1.1.4/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
-      rm -rf "$cinnamon_icons_dir/korla-1.1.4"
+      mv -fv "$cinnamon_icons_dir/korla-1.1.5/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
+      rm -rf "$cinnamon_icons_dir/korla-1.1.5"
       rm -fv "$file"
     else
       echo "$cinnamon_icon_name is already installed"
