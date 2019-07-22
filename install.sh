@@ -210,6 +210,12 @@ then
 
   printLine "Steam"
   sudo apt install steam -y
+
+  printLine "HexChat"
+  sudo apt remove hexchat -y
+
+  printLine "Thunderbird"
+  sudo apt remove thunderbird -y
 fi
 
 if [[ "${args[@]}" =~ "--with-add-ons" ]] || [[ "${args[@]}" =~ "--only-add-ons" ]]

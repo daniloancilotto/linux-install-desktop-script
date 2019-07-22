@@ -54,6 +54,10 @@
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
 
+### Uninstall Apps
+* HexChat
+* Thunderbird
+
 ### Install Add-ons (Conditional)
 * [Cinnamon Spices](https://cinnamon-spices.linuxmint.com/)
   * Applets - Latest
