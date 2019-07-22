@@ -34,7 +34,7 @@
     * Desktop
       * ~/.local/share/applications/cpu-x.desktop
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
-* Dropbox - Latest
+* [Dropbox - 2019.02.14 (Dpkg)](https://www.dropbox.com/install)
 * [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
   * User Configurations
     * Desktop

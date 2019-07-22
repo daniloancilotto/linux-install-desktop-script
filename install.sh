@@ -127,7 +127,12 @@ then
   sudo snap install discord
 
   printLine "Dropbox"
-  sudo apt install dropbox -y
+  if [ ! -f "/usr/bin/dropbox" ]
+  then
+    dpkgInstall "dropbox.deb" "https://linux.dropbox.com/packages/ubuntu/dropbox_2019.02.14_$arch.deb"
+  else
+    echo "dropbox is already installed"
+  fi
 
   printLine "FreeRapid Downloader"
 
