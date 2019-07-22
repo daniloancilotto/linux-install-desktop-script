@@ -20,6 +20,7 @@
   * Jq
   * Neofetch
   * Htop
+  * Dconf
 * App Hubs - Latest
   * [Snap](https://snapcraft.io/store)
   * [Flatpak](https://flathub.org/home)
@@ -32,7 +33,6 @@
   * User Configurations
     * Desktop
       * ~/.local/share/applications/cpu-x.desktop
-* Dconf Tools - Latest
 * [Discord - Latest (Snap)](https://snapcraft.io/discord)
 * Dropbox - Latest
 * [FreeRapid Downloader - 0.9.4 (Portable)](http://wordrider.net/freerapid/)
@@ -53,6 +53,7 @@
     * VNC
 * [Spotify - Latest (Snap)](https://snapcraft.io/spotify)
 * Steam - Latest
+* Editor Dconf - Latest
 
 ### Uninstall Apps
 * HexChat

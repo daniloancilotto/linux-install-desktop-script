@@ -55,7 +55,7 @@ urlEncode() {
 
 printLine "Base Apps"
 sudo apt update
-sudo apt install curl wget git unzip tar jq neofetch htop -y
+sudo apt install curl wget git unzip tar jq neofetch htop dconf-cli -y
 
 if ! [[ "${args[@]}" =~ "--only-add-ons" ]]
 then
@@ -121,9 +121,6 @@ then
   fi
 
   echo "$portable_name have been configured"
-
-  printLine "Dconf Tools"
-  sudo apt install dconf-tools -y
 
   printLine "Discord"
   echo "Running snap, please wait..."
@@ -210,6 +207,9 @@ then
 
   printLine "Steam"
   sudo apt install steam -y
+
+  printLine "Editor Dconf"
+  sudo apt install dconf-editor -y
 
   printLine "HexChat"
   sudo apt remove hexchat -y
