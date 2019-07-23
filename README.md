@@ -115,7 +115,7 @@
 
 <br/>
 
-# Preparing
+# Preparing to Run the Script
 
 ### Ubuntu and Derivatives
 ```bash
@@ -124,7 +124,7 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 
 <br/>
 
-# Running
+# Running the Script
 
 ### Cinnamon
 ```bash
