@@ -375,6 +375,30 @@ then
   echo ""
 fi
 
+for i in {1..10}
+do
+  file="`ls -1 $HOME/.cinnamon/configs/transparent-panels@germanfr/*.json 2> /dev/null | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."transparency-type"."value"="panel-transparent"'`"
+    echo "$json" > "$file"
+    break
+  else
+    if [ $i == 1 ]
+    then
+      echo -n "Waiting for transparent-panels@germanfr..."
+    else
+      echo -n "."
+    fi
+    sleep 1
+  fi
+done
+if [ $i != 1 ]
+then
+  echo ""
+fi
+
 echo "spices have been configured"
 
 printLine "Cinnamon Themes"
