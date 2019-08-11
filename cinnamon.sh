@@ -476,15 +476,15 @@ dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
 cinnamon_icons_dir="$HOME/.icons"
-cinnamon_icon_name="Korla-1.1.5-Dark"
+cinnamon_icon_name="Korla-1.1.6-Dark"
 if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
 then
   mkdir -pv "$cinnamon_icons_dir"
   file="$cinnamon_icons_dir/korla-dark.zip"
-  wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.5.zip"
+  wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.6.zip"
   unzip -q "$file" -d "$cinnamon_icons_dir"
-  mv -fv "$cinnamon_icons_dir/korla-1.1.5/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
-  rm -rf "$cinnamon_icons_dir/korla-1.1.5"
+  mv -fv "$cinnamon_icons_dir/korla-1.1.6/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
+  rm -rf "$cinnamon_icons_dir/korla-1.1.6"
   rm -fv "$file"
 else
   echo "$cinnamon_icon_name is already installed"

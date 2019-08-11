@@ -46,7 +46,7 @@
 * Themes
   * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/mojave-gtk-theme)
 * Icons
-  * [Korla - 1.1.5 (Dark)](https://github.com/bikass/korla)
+  * [Korla - 1.1.6 (Dark)](https://github.com/bikass/korla)
 * Cursors
   * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
 * Backgrounds
