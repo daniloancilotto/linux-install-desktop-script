@@ -122,6 +122,7 @@
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
   * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
+  * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions

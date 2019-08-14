@@ -62,6 +62,7 @@ do
       "https://extensions.gnome.org/extension-data/gnome-shell-trash-extension.v16.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/drive-menugnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v9.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -71,6 +72,7 @@ do
       "gnome-shell-trash-extension" \
       "drive-menu@gnome-shell-extensions.gcampax.github.com" \
       "printers@linux-man.org" \
+      "lockkeys@vaina.lt" \
     )
   fi
   j=0
@@ -104,7 +106,8 @@ do
       'Vitals@CoreCoding.com',
       'gnome-shell-trash-extension',
       'drive-menu@gnome-shell-extensions.gcampax.github.com',
-      'printers@linux-man.org'
+      'printers@linux-man.org',
+      'lockkeys@vaina.lt'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
