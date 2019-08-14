@@ -120,6 +120,7 @@
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v20](https://extensions.gnome.org/extension/1460/vitals/)
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
+  * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
 * User Configurations
   * Dconf
@@ -153,7 +154,7 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 
 ### GNOME
 ```bash
-sudo apt install curl wget unzip tar jq dconf-cli dconf-editor gnome-tweaks -y
+sudo apt install curl wget unzip tar jq dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell -y
 ```
 
 <br/>
