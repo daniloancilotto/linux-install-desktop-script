@@ -37,7 +37,6 @@
     * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
     * ~/.cinnamon/configs/weather@mockturtl/*.json
     * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
-    * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
     * ~/.cinnamon/configs/sound@cinnamon.org/*.json
     * ~/.cinnamon/configs/power@cinnamon.org/*.json
     * ~/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json
