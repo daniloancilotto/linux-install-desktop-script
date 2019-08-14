@@ -120,6 +120,7 @@
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v20](https://extensions.gnome.org/extension/1460/vitals/)
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
+  * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
@@ -137,6 +138,7 @@
     * /org/gnome/shell/extensions/openweather/pressure-unit
     * /org/gnome/shell/extensions/openweather/unit
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
+    * /org/gnome/shell/extensions/printers/show-icon
 
 <br/>
 
