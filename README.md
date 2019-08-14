@@ -119,6 +119,10 @@
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
+    * /org/gnome/shell/extensions/unite/extend-left-box
+    * /org/gnome/shell/extensions/unite/use-system-fonts
+    * /org/gnome/shell/extensions/unite/show-window-title
+    * /org/gnome/shell/extensions/unite/window-buttons-theme
 
 <br/>
 

@@ -96,6 +96,10 @@ do
   let "i++"
 done
 
+dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
+dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
+dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
+dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 # dconf write /org/cinnamon/favorite-apps "[
 #   'cinnamon-settings.desktop',
 #   'mintinstall.desktop',
