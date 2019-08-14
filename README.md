@@ -34,12 +34,12 @@
     * /org/gnome/desktop/privacy/remember-recent-files
   * Json
     * ~/.cinnamon/configs/menu@cinnamon.org/*.json
-    * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
+    * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
     * ~/.cinnamon/configs/weather@mockturtl/*.json
+    * ~/.cinnamon/configs/notifications@cinnamon.org/*.json
+    * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
     * ~/.cinnamon/configs/sound@cinnamon.org/*.json
     * ~/.cinnamon/configs/power@cinnamon.org/*.json
-    * ~/.cinnamon/configs/calendar@cinnamon.org/*.json
-    * ~/.cinnamon/configs/show-desktop@cinnamon.org/*.json
     * ~/.cinnamon/configs/grouped-window-list@cinnamon.org/*.json
     * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
 
@@ -113,6 +113,13 @@
     * /org/gnome/nautilus/preferences/executable-text-activation
     * /org/gnome/terminal/legacy/menu-accelerator-enabled
 
+### Install GNOME Spices
+* Extensions
+  * [Unite - v31](https://extensions.gnome.org/extension/1287/unite/)
+* User Configurations
+  * Dconf
+    * /org/gnome/shell/enabled-extensions
+
 <br/>
 
 # Preparing to Run the Script
@@ -129,6 +136,11 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 ### Cinnamon
 ```bash
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/cinnamon.sh | bash
+```
+
+### GNOME
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/gnome.sh | bash
 ```
 
 <br/>
