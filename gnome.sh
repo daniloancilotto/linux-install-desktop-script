@@ -59,12 +59,14 @@ do
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v20.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/gnome-shell-trash-extension.v16.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
+      "gnome-shell-trash-extension" \
     )
   fi
   j=0
@@ -95,7 +97,8 @@ do
       'unite@hardpixel.eu',
       'clock-override@gnomeshell.kryogenix.org',
       'openweather-extension@jenslody.de',
-      'Vitals@CoreCoding.com'
+      'Vitals@CoreCoding.com',
+      'gnome-shell-trash-extension'
     ]"
     #['mediaplayer@patapon.info', 'gnomeGlobalAppMenu@lestcape', 'weatherintheclock@JasonLG1979.github.io', 'toggle_nemo@kirby33', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'display-button@fthx', 'laine@knasher.gmail.com', 'services-systemd@abteil.org', 'notification-center@Selenium-H', 'docker_status@gpouilloux', 'Resource_Monitor@Ory0n', 'cpufreq@konkor', 'sensory-perception@HarlemSquirrel.github.io', 'System_Monitor@bghome.gmail.com', 'freon@UshakovVasilii_Github.yahoo.com', 'system-monitor@paradoxxx.zero.gmail.com', 'datetime-format@Daniel-Khodabakhsh.github.com', 'temperature@xtranophilist', 'panelSettings@eddiefullmetal.gr', 'systemMonitor@gnome-shell-extensions.gcampax.github.com', 'showappstoppanel@alireza6677.gmail.com', 'AppsOnTop@obsidien.github.com', 'showapplications@apps.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'dock-settings@lagrangian', 'em-dash@github.com_tliron', 'Vitals@CoreCoding.com', 'icon-area-horizontal-spacing@kirby_33@hotmail.fr', 'tweaks-system-menu@extensions.gnome-shell.fifi.org', 'clock-override@gnomeshell.kryogenix.org', 'ds4battery@slie.ru', 'lockkeys@vaina.lt', 'openweather-extension@jenslody.de', 'printers@linux-man.org', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'gnome-shell-trash-extension', 'unite@hardpixel.eu', 'desktop-icons@csoriano']
   fi
@@ -109,18 +112,20 @@ dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
-dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
-dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
-dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
-dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
-dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
-dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
+dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
+dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
   '_processor_average_',
   '_memory_usage_',
   '__max_network-download__',
   '__max_network-upload__'
 ]"
+dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
+dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
+dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
+dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
+dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
+dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
 # dconf write /org/cinnamon/favorite-apps "[
 #   'cinnamon-settings.desktop',
 #   'mintinstall.desktop',

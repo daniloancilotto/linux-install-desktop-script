@@ -119,6 +119,7 @@
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v20](https://extensions.gnome.org/extension/1460/vitals/)
+  * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
@@ -127,13 +128,15 @@
     * /org/gnome/shell/extensions/unite/show-window-title
     * /org/gnome/shell/extensions/unite/window-buttons-theme
     * /org/gnome/shell/extensions/clock_override/override-string
+    * /org/gnome/shell/extensions/vitals/alphabetize
+    * /org/gnome/shell/extensions/vitals/position-in-panel
+    * /org/gnome/shell/extensions/vitals/hot-sensors
     * /org/gnome/shell/extensions/openweather/city
     * /org/gnome/shell/extensions/openweather/days-forecast
     * /org/gnome/shell/extensions/openweather/decimal-places
     * /org/gnome/shell/extensions/openweather/pressure-unit
     * /org/gnome/shell/extensions/openweather/unit
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
-    * /org/gnome/shell/extensions/vitals/hot-sensors
 
 <br/>
 
