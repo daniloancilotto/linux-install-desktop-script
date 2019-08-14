@@ -107,15 +107,16 @@ do
       'panel1:right:1:trash@cinnamon.org',
       'panel1:right:2:removable-drives@cinnamon.org',
       'panel1:right:3:printers@cinnamon.org',
-      'panel1:right:4:systray@cinnamon.org',
-      'panel1:right:5:keyboard@cinnamon.org',
-      'panel1:right:6:betterlock',
-      'panel1:right:7:xrandr@cinnamon.org',
-      'panel1:right:8:blueberry@cinnamon.org',
-      'panel1:right:9:network@cinnamon.org',
-      'panel1:right:10:sound@cinnamon.org',
-      'panel1:right:11:power@cinnamon.org',
-      'panel1:right:12:show-desktop@cinnamon.org',
+      'panel1:right:4:show-desktop@cinnamon.org',
+      'panel1:right:5:systray@cinnamon.org',
+      'panel1:right:6:keyboard@cinnamon.org',
+      'panel1:right:7:betterlock',
+      'panel1:right:8:xrandr@cinnamon.org',
+      'panel1:right:9:blueberry@cinnamon.org',
+      'panel1:right:10:network@cinnamon.org',
+      'panel1:right:11:sound@cinnamon.org',
+      'panel1:right:12:power@cinnamon.org',
+      'panel1:right:13:user@cinnamon.org',
       'panel2:left:0:grouped-window-list@cinnamon.org'
     ]"
   elif [ "$cinnamon_spice" == "extensions" ]
@@ -186,7 +187,7 @@ do
   then
     json="`cat "$file"`"
     json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
-    json="`echo "$json" | jq '."custom-format"."value"="%d/%m/%Y %H:%M:%S"'`"
+    json="`echo "$json" | jq '."custom-format"."value"="%d/%m/%Y  %H:%M:%S"'`"
     echo "$json" > "$file"
     break
   else
@@ -259,6 +260,30 @@ fi
 
 for i in {1..10}
 do
+  file="`ls -1 $HOME/.cinnamon/configs/show-desktop@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."peek-at-desktop"."value"=true'`"
+    echo "$json" > "$file"
+    break
+  else
+    if [ $i == 1 ]
+    then
+      echo -n "Waiting for show-desktop@cinnamon.org..."
+    else
+      echo -n "."
+    fi
+    sleep 1
+  fi
+done
+if [ $i != 1 ]
+then
+  echo ""
+fi
+
+for i in {1..10}
+do
   file="`ls -1 $HOME/.cinnamon/configs/sound@cinnamon.org/*.json 2> /dev/null | tail -n1`"
   if [ -f "$file" ]
   then
@@ -294,30 +319,6 @@ do
     if [ $i == 1 ]
     then
       echo -n "Waiting for power@cinnamon.org..."
-    else
-      echo -n "."
-    fi
-    sleep 1
-  fi
-done
-if [ $i != 1 ]
-then
-  echo ""
-fi
-
-for i in {1..10}
-do
-  file="`ls -1 $HOME/.cinnamon/configs/show-desktop@cinnamon.org/*.json 2> /dev/null | tail -n1`"
-  if [ -f "$file" ]
-  then
-    json="`cat "$file"`"
-    json="`echo "$json" | jq '."peek-at-desktop"."value"=true'`"
-    echo "$json" > "$file"
-    break
-  else
-    if [ $i == 1 ]
-    then
-      echo -n "Waiting for show-desktop@cinnamon.org..."
     else
       echo -n "."
     fi
