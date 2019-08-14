@@ -2,6 +2,7 @@
 
 ### Supported Desktops
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
+* [GNOME - 3.30 ~ 3.32](https://www.gnome.org/)
 
 ### Install Cinnamon Spices
 * Applets - Latest
@@ -105,7 +106,6 @@
     * /org/cinnamon/alttab-switcher-enforce-primary-monitor
     * /org/cinnamon/alttab-switcher-show-all-workspaces
     * /org/cinnamon/bring-windows-to-current-workspace
-    * /org/cinnamon/muffin/attach-modal-dialogs
     * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action

@@ -96,24 +96,26 @@ do
   then
     cinnamon_spice_dconf="[
       'panel1:left:0:menu@cinnamon.org',
-      'panel1:center:0:cpu-monitor-text@gnemonix',
+      'panel1:center:0:calendar@cinnamon.org',
       'panel1:center:1:spacer@cinnamon.org',
-      'panel1:center:2:mem-monitor-text@datanom.net',
+      'panel1:center:2:cpu-monitor-text@gnemonix',
+      'panel1:center:3:spacer@cinnamon.org',
+      'panel1:center:4:mem-monitor-text@datanom.net',
+      'panel1:center:5:spacer@cinnamon.org',
+      'panel1:center:6:weather@mockturtl',
       'panel1:right:0:notifications@cinnamon.org',
-      'panel1:right:1:weather@mockturtl',
-      'panel1:right:2:trash@cinnamon.org',
-      'panel1:right:3:removable-drives@cinnamon.org',
-      'panel1:right:4:printers@cinnamon.org',
-      'panel1:right:5:systray@cinnamon.org',
-      'panel1:right:6:keyboard@cinnamon.org',
-      'panel1:right:7:betterlock',
-      'panel1:right:8:xrandr@cinnamon.org',
-      'panel1:right:9:sound@cinnamon.org',
-      'panel1:right:10:blueberry@cinnamon.org',
-      'panel1:right:11:network@cinnamon.org',
-      'panel1:right:12:power@cinnamon.org',
-      'panel1:right:13:calendar@cinnamon.org',
-      'panel1:right:14:show-desktop@cinnamon.org',
+      'panel1:right:1:trash@cinnamon.org',
+      'panel1:right:2:removable-drives@cinnamon.org',
+      'panel1:right:3:printers@cinnamon.org',
+      'panel1:right:4:systray@cinnamon.org',
+      'panel1:right:5:keyboard@cinnamon.org',
+      'panel1:right:6:betterlock',
+      'panel1:right:7:xrandr@cinnamon.org',
+      'panel1:right:8:blueberry@cinnamon.org',
+      'panel1:right:9:network@cinnamon.org',
+      'panel1:right:10:sound@cinnamon.org',
+      'panel1:right:11:power@cinnamon.org',
+      'panel1:right:12:show-desktop@cinnamon.org',
       'panel2:left:0:grouped-window-list@cinnamon.org'
     ]"
   elif [ "$cinnamon_spice" == "extensions" ]
@@ -159,7 +161,7 @@ do
     json="`cat "$file"`"
     json="`echo "$json" | jq '."menu-custom"."value"=true'`"
     json="`echo "$json" | jq '."menu-icon"."value"="cinnamon-symbolic"'`"
-    json="`echo "$json" | jq '."menu-label"."value"=" Cinnamon "'`"
+    json="`echo "$json" | jq '."menu-label"."value"=" Cinnamon Desktop"'`"
     echo "$json" > "$file"
     break
   else
@@ -179,17 +181,18 @@ fi
 
 for i in {1..10}
 do
-  file="`ls -1 $HOME/.cinnamon/configs/notifications@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+  file="`ls -1 $HOME/.cinnamon/configs/calendar@cinnamon.org/*.json 2> /dev/null | tail -n1`"
   if [ -f "$file" ]
   then
     json="`cat "$file"`"
-    json="`echo "$json" | jq '."showEmptyTray"."value"=true'`"
+    json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
+    json="`echo "$json" | jq '."custom-format"."value"="%d/%m/%Y %H:%M:%S"'`"
     echo "$json" > "$file"
     break
   else
     if [ $i == 1 ]
     then
-      echo -n "Waiting for notifications@cinnamon.org..."
+      echo -n "Waiting for calendar@cinnamon.org..."
     else
       echo -n "."
     fi
@@ -219,6 +222,30 @@ do
     if [ $i == 1 ]
     then
       echo -n "Waiting for weather@mockturtl..."
+    else
+      echo -n "."
+    fi
+    sleep 1
+  fi
+done
+if [ $i != 1 ]
+then
+  echo ""
+fi
+
+for i in {1..10}
+do
+  file="`ls -1 $HOME/.cinnamon/configs/notifications@cinnamon.org/*.json 2> /dev/null | tail -n1`"
+  if [ -f "$file" ]
+  then
+    json="`cat "$file"`"
+    json="`echo "$json" | jq '."showEmptyTray"."value"=true'`"
+    echo "$json" > "$file"
+    break
+  else
+    if [ $i == 1 ]
+    then
+      echo -n "Waiting for notifications@cinnamon.org..."
     else
       echo -n "."
     fi
@@ -267,31 +294,6 @@ do
     if [ $i == 1 ]
     then
       echo -n "Waiting for power@cinnamon.org..."
-    else
-      echo -n "."
-    fi
-    sleep 1
-  fi
-done
-if [ $i != 1 ]
-then
-  echo ""
-fi
-
-for i in {1..10}
-do
-  file="`ls -1 $HOME/.cinnamon/configs/calendar@cinnamon.org/*.json 2> /dev/null | tail -n1`"
-  if [ -f "$file" ]
-  then
-    json="`cat "$file"`"
-    json="`echo "$json" | jq '."use-custom-format"."value"=true'`"
-    json="`echo "$json" | jq '."custom-format"."value"="  %H:%M:%S\n%d/%m/%Y"'`"
-    echo "$json" > "$file"
-    break
-  else
-    if [ $i == 1 ]
-    then
-      echo -n "Waiting for calendar@cinnamon.org..."
     else
       echo -n "."
     fi
@@ -594,7 +596,6 @@ printLine "Cinnamon Actions"
 dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
 dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
 dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
-dconf write /org/cinnamon/muffin/attach-modal-dialogs "true"
 dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
 dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
 dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
