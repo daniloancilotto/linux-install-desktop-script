@@ -56,6 +56,7 @@ do
   then
     gnome_spice_items=( \
       "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -73,8 +74,7 @@ do
       mkdir -pv "$gnome_spice_items_dir"
       file="$gnome_spice_items_dir/$gnome_spice_item_file"
       wget -O "$file" "${gnome_spice_item}"
-      unzip -q "$file" -d "$gnome_spice_items_dir"
-      mv -fv "$gnome_spice_items_dir/${gnome_spice_item_file%.*}" "$gnome_spice_items_dir/$gnome_spice_item_name"
+      unzip -q "$file" -d "$gnome_spice_items_dir/$gnome_spice_item_name"
       rm -fv "$file"
     else
       echo "$gnome_spice_item_name is already installed"
@@ -100,6 +100,7 @@ dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
+dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
 # dconf write /org/cinnamon/favorite-apps "[
 #   'cinnamon-settings.desktop',
 #   'mintinstall.desktop',
