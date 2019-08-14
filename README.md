@@ -122,6 +122,7 @@
   * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
+  * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions

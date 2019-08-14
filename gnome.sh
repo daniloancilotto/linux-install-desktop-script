@@ -63,6 +63,7 @@ do
       "https://extensions.gnome.org/extension-data/drive-menugnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v9.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -73,6 +74,7 @@ do
       "drive-menu@gnome-shell-extensions.gcampax.github.com" \
       "printers@linux-man.org" \
       "lockkeys@vaina.lt" \
+      "ds4battery@slie.ru" \
     )
   fi
   j=0
@@ -107,7 +109,8 @@ do
       'gnome-shell-trash-extension',
       'drive-menu@gnome-shell-extensions.gcampax.github.com',
       'printers@linux-man.org',
-      'lockkeys@vaina.lt'
+      'lockkeys@vaina.lt',
+      'ds4battery@slie.ru'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
