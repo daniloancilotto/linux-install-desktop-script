@@ -66,6 +66,7 @@ do
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v3.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/desktop-iconscsoriano.v14.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v37.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -79,6 +80,7 @@ do
       "ds4battery@slie.ru" \
       "tweaks-system-menu@extensions.gnome-shell.fifi.org" \
       "desktop-icons@csoriano" \
+      "user-theme@gnome-shell-extensions.gcampax.github.com" \
     )
   fi
   j=0
@@ -116,7 +118,8 @@ do
       'lockkeys@vaina.lt',
       'ds4battery@slie.ru',
       'tweaks-system-menu@extensions.gnome-shell.fifi.org',
-      'desktop-icons@csoriano'
+      'desktop-icons@csoriano',
+      'user-theme@gnome-shell-extensions.gcampax.github.com'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"

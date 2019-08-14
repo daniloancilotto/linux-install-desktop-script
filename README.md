@@ -125,6 +125,7 @@
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
   * [Tweaks in System Menu - v3](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
   * [Desktop Icons - v14](https://extensions.gnome.org/extension/1465/desktop-icons/)
+  * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
