@@ -51,10 +51,14 @@ do
 
   gnome_spice_items_dir="$gnome_spices_dir/$gnome_spice"
   gnome_spice_items=()
+  gnome_spice_items_names=()
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      ("https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip" "unite@hardpixel.eu") \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip" \
+    )
+    gnome_spice_items_names=( \
+      "unite@hardpixel.eu" \
     )
   fi
   j=0
@@ -62,13 +66,13 @@ do
   do
     gnome_spice_item="${gnome_spice_items[$j]}"
 
-    gnome_spice_item_file="${gnome_spice_item[0]##*/}"
-    gnome_spice_item_name="${gnome_spice_item[1]}"
+    gnome_spice_item_file="${gnome_spice_item##*/}"
+    gnome_spice_item_name="${gnome_spice_items_names[$j]}"
     if [ ! -d "$gnome_spice_items_dir/$gnome_spice_item_name" ]
     then
       mkdir -pv "$gnome_spice_items_dir"
       file="$gnome_spice_items_dir/$gnome_spice_item_file"
-      wget -O "$file" "${gnome_spice_item[0]}"
+      wget -O "$file" "${gnome_spice_item}"
       unzip -q "$file" -d "$gnome_spice_items_dir"
       mv -fv "$gnome_spice_items_dir/${gnome_spice_item_file%.*}" "$gnome_spice_items_dir/$gnome_spice_item_name"
       rm -fv "$file"
