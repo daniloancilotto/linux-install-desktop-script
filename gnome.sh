@@ -64,6 +64,7 @@ do
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v9.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v3.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -75,6 +76,7 @@ do
       "printers@linux-man.org" \
       "lockkeys@vaina.lt" \
       "ds4battery@slie.ru" \
+      "tweaks-system-menu@extensions.gnome-shell.fifi.org" \
     )
   fi
   j=0
@@ -110,7 +112,8 @@ do
       'drive-menu@gnome-shell-extensions.gcampax.github.com',
       'printers@linux-man.org',
       'lockkeys@vaina.lt',
-      'ds4battery@slie.ru'
+      'ds4battery@slie.ru',
+      'tweaks-system-menu@extensions.gnome-shell.fifi.org'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
@@ -138,12 +141,20 @@ dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
 dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
 dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
 dconf write /org/gnome/shell/extensions/printers/show-icon "'When printers exist'"
-
-# dconf write /org/cinnamon/favorite-apps "[
-#   'cinnamon-settings.desktop',
-#   'mintinstall.desktop',
-#   'cinnamon-settings-info.desktop'
-# ]"
+dconf write /org/gnome/shell/favorite-apps "[
+  'org.gnome.Terminal.desktop',
+  'org.gnome.Nautilus.desktop',
+  'google-chrome.desktop',
+  'spotify_spotify.desktop',
+  'virtualbox.desktop',
+  'org.remmina.Remmina.desktop',
+  'org.gnome.Screenshot.desktop',
+  'org.gnome.Calculator.desktop',
+  'slack.desktop',
+  'code_code.desktop',
+  'postman_postman.desktop',
+  'mysql-workbench.desktop'
+]"
 # dconf write /org/cinnamon/panels-enabled "[
 #   '1:0:top',
 #   '2:0:left'

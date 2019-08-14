@@ -123,6 +123,7 @@
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
+  * [Tweaks in System Menu - v3](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
 * User Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
@@ -141,6 +142,7 @@
     * /org/gnome/shell/extensions/openweather/unit
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
     * /org/gnome/shell/extensions/printers/show-icon
+    * /org/gnome/shell/favorite-apps
 
 <br/>
 
