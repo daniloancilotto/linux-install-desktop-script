@@ -169,7 +169,7 @@ dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
 echo "spices have been configured"
 
-printLine "GNOME Themes"
+printLine "GNOME Appearances"
 
 IFS=$'\n'
 gnome_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
@@ -195,10 +195,12 @@ do
 done
 unset $IFS
 
+gnome_cursor_name="Yaru"
 gnome_icon_name="Yaru"
 gnome_theme_name="Yaru-dark"
 gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 
+dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
 dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
@@ -211,105 +213,16 @@ dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautil
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
+echo "appearances have been configured"
 
-# cinnamon_cursors_dir="$HOME/.icons"
-# cinnamon_cursor_name="Capitaine-Cursors-R3-Light"
-# if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
-# then
-#   mkdir -pv "$cinnamon_cursors_dir"
-#   file="$cinnamon_cursors_dir/capitaine-cursors-light.tar.xz"
-#   wget -O "$file" "https://github.com/keeferrourke/capitaine-cursors/releases/download/r3/capitaine-cursors-light.tar.xz"
-#   tar -xf "$file" -C "$cinnamon_cursors_dir"
-#   mv -fv "$cinnamon_cursors_dir/dist-white" "$cinnamon_cursors_dir/$cinnamon_cursor_name"
-#   rm -fv "$file"
-# else
-#   echo "$cinnamon_cursor_name is already installed"
-# fi
-# cinnamon_cursor_name_backup="DMZ-White"
-# if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
-# then
-#   cinnamon_cursor_name="$cinnamon_cursor_name_backup"
-# fi
+printLine "GNOME Actions"
 
-# dconf write /org/cinnamon/desktop/interface/cursor-theme "'$cinnamon_cursor_name'"
+dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
+dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
+dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
-# cinnamon_backgrounds_dir="$HOME/.cinnamon/backgrounds"
-# cinnamon_backgrounds=( \
-#   "Light" \
-#   "Dark" \
-# )
-# cinnamon_backgrounds_list="$cinnamon_backgrounds_dir/user-folders.lst"
-# mkdir -pv "$cinnamon_backgrounds_dir"
-# cp /dev/null "$cinnamon_backgrounds_list"
-# i=0
-# while [ $i != ${#cinnamon_backgrounds[@]} ]
-# do
-#   cinnamon_background="${cinnamon_backgrounds[$i]}"
+echo "actions have been configured"
 
-#   cinnamon_background_items_dir="$cinnamon_backgrounds_dir/$cinnamon_background"
-#   cinnamon_background_items=()
-#   if [ "$cinnamon_background" == "Dark" ]
-#   then
-#     cinnamon_background_items=( \
-#       "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
-#       "https://w.wallhaven.cc/full/4y/wallhaven-4y83px.jpg" \
-#     )
-#   fi
-#   mkdir -pv "$cinnamon_background_items_dir"
-#   echo "$cinnamon_background_items_dir" >> "$cinnamon_backgrounds_list"
-#   j=0
-#   while [ $j != ${#cinnamon_background_items[@]} ]
-#   do
-#     cinnamon_background_item="${cinnamon_background_items[$j]}"
-
-#     cinnamon_background_item_file="${cinnamon_background_item##*/}"
-#     if [ ! -f "$cinnamon_background_items_dir/$cinnamon_background_item_file" ]
-#     then
-#       wget -O "$cinnamon_background_items_dir/$cinnamon_background_item_file" "$cinnamon_background_item"
-#     else
-#       echo "$cinnamon_background_item_file is already installed"
-#     fi
-
-#     let "j++"
-#   done
-
-#   let "i++"
-# done
-
-# dconf write /org/cinnamon/desktop/background/picture-uri "'file://$cinnamon_background_items_dir/$cinnamon_background_item_file'"
-# dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"
-# dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
-# dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
-# dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
-
-# conf=$'[Greeter]\n'
-# conf+=$'show-hostname=true\n'
-# conf+=$'draw-grid=false\n'
-# conf+=$'theme-name=Mint-Y-Dark-Blue\n'
-# conf+=$'icon-theme-name=Mint-Y-Blue\n'
-# echo "$conf" | sudo tee "/etc/lightdm/slick-greeter.conf"
-
-# conf=$'[desktop-monitor-0]\n'
-# conf+=$'desktop-horizontal=true\n'
-# conf+=$'desktop-grid-adjust=107;75;\n'
-# echo "$conf" > "$HOME/.config/nemo/desktop-metadata"
-
-# echo "themes have been configured"
-
-# printLine "Cinnamon Actions"
-
-# dconf write /org/cinnamon/alttab-switcher-enforce-primary-monitor "true"
-# dconf write /org/cinnamon/alttab-switcher-show-all-workspaces "true"
-# dconf write /org/cinnamon/bring-windows-to-current-workspace "true"
-# dconf write /org/cinnamon/desktop/wm/preferences/mouse-button-modifier "'<Super>'"
-# dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
-# dconf write /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
-# dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
-# dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
-# dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
-
-# echo "actions have been configured"
-
-# printLine "Finished"
-# echo "Done, please reboot your system."
-# echo ""
+printLine "Finished"
+echo "Done, please reboot your system."
+echo ""

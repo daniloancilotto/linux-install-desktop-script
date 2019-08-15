@@ -12,7 +12,7 @@
   * [Weather](https://cinnamon-spices.linuxmint.com/applets/view/17)
 * Extensions - Latest
   * [Transparent panels](https://cinnamon-spices.linuxmint.com/extensions/view/42)
-* User Configurations
+* Configurations
   * Dconf
     * /org/cinnamon/next-applet-id
     * /org/cinnamon/next-desklet-id
@@ -51,7 +51,7 @@
   * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
 * Backgrounds
   * [Wallhaven (Dark)](https://wallhaven.cc/)
-* User Configurations
+* Configurations
   * Dconf
     * /org/cinnamon/theme/name
     * /org/cinnamon/desktop/interface/gtk-theme
@@ -100,7 +100,7 @@
     * ~/.cinnamon/backgrounds/user-folders.lst
 
 ### Install Cinnamon Actions
-* User Configurations
+* Configurations
   * Dconf
     * /org/cinnamon/alttab-switcher-enforce-primary-monitor
     * /org/cinnamon/alttab-switcher-show-all-workspaces
@@ -126,7 +126,7 @@
   * [Tweaks in System Menu - v3](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
   * [Desktop Icons - v14](https://extensions.gnome.org/extension/1465/desktop-icons/)
   * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
-* User Configurations
+* Configurations
   * Dconf
     * /org/gnome/shell/enabled-extensions
     * /org/gnome/shell/extensions/unite/extend-left-box
@@ -152,8 +152,9 @@
     * /org/gnome/desktop/privacy/remember-recent-files
 
 ### Install GNOME Appearances
-* User Configurations
+* Configurations
   * Dconf
+    * /org/gnome/desktop/interface/cursor-theme
     * /org/gnome/desktop/interface/icon-theme
     * /org/gnome/desktop/interface/gtk-theme
     * /org/gnome/desktop/wm/preferences/theme
@@ -167,6 +168,13 @@
     * /org/gnome/nautilus/preferences/default-folder-viewer
   * List
     * ~/.config/gtk-3.0/bookmarks
+
+### Install GNOME Actions
+* Configurations
+  * Dconf
+    * /org/gnome/nautilus/compression/default-compression-format
+    * /org/gnome/nautilus/preferences/executable-text-activation
+    * /org/gnome/terminal/legacy/menu-accelerator-enabled
 
 <br/>
 
