@@ -26,18 +26,6 @@ printLine() {
   echo ""
 }
 
-urlEncode() {
-  local length="${#1}"
-  for (( i = 0; i < length; i++ ))
-  do
-    local c="${1:i:1}"
-    case $c in
-      [a-zA-Z0-9.~_-]) printf "$c" ;;
-      *) printf '%%%02X' "'$c" ;;
-    esac
-  done
-}
-
 printLine "GNOME Spices"
 
 gnome_spices_dir="$HOME/.local/share/gnome-shell"
@@ -194,7 +182,7 @@ do
   if ! [[ "${gnome_bookmarks_ignored[@]}" =~ "$gnome_bookmark" ]]
   then
     gnome_bookmark=${gnome_bookmark##*/}
-    gnome_bookmark="file://$HOME/`urlEncode "$gnome_bookmark"` $gnome_bookmark"
+    gnome_bookmark="file://$HOME/$gnome_bookmark $gnome_bookmark"
 
     echo "$gnome_bookmark" >> "$gnome_bookmarks_list"
     let "gnome_bookmarks_count++"
