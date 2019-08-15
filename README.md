@@ -176,6 +176,8 @@
 ### Install GNOME Actions
 * Configurations
   * Dconf
+    * /org/gnome/settings-daemon/plugins/power/lid-close-battery-action
+    * /org/gnome/settings-daemon/plugins/power/lid-close-ac-action
     * /org/gnome/nautilus/compression/default-compression-format
     * /org/gnome/nautilus/preferences/executable-text-activation
     * /org/gnome/terminal/legacy/menu-accelerator-enabled

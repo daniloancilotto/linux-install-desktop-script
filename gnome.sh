@@ -221,6 +221,8 @@ echo "appearances have been configured"
 
 printLine "GNOME Actions"
 
+dconf write /org/gnome/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
+dconf write /org/gnome/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
 dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
