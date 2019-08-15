@@ -101,8 +101,7 @@ do
       'panel1:center:2:weather@mockturtl',
       'panel1:center:3:spacer@cinnamon.org',
       'panel1:center:4:cpu-monitor-text@gnemonix',
-      'panel1:center:5:spacer@cinnamon.org',
-      'panel1:center:6:mem-monitor-text@datanom.net',
+      'panel1:center:5:mem-monitor-text@datanom.net',
       'panel1:right:0:notifications@cinnamon.org',
       'panel1:right:1:trash@cinnamon.org',
       'panel1:right:2:removable-drives@cinnamon.org',
@@ -381,25 +380,6 @@ echo "spices have been configured"
 
 printLine "Cinnamon Themes"
 
-cinnamon_themes_dir="$HOME/.themes"
-cinnamon_theme_name="Mojave-2019-06-23-Dark"
-if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
-then
-  mkdir -pv "$cinnamon_themes_dir"
-  file="$cinnamon_themes_dir/mojave-dark.tar.xz"
-  wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-06-23/Mojave-dark.tar.xz"
-  tar -xf "$file" -C "$cinnamon_themes_dir"
-  mv -fv "$cinnamon_themes_dir/Mojave-dark" "$cinnamon_themes_dir/$cinnamon_theme_name"
-  rm -fv "$file"
-else
-  echo "$cinnamon_theme_name is already installed"
-fi
-cinnamon_theme_name_backup="Mint-Y-Dark"
-if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
-then
-  cinnamon_theme_name="$cinnamon_theme_name_backup"
-fi
-
 IFS=$'\n'
 cinnamon_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 cinnamon_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
@@ -423,6 +403,25 @@ do
   let "i++"
 done
 unset $IFS
+
+cinnamon_themes_dir="$HOME/.themes"
+cinnamon_theme_name="Mojave-2019-06-23-Dark"
+if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
+then
+  mkdir -pv "$cinnamon_themes_dir"
+  file="$cinnamon_themes_dir/mojave-dark.tar.xz"
+  wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-06-23/Mojave-dark.tar.xz"
+  tar -xf "$file" -C "$cinnamon_themes_dir"
+  mv -fv "$cinnamon_themes_dir/Mojave-dark" "$cinnamon_themes_dir/$cinnamon_theme_name"
+  rm -fv "$file"
+else
+  echo "$cinnamon_theme_name is already installed"
+fi
+cinnamon_theme_name_backup="Mint-Y-Dark"
+if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
+then
+  cinnamon_theme_name="$cinnamon_theme_name_backup"
+fi
 
 cinnamon_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 cinnamon_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
