@@ -145,6 +145,26 @@
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
     * /org/gnome/shell/extensions/printers/show-icon
     * /org/gnome/shell/favorite-apps
+    * /org/gnome/desktop/interface/clock-show-date
+    * /org/gnome/desktop/interface/clock-show-seconds
+    * /org/gnome/desktop/privacy/remember-app-usage
+    * /org/gnome/desktop/privacy/remember-recent-files
+
+### Install GNOME Appearances
+* User Configurations
+  * Dconf
+    * /org/gnome/desktop/interface/gtk-theme
+    * /org/gnome/desktop/wm/preferences/theme
+    * /org/gnome/desktop/wm/preferences/button-layout
+    * /org/gnome/nautilus/window-state/sidebar-width
+    * /org/gnome/nautilus/icon-view/default-zoom-level
+    * /org/gnome/nautilus/list-view/default-zoom-level
+    * /org/gnome/nautilus/list-view/default-column-order
+    * /org/gnome/nautilus/list-view/default-visible-columns
+    * /org/gnome/nautilus/list-view/use-tree-view
+    * /org/gnome/nautilus/preferences/default-folder-viewer
+  * List
+    * ~/.config/gtk-3.0/bookmarks
 
 <br/>
 
