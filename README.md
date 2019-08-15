@@ -147,6 +147,7 @@
     * /org/gnome/shell/favorite-apps
     * /org/gnome/desktop/interface/clock-show-date
     * /org/gnome/desktop/interface/clock-show-seconds
+    * /org/gnome/desktop/interface/show-battery-percentage
     * /org/gnome/desktop/privacy/remember-app-usage
     * /org/gnome/desktop/privacy/remember-recent-files
 

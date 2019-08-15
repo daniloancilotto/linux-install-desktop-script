@@ -436,7 +436,7 @@ dconf write /org/cinnamon/desktop/wm/preferences/button-layout "'close,minimize,
 dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
 dconf write /org/nemo/window-state/sidebar-width "210"
 dconf write /org/nemo/icon-view/default-zoom-level "'small'"
-dconf write /org/nemo/list-view/default-zoom-level "'small'"
+dconf write /org/nemo/list-view/default-zoom-level "'standard'"
 dconf write /org/nemo/list-view/default-column-order "$cinnamon_nemo_columns"
 dconf write /org/nemo/list-view/default-visible-columns "$cinnamon_nemo_columns"
 dconf write /org/nemo/list-view/search-visible-columns "$cinnamon_nemo_search_columns"

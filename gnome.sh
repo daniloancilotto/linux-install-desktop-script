@@ -163,6 +163,7 @@ dconf write /org/gnome/shell/favorite-apps "[
 ]"
 dconf write /org/gnome/desktop/interface/clock-show-date "true"
 dconf write /org/gnome/desktop/interface/clock-show-seconds "true"
+dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
@@ -202,35 +203,17 @@ dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
 dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
-dconf write /org/gnome/nautilus/list-view/default-zoom-level "'small'"
+dconf write /org/gnome/nautilus/list-view/default-zoom-level "'standard'"
 dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
-# cinnamon_icons_dir="$HOME/.icons"
-# cinnamon_icon_name="Korla-1.1.6-Dark"
-# if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
-# then
-#   mkdir -pv "$cinnamon_icons_dir"
-#   file="$cinnamon_icons_dir/korla-dark.zip"
-#   wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.6.zip"
-#   unzip -q "$file" -d "$cinnamon_icons_dir"
-#   mv -fv "$cinnamon_icons_dir/korla-1.1.6/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
-#   rm -rf "$cinnamon_icons_dir/korla-1.1.6"
-#   rm -fv "$file"
-# else
-#   echo "$cinnamon_icon_name is already installed"
-# fi
-# cinnamon_icon_name_backup="Mint-Y"
-# if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
-# then
-#   cinnamon_icon_name="$cinnamon_icon_name_backup"
-# fi
+gnome_icon_name="Korla-1.1.6-Dark"
 
-# dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
-# dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
-# dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
+# dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
+# dconf write /org/gnome/desktop/interface/icon-theme-backup "'$gnome_icon_name_backup'"
+# dconf write /org/gnome/settings-daemon/plugins/xsettings/buttons-have-icons "true"
 # dconf write /org/nemo/desktop/computer-icon-visible "false"
 # dconf write /org/nemo/desktop/network-icon-visible "true"
 # dconf write /org/nemo/desktop/trash-icon-visible "true"
