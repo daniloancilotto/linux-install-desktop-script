@@ -378,7 +378,7 @@ fi
 
 echo "spices have been configured"
 
-printLine "Cinnamon Themes"
+printLine "Cinnamon Appearances"
 
 IFS=$'\n'
 cinnamon_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
@@ -564,7 +564,7 @@ conf+=$'desktop-horizontal=true\n'
 conf+=$'desktop-grid-adjust=107;75;\n'
 echo "$conf" > "$HOME/.config/nemo/desktop-metadata"
 
-echo "themes have been configured"
+echo "appearances have been configured"
 
 printLine "Cinnamon Actions"
 
