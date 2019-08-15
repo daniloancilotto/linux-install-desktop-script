@@ -33,7 +33,7 @@ urlEncode() {
     local c="${1:i:1}"
     case $c in
       [a-zA-Z0-9.~_-]) printf "$c" ;;
-      *) printf '%%%02X' "'$c"
+      *) printf '%%%02X' "'$c" ;;
     esac
   done
 }
@@ -129,6 +129,7 @@ done
 
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
+dconf write /org/gnome/shell/extensions/unite/show-window-buttons "'always'"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
@@ -151,11 +152,15 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size "32"
 dconf write /org/gnome/shell/extensions/dash-to-dock/animate-show-apps "false"
 dconf write /org/gnome/shell/extensions/desktop-icons/icon-size "'small'"
+dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
+dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "false"
 dconf write /org/gnome/shell/favorite-apps "[
+  'update-manager.desktop',
   'org.gnome.Terminal.desktop',
   'org.gnome.Nautilus.desktop',
   'google-chrome.desktop',
   'spotify_spotify.desktop',
+  'steam.desktop',
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',

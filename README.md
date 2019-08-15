@@ -2,7 +2,7 @@
 
 ### Supported Desktops
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
-* [GNOME - 3.30 ~ 3.32](https://www.gnome.org/)
+* [GNOME - 3.32](https://www.gnome.org/)
 
 ### Install Cinnamon Spices
 * Applets - Latest
@@ -131,6 +131,7 @@
     * /org/gnome/shell/enabled-extensions
     * /org/gnome/shell/extensions/unite/extend-left-box
     * /org/gnome/shell/extensions/unite/use-system-fonts
+    * /org/gnome/shell/extensions/unite/show-window-buttons
     * /org/gnome/shell/extensions/unite/show-window-title
     * /org/gnome/shell/extensions/unite/window-buttons-theme
     * /org/gnome/shell/extensions/clock_override/override-string
@@ -148,6 +149,8 @@
     * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
     * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
     * /org/gnome/shell/extensions/desktop-icons/icon-size
+    * /org/gnome/shell/extensions/desktop-icons/show-home
+    * /org/gnome/shell/extensions/desktop-icons/show-trash
     * /org/gnome/shell/favorite-apps
     * /org/gnome/desktop/interface/clock-show-date
     * /org/gnome/desktop/interface/clock-show-seconds
@@ -186,16 +189,14 @@
 
 # Preparing to Run the Script
 
-## Ubuntu and Derivatives
-
-### Cinnamon
+### Cinnamon - Ubuntu and Derivatives
 ```bash
 sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 ```
 
-### GNOME
+### GNOME - Ubuntu and Derivatives
 ```bash
-sudo apt install curl wget unzip tar jq dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell -y
+sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell -y
 ```
 
 <br/>
