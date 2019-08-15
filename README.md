@@ -105,6 +105,7 @@
     * /org/cinnamon/alttab-switcher-enforce-primary-monitor
     * /org/cinnamon/alttab-switcher-show-all-workspaces
     * /org/cinnamon/bring-windows-to-current-workspace
+    * /org/cinnamon/muffin/attach-modal-dialogs
     * /org/cinnamon/desktop/wm/preferences/mouse-button-modifier
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-battery-action
     * /org/cinnamon/settings-daemon/plugins/power/lid-close-ac-action
@@ -179,6 +180,7 @@
 ### Install GNOME Actions
 * Configurations
   * Dconf
+    * /org/gnome/mutter/attach-modal-dialogs
     * /org/gnome/settings-daemon/plugins/power/lid-close-battery-action
     * /org/gnome/settings-daemon/plugins/power/lid-close-ac-action
     * /org/gnome/nautilus/compression/default-compression-format
