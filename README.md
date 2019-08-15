@@ -154,6 +154,7 @@
 ### Install GNOME Appearances
 * User Configurations
   * Dconf
+    * /org/gnome/desktop/interface/icon-theme
     * /org/gnome/desktop/interface/gtk-theme
     * /org/gnome/desktop/wm/preferences/theme
     * /org/gnome/desktop/wm/preferences/button-layout

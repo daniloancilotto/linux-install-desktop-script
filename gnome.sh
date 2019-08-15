@@ -195,9 +195,11 @@ do
 done
 unset $IFS
 
+gnome_icon_name="Yaru"
 gnome_theme_name="Yaru-dark"
 gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 
+dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
@@ -209,17 +211,6 @@ dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautil
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
-gnome_icon_name="Korla-1.1.6-Dark"
-
-# dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
-# dconf write /org/gnome/desktop/interface/icon-theme-backup "'$gnome_icon_name_backup'"
-# dconf write /org/gnome/settings-daemon/plugins/xsettings/buttons-have-icons "true"
-# dconf write /org/nemo/desktop/computer-icon-visible "false"
-# dconf write /org/nemo/desktop/network-icon-visible "true"
-# dconf write /org/nemo/desktop/trash-icon-visible "true"
-# dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
-# dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
-# dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
 
 # cinnamon_cursors_dir="$HOME/.icons"
 # cinnamon_cursor_name="Capitaine-Cursors-R3-Light"
