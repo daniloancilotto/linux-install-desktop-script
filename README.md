@@ -144,6 +144,10 @@
     * /org/gnome/shell/extensions/openweather/unit
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
     * /org/gnome/shell/extensions/printers/show-icon
+    * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
+    * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
+    * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
+    * /org/gnome/shell/extensions/desktop-icons/icon-size
     * /org/gnome/shell/favorite-apps
     * /org/gnome/desktop/interface/clock-show-date
     * /org/gnome/desktop/interface/clock-show-seconds
