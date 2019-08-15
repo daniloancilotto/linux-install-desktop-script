@@ -139,6 +139,8 @@ dconf write /org/gnome/shell/extensions/printers/show-icon "'When printers exist
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size "32"
 dconf write /org/gnome/shell/extensions/dash-to-dock/animate-show-apps "false"
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-delay "0.0"
+dconf write /org/gnome/shell/extensions/dash-to-dock/hide-delay "0.0"
 dconf write /org/gnome/shell/extensions/desktop-icons/icon-size "'small'"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "false"

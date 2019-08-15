@@ -149,6 +149,8 @@
     * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
     * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
     * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
+    * /org/gnome/shell/extensions/dash-to-dock/show-delay
+    * /org/gnome/shell/extensions/dash-to-dock/hide-delay
     * /org/gnome/shell/extensions/desktop-icons/icon-size
     * /org/gnome/shell/extensions/desktop-icons/show-home
     * /org/gnome/shell/extensions/desktop-icons/show-trash
