@@ -222,4 +222,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Cinnamon
-![Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)
+![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)
+
+### GNOME
+![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/63140807-84d64280-bfb9-11e9-963d-e7952cc9e54b.png)
