@@ -469,8 +469,6 @@ dconf write /org/gnome/nautilus/list-view/default-visible-columns "$cinnamon_nau
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
-dconf write /org/cinnamon/desktop/background/picture-uri "'file:///usr/share/backgrounds/linuxmint/edesigner_linuxmint.png'"
-
 conf=$'[Greeter]\n'
 conf+=$'show-hostname=true\n'
 conf+=$'draw-grid=false\n'
