@@ -4,7 +4,7 @@
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
 * [GNOME - 3.32](https://www.gnome.org/)
 
-### Configure Cinnamon Spices
+### Install and Configure Cinnamon Spices
 * Applets - Latest
   * [Num Lock/Caps Lock indicator with notifications](https://cinnamon-spices.linuxmint.com/applets/view/83)
   * [Simple CPU Monitor](https://cinnamon-spices.linuxmint.com/applets/view/8)
@@ -96,7 +96,7 @@
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 
-### Configure GNOME Spices
+### Install and Configure GNOME Spices
 * Extensions
   * [Unite - v31](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
@@ -202,7 +202,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Cinnamon
-![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/61247926-6d8d0680-a728-11e9-9026-ba6b457aae82.png)
+![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/63217251-38097d80-c119-11e9-9b5b-587ce0b2dedc.png)
 
 ### GNOME
 ![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/63140807-84d64280-bfb9-11e9-963d-e7952cc9e54b.png)
