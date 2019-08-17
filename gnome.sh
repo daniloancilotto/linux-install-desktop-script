@@ -174,7 +174,6 @@ IFS=$'\n'
 gnome_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 gnome_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
 gnome_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
-gnome_bookmarks_count=0
 cp /dev/null "$gnome_bookmarks_list"
 i=0
 while [ $i != ${#gnome_bookmarks[@]} ]
@@ -187,7 +186,6 @@ do
     gnome_bookmark="file://$HOME/$gnome_bookmark $gnome_bookmark"
 
     echo "$gnome_bookmark" >> "$gnome_bookmarks_list"
-    let "gnome_bookmarks_count++"
   fi
 
   let "i++"
