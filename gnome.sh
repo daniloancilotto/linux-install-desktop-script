@@ -194,13 +194,13 @@ do
 done
 unset $IFS
 
-gnome_cursor_name="Yaru"
 gnome_icon_name="Yaru"
+gnome_cursor_name="Yaru"
 gnome_theme_name="Yaru-dark"
 gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 
-dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
 dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
+dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"

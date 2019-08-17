@@ -403,36 +403,54 @@ do
 done
 unset $IFS
 
-cinnamon_themes_dir="$HOME/.themes"
-cinnamon_theme_name="Mojave-2019-06-23-Dark"
-if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
+dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
+
+cinnamon_icons_dir="$HOME/.icons"
+cinnamon_icon_name="Korla-1.1.6-Dark"
+if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
 then
-  mkdir -pv "$cinnamon_themes_dir"
-  file="$cinnamon_themes_dir/mojave-dark.tar.xz"
-  wget -O "$file" "https://github.com/daniloancilotto/mojave-gtk-theme/releases/download/2019-06-23/Mojave-dark.tar.xz"
-  tar -xf "$file" -C "$cinnamon_themes_dir"
-  mv -fv "$cinnamon_themes_dir/Mojave-dark" "$cinnamon_themes_dir/$cinnamon_theme_name"
+  mkdir -pv "$cinnamon_icons_dir"
+  file="$cinnamon_icons_dir/korla-dark.zip"
+  wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.6.zip"
+  unzip -q "$file" -d "$cinnamon_icons_dir"
+  mv -fv "$cinnamon_icons_dir/korla-1.1.6/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
+  rm -rf "$cinnamon_icons_dir/korla-1.1.6"
   rm -fv "$file"
 else
-  echo "$cinnamon_theme_name is already installed"
+  echo "$cinnamon_icon_name is already installed"
 fi
-cinnamon_theme_name_backup="Mint-Y-Dark"
-if [ ! -d "$cinnamon_themes_dir/$cinnamon_theme_name" ]
+cinnamon_icon_name_backup="Mint-Y-Dark-Blue"
+if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
 then
-  cinnamon_theme_name="$cinnamon_theme_name_backup"
+  cinnamon_icon_name="$cinnamon_icon_name_backup"
 fi
 
+dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
+dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
+dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
+dconf write /org/nemo/desktop/computer-icon-visible "false"
+dconf write /org/nemo/desktop/network-icon-visible "true"
+dconf write /org/nemo/desktop/trash-icon-visible "true"
+dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
+dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
+dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
+
+cinnamon_cursor_name="DMZ-Black"
+cinnamon_theme_name="Mint-Y-Dark-Blue"
+cinnamon_theme_name_backup="Mint-Y-Dark-Blue"
+cinnamon_theme_name_window="Mint-Y-Dark"
+cinnamon_theme_name_window_backup="Mint-Y-Dark"
 cinnamon_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 cinnamon_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
 cinnamon_nautilus_columns="['name', 'size', 'type', 'group', 'permissions', 'date_modified']"
 
+dconf write /org/cinnamon/desktop/interface/cursor-theme "'$cinnamon_cursor_name'"
 dconf write /org/cinnamon/theme/name "'$cinnamon_theme_name'"
 dconf write /org/cinnamon/desktop/interface/gtk-theme "'$cinnamon_theme_name'"
 dconf write /org/cinnamon/desktop/interface/gtk-theme-backup "'$cinnamon_theme_name_backup'"
-dconf write /org/cinnamon/desktop/wm/preferences/theme "'$cinnamon_theme_name'"
-dconf write /org/cinnamon/desktop/wm/preferences/theme-backup "'$cinnamon_theme_name_backup'"
+dconf write /org/cinnamon/desktop/wm/preferences/theme "'$cinnamon_theme_name_window'"
+dconf write /org/cinnamon/desktop/wm/preferences/theme-backup "'$cinnamon_theme_name_window_backup'"
 dconf write /org/cinnamon/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
-dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
 dconf write /org/nemo/window-state/sidebar-width "210"
 dconf write /org/nemo/icon-view/default-zoom-level "'small'"
 dconf write /org/nemo/list-view/default-zoom-level "'small'"
@@ -451,111 +469,13 @@ dconf write /org/gnome/nautilus/list-view/default-visible-columns "$cinnamon_nau
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 
-cinnamon_icons_dir="$HOME/.icons"
-cinnamon_icon_name="Korla-1.1.6-Dark"
-if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
-then
-  mkdir -pv "$cinnamon_icons_dir"
-  file="$cinnamon_icons_dir/korla-dark.zip"
-  wget -O "$file" "https://github.com/bikass/korla/archive/v1.1.6.zip"
-  unzip -q "$file" -d "$cinnamon_icons_dir"
-  mv -fv "$cinnamon_icons_dir/korla-1.1.6/korla" "$cinnamon_icons_dir/$cinnamon_icon_name"
-  rm -rf "$cinnamon_icons_dir/korla-1.1.6"
-  rm -fv "$file"
-else
-  echo "$cinnamon_icon_name is already installed"
-fi
-cinnamon_icon_name_backup="Mint-Y"
-if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
-then
-  cinnamon_icon_name="$cinnamon_icon_name_backup"
-fi
-
-dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
-dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
-dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
-dconf write /org/nemo/desktop/computer-icon-visible "false"
-dconf write /org/nemo/desktop/network-icon-visible "true"
-dconf write /org/nemo/desktop/trash-icon-visible "true"
-dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
-dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
-dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
-
-cinnamon_cursors_dir="$HOME/.icons"
-cinnamon_cursor_name="Capitaine-Cursors-R3-Light"
-if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
-then
-  mkdir -pv "$cinnamon_cursors_dir"
-  file="$cinnamon_cursors_dir/capitaine-cursors-light.tar.xz"
-  wget -O "$file" "https://github.com/keeferrourke/capitaine-cursors/releases/download/r3/capitaine-cursors-light.tar.xz"
-  tar -xf "$file" -C "$cinnamon_cursors_dir"
-  mv -fv "$cinnamon_cursors_dir/dist-white" "$cinnamon_cursors_dir/$cinnamon_cursor_name"
-  rm -fv "$file"
-else
-  echo "$cinnamon_cursor_name is already installed"
-fi
-cinnamon_cursor_name_backup="DMZ-White"
-if [ ! -d "$cinnamon_cursors_dir/$cinnamon_cursor_name" ]
-then
-  cinnamon_cursor_name="$cinnamon_cursor_name_backup"
-fi
-
-dconf write /org/cinnamon/desktop/interface/cursor-theme "'$cinnamon_cursor_name'"
-
-cinnamon_backgrounds_dir="$HOME/.cinnamon/backgrounds"
-cinnamon_backgrounds=( \
-  "Light" \
-  "Dark" \
-)
-cinnamon_backgrounds_list="$cinnamon_backgrounds_dir/user-folders.lst"
-mkdir -pv "$cinnamon_backgrounds_dir"
-cp /dev/null "$cinnamon_backgrounds_list"
-i=0
-while [ $i != ${#cinnamon_backgrounds[@]} ]
-do
-  cinnamon_background="${cinnamon_backgrounds[$i]}"
-
-  cinnamon_background_items_dir="$cinnamon_backgrounds_dir/$cinnamon_background"
-  cinnamon_background_items=()
-  if [ "$cinnamon_background" == "Dark" ]
-  then
-    cinnamon_background_items=( \
-      "https://w.wallhaven.cc/full/ym/wallhaven-ymxx57.jpg" \
-      "https://w.wallhaven.cc/full/4y/wallhaven-4y83px.jpg" \
-    )
-  fi
-  mkdir -pv "$cinnamon_background_items_dir"
-  echo "$cinnamon_background_items_dir" >> "$cinnamon_backgrounds_list"
-  j=0
-  while [ $j != ${#cinnamon_background_items[@]} ]
-  do
-    cinnamon_background_item="${cinnamon_background_items[$j]}"
-
-    cinnamon_background_item_file="${cinnamon_background_item##*/}"
-    if [ ! -f "$cinnamon_background_items_dir/$cinnamon_background_item_file" ]
-    then
-      wget -O "$cinnamon_background_items_dir/$cinnamon_background_item_file" "$cinnamon_background_item"
-    else
-      echo "$cinnamon_background_item_file is already installed"
-    fi
-
-    let "j++"
-  done
-
-  let "i++"
-done
-
-dconf write /org/cinnamon/desktop/background/picture-uri "'file://$cinnamon_background_items_dir/$cinnamon_background_item_file'"
-dconf write /org/cinnamon/desktop/background/slideshow/image-source "'directory://$cinnamon_background_items_dir'"
-dconf write /org/cinnamon/desktop/background/slideshow/delay "10"
-dconf write /org/cinnamon/desktop/background/slideshow/random-order "true"
-dconf write /org/cinnamon/desktop/background/slideshow/slideshow-enabled "true"
+dconf write /org/cinnamon/desktop/background/picture-uri "'file:///usr/share/backgrounds/linuxmint/edesigner_linuxmint.png'"
 
 conf=$'[Greeter]\n'
 conf+=$'show-hostname=true\n'
 conf+=$'draw-grid=false\n'
 conf+=$'theme-name=Mint-Y-Dark-Blue\n'
-conf+=$'icon-theme-name=Mint-Y-Blue\n'
+conf+=$'icon-theme-name=Mint-Y-Dark-Blue\n'
 echo "$conf" | sudo tee "/etc/lightdm/slick-greeter.conf"
 
 conf=$'[desktop-monitor-0]\n'
