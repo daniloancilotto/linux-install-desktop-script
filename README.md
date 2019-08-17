@@ -43,23 +43,27 @@
     * ~/.cinnamon/configs/transparent-panels@germanfr/*.json
 
 ### Install Cinnamon Appearances
-* Themes
-  * [Mojave - 2019-06-23 (Dark)](https://github.com/daniloancilotto/mojave-gtk-theme)
 * Icons
   * [Korla - 1.1.6 (Dark)](https://github.com/bikass/korla)
-* Cursors
-  * [Capitaine Cursors - R3 (Light)](https://github.com/keeferrourke/capitaine-cursors)
-* Backgrounds
-  * [Wallhaven (Dark)](https://wallhaven.cc/)
 * Configurations
   * Dconf
+    * /org/nemo/window-state/sidebar-bookmark-breakpoint
+    * /org/cinnamon/desktop/interface/icon-theme
+    * /org/cinnamon/desktop/interface/icon-theme-backup
+    * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
+    * /org/nemo/desktop/computer-icon-visible
+    * /org/nemo/desktop/network-icon-visible
+    * /org/nemo/desktop/trash-icon-visible
+    * /org/nemo/preferences/show-home-icon-toolbar
+    * /org/nemo/preferences/show-reload-icon-toolbar
+    * /org/nemo/preferences/show-open-in-terminal-toolbar
+    * /org/cinnamon/desktop/interface/cursor-theme
     * /org/cinnamon/theme/name
     * /org/cinnamon/desktop/interface/gtk-theme
     * /org/cinnamon/desktop/interface/gtk-theme-backup
     * /org/cinnamon/desktop/wm/preferences/theme
     * /org/cinnamon/desktop/wm/preferences/theme-backup
     * /org/cinnamon/desktop/wm/preferences/button-layout
-    * /org/nemo/window-state/sidebar-bookmark-breakpoint
     * /org/nemo/window-state/sidebar-width
     * /org/nemo/icon-view/default-zoom-level
     * /org/nemo/list-view/default-zoom-level
@@ -77,27 +81,11 @@
     * /org/gnome/nautilus/list-view/default-visible-columns
     * /org/gnome/nautilus/list-view/use-tree-view
     * /org/gnome/nautilus/preferences/default-folder-viewer
-    * /org/cinnamon/desktop/interface/icon-theme
-    * /org/cinnamon/desktop/interface/icon-theme-backup
-    * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
-    * /org/nemo/desktop/computer-icon-visible
-    * /org/nemo/desktop/network-icon-visible
-    * /org/nemo/desktop/trash-icon-visible
-    * /org/nemo/preferences/show-home-icon-toolbar
-    * /org/nemo/preferences/show-reload-icon-toolbar
-    * /org/nemo/preferences/show-open-in-terminal-toolbar
-    * /org/cinnamon/desktop/interface/cursor-theme
-    * /org/cinnamon/desktop/background/picture-uri
-    * /org/cinnamon/desktop/background/slideshow/image-source
-    * /org/cinnamon/desktop/background/slideshow/delay
-    * /org/cinnamon/desktop/background/slideshow/random-order
-    * /org/cinnamon/desktop/background/slideshow/slideshow-enabled
   * Conf
     * /etc/lightdm/slick-greeter.conf
     * ~/.config/nemo/desktop-metadata
   * List
     * ~/.config/gtk-3.0/bookmarks
-    * ~/.cinnamon/backgrounds/user-folders.lst
 
 ### Install Cinnamon Actions
 * Configurations

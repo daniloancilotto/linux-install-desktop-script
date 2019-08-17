@@ -419,7 +419,7 @@ then
 else
   echo "$cinnamon_icon_name is already installed"
 fi
-cinnamon_icon_name_backup="Mint-Y-Dark-Blue"
+cinnamon_icon_name_backup="Mint-Y-Dark"
 if [ ! -d "$cinnamon_icons_dir/$cinnamon_icon_name" ]
 then
   cinnamon_icon_name="$cinnamon_icon_name_backup"
@@ -436,8 +436,8 @@ dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
 dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
 
 cinnamon_cursor_name="DMZ-Black"
-cinnamon_theme_name="Mint-Y-Dark-Blue"
-cinnamon_theme_name_backup="Mint-Y-Dark-Blue"
+cinnamon_theme_name="Mint-Y-Dark"
+cinnamon_theme_name_backup="Mint-Y-Dark"
 cinnamon_theme_name_window="Mint-Y-Dark"
 cinnamon_theme_name_window_backup="Mint-Y-Dark"
 cinnamon_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
@@ -472,8 +472,8 @@ dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 conf=$'[Greeter]\n'
 conf+=$'show-hostname=true\n'
 conf+=$'draw-grid=false\n'
-conf+=$'theme-name=Mint-Y-Dark-Blue\n'
-conf+=$'icon-theme-name=Mint-Y-Dark-Blue\n'
+conf+=$'theme-name=Mint-Y-Dark\n'
+conf+=$'icon-theme-name=Mint-Y-Dark\n'
 echo "$conf" | sudo tee "/etc/lightdm/slick-greeter.conf"
 
 conf=$'[desktop-monitor-0]\n'
