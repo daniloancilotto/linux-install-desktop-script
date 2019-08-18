@@ -189,7 +189,7 @@ do
   if ! [[ "${gnome_bookmarks_ignored[@]}" =~ "$gnome_bookmark" ]]
   then
     gnome_bookmark=${gnome_bookmark##*/}
-    gnome_bookmark="file://$HOME/$gnome_bookmark $gnome_bookmark"
+    gnome_bookmark="file://$HOME/${gnome_bookmark// /%20} $gnome_bookmark"
 
     echo "$gnome_bookmark" >> "$gnome_bookmarks_list"
   fi
