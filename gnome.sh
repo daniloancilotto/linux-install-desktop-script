@@ -117,6 +117,7 @@ done
 
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
+dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/show-window-buttons "'always'"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
@@ -125,9 +126,11 @@ dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
 dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
   '_processor_average_',
+  '__temperature_avg__',
   '_memory_usage_',
   '__max_network-download__',
-  '__max_network-upload__'
+  '__max_network-upload__',
+  '_battery_rate_'
 ]"
 dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
 dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
