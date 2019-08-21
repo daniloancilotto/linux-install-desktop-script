@@ -130,6 +130,7 @@
   * /org/gnome/shell/extensions/openweather/unit
   * /org/gnome/shell/extensions/openweather/wind-speed-unit
   * /org/gnome/shell/extensions/printers/show-icon
+  * /org/gnome/shell/extensions/lockkeys/notifications
   * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
   * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
   * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
