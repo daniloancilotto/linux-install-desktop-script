@@ -130,9 +130,7 @@ dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
   '_processor_average_',
   '__temperature_avg__',
-  '_memory_usage_',
-  '__max_network-download__',
-  '__max_network-upload__'
+  '_memory_usage_'
 ]"
 dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
 dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
