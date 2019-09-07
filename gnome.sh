@@ -227,6 +227,9 @@ dconf write /org/gnome/nautilus/compression/default-compression-format "'7z'"
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
+file="/usr/share/X11/xkb/symbols/br"
+sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
+
 echo "actions have been configured"
 
 printLine "Finished"

@@ -172,6 +172,8 @@
   * /org/gnome/nautilus/compression/default-compression-format
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
+* X11
+  * /usr/share/X11/xkb/symbols/br
 
 <br/>
 
