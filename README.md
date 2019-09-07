@@ -101,15 +101,15 @@
   * [Unite - v31](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
-  * [Vitals - v20](https://extensions.gnome.org/extension/1460/vitals/)
+  * [Vitals - v21](https://extensions.gnome.org/extension/1460/vitals/)
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
   * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
   * [Sound Input & Output Device Chooser - v22](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-  * [Tweaks in System Menu - v3](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
-  * [Desktop Icons - v14](https://extensions.gnome.org/extension/1465/desktop-icons/)
+  * [Tweaks in System Menu - v5](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
+  * [Desktop Icons - v15](https://extensions.gnome.org/extension/1465/desktop-icons/)
   * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
@@ -123,6 +123,7 @@
   * /org/gnome/shell/extensions/vitals/alphabetize
   * /org/gnome/shell/extensions/vitals/position-in-panel
   * /org/gnome/shell/extensions/vitals/hot-sensors
+  * /org/gnome/shell/extensions/vitals/storage-path
   * /org/gnome/shell/extensions/openweather/city
   * /org/gnome/shell/extensions/openweather/days-forecast
   * /org/gnome/shell/extensions/openweather/decimal-places
@@ -183,7 +184,7 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 
 ### GNOME - Ubuntu and Derivatives
 ```bash
-sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell -y
+sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
