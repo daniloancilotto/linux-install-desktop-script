@@ -175,6 +175,43 @@
 * X11
   * /usr/share/X11/xkb/symbols/br
 
+### Configure Xfce4 Spices
+* Xfconf
+  * xfce4-panel:/panels
+  * xfce4-panel:/panels/panel-0/size
+  * xfce4-panel:/panels/panel-0/plugin-ids
+  * xfce4-panel:/panels/panel-1/mode
+  * xfce4-panel:/panels/panel-1/position
+  * xfce4-panel:/panels/panel-1/length
+  * xfce4-panel:/panels/panel-1/length-adjust
+  * xfce4-panel:/panels/panel-1/size
+  * xfce4-panel:/panels/panel-1/plugin-ids
+  * xfce4-panel:/plugins/plugin-*/show-handle
+  * xfce4-panel:/plugins/plugin-*/show-labels
+  * xfce4-panel:/plugins/plugin-*/flat-buttons
+  * xfce4-panel:/plugins/plugin-*/grouping
+  * xfce4-panel:/plugins/plugin-*/sort-order
+  * xfce4-panel:/plugins/plugin-*/include-all-workspaces
+  * xfce4-desktop:/desktop-icons/file-icons/show-filesystem
+  * xfce4-desktop:/desktop-icons/file-icons/show-home
+  * xfce4-desktop:/desktop-icons/file-icons/show-trash
+  * xfce4-notifyd:/primary-monitor
+
+### Configure Xfce4 Appearances
+* Xfconf
+  * xsettings:/Net/IconThemeName
+  * xsettings:/Net/FallbackIconTheme
+  * xsettings:/Net/ThemeName
+  * xsettings:/Gtk/DecorationLayout
+  * xfwm4:/general/button_layout
+  * xfwm4:/general/theme
+  * xfce4-desktop:/desktop-icons/gravity
+
+### Configure Xfce4 Actions
+* Xfconf
+  * xfwm4:/general/easy_click
+  * xfwm4:/general/cycle_workspaces
+
 <br/>
 
 # Preparing to Run the Script
@@ -187,6 +224,11 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 ### GNOME - Ubuntu and Derivatives
 ```bash
 sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+```
+
+### Xfce4 - Ubuntu and Derivatives
+```bash
+sudo apt install curl -y
 ```
 
 <br/>
@@ -203,6 +245,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/gnome.sh | bash
 ```
 
+### Xfce4
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/xfce4.sh | bash
+```
+
 <br/>
 
 # Screenshots
@@ -212,3 +259,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME
 ![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/63140807-84d64280-bfb9-11e9-963d-e7952cc9e54b.png)
+
+### Xfce4
+![Xubuntu Xfce4]()

@@ -29,11 +29,11 @@ printLine() {
 printLine "Xfce4 Spices"
 
 xfce4_panel_0_plugin_names=()
-xfce4_panel_0_plugin_values=""
 xfce4_panel_0_plugin_types=""
+xfce4_panel_0_plugin_values=""
 xfce4_panel_1_plugin_names=("whiskermenu" "tasklist")
-xfce4_panel_1_plugin_values=""
 xfce4_panel_1_plugin_types=""
+xfce4_panel_1_plugin_values=""
 
 j=0
 while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
@@ -92,12 +92,12 @@ do
 
     case $xfce4_panel_plugin_name in
       "tasklist")
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/flat-buttons -s true -n -t bool
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/grouping -s 1 -n -t int
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -s true -n -t bool
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -s false -n -t bool
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -s false -n -t bool
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -s 4 -n -t int
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -n -t bool -s false
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -n -t bool -s false
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/flat-buttons -n -t bool -s true
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/grouping -n -t int -s 1
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -n -t int -s 4
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -n -t bool -s true
       ;;
     esac
   else
@@ -112,14 +112,14 @@ do
   xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_$xfce4_panel_0_plugin_name"
   if [ ${!xfce4_panel_0_plugin_varname} == 0 ]
   then
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -s "$xfce4_panel_0_plugin_name" -n -t string
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_0_plugin_name"
     declare $xfce4_panel_0_plugin_varname=$i
 
     let "i++"
   fi
 
-  xfce4_panel_0_plugin_values="$xfce4_panel_0_plugin_values -s ${!xfce4_panel_0_plugin_varname}"
   xfce4_panel_0_plugin_types="$xfce4_panel_0_plugin_types -t int"
+  xfce4_panel_0_plugin_values="$xfce4_panel_0_plugin_values -s ${!xfce4_panel_0_plugin_varname}"
 
   let "j++"
 done
@@ -130,52 +130,52 @@ do
   xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_$xfce4_panel_1_plugin_name"
   if [ ${!xfce4_panel_1_plugin_varname} == 0 ]
   then
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -s "$xfce4_panel_1_plugin_name" -n -t string
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_1_plugin_name"
     declare $xfce4_panel_1_plugin_varname=$i
 
     let "i++"
   fi
 
-  xfce4_panel_1_plugin_values="$xfce4_panel_1_plugin_values -s ${!xfce4_panel_1_plugin_varname}"
   xfce4_panel_1_plugin_types="$xfce4_panel_1_plugin_types -t int"
+  xfce4_panel_1_plugin_values="$xfce4_panel_1_plugin_values -s ${!xfce4_panel_1_plugin_varname}"
 
   let "j++"
 done
 
-xfconf-query -c xfce4-panel -p /panels -s 0 -s 1  -n  -t int -t int
-xfconf-query -c xfce4-panel -p /panels/panel-0/size -s 27 -n -t int
-#xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids $xfce4_panel_0_plugin_values  -n $xfce4_panel_0_plugin_types
-xfconf-query -c xfce4-panel -p /panels/panel-1/length -s 96 -n -t int
-xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -s false -n -t bool
-xfconf-query -c xfce4-panel -p /panels/panel-1/mode -s 2 -n -t int
-xfconf-query -c xfce4-panel -p /panels/panel-1/position -s "p=7;x=17;y=360" -n -t string
-xfconf-query -c xfce4-panel -p /panels/panel-1/size -s 37 -n -t int
-xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids $xfce4_panel_1_plugin_values  -n $xfce4_panel_1_plugin_types
+xfconf-query -c xfce4-panel -p /panels -n -t int -t int -s 0 -s 1
+xfconf-query -c xfce4-panel -p /panels/panel-0/size -n -t int -s 27
+#xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -n $xfce4_panel_0_plugin_types $xfce4_panel_0_plugin_values
+xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
+xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
+xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
+xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -n -t bool -s false
+xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 37
+xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
 xfce4-panel -r
 
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -s false
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-home -s false
-xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -s false
-xfconf-query -c xfce4-notifyd -p /primary-monitor -s 1
+xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -n -t bool -s false
+xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-home -n -t bool -s false
+xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-trash -n -t bool -s false
+xfconf-query -c xfce4-notifyd -p /primary-monitor -n -t int -s 1
 
 echo "spices have been configured"
 
 printLine "Xfce4 Appearances"
 
-xfconf-query -c xsettings -p /Net/IconThemeName -s "Humanity-Dark"
-xfconf-query -c xsettings -p /Net/FallbackIconTheme -s "ubuntu-mono-dark"
-xfconf-query -c xsettings -p /Net/ThemeName -s "Adwaita-dark"
-xfconf-query -c xsettings -p /Gtk/DecorationLayout -s "close,minimize,maximize:"
-xfconf-query -c xfwm4 -p /general/button_layout -s "CHM|"
-xfconf-query -c xfwm4 -p /general/theme -s "Numix"
-xfconf-query -c xfce4-desktop -p /desktop-icons/gravity -s 1
+xfconf-query -c xsettings -p /Net/IconThemeName -n -t string -s "Humanity-Dark"
+xfconf-query -c xsettings -p /Net/FallbackIconTheme -n -t string -s "ubuntu-mono-dark"
+xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Adwaita-dark"
+xfconf-query -c xsettings -p /Gtk/DecorationLayout -n -t string -s "close,minimize,maximize:"
+xfconf-query -c xfwm4 -p /general/button_layout -n -t string -s "CHM|"
+xfconf-query -c xfwm4 -p /general/theme -s -n -t string "Numix"
+xfconf-query -c xfce4-desktop -p /desktop-icons/gravity -n -t int -s 1
 
 echo "appearances have been configured"
 
 printLine "Xfce4 Actions"
 
-xfconf-query -c xfwm4 -p /general/easy_click -s "Super"
-xfconf-query -c xfwm4 -p /general/cycle_workspaces -s true
+xfconf-query -c xfwm4 -p /general/easy_click -n -t string -s "Super"
+xfconf-query -c xfwm4 -p /general/cycle_workspaces -n -t bool -s true
 
 echo "actions have been configured"
 
