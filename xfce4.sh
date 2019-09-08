@@ -167,7 +167,7 @@ xfconf-query -c xsettings -p /Net/FallbackIconTheme -n -t string -s "ubuntu-mono
 xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Adwaita-dark"
 xfconf-query -c xsettings -p /Gtk/DecorationLayout -n -t string -s "close,minimize,maximize:"
 xfconf-query -c xfwm4 -p /general/button_layout -n -t string -s "CHM|"
-xfconf-query -c xfwm4 -p /general/theme -s -n -t string "Numix"
+xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Numix"
 xfconf-query -c xfce4-desktop -p /desktop-icons/gravity -n -t int -s 1
 
 echo "appearances have been configured"
