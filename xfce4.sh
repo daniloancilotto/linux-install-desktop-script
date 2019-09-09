@@ -80,7 +80,7 @@ do
         let "j++"
       fi
     done
-    if [ $k ]
+    if $k
     then
       continue
     fi 
