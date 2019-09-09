@@ -125,6 +125,7 @@ do
   then
     case $xfce4_panel_0_plugin_number in
       1)
+        mkdir -pv "$HOME/.config/xfce4/panel/launcher-$k"
         file="$HOME/.config/xfce4/panel/launcher-$k/window-close.desktop"
         if [ ! -f "$file" ]
         then
@@ -145,6 +146,7 @@ do
         xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-close.desktop"
       ;;
       2)
+        mkdir -pv "$HOME/.config/xfce4/panel/launcher-$k"
         file="$HOME/.config/xfce4/panel/launcher-$k/window-minimize.desktop"
         if [ ! -f "$file" ]
         then
@@ -165,6 +167,7 @@ do
         xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-minimize.desktop"
       ;;
       3)
+        mkdir -pv "$HOME/.config/xfce4/panel/launcher-$k"
         file="$HOME/.config/xfce4/panel/launcher-$k/window-maximize.desktop"
         if [ ! -f "$file" ]
         then
