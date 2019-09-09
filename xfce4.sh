@@ -28,10 +28,10 @@ printLine() {
 
 printLine "Xfce4 Spices"
 
-xfce4_panel_0_plugin_names=()
+xfce4_panel_0_plugin_names=("separator" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
 xfce4_panel_0_plugin_types=""
 xfce4_panel_0_plugin_values=""
-xfce4_panel_1_plugin_names=("whiskermenu" "tasklist")
+xfce4_panel_1_plugin_names=("whiskermenu" "tasklist" "separator")
 xfce4_panel_1_plugin_types=""
 xfce4_panel_1_plugin_values=""
 
@@ -99,6 +99,10 @@ do
         xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -n -t int -s 4
         xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -n -t bool -s true
       ;;
+      "separator")
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/expand -n -t bool -s true
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/style -n -t int -s 0
+      ;;
     esac
   else
     break
@@ -149,7 +153,7 @@ xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
 xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
 xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
 xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -n -t bool -s false
-xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 37
+xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 39
 xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
 xfce4-panel -r
 

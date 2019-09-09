@@ -3,6 +3,7 @@
 ### Supported Desktops
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
 * [GNOME - 3.32](https://www.gnome.org/)
+* [Xfce4 - 4.12](https://www.xfce.org/)
 
 ### Install and Configure Cinnamon Spices
 * Applets - Latest
@@ -186,12 +187,14 @@
   * xfce4-panel:/panels/panel-1/length-adjust
   * xfce4-panel:/panels/panel-1/size
   * xfce4-panel:/panels/panel-1/plugin-ids
-  * xfce4-panel:/plugins/plugin-*/show-handle
-  * xfce4-panel:/plugins/plugin-*/show-labels
-  * xfce4-panel:/plugins/plugin-*/flat-buttons
-  * xfce4-panel:/plugins/plugin-*/grouping
-  * xfce4-panel:/plugins/plugin-*/sort-order
-  * xfce4-panel:/plugins/plugin-*/include-all-workspaces
+  * xfce4-panel:/plugins/plugin-#tasklist/show-handle
+  * xfce4-panel:/plugins/plugin-#tasklist/show-labels
+  * xfce4-panel:/plugins/plugin-#tasklist/flat-buttons
+  * xfce4-panel:/plugins/plugin-#tasklist/grouping
+  * xfce4-panel:/plugins/plugin-#tasklist/sort-order
+  * xfce4-panel:/plugins/plugin-#tasklist/include-all-workspaces
+  * xfce4-panel:/plugins/plugin-#separator/expand
+  * xfce4-panel:/plugins/plugin-#separator/style
   * xfce4-desktop:/desktop-icons/file-icons/show-filesystem
   * xfce4-desktop:/desktop-icons/file-icons/show-home
   * xfce4-desktop:/desktop-icons/file-icons/show-trash
