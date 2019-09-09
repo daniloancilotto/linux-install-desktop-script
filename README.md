@@ -237,7 +237,7 @@ sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnom
 
 ### Xfce4 - Ubuntu and Derivatives
 ```bash
-sudo apt install curl xfconf wmctrl xdotool-y
+sudo apt install curl xfconf wmctrl xdotool -y
 ```
 
 <br/>
