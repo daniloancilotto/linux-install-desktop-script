@@ -188,6 +188,10 @@ do
         xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-maximize.desktop"
       ;;
     esac
+  elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/style -n -t int -s 0
   fi
 
   xfce4_panel_0_plugin_types="$xfce4_panel_0_plugin_types -t int"
@@ -210,36 +214,36 @@ do
     let "i++"
   fi
 
+  k="${!xfce4_panel_1_plugin_varname}"
+  if [ "$xfce4_panel_1_plugin_name" == "tasklist" ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/show-handle -n -t bool -s false
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/show-labels -n -t bool -s false
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/flat-buttons -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/grouping -n -t int -s 1
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/sort-order -n -t int -s 4
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/include-all-workspaces -n -t bool -s true
+  elif [ "$xfce4_panel_1_plugin_name" == "separator" ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/style -n -t int -s 0
+  fi
+
   xfce4_panel_1_plugin_types="$xfce4_panel_1_plugin_types -t int"
   xfce4_panel_1_plugin_values="$xfce4_panel_1_plugin_values -s ${!xfce4_panel_1_plugin_varname}"
 
   let "j++"
 done
 
-    # case $xfce4_panel_plugin_name in
-    #   "tasklist")
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -n -t bool -s false
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -n -t bool -s false
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/flat-buttons -n -t bool -s true
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/grouping -n -t int -s 1
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -n -t int -s 4
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -n -t bool -s true
-    #   ;;
-    #   "separator")
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/expand -n -t bool -s true
-    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/style -n -t int -s 0
-    #   ;;
-    # esac
-
 xfconf-query -c xfce4-panel -p /panels -n -t int -t int -s 0 -s 1
 xfconf-query -c xfce4-panel -p /panels/panel-0/size -n -t int -s 27
-xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -n $xfce4_panel_0_plugin_types $xfce4_panel_0_plugin_values
+xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -n -a $xfce4_panel_0_plugin_types $xfce4_panel_0_plugin_values
 xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
 xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
 xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
 xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -n -t bool -s false
 xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 39
-xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
+xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n -a $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
 xfce4-panel -r
 
 xfconf-query -c xfce4-desktop -p /desktop-icons/file-icons/show-filesystem -n -t bool -s false
