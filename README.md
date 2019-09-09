@@ -191,6 +191,7 @@
   * xfce4-panel:/panels/panel-1/length-adjust
   * xfce4-panel:/panels/panel-1/size
   * xfce4-panel:/panels/panel-1/plugin-ids
+  * xfce4-panel:/plugins/plugin-$launcher_id/disable-tooltips
   * xfce4-panel:/plugins/plugin-$launcher_id/items
   * xfce4-panel:/plugins/plugin-$tasklist_id/show-handle
   * xfce4-panel:/plugins/plugin-$tasklist_id/show-labels

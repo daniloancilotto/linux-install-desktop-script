@@ -98,8 +98,7 @@ do
           conf=$'[Desktop Entry]\n'
           conf+=$'Version=1.0\n'
           conf+=$'Type=Application\n'
-          conf+=$'Name=Close Window\n'
-          conf+=$'Name[pt_BR]=Fechar Janela\n'
+          conf+=$'Name=Window Close\n'
           conf+=$'Comment=\n'
           conf+=$'Exec=wmctrl -c ":ACTIVE:"\n'
           conf+=$'Icon=window-close\n'
@@ -114,10 +113,9 @@ do
           conf=$'[Desktop Entry]\n'
           conf+=$'Version=1.0\n'
           conf+=$'Type=Application\n'
-          conf+=$'Name=Minimize Window\n'
-          conf+=$'Name[pt_BR]=Minimizar Janela\n'
+          conf+=$'Name=Window Minimize\n'
           conf+=$'Comment=\n'
-          conf+=$'Exec=wmctrl -c ":ACTIVE:"\n'
+          conf+=$'Exec=wmctrl -r ":ACTIVE:" -b toggle,shaded\n'
           conf+=$'Icon=window-minimize\n'
           conf+=$'Path=/tmp/\n'
           conf+=$'Terminal=false\n'
@@ -130,8 +128,7 @@ do
           conf=$'[Desktop Entry]\n'
           conf+=$'Version=1.0\n'
           conf+=$'Type=Application\n'
-          conf+=$'Name=Maximize Window\n'
-          conf+=$'Name[pt_BR]=Maximizar Janela\n'
+          conf+=$'Name=Window Maximize\n'
           conf+=$'Comment=\n'
           conf+=$'Exec=wmctrl -r ":ACTIVE:" -b toggle,maximized_vert,maximized_horz\n'
           conf+=$'Icon=window-maximize\n'
@@ -141,6 +138,7 @@ do
           echo "$conf" > "$file"
         fi
 
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/disable-tooltips -n -t bool -s true
         xfconf-query -c xfce4-panel -p /plugins/plugin-$i/items -n -t string -t string -t string -s "window-close.desktop" -s "window-minimize.desktop" -s "window-maximize.desktop"
       ;;
       "tasklist")
