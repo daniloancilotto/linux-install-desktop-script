@@ -28,10 +28,10 @@ printLine() {
 
 printLine "Xfce4 Spices"
 
-xfce4_panel_0_plugin_names=("launcher" "separator" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
+xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "separator_1" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
 xfce4_panel_0_plugin_types=""
 xfce4_panel_0_plugin_values=""
-xfce4_panel_1_plugin_names=("whiskermenu" "tasklist" "separator")
+xfce4_panel_1_plugin_names=("whiskermenu" "launcher_4" "tasklist" "separator_2")
 xfce4_panel_1_plugin_types=""
 xfce4_panel_1_plugin_values=""
 
@@ -40,6 +40,7 @@ while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
 do
   xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
   xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
+  xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_name%_*}
   declare $xfce4_panel_0_plugin_varname=0
 
   let "j++"
@@ -49,6 +50,7 @@ while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
 do
   xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
   xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
+  xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_name%_*}
   declare $xfce4_panel_1_plugin_varname=0
 
   let "j++"
@@ -61,38 +63,69 @@ do
   then
     xfce4_panel_plugin_name=${xfce4_panel_plugin_name[1]}
 
+    k=false
     j=0
     while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
     do
       xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
       xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
+      xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_name%_*}
       if [ "$xfce4_panel_plugin_name" == "$xfce4_panel_0_plugin_name" ] && [ ${!xfce4_panel_0_plugin_varname} == 0 ]
       then
         declare $xfce4_panel_0_plugin_varname=$i
 
+        k=true
         j=${#xfce4_panel_0_plugin_names[@]}
       else
         let "j++"
       fi
     done
+    if [ $k ]
+    then
+      continue
+    fi 
     j=0
     while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
     do
       xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
       xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
+      xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_name%_*}
       if [ "$xfce4_panel_plugin_name" == "$xfce4_panel_1_plugin_name" ] && [ ${!xfce4_panel_1_plugin_varname} == 0 ]
       then
         declare $xfce4_panel_1_plugin_varname=$i
 
+        k=true
         j=${#xfce4_panel_1_plugin_names[@]}
       else
         let "j++"
       fi
     done
+  else
+    break
+  fi
+done
 
-    case $xfce4_panel_plugin_name in
-      "launcher")
-        file="$HOME/.config/xfce4/panel/launcher-$i/window-close.desktop"
+j=0
+while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
+do
+  xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
+  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
+  xfce4_panel_0_plugin_number=${xfce4_panel_0_plugin_name##*_}
+  xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_name%_*}
+  if [ ${!xfce4_panel_0_plugin_varname} == 0 ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_0_plugin_name"
+    declare $xfce4_panel_0_plugin_varname=$i
+
+    let "i++"
+  fi
+
+  k="${!xfce4_panel_0_plugin_varname}"
+  if [ "$xfce4_panel_0_plugin_name" == "launcher" ]
+  then
+    case $xfce4_panel_0_plugin_number in
+      1)
+        file="$HOME/.config/xfce4/panel/launcher-$k/window-close.desktop"
         if [ ! -f "$file" ]
         then
           conf=$'[Desktop Entry]\n'
@@ -107,7 +140,12 @@ do
           conf+=$'StartupNotify=false\n'
           echo "$conf" > "$file"
         fi
-        file="$HOME/.config/xfce4/panel/launcher-$i/window-minimize.desktop"
+
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/disable-tooltips -n -t bool -s true
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-close.desktop"
+      ;;
+      2)
+        file="$HOME/.config/xfce4/panel/launcher-$k/window-minimize.desktop"
         if [ ! -f "$file" ]
         then
           conf=$'[Desktop Entry]\n'
@@ -115,14 +153,19 @@ do
           conf+=$'Type=Application\n'
           conf+=$'Name=Window Minimize\n'
           conf+=$'Comment=\n'
-          conf+=$'Exec=wmctrl -r ":ACTIVE:" -b toggle,shaded\n'
+          conf+=$'Exec=xdotool key alt+space key n\n'
           conf+=$'Icon=window-minimize\n'
           conf+=$'Path=/tmp/\n'
           conf+=$'Terminal=false\n'
           conf+=$'StartupNotify=false\n'
           echo "$conf" > "$file"
         fi
-        file="$HOME/.config/xfce4/panel/launcher-$i/window-maximize.desktop"
+
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/disable-tooltips -n -t bool -s true
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-minimize.desktop"
+      ;;
+      3)
+        file="$HOME/.config/xfce4/panel/launcher-$k/window-maximize.desktop"
         if [ ! -f "$file" ]
         then
           conf=$'[Desktop Entry]\n'
@@ -138,38 +181,10 @@ do
           echo "$conf" > "$file"
         fi
 
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/disable-tooltips -n -t bool -s true
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/items -n -t string -t string -t string -s "window-close.desktop" -s "window-minimize.desktop" -s "window-maximize.desktop"
-      ;;
-      "tasklist")
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -n -t bool -s false
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -n -t bool -s false
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/flat-buttons -n -t bool -s true
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/grouping -n -t int -s 1
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -n -t int -s 4
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -n -t bool -s true
-      ;;
-      "separator")
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/expand -n -t bool -s true
-        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/style -n -t int -s 0
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/disable-tooltips -n -t bool -s true
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-maximize.desktop"
       ;;
     esac
-  else
-    break
-  fi
-done
-
-j=0
-while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
-do
-  xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
-  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
-  if [ ${!xfce4_panel_0_plugin_varname} == 0 ]
-  then
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_0_plugin_name"
-    declare $xfce4_panel_0_plugin_varname=$i
-
-    let "i++"
   fi
 
   xfce4_panel_0_plugin_types="$xfce4_panel_0_plugin_types -t int"
@@ -182,6 +197,8 @@ while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
 do
   xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
   xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
+  xfce4_panel_1_plugin_number=${xfce4_panel_1_plugin_name##*_}
+  xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_name%_*}
   if [ ${!xfce4_panel_1_plugin_varname} == 0 ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_1_plugin_name"
@@ -195,6 +212,21 @@ do
 
   let "j++"
 done
+
+    # case $xfce4_panel_plugin_name in
+    #   "tasklist")
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -n -t bool -s false
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -n -t bool -s false
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/flat-buttons -n -t bool -s true
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/grouping -n -t int -s 1
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/sort-order -n -t int -s 4
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/include-all-workspaces -n -t bool -s true
+    #   ;;
+    #   "separator")
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/expand -n -t bool -s true
+    #     xfconf-query -c xfce4-panel -p /plugins/plugin-$i/style -n -t int -s 0
+    #   ;;
+    # esac
 
 xfconf-query -c xfce4-panel -p /panels -n -t int -t int -s 0 -s 1
 xfconf-query -c xfce4-panel -p /panels/panel-0/size -n -t int -s 27
