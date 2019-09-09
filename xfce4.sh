@@ -39,7 +39,7 @@ j=0
 while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
 do
   xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
-  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_$xfce4_panel_0_plugin_name"
+  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
   declare $xfce4_panel_0_plugin_varname=0
 
   let "j++"
@@ -48,7 +48,7 @@ j=0
 while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
 do
   xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
-  xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_$xfce4_panel_1_plugin_name"
+  xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
   declare $xfce4_panel_1_plugin_varname=0
 
   let "j++"
@@ -65,7 +65,7 @@ do
     while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
     do
       xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
-      xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_$xfce4_panel_0_plugin_name"
+      xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
       if [ "$xfce4_panel_plugin_name" == "$xfce4_panel_0_plugin_name" ] && [ ${!xfce4_panel_0_plugin_varname} == 0 ]
       then
         declare $xfce4_panel_0_plugin_varname=$i
@@ -79,7 +79,7 @@ do
     while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
     do
       xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
-      xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_$xfce4_panel_1_plugin_name"
+      xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
       if [ "$xfce4_panel_plugin_name" == "$xfce4_panel_1_plugin_name" ] && [ ${!xfce4_panel_1_plugin_varname} == 0 ]
       then
         declare $xfce4_panel_1_plugin_varname=$i
@@ -113,7 +113,7 @@ j=0
 while [ $j != ${#xfce4_panel_0_plugin_names[@]} ]
 do
   xfce4_panel_0_plugin_name=${xfce4_panel_0_plugin_names[$j]}
-  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_$xfce4_panel_0_plugin_name"
+  xfce4_panel_0_plugin_varname="xfce4_panel_0_plugin_${xfce4_panel_0_plugin_name//-/_}"
   if [ ${!xfce4_panel_0_plugin_varname} == 0 ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_0_plugin_name"
@@ -131,7 +131,7 @@ j=0
 while [ $j != ${#xfce4_panel_1_plugin_names[@]} ]
 do
   xfce4_panel_1_plugin_name=${xfce4_panel_1_plugin_names[$j]}
-  xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_$xfce4_panel_1_plugin_name"
+  xfce4_panel_1_plugin_varname="xfce4_panel_1_plugin_${xfce4_panel_1_plugin_name//-/_}"
   if [ ${!xfce4_panel_1_plugin_varname} == 0 ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$i -n -t string -s "$xfce4_panel_1_plugin_name"
@@ -148,7 +148,7 @@ done
 
 xfconf-query -c xfce4-panel -p /panels -n -t int -t int -s 0 -s 1
 xfconf-query -c xfce4-panel -p /panels/panel-0/size -n -t int -s 27
-#xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -n $xfce4_panel_0_plugin_types $xfce4_panel_0_plugin_values
+xfconf-query -c xfce4-panel -p /panels/panel-0/plugin-ids -n $xfce4_panel_0_plugin_types $xfce4_panel_0_plugin_values
 xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
 xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
 xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
