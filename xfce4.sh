@@ -91,6 +91,58 @@ do
     done
 
     case $xfce4_panel_plugin_name in
+      "launcher")
+        file="$HOME/.config/xfce4/panel/launcher-$i/window-close.desktop"
+        if [ ! -f "$file" ]
+        then
+          conf=$'[Desktop Entry]\n'
+          conf+=$'Version=1.0\n'
+          conf+=$'Type=Application\n'
+          conf+=$'Name=Close Window\n'
+          conf+=$'Name[pt_BR]=Fechar Janela\n'
+          conf+=$'Comment=\n'
+          conf+=$'Exec=wmctrl -c ":ACTIVE:"\n'
+          conf+=$'Icon=window-close\n'
+          conf+=$'Path=/tmp/\n'
+          conf+=$'Terminal=false\n'
+          conf+=$'StartupNotify=false\n'
+          echo "$conf" > "$file"
+        fi
+        file="$HOME/.config/xfce4/panel/launcher-$i/window-minimize.desktop"
+        if [ ! -f "$file" ]
+        then
+          conf=$'[Desktop Entry]\n'
+          conf+=$'Version=1.0\n'
+          conf+=$'Type=Application\n'
+          conf+=$'Name=Minimize Window\n'
+          conf+=$'Name[pt_BR]=Minimizar Janela\n'
+          conf+=$'Comment=\n'
+          conf+=$'Exec=wmctrl -c ":ACTIVE:"\n'
+          conf+=$'Icon=window-minimize\n'
+          conf+=$'Path=/tmp/\n'
+          conf+=$'Terminal=false\n'
+          conf+=$'StartupNotify=false\n'
+          echo "$conf" > "$file"
+        fi
+        file="$HOME/.config/xfce4/panel/launcher-$i/window-maximize.desktop"
+        if [ ! -f "$file" ]
+        then
+          conf=$'[Desktop Entry]\n'
+          conf+=$'Version=1.0\n'
+          conf+=$'Type=Application\n'
+          conf+=$'Name=Maximize Window\n'
+          conf+=$'Name[pt_BR]=Maximizar Janela\n'
+          conf+=$'Comment=\n'
+          conf+=$'Exec=wmctrl -r ":ACTIVE:" -b toggle,maximized_vert,maximized_horz\n'
+          conf+=$'Icon=window-maximize\n'
+          conf+=$'Path=/tmp/\n'
+          conf+=$'Terminal=false\n'
+          conf+=$'StartupNotify=false\n'
+          echo "$conf" > "$file"
+        fi
+
+        xfconf-query -c xfce4-panel -p /plugins/plugin-$i/items -n -t string -t string -t string -s "window-close.desktop" -s "window-minimize.desktop" -s "window-maximize.desktop"
+      ;;
       "tasklist")
         xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-handle -n -t bool -s false
         xfconf-query -c xfce4-panel -p /plugins/plugin-$i/show-labels -n -t bool -s false

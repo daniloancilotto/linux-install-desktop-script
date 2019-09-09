@@ -177,6 +177,10 @@
   * /usr/share/X11/xkb/symbols/br
 
 ### Configure Xfce4 Spices
+* Desktop
+  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-close.desktop
+  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-minimize.desktop
+  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-maximize.desktop
 * Xfconf
   * xfce4-panel:/panels
   * xfce4-panel:/panels/panel-0/size
@@ -187,14 +191,15 @@
   * xfce4-panel:/panels/panel-1/length-adjust
   * xfce4-panel:/panels/panel-1/size
   * xfce4-panel:/panels/panel-1/plugin-ids
-  * xfce4-panel:/plugins/plugin-#tasklist/show-handle
-  * xfce4-panel:/plugins/plugin-#tasklist/show-labels
-  * xfce4-panel:/plugins/plugin-#tasklist/flat-buttons
-  * xfce4-panel:/plugins/plugin-#tasklist/grouping
-  * xfce4-panel:/plugins/plugin-#tasklist/sort-order
-  * xfce4-panel:/plugins/plugin-#tasklist/include-all-workspaces
-  * xfce4-panel:/plugins/plugin-#separator/expand
-  * xfce4-panel:/plugins/plugin-#separator/style
+  * xfce4-panel:/plugins/plugin-$launcher_id/items
+  * xfce4-panel:/plugins/plugin-$tasklist_id/show-handle
+  * xfce4-panel:/plugins/plugin-$tasklist_id/show-labels
+  * xfce4-panel:/plugins/plugin-$tasklist_id/flat-buttons
+  * xfce4-panel:/plugins/plugin-$tasklist_id/grouping
+  * xfce4-panel:/plugins/plugin-$tasklist_id/sort-order
+  * xfce4-panel:/plugins/plugin-$tasklist_id/include-all-workspaces
+  * xfce4-panel:/plugins/plugin-$separator_id/expand
+  * xfce4-panel:/plugins/plugin-$separator_id/style
   * xfce4-desktop:/desktop-icons/file-icons/show-filesystem
   * xfce4-desktop:/desktop-icons/file-icons/show-home
   * xfce4-desktop:/desktop-icons/file-icons/show-trash
@@ -231,7 +236,7 @@ sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnom
 
 ### Xfce4 - Ubuntu and Derivatives
 ```bash
-sudo apt install curl -y
+sudo apt install curl xfconf wmctrl -y
 ```
 
 <br/>
