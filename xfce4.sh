@@ -28,10 +28,10 @@ printLine() {
 
 printLine "Xfce4 Spices"
 
-xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "separator_1" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
+xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "appmenu" "separator_1" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
 xfce4_panel_0_plugin_types=""
 xfce4_panel_0_plugin_values=""
-xfce4_panel_1_plugin_names=("whiskermenu" "launcher_4" "tasklist" "separator_2")
+xfce4_panel_1_plugin_names=("whiskermenu" "tasklist" "separator_2")
 xfce4_panel_1_plugin_types=""
 xfce4_panel_1_plugin_values=""
 
@@ -261,6 +261,7 @@ xfconf-query -c xsettings -p /Net/ThemeName -n -t string -s "Adwaita-dark"
 xfconf-query -c xsettings -p /Gtk/DecorationLayout -n -t string -s "close,minimize,maximize:"
 xfconf-query -c xfwm4 -p /general/button_layout -n -t string -s "CHM|"
 xfconf-query -c xfwm4 -p /general/theme -n -t string -s "Numix"
+xfconf-query -c xfwm4 -p /general/titleless_maximize -n -t bool -s true
 xfconf-query -c xfce4-desktop -p /desktop-icons/gravity -n -t int -s 1
 
 echo "appearances have been configured"

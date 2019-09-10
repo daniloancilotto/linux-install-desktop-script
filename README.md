@@ -214,6 +214,7 @@
   * xsettings:/Gtk/DecorationLayout
   * xfwm4:/general/button_layout
   * xfwm4:/general/theme
+  * xfwm4:/general/titleless_maximize
   * xfce4-desktop:/desktop-icons/gravity
 
 ### Configure Xfce4 Actions
@@ -237,7 +238,7 @@ sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnom
 
 ### Xfce4 - Ubuntu and Derivatives
 ```bash
-sudo apt install curl xfconf wmctrl xdotool -y
+sudo apt install curl xfconf wmctrl xdotool xfce4-appmenu-plugin -y
 ```
 
 <br/>
