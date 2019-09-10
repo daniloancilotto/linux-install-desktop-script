@@ -28,7 +28,7 @@ printLine() {
 
 printLine "Xfce4 Spices"
 
-xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "appmenu" "clock" "weather" "systemload" "separator" "notification-plugin" "thunar-tpa" "systray" "indicator" "statusnotifier" "pulseaudio" "power-manager-plugin")
+xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "appmenu" "clock" "weather" "systemload" "separator_1" "separator_2" "separator_3" "notification-plugin" "thunar-tpa" "systray" "indicator" "statusnotifier" "pulseaudio" "power-manager-plugin")
 xfce4_panel_0_plugin_types=""
 xfce4_panel_0_plugin_values=""
 xfce4_panel_1_plugin_names=("whiskermenu" "tasklist")
