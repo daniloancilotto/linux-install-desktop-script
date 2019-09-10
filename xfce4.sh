@@ -188,6 +188,10 @@ do
         xfconf-query -c xfce4-panel -p /plugins/plugin-$k/items -n -a -t string -s "window-maximize.desktop"
       ;;
     esac
+  elif [ "$xfce4_panel_0_plugin_name" == "appmenu" ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/bold-application-name -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/compact-mode -n -t bool -s true
   elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
@@ -242,7 +246,7 @@ xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
 xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
 xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
 xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -n -t bool -s false
-xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 39
+xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 34
 xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n -a $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
 xfce4-panel -r
 
