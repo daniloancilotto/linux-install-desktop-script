@@ -190,8 +190,8 @@ do
     esac
   elif [ "$xfce4_panel_0_plugin_name" == "appmenu" ]
   then
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/bold-application-name -n -t bool -s true
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/compact-mode -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/plugins/plugin-$k/bold-application-name -n -t bool -s true
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/plugins/plugin-$k/compact-mode -n -t bool -s false
   elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
