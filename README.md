@@ -186,6 +186,7 @@
   * xfce4-panel:/plugins/plugin-$launcher_id/items
   * xfce4-panel:/plugins/plugin-$appmenu_id/plugins/plugin-$appmenu_id/bold-application-name
   * xfce4-panel:/plugins/plugin-$appmenu_id/plugins/plugin-$appmenu_id/compact-mode
+  * xfce4-panel:/plugins/plugin-$clock_id/digital-format
   * xfce4-panel:/plugins/plugin-$tasklist_id/show-handle
   * xfce4-panel:/plugins/plugin-$tasklist_id/show-labels
   * xfce4-panel:/plugins/plugin-$tasklist_id/flat-buttons

@@ -28,10 +28,10 @@ printLine() {
 
 printLine "Xfce4 Spices"
 
-xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "appmenu" "separator_1" "systray" "notification-plugin" "indicator" "statusnotifier" "power-manager-plugin" "pulseaudio" "clock")
+xfce4_panel_0_plugin_names=("launcher_1" "launcher_2" "launcher_3" "appmenu" "notification-plugin" "systray" "indicator" "statusnotifier" "pulseaudio" "power-manager-plugin" "clock")
 xfce4_panel_0_plugin_types=""
 xfce4_panel_0_plugin_values=""
-xfce4_panel_1_plugin_names=("whiskermenu" "tasklist" "separator_2")
+xfce4_panel_1_plugin_names=("whiskermenu" "tasklist")
 xfce4_panel_1_plugin_types=""
 xfce4_panel_1_plugin_values=""
 
@@ -192,6 +192,9 @@ do
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/plugins/plugin-$k/bold-application-name -n -t bool -s true
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/plugins/plugin-$k/compact-mode -n -t bool -s false
+  elif [ "$xfce4_panel_0_plugin_name" == "clock" ]
+  then
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/digital-format -n -t string -s "%d/%m/%Y  %H:%M:%S"
   elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
