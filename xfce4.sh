@@ -194,15 +194,49 @@ do
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/plugins/plugin-$k/compact-mode -n -t bool -s true
   elif [ "$xfce4_panel_0_plugin_name" == "clock" ]
   then
-    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/digital-format -n -t string -s "%d/%m/%Y  %H:%M:%S"
+    xfconf-query -c xfce4-panel -p /plugins/plugin-$k/digital-format -n -t string -s "%d/%m/%Y  %H:%M:%S    "
+  elif [ "$xfce4_panel_0_plugin_name" == "weather" ]
+  then
+    mkdir -pv "$HOME/.config/xfce4/panel"
+    file="$HOME/.config/xfce4/panel/weather-$k.rc"
+    if [ ! -f "$file" ]
+    then
+      conf=$'loc_name=Mirandópolis, BR\n'
+      conf+=$'lat=-21.132831\n'
+      conf+=$'lon=-51.102942\n'
+      conf+=$'msl=422\n'
+      conf+=$'timezone=America/Sao_Paulo\n'
+      conf+=$'offset=-03:00\n'
+      conf+=$'cache_file_max_age=172800\n'
+      conf+=$'power_saving=true\n'
+      conf+=$'units_temperature=0\n'
+      conf+=$'units_pressure=0\n'
+      conf+=$'units_windspeed=0\n'
+      conf+=$'units_precipitation=0\n'
+      conf+=$'units_altitude=0\n'
+      conf+=$'model_apparent_temperature=0\n'
+      conf+=$'round=true\n'
+      conf+=$'single_row=true\n'
+      conf+=$'tooltip_style=1\n'
+      conf+=$'forecast_layout=1\n'
+      conf+=$'forecast_days=10\n'
+      conf+=$'scrollbox_animate=true\n'
+      conf+=$'theme_dir=/usr/share/xfce4/weather/icons/simplistic\n'
+      conf+=$'show_scrollbox=true\n'
+      conf+=$'scrollbox_lines=1\n'
+      conf+=$'scrollbox_color=rgba(0,0,0,0)\n'
+      conf+=$'scrollbox_use_color=false\n'
+      conf+=$'label0=3\n'
+      echo "$conf" > "$file"
+    fi
   elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/style -n -t int -s 0
   fi
 
-  xfce4_panel_0_plugin_types="$xfce4_panel_0_plugin_types -t int"
-  xfce4_panel_0_plugin_values="$xfce4_panel_0_plugin_values -s ${!xfce4_panel_0_plugin_varname}"
+  xfce4_panel_0_plugin_types+=" -t int"
+  xfce4_panel_0_plugin_values+=" -s ${!xfce4_panel_0_plugin_varname}"
 
   let "j++"
 done
@@ -236,8 +270,8 @@ do
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/style -n -t int -s 0
   fi
 
-  xfce4_panel_1_plugin_types="$xfce4_panel_1_plugin_types -t int"
-  xfce4_panel_1_plugin_values="$xfce4_panel_1_plugin_values -s ${!xfce4_panel_1_plugin_varname}"
+  xfce4_panel_1_plugin_types+=" -t int"
+  xfce4_panel_1_plugin_values+=" -s ${!xfce4_panel_1_plugin_varname}"
 
   let "j++"
 done
@@ -249,7 +283,7 @@ xfconf-query -c xfce4-panel -p /panels/panel-1/mode -n -t int -s 2
 xfconf-query -c xfce4-panel -p /panels/panel-1/position -n -t string -s "p=7;x=17;y=360"
 xfconf-query -c xfce4-panel -p /panels/panel-1/length -n -t int -s 96
 xfconf-query -c xfce4-panel -p /panels/panel-1/length-adjust -n -t bool -s false
-xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 34
+xfconf-query -c xfce4-panel -p /panels/panel-1/size -n -t int -s 36
 xfconf-query -c xfce4-panel -p /panels/panel-1/plugin-ids -n -a $xfce4_panel_1_plugin_types $xfce4_panel_1_plugin_values
 xfce4-panel -r
 

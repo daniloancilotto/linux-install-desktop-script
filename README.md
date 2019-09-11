@@ -181,6 +181,8 @@
   * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-close.desktop
   * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-minimize.desktop
   * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-maximize.desktop
+* RC
+  * $HOME/.config/xfce4/panel/weather-$weather_id.rc
 * Xfconf
   * xfce4-panel:/plugins/plugin-$launcher_id/disable-tooltips
   * xfce4-panel:/plugins/plugin-$launcher_id/items
