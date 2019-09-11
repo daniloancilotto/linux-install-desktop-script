@@ -229,6 +229,35 @@ do
       conf+=$'label0=3\n'
       echo "$conf" > "$file"
     fi
+  elif [ "$xfce4_panel_0_plugin_name" == "systemload" ]
+  then
+    mkdir -pv "$HOME/.config/xfce4/panel"
+    file="$HOME/.config/xfce4/panel/systemload-$k.rc"
+    if [ ! -f "$file" ]
+    then
+      conf=$'[Main]\n'
+      conf+=$'Timeout=500\n'
+      conf+=$'Timeout_Seconds=1\n'
+      conf+=$'Click_Command=xfce4-taskmanager\n'
+      conf+=$'[SL_Cpu]\n'
+      conf+=$'Enabled=true\n'
+      conf+=$'Use_Label=true\n'
+      conf+=$'Color=rgb(0,0,192)\n'
+      conf+=$'Text=\\ \\ cpu\n'
+      conf+=$'[SL_Mem]\n'
+      conf+=$'Enabled=true\n'
+      conf+=$'Use_Label=true\n'
+      conf+=$'Color=rgb(0,192,0)\n'
+      conf+=$'Text=\\ \\ mem\n'
+      conf+=$'[SL_Swap]\n'
+      conf+=$'Enabled=true\n'
+      conf+=$'Use_Label=true\n'
+      conf+=$'Color=rgb(240,240,0)\n'
+      conf+=$'Text=\\ \\ swap\n'
+      conf+=$'[SL_Uptime]\n'
+      conf+=$'Enabled=false\n'
+      echo "$conf" > "$file"
+    fi
   elif [ "$xfce4_panel_0_plugin_name" == "separator" ]
   then
     xfconf-query -c xfce4-panel -p /plugins/plugin-$k/expand -n -t bool -s true

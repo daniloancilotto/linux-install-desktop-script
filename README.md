@@ -183,6 +183,7 @@
   * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-maximize.desktop
 * RC
   * $HOME/.config/xfce4/panel/weather-$weather_id.rc
+  * $HOME/.config/xfce4/panel/systemload-$systemload_id.rc
 * Xfconf
   * xfce4-panel:/plugins/plugin-$launcher_id/disable-tooltips
   * xfce4-panel:/plugins/plugin-$launcher_id/items
