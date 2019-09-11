@@ -58,7 +58,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 <br/>
 
-# Installation and Configuration
+# Installations and Configurations
 
 ### Cinnamon Spices
 * Applets - Latest
