@@ -152,18 +152,20 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 
+<hr/>
+
 ### GNOME Spices
 * Extensions
   * [Unite - v31](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
-  * [Vitals - v21](https://extensions.gnome.org/extension/1460/vitals/)
+  * [Vitals - v22](https://extensions.gnome.org/extension/1460/vitals/)
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
   * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
-  * [Sound Input & Output Device Chooser - v22](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+  * [Sound Input & Output Device Chooser - v25](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
   * [Tweaks in System Menu - v5](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
   * [Desktop Icons - v15](https://extensions.gnome.org/extension/1465/desktop-icons/)
   * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
@@ -230,6 +232,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * X11
   * /usr/share/X11/xkb/symbols/br
+
+<hr/>
 
 ### Xfce4 Spices
 * Desktop
