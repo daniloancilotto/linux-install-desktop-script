@@ -191,8 +191,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/printers/show-icon
   * /org/gnome/shell/extensions/lockkeys/notifications
   * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
-  * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
   * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
+  * /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme
+  * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
+  * /org/gnome/shell/extensions/dash-to-dock/click-action
   * /org/gnome/shell/extensions/dash-to-dock/show-delay
   * /org/gnome/shell/extensions/dash-to-dock/hide-delay
   * /org/gnome/shell/extensions/desktop-icons/icon-size
