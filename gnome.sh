@@ -43,17 +43,17 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v31.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v33.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v22.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v24.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/gnome-shell-trash-extension.v16.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/drive-menugnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/printerslinux-man.org.v9.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/printerslinux-man.org.v10.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v25.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v5.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v7.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/desktop-iconscsoriano.v15.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v37.shell-extension.zip" \
     )

@@ -2,7 +2,7 @@
 
 ### Supported Desktops
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
-* [GNOME - 3.32](https://www.gnome.org/)
+* [GNOME - 3.32 ~ 3.34](https://www.gnome.org/)
 * [Xfce4 - 4.12](https://www.xfce.org/)
 
 <br/>
@@ -156,17 +156,17 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME Spices
 * Extensions
-  * [Unite - v31](https://extensions.gnome.org/extension/1287/unite/)
+  * [Unite - v33](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
-  * [Vitals - v22](https://extensions.gnome.org/extension/1460/vitals/)
+  * [Vitals - v24](https://extensions.gnome.org/extension/1460/vitals/)
   * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
   * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
-  * [Printers - v9](https://extensions.gnome.org/extension/1218/printers/)
+  * [Printers - v10](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
   * [Sound Input & Output Device Chooser - v25](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-  * [Tweaks in System Menu - v5](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
+  * [Tweaks in System Menu - v7](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
   * [Desktop Icons - v15](https://extensions.gnome.org/extension/1465/desktop-icons/)
   * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
 * Dconf
