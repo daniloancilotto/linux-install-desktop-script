@@ -174,8 +174,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/unite/extend-left-box
   * /org/gnome/shell/extensions/unite/use-system-fonts
   * /org/gnome/shell/extensions/unite/notifications-position
-  * /org/gnome/shell/extensions/unite/show-window-buttons
-  * /org/gnome/shell/extensions/unite/show-window-title
   * /org/gnome/shell/extensions/unite/window-buttons-theme
   * /org/gnome/shell/extensions/clock_override/override-string
   * /org/gnome/shell/extensions/vitals/alphabetize
