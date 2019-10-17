@@ -204,6 +204,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/interface/show-battery-percentage
   * /org/gnome/desktop/privacy/remember-app-usage
   * /org/gnome/desktop/privacy/remember-recent-files
+  * /org/gnome/desktop/app-folders/folders/*
+  * /org/gnome/desktop/app-folders/folder-children
 
 ### GNOME Appearances
 * Dconf

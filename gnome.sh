@@ -160,6 +160,7 @@ dconf write /org/gnome/shell/favorite-apps "[
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',
+  'org.gnome.gedit.desktop',
   'gnome-calculator_gnome-calculator.desktop',
   'slack.desktop',
   'code_code.desktop',
@@ -171,6 +172,77 @@ dconf write /org/gnome/desktop/interface/clock-show-seconds "true"
 dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
+
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
+dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
+  '4kvideodownloader.desktop',
+  'discord_discord.desktop',
+  'dropbox.desktop',
+  'firefox.desktop',
+  'freerapiddownloader.desktop',
+  'google-chrome.desktop',
+  'transmission-gtk.desktop'
+]"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name "LibreOffice"
+dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "[
+  'libreoffice_base.desktop',
+  'libreoffice_calc.desktop',
+  'libreoffice_draw.desktop',
+  'libreoffice_impress.desktop',
+  'libreoffice_libreoffice.desktop',
+  'libreoffice_math.desktop',
+  'libreoffice_writer.desktop'
+]"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Options/ name "Options"
+dconf write /org/gnome/desktop/app-folders/folders/Options/apps "[
+  'ca.desrt.dconf-editor.desktop',
+  'gnome-control-center.desktop',
+  'gnome-language-selector.desktop',
+  'gnome-session-properties.desktop',
+  'openjdk-8-policytool.desktop',
+  'org.gnome.tweaks.desktop'
+]"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Updaters"
+dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
+  'org.gnome.Software.desktop',
+  'software-properties-drivers.desktop',
+  'software-properties-gtk.desktop',
+  'software-properties-livepatch.desktop',
+  'update-manager.desktop'
+]"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "Utilities"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
+  'cpu-x.desktop',
+  'eog.desktop',
+  'furiusisomount.desktop',
+  'gnome-system-log.desktop',
+  'gnome-system-monitor.desktop',
+  'gparted.desktop',
+  'htop.desktop',
+  'im-config.desktop',
+  'info.desktop',
+  'ipscan.desktop',
+  'org.gnome.Characters.desktop',
+  'org.gnome.DiskUtility.desktop',
+  'org.gnome.Evince.desktop',
+  'org.gnome.FileRoller.desktop',
+  'org.gnome.font-viewer.desktop',
+  'org.gnome.PowerStats.desktop',
+  'org.gnome.seahorse.Application.desktop',
+  'yelp.desktop'
+]"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
+  'org.gnome.Screenshot.desktop'
+]"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
+dconf write /org/gnome/desktop/app-folders/folder-children "[
+  'Internet',
+  'LibreOffice',
+  'Options',
+  'Updaters',
+  'Utilities',
+  'YaST'
+]"
 
 echo "spices have been configured"
 
