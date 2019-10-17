@@ -210,7 +210,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
   'software-properties-livepatch.desktop',
   'update-manager.desktop'
 ]"
-dconf write /org/gnome/desktop/app-folders/folders/Utilities/name "Utilities"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilities"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'cpu-x.desktop',
   'eog.desktop',
