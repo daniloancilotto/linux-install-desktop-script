@@ -193,8 +193,8 @@ dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "[
   'libreoffice_math.desktop',
   'libreoffice_writer.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Options/ name "Options"
-dconf write /org/gnome/desktop/app-folders/folders/Options/apps "[
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Settings/ name "Settings"
+dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'ca.desrt.dconf-editor.desktop',
   'gnome-control-center.desktop',
   'gnome-language-selector.desktop',
@@ -238,7 +238,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
 dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Internet',
   'LibreOffice',
-  'Options',
+  'Settings',
   'Updaters',
   'Utilities',
   'YaST'
