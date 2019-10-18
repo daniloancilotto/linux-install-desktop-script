@@ -3,7 +3,6 @@
 ### Supported Desktops
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
 * [GNOME - 3.32 ~ 3.34](https://www.gnome.org/)
-* [Xfce4 - 4.12](https://www.xfce.org/)
 
 <br/>
 
@@ -17,11 +16,6 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 ### GNOME - Ubuntu and Derivatives
 ```bash
 sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
-```
-
-### Xfce4 - Ubuntu and Derivatives
-```bash
-sudo apt install curl xfconf wmctrl xdotool xfce4-appmenu-plugin -y
 ```
 
 <br/>
@@ -38,11 +32,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/gnome.sh | bash
 ```
 
-### Xfce4
-```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/desktop-environment-script/master/xfce4.sh | bash
-```
-
 <br/>
 
 # Screenshots
@@ -52,9 +41,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME
 ![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/63140807-84d64280-bfb9-11e9-963d-e7952cc9e54b.png)
-
-### Xfce4
-![Xubuntu Xfce4]()
 
 <br/>
 
@@ -234,57 +220,3 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * X11
   * /usr/share/X11/xkb/symbols/br
-
-<hr/>
-
-### Xfce4 Spices
-* Desktop
-  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-close.desktop
-  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-minimize.desktop
-  * $HOME/.config/xfce4/panel/launcher-$launcher_id/window-maximize.desktop
-* RC
-  * $HOME/.config/xfce4/panel/weather-$weather_id.rc
-  * $HOME/.config/xfce4/panel/systemload-$systemload_id.rc
-* Xfconf
-  * xfce4-panel:/plugins/plugin-$launcher_id/disable-tooltips
-  * xfce4-panel:/plugins/plugin-$launcher_id/items
-  * xfce4-panel:/plugins/plugin-$appmenu_id/plugins/plugin-$appmenu_id/bold-application-name
-  * xfce4-panel:/plugins/plugin-$appmenu_id/plugins/plugin-$appmenu_id/compact-mode
-  * xfce4-panel:/plugins/plugin-$clock_id/digital-format
-  * xfce4-panel:/plugins/plugin-$tasklist_id/show-handle
-  * xfce4-panel:/plugins/plugin-$tasklist_id/show-labels
-  * xfce4-panel:/plugins/plugin-$tasklist_id/flat-buttons
-  * xfce4-panel:/plugins/plugin-$tasklist_id/grouping
-  * xfce4-panel:/plugins/plugin-$tasklist_id/sort-order
-  * xfce4-panel:/plugins/plugin-$tasklist_id/include-all-workspaces
-  * xfce4-panel:/plugins/plugin-$separator_id/expand
-  * xfce4-panel:/plugins/plugin-$separator_id/style
-  * xfce4-panel:/panels
-  * xfce4-panel:/panels/panel-0/size
-  * xfce4-panel:/panels/panel-0/plugin-ids
-  * xfce4-panel:/panels/panel-1/mode
-  * xfce4-panel:/panels/panel-1/position
-  * xfce4-panel:/panels/panel-1/length
-  * xfce4-panel:/panels/panel-1/length-adjust
-  * xfce4-panel:/panels/panel-1/size
-  * xfce4-panel:/panels/panel-1/plugin-ids
-  * xfce4-desktop:/desktop-icons/file-icons/show-filesystem
-  * xfce4-desktop:/desktop-icons/file-icons/show-home
-  * xfce4-desktop:/desktop-icons/file-icons/show-trash
-  * xfce4-notifyd:/primary-monitor
-
-### Xfce4 Appearances
-* Xfconf
-  * xsettings:/Net/IconThemeName
-  * xsettings:/Net/FallbackIconTheme
-  * xsettings:/Net/ThemeName
-  * xsettings:/Gtk/DecorationLayout
-  * xfwm4:/general/button_layout
-  * xfwm4:/general/theme
-  * xfwm4:/general/titleless_maximize
-  * xfce4-desktop:/desktop-icons/gravity
-
-### Xfce4 Actions
-* Xfconf
-  * xfwm4:/general/easy_click
-  * xfwm4:/general/cycle_workspaces
