@@ -180,6 +180,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/dash-to-dock/click-action
   * /org/gnome/shell/extensions/dash-to-dock/show-delay
   * /org/gnome/shell/extensions/dash-to-dock/hide-delay
+  * /org/gnome/shell/extensions/dash-to-dock/show-trash
   * /org/gnome/shell/extensions/desktop-icons/icon-size
   * /org/gnome/shell/extensions/desktop-icons/show-home
   * /org/gnome/shell/extensions/desktop-icons/show-trash

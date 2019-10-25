@@ -141,9 +141,10 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size "32"
 dconf write /org/gnome/shell/extensions/dash-to-dock/click-action "'minimize-or-previews'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-delay "0.0"
 dconf write /org/gnome/shell/extensions/dash-to-dock/hide-delay "0.0"
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "true"
 dconf write /org/gnome/shell/extensions/desktop-icons/icon-size "'small'"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
-dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "true"
+dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "false"
 dconf write /org/gnome/shell/favorite-apps "[
   'update-manager.desktop',
   'org.gnome.Terminal.desktop',
