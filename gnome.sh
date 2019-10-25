@@ -154,9 +154,8 @@ dconf write /org/gnome/shell/favorite-apps "[
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',
-  'org.gnome.gedit.desktop',
   'gnome-calculator_gnome-calculator.desktop',
-  'slack.desktop',
+  'org.gnome.gedit.desktop',
   'code_code.desktop',
   'postman_postman.desktop',
   'mysql-workbench.desktop'
@@ -167,6 +166,12 @@ dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Development"
+dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
+  'code_code.desktop',
+  'mysql-workbench.desktop',
+  'postman_postman.desktop'
+]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
 dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   '4kvideodownloader.desktop',
@@ -175,7 +180,9 @@ dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   'firefox.desktop',
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
-  'transmission-gtk.desktop'
+  'slack.desktop',
+  'transmission-gtk.desktop',
+  'zoiper5.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name "LibreOffice"
 dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "[
@@ -193,6 +200,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'gnome-control-center.desktop',
   'gnome-language-selector.desktop',
   'gnome-session-properties.desktop',
+  'nvidia-settings.desktop',
   'openjdk-8-policytool.desktop',
   'org.gnome.tweaks.desktop'
 ]"
@@ -211,6 +219,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'furiusisomount.desktop',
   'gnome-system-log.desktop',
   'gnome-system-monitor.desktop',
+  'gnome-system-monitor_gnome-system-monitor.desktop',
   'gparted.desktop',
   'htop.desktop',
   'im-config.desktop',
@@ -230,6 +239,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
 ]"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
 dconf write /org/gnome/desktop/app-folders/folder-children "[
+  'Development',
   'Internet',
   'LibreOffice',
   'Settings',

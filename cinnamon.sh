@@ -320,7 +320,7 @@ do
       "org.remmina.Remmina.desktop",
       "org.gnome.Screenshot.desktop",
       "org.gnome.Calculator.desktop",
-      "slack.desktop",
+      "org.gnome.gedit.desktop",
       "code_code.desktop",
       "postman_postman.desktop",
       "mysql-workbench.desktop"
