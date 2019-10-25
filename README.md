@@ -37,10 +37,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Cinnamon
-![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/63217251-38097d80-c119-11e9-9b5b-587ce0b2dedc.png)
+![Linux Mint Cinnamon](https://user-images.githubusercontent.com/29760411/67599877-5ad29680-f747-11e9-859e-9a333afb3fe9.png)
 
 ### GNOME
-![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/63140807-84d64280-bfb9-11e9-963d-e7952cc9e54b.png)
+![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/67599980-8eadbc00-f747-11e9-87dd-6790acd5cb1d.png)
 
 <br/>
 
