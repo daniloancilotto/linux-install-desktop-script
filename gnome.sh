@@ -47,8 +47,6 @@ do
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v24.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/gnome-shell-trash-extension.v16.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/drive-menugnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v10.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
@@ -62,8 +60,6 @@ do
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
-      "gnome-shell-trash-extension" \
-      "drive-menu@gnome-shell-extensions.gcampax.github.com" \
       "printers@linux-man.org" \
       "lockkeys@vaina.lt" \
       "ds4battery@slie.ru" \
@@ -102,8 +98,6 @@ do
       'clock-override@gnomeshell.kryogenix.org',
       'openweather-extension@jenslody.de',
       'Vitals@CoreCoding.com',
-      'gnome-shell-trash-extension',
-      'drive-menu@gnome-shell-extensions.gcampax.github.com',
       'printers@linux-man.org',
       'lockkeys@vaina.lt',
       'ds4battery@slie.ru',
@@ -149,7 +143,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/show-delay "0.0"
 dconf write /org/gnome/shell/extensions/dash-to-dock/hide-delay "0.0"
 dconf write /org/gnome/shell/extensions/desktop-icons/icon-size "'small'"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
-dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "false"
+dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "true"
 dconf write /org/gnome/shell/favorite-apps "[
   'update-manager.desktop',
   'org.gnome.Terminal.desktop',

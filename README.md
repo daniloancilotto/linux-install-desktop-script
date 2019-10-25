@@ -146,8 +146,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v24](https://extensions.gnome.org/extension/1460/vitals/)
-  * [Trash - v16](https://extensions.gnome.org/extension/48/trash/)
-  * [Removable Drive Menu - v40](https://extensions.gnome.org/extension/7/removable-drive-menu/)
   * [Printers - v10](https://extensions.gnome.org/extension/1218/printers/)
   * [Lock Keys - v28](https://extensions.gnome.org/extension/36/lock-keys/)
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)

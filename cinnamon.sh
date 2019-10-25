@@ -103,18 +103,16 @@ do
       'panel1:center:4:cpu-monitor-text@gnemonix',
       'panel1:center:5:mem-monitor-text@datanom.net',
       'panel1:right:0:notifications@cinnamon.org',
-      'panel1:right:1:trash@cinnamon.org',
-      'panel1:right:2:removable-drives@cinnamon.org',
-      'panel1:right:3:printers@cinnamon.org',
-      'panel1:right:4:systray@cinnamon.org',
-      'panel1:right:5:keyboard@cinnamon.org',
-      'panel1:right:6:betterlock',
-      'panel1:right:7:xrandr@cinnamon.org',
-      'panel1:right:8:blueberry@cinnamon.org',
-      'panel1:right:9:network@cinnamon.org',
-      'panel1:right:10:sound@cinnamon.org',
-      'panel1:right:11:power@cinnamon.org',
-      'panel1:right:12:user@cinnamon.org',
+      'panel1:right:1:printers@cinnamon.org',
+      'panel1:right:2:systray@cinnamon.org',
+      'panel1:right:3:keyboard@cinnamon.org',
+      'panel1:right:4:betterlock',
+      'panel1:right:5:xrandr@cinnamon.org',
+      'panel1:right:6:blueberry@cinnamon.org',
+      'panel1:right:7:network@cinnamon.org',
+      'panel1:right:8:sound@cinnamon.org',
+      'panel1:right:9:power@cinnamon.org',
+      'panel1:right:10:user@cinnamon.org',
       'panel2:left:0:grouped-window-list@cinnamon.org'
     ]"
   elif [ "$cinnamon_spice" == "extensions" ]
@@ -420,7 +418,7 @@ dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
 dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
 dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
 dconf write /org/nemo/desktop/computer-icon-visible "false"
-dconf write /org/nemo/desktop/network-icon-visible "true"
+dconf write /org/nemo/desktop/network-icon-visible "false"
 dconf write /org/nemo/desktop/trash-icon-visible "true"
 dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
 dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
