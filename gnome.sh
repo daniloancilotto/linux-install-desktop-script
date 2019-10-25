@@ -182,8 +182,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
   'slack.desktop',
-  'transmission-gtk.desktop',
-  'zoiper5.desktop'
+  'transmission-gtk.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name "LibreOffice"
 dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "[
@@ -199,7 +198,6 @@ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folder
 dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'ca.desrt.dconf-editor.desktop',
   'gnome-control-center.desktop',
-  'gnome-language-selector.desktop',
   'gnome-session-properties.desktop',
   'nvidia-settings.desktop',
   'openjdk-8-policytool.desktop',
@@ -218,13 +216,13 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'cpu-x.desktop',
   'eog.desktop',
   'furiusisomount.desktop',
+  'gnome-language-selector.desktop',
   'gnome-system-log.desktop',
   'gnome-system-monitor.desktop',
   'gnome-system-monitor_gnome-system-monitor.desktop',
   'gparted.desktop',
   'htop.desktop',
   'im-config.desktop',
-  'info.desktop',
   'ipscan.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
@@ -245,9 +243,14 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'LibreOffice',
   'Settings',
   'Updaters',
-  'Utilities',
-  'YaST'
+  'Utilities'
 ]"
+
+file="/usr/share/applications/info.desktop"
+if [ -f "$file" ]
+then
+  sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
+fi
 
 echo "spices have been configured"
 
