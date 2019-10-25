@@ -90,6 +90,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/cinnamon/desktop/interface/icon-theme-backup
   * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
   * /org/nemo/desktop/computer-icon-visible
+  * /org/nemo/desktop/home-icon-visible
   * /org/nemo/desktop/network-icon-visible
   * /org/nemo/desktop/trash-icon-visible
   * /org/nemo/preferences/show-home-icon-toolbar

@@ -320,7 +320,7 @@ do
       "org.remmina.Remmina.desktop",
       "org.gnome.Screenshot.desktop",
       "org.gnome.Calculator.desktop",
-      "org.gnome.gedit.desktop",
+      "xed.desktop",
       "code_code.desktop",
       "postman_postman.desktop",
       "mysql-workbench.desktop"
@@ -418,6 +418,7 @@ dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
 dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
 dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
 dconf write /org/nemo/desktop/computer-icon-visible "false"
+dconf write /org/nemo/desktop/home-icon-visible "false"
 dconf write /org/nemo/desktop/network-icon-visible "false"
 dconf write /org/nemo/desktop/trash-icon-visible "true"
 dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
