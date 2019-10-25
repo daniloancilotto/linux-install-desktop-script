@@ -448,6 +448,7 @@ dconf write /org/gnome/nautilus/list-view/default-column-order "$cinnamon_nautil
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$cinnamon_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
+dconf write /org/cinnamon/desktop/interface/text-scaling-factor "1.1"
 
 conf=$'[Greeter]\n'
 conf+=$'show-hostname=true\n'

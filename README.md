@@ -120,6 +120,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/list-view/default-visible-columns
   * /org/gnome/nautilus/list-view/use-tree-view
   * /org/gnome/nautilus/preferences/default-folder-viewer
+  * /org/cinnamon/desktop/interface/text-scaling-factor
 * Conf
   * /etc/lightdm/slick-greeter.conf
   * ~/.config/nemo/desktop-metadata
