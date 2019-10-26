@@ -4,6 +4,11 @@
 * [Cinnamon - 4.0 ~ 4.2](https://github.com/linuxmint/cinnamon)
 * [GNOME - 3.32 ~ 3.34](https://www.gnome.org/)
 
+### Supported Systems
+* Ubuntu and Derivatives
+  * [Ubuntu - 18.04 ~ 19.10](https://ubuntu.com/)
+  * [Linux Mint - 19.1 ~ 19.2](https://linuxmint.com/)
+
 <br/>
 
 # Preparing to Run the Script
