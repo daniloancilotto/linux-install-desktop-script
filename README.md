@@ -158,7 +158,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
   * [Sound Input & Output Device Chooser - v25](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
   * [Tweaks in System Menu - v8](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
-  * [Desktop Icons - v15](https://extensions.gnome.org/extension/1465/desktop-icons/)
   * [User Themes - v37](https://extensions.gnome.org/extension/19/user-themes/)
 * Dconf
   * /org/gnome/shell/enabled-extensions

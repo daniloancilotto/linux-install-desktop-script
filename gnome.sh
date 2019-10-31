@@ -52,7 +52,6 @@ do
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v25.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v8.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/desktop-iconscsoriano.v15.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v37.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
@@ -65,7 +64,6 @@ do
       "ds4battery@slie.ru" \
       "sound-output-device-chooser@kgshank.net" \
       "tweaks-system-menu@extensions.gnome-shell.fifi.org" \
-      "desktop-icons@csoriano" \
       "user-theme@gnome-shell-extensions.gcampax.github.com" \
     )
   fi
@@ -103,7 +101,6 @@ do
       'ds4battery@slie.ru',
       'sound-output-device-chooser@kgshank.net',
       'tweaks-system-menu@extensions.gnome-shell.fifi.org',
-      'desktop-icons@csoriano',
       'user-theme@gnome-shell-extensions.gcampax.github.com'
     ]"
   fi
