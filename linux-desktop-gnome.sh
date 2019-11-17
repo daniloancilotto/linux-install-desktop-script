@@ -209,6 +209,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilities"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
+  'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
   'eog.desktop',
   'furiusisomount.desktop',
@@ -220,6 +221,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'htop.desktop',
   'im-config.desktop',
   'ipscan.desktop',
+  'nemo.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
   'org.gnome.Evince.desktop',
