@@ -43,16 +43,15 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v33.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v24.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v25.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v10.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v25.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v8.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v37.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
@@ -64,7 +63,6 @@ do
       "ds4battery@slie.ru" \
       "sound-output-device-chooser@kgshank.net" \
       "tweaks-system-menu@extensions.gnome-shell.fifi.org" \
-      "user-theme@gnome-shell-extensions.gcampax.github.com" \
     )
   fi
   j=0
@@ -100,8 +98,7 @@ do
       'lockkeys@vaina.lt',
       'ds4battery@slie.ru',
       'sound-output-device-chooser@kgshank.net',
-      'tweaks-system-menu@extensions.gnome-shell.fifi.org',
-      'user-theme@gnome-shell-extensions.gcampax.github.com'
+      'tweaks-system-menu@extensions.gnome-shell.fifi.org'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
