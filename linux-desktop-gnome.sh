@@ -163,6 +163,8 @@ dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Development"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
+  'arduino-arduinoide.desktop',
+  'arduino-arduinoide-esp32.desktop',
   'code_code.desktop',
   'mysql-workbench.desktop',
   'postman_postman.desktop'
