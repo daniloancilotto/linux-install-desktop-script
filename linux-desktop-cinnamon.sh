@@ -1,7 +1,7 @@
 #!/bin/bash
 system="`lsb_release -sd`"
 
-echo "LINUX DESKTOP SCRIPT - CINNAMON"
+echo "LINUX DESKTOP CINNAMON"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Home: $HOME"

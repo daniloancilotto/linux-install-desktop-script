@@ -1,7 +1,7 @@
 #!/bin/bash
 system="`lsb_release -sd`"
 
-echo "LINUX DESKTOP SCRIPT - GNOME"
+echo "LINUX DESKTOP GNOME"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Home: $HOME"
