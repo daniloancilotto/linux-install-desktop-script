@@ -15,12 +15,12 @@
 
 ### Cinnamon - Ubuntu and Derivatives
 ```bash
-sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
+sudo apt install curl wget unzip p7zip-full tar jq dconf-cli dconf-editor -y
 ```
 
 ### GNOME - Ubuntu and Derivatives
 ```bash
-sudo apt install curl wget unzip dconf-cli dconf-editor nemo gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
