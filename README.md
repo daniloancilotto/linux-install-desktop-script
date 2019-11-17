@@ -20,7 +20,7 @@ sudo apt install curl wget unzip tar jq dconf-cli dconf-editor -y
 
 ### GNOME - Ubuntu and Derivatives
 ```bash
-sudo apt install curl wget unzip dconf-cli dconf-editor gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip dconf-cli dconf-editor gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell nemo x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
@@ -90,9 +90,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### Cinnamon Appearances
 * Dconf
-  * /org/nemo/window-state/sidebar-bookmark-breakpoint
   * /org/cinnamon/desktop/interface/icon-theme
   * /org/cinnamon/desktop/interface/icon-theme-backup
+  * /org/cinnamon/desktop/interface/text-scaling-factor
   * /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons
   * /org/nemo/desktop/computer-icon-visible
   * /org/nemo/desktop/home-icon-visible
@@ -108,6 +108,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/cinnamon/desktop/wm/preferences/theme
   * /org/cinnamon/desktop/wm/preferences/theme-backup
   * /org/cinnamon/desktop/wm/preferences/button-layout
+  * /org/nemo/window-state/sidebar-bookmark-breakpoint
   * /org/nemo/window-state/sidebar-width
   * /org/nemo/icon-view/default-zoom-level
   * /org/nemo/list-view/default-zoom-level
@@ -116,7 +117,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/nemo/list-view/search-visible-columns
   * /org/nemo/preferences/date-format
   * /org/nemo/preferences/default-folder-viewer
-  * /org/nemo/preferences/show-advanced-permissions
   * /org/nemo/preferences/ignore-view-metadata
   * /org/gnome/nautilus/window-state/sidebar-width
   * /org/gnome/nautilus/icon-view/default-zoom-level
@@ -125,7 +125,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/list-view/default-visible-columns
   * /org/gnome/nautilus/list-view/use-tree-view
   * /org/gnome/nautilus/preferences/default-folder-viewer
-  * /org/cinnamon/desktop/interface/text-scaling-factor
 * Conf
   * /etc/lightdm/slick-greeter.conf
   * ~/.config/nemo/desktop-metadata
@@ -214,6 +213,19 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/list-view/default-visible-columns
   * /org/gnome/nautilus/list-view/use-tree-view
   * /org/gnome/nautilus/preferences/default-folder-viewer
+  * /org/nemo/preferences/show-home-icon-toolbar
+  * /org/nemo/preferences/show-reload-icon-toolbar
+  * /org/nemo/preferences/show-open-in-terminal-toolbar
+  * /org/nemo/window-state/sidebar-bookmark-breakpoint
+  * /org/nemo/window-state/sidebar-width
+  * /org/nemo/icon-view/default-zoom-level
+  * /org/nemo/list-view/default-zoom-level
+  * /org/nemo/list-view/default-column-order
+  * /org/nemo/list-view/default-visible-columns
+  * /org/nemo/list-view/search-visible-columns
+  * /org/nemo/preferences/date-format
+  * /org/nemo/preferences/default-folder-viewer
+  * /org/nemo/preferences/ignore-view-metadata
 * List
   * ~/.config/gtk-3.0/bookmarks
 

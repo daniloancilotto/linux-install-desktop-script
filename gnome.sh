@@ -257,6 +257,7 @@ IFS=$'\n'
 gnome_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 gnome_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
 gnome_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
+gnome_bookmarks_count=0
 cp /dev/null "$gnome_bookmarks_list"
 i=0
 while [ $i != ${#gnome_bookmarks[@]} ]
@@ -269,6 +270,7 @@ do
     gnome_bookmark="file://$HOME/${gnome_bookmark// /%20} $gnome_bookmark"
 
     echo "$gnome_bookmark" >> "$gnome_bookmarks_list"
+    let "gnome_bookmarks_count++"
   fi
 
   let "i++"
@@ -279,6 +281,8 @@ gnome_icon_name="Yaru"
 gnome_cursor_name="Yaru"
 gnome_theme_name="Yaru-dark"
 gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
+gnome_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
+gnome_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
 
 dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
@@ -292,6 +296,19 @@ dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
+dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
+dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
+dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
+dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$gnome_bookmarks_count"
+dconf write /org/nemo/window-state/sidebar-width "210"
+dconf write /org/nemo/icon-view/default-zoom-level "'small'"
+dconf write /org/nemo/list-view/default-zoom-level "'small'"
+dconf write /org/nemo/list-view/default-column-order "$gnome_nemo_columns"
+dconf write /org/nemo/list-view/default-visible-columns "$gnome_nemo_columns"
+dconf write /org/nemo/list-view/search-visible-columns "$gnome_nemo_search_columns"
+dconf write /org/nemo/preferences/date-format "'iso'"
+dconf write /org/nemo/preferences/default-folder-viewer "'list-view'"
+dconf write /org/nemo/preferences/ignore-view-metadata "true"
 
 echo "appearances have been configured"
 

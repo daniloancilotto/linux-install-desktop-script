@@ -401,8 +401,6 @@ do
 done
 unset $IFS
 
-dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
-
 cinnamon_icon_name="Mint-Y-Dark"
 cinnamon_icon_name_backup="Mint-Y-Dark"
 cinnamon_cursor_name="DMZ-Black"
@@ -416,6 +414,7 @@ cinnamon_nautilus_columns="['name', 'size', 'type', 'group', 'permissions', 'dat
 
 dconf write /org/cinnamon/desktop/interface/icon-theme "'$cinnamon_icon_name'"
 dconf write /org/cinnamon/desktop/interface/icon-theme-backup "'$cinnamon_icon_name_backup'"
+dconf write /org/cinnamon/desktop/interface/text-scaling-factor "1.1"
 dconf write /org/cinnamon/settings-daemon/plugins/xsettings/buttons-have-icons "true"
 dconf write /org/nemo/desktop/computer-icon-visible "false"
 dconf write /org/nemo/desktop/home-icon-visible "false"
@@ -431,6 +430,7 @@ dconf write /org/cinnamon/desktop/interface/gtk-theme-backup "'$cinnamon_theme_n
 dconf write /org/cinnamon/desktop/wm/preferences/theme "'$cinnamon_theme_name_window'"
 dconf write /org/cinnamon/desktop/wm/preferences/theme-backup "'$cinnamon_theme_name_window_backup'"
 dconf write /org/cinnamon/desktop/wm/preferences/button-layout "'close,minimize,maximize:'"
+dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$cinnamon_bookmarks_count"
 dconf write /org/nemo/window-state/sidebar-width "210"
 dconf write /org/nemo/icon-view/default-zoom-level "'small'"
 dconf write /org/nemo/list-view/default-zoom-level "'small'"
@@ -439,7 +439,6 @@ dconf write /org/nemo/list-view/default-visible-columns "$cinnamon_nemo_columns"
 dconf write /org/nemo/list-view/search-visible-columns "$cinnamon_nemo_search_columns"
 dconf write /org/nemo/preferences/date-format "'iso'"
 dconf write /org/nemo/preferences/default-folder-viewer "'list-view'"
-dconf write /org/nemo/preferences/show-advanced-permissions "true"
 dconf write /org/nemo/preferences/ignore-view-metadata "true"
 dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
@@ -448,7 +447,6 @@ dconf write /org/gnome/nautilus/list-view/default-column-order "$cinnamon_nautil
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$cinnamon_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
-dconf write /org/cinnamon/desktop/interface/text-scaling-factor "1.1"
 
 conf=$'[Greeter]\n'
 conf+=$'show-hostname=true\n'
