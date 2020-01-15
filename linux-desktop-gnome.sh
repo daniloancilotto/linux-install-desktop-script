@@ -168,11 +168,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'mysql-workbench.desktop',
   'postman_postman.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Editors/ name "Edição"
-dconf write /org/gnome/desktop/app-folders/folders/Editors/apps "[
-  'audacity.desktop',
-  'gimp.desktop'
-]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
 dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   '4kvideodownloader.desktop',
@@ -242,7 +237,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
 dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Development',
-  'Editors',
   'Internet',
   'LibreOffice',
   'Settings',
