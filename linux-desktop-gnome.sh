@@ -43,12 +43,12 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v34.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v35.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v25.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v26.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/printerslinux-man.org.v10.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v28.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v29.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v25.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v8.shell-extension.zip" \
@@ -108,7 +108,6 @@ done
 
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
-dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
 dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
@@ -161,7 +160,7 @@ dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Development"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'arduino-arduinoide.desktop',
   'arduino-arduinoide-esp32.desktop',
@@ -169,11 +168,15 @@ dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'mysql-workbench.desktop',
   'postman_postman.desktop'
 ]"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Editors/ name "Edição"
+dconf write /org/gnome/desktop/app-folders/folders/Editors/apps "[
+  'audacity.desktop',
+  'gimp.desktop'
+]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
 dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   '4kvideodownloader.desktop',
   'discord_discord.desktop',
-  'dropbox.desktop',
   'firefox.desktop',
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
@@ -190,16 +193,15 @@ dconf write /org/gnome/desktop/app-folders/folders/LibreOffice/apps "[
   'libreoffice_math.desktop',
   'libreoffice_writer.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Settings/ name "Settings"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Settings/ name "Configurações"
 dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'ca.desrt.dconf-editor.desktop',
   'gnome-control-center.desktop',
   'gnome-session-properties.desktop',
   'nvidia-settings.desktop',
-  'openjdk-8-policytool.desktop',
   'org.gnome.tweaks.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Updaters"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizações"
 dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
   'org.gnome.Software.desktop',
   'software-properties-drivers.desktop',
@@ -207,10 +209,11 @@ dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
   'software-properties-livepatch.desktop',
   'update-manager.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilities"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilitários"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
+  'dropbox.desktop',
   'eog.desktop',
   'furiusisomount.desktop',
   'gnome-language-selector.desktop',
@@ -222,6 +225,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'im-config.desktop',
   'ipscan.desktop',
   'nemo.desktop',
+  'openjdk-8-policytool.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
   'org.gnome.Evince.desktop',
@@ -229,6 +233,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'org.gnome.font-viewer.desktop',
   'org.gnome.PowerStats.desktop',
   'org.gnome.seahorse.Application.desktop',
+  'scrcpy.desktop',
   'yelp.desktop'
 ]"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
@@ -237,6 +242,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
 dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Development',
+  'Editors',
   'Internet',
   'LibreOffice',
   'Settings',
