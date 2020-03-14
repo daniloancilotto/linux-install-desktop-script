@@ -148,15 +148,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME Spices
 * Extensions
-  * [Unite - v35](https://extensions.gnome.org/extension/1287/unite/)
+  * [Unite - v37](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
-  * [OpenWeather - v97](https://extensions.gnome.org/extension/750/openweather/)
-  * [Vitals - v26](https://extensions.gnome.org/extension/1460/vitals/)
-  * [Printers - v10](https://extensions.gnome.org/extension/1218/printers/)
-  * [Lock Keys - v29](https://extensions.gnome.org/extension/36/lock-keys/)
-  * [Dual Shock 4 battery percentage - v4](https://extensions.gnome.org/extension/1283/dual-shock-4-battery-percentage/)
-  * [Sound Input & Output Device Chooser - v25](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-  * [Tweaks in System Menu - v8](https://extensions.gnome.org/extension/1653/tweaks-in-system-menu/)
+  * [OpenWeather - v99](https://extensions.gnome.org/extension/750/openweather/)
+  * [Vitals - v27](https://extensions.gnome.org/extension/1460/vitals/)
+  * [Lock Keys - v36](https://extensions.gnome.org/extension/36/lock-keys/)
+  * [Sound Input & Output Device Chooser - v28](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
   * /org/gnome/shell/extensions/unite/extend-left-box
@@ -173,7 +170,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/openweather/pressure-unit
   * /org/gnome/shell/extensions/openweather/unit
   * /org/gnome/shell/extensions/openweather/wind-speed-unit
-  * /org/gnome/shell/extensions/printers/show-icon
   * /org/gnome/shell/extensions/lockkeys/notifications
   * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
   * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps

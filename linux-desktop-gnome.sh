@@ -43,26 +43,20 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v35.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v37.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v97.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v26.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/printerslinux-man.org.v10.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v29.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/ds4battery%40slie.ru.v4.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v25.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/tweaks-system-menuextensions.gnome-shell.fifi.org.v8.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v99.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v27.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v36.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v28.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
-      "printers@linux-man.org" \
       "lockkeys@vaina.lt" \
-      "ds4battery@slie.ru" \
       "sound-output-device-chooser@kgshank.net" \
-      "tweaks-system-menu@extensions.gnome-shell.fifi.org" \
     )
   fi
   j=0
@@ -94,11 +88,8 @@ do
       'clock-override@gnomeshell.kryogenix.org',
       'openweather-extension@jenslody.de',
       'Vitals@CoreCoding.com',
-      'printers@linux-man.org',
       'lockkeys@vaina.lt',
-      'ds4battery@slie.ru',
-      'sound-output-device-chooser@kgshank.net',
-      'tweaks-system-menu@extensions.gnome-shell.fifi.org'
+      'sound-output-device-chooser@kgshank.net'
     ]"
   fi
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
@@ -125,7 +116,6 @@ dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
 dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
 dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
 dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
-dconf write /org/gnome/shell/extensions/printers/show-icon "'When printers exist'"
 dconf write /org/gnome/shell/extensions/lockkeys/notifications "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/animate-show-apps "false"
