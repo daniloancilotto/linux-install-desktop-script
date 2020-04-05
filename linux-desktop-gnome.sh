@@ -43,11 +43,11 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v37.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v39.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/openweather-extension%40jenslody.de.v99.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v27.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v36.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v100.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v38.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v28.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
@@ -138,17 +138,18 @@ dconf write /org/gnome/shell/favorite-apps "[
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',
-  'gnome-calculator_gnome-calculator.desktop',
+  'gnome-calculator.desktop',
   'org.gnome.gedit.desktop',
   'code_code.desktop',
-  'postman_postman.desktop',
-  'mysql-workbench.desktop'
+  'mysql-workbench.desktop',
+  'postman_postman.desktop'
 ]"
 dconf write /org/gnome/desktop/interface/clock-show-date "true"
 dconf write /org/gnome/desktop/interface/clock-show-seconds "true"
 dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
+dconf write /org/gnome/desktop/search-providers/disable-external "true"
 
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
@@ -161,7 +162,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
 dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   '4kvideodownloader.desktop',
-  'discord_discord.desktop',
   'firefox.desktop',
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
@@ -199,12 +199,9 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
   'dropbox.desktop',
-  'eog.desktop',
-  'furiusisomount.desktop',
   'gnome-language-selector.desktop',
   'gnome-system-log.desktop',
   'gnome-system-monitor.desktop',
-  'gnome-system-monitor_gnome-system-monitor.desktop',
   'gparted.desktop',
   'htop.desktop',
   'im-config.desktop',
@@ -213,6 +210,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'openjdk-8-policytool.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
+  'org.gnome.eog.desktop',
   'org.gnome.Evince.desktop',
   'org.gnome.FileRoller.desktop',
   'org.gnome.font-viewer.desktop',
