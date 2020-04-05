@@ -12,7 +12,7 @@
 
 ### GNOME - Ubuntu
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-shell-extension-prefs gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors gnome-shell-extension-prefs -y
 ```
 
 <br/>
