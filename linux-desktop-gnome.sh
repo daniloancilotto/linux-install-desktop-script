@@ -199,6 +199,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
   'dropbox.desktop',
+  'eog.desktop',
   'gnome-language-selector.desktop',
   'gnome-system-log.desktop',
   'gnome-system-monitor.desktop',
