@@ -150,6 +150,8 @@ dconf write /org/gnome/desktop/interface/show-battery-percentage "true"
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 dconf write /org/gnome/desktop/search-providers/disable-external "true"
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
+dconf write /org/gnome/mutter/dynamic-workspaces "false"
 
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
@@ -184,6 +186,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'gnome-control-center.desktop',
   'gnome-session-properties.desktop',
   'nvidia-settings.desktop',
+  'org.gnome.Extensions.desktop',
   'org.gnome.tweaks.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizações"

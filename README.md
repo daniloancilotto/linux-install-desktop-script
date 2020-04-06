@@ -78,6 +78,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/privacy/remember-app-usage
   * /org/gnome/desktop/privacy/remember-recent-files
   * /org/gnome/desktop/search-providers/disable-external
+  * /org/gnome/desktop/wm/preferences/num-workspaces
+  * /org/gnome/mutter/dynamic-workspaces
   * /org/gnome/desktop/app-folders/folders/*
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
