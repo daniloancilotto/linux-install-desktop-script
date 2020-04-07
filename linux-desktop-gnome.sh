@@ -167,7 +167,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   'firefox.desktop',
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
-  'slack.desktop',
+  'slack_slack.desktop',
   'transmission-gtk.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name "LibreOffice"
