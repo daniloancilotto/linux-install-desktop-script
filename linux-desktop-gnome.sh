@@ -48,6 +48,7 @@ do
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v100.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v38.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v28.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
@@ -56,6 +57,7 @@ do
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
       "lockkeys@vaina.lt" \
+      "user-theme@gnome-shell-extensions.gcampax.github.com" \
       "sound-output-device-chooser@kgshank.net" \
     )
   fi
@@ -89,6 +91,7 @@ do
       'openweather-extension@jenslody.de',
       'Vitals@CoreCoding.com',
       'lockkeys@vaina.lt',
+      'user-theme@gnome-shell-extensions.gcampax.github.com',
       'sound-output-device-chooser@kgshank.net'
     ]"
   fi
@@ -278,6 +281,7 @@ gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions'
 gnome_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 gnome_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
 
+dconf write /org/gnome/shell/extensions/user-theme/name "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
 dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"

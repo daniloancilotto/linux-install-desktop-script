@@ -42,6 +42,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [OpenWeather - v100](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
   * [Lock Keys - v38](https://extensions.gnome.org/extension/36/lock-keys/)
+  * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   * [Sound Input & Output Device Chooser - v28](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
@@ -87,8 +88,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME Appearances
 * Dconf
-  * /org/gnome/desktop/interface/cursor-theme
+  * /org/gnome/shell/extensions/user-theme/name
   * /org/gnome/desktop/interface/icon-theme
+  * /org/gnome/desktop/interface/cursor-theme
   * /org/gnome/desktop/interface/gtk-theme
   * /org/gnome/desktop/wm/preferences/theme
   * /org/gnome/desktop/wm/preferences/button-layout
