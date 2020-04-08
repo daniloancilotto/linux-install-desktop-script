@@ -243,7 +243,7 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
 file="/usr/share/applications/org.gnome.Nautilus.desktop"
 if [ -f "$file" ]
 then
-  sudo sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$file"
+  sudo sed -i '/^Icon=/{h;s/=.*/=user-home/};${x;/^$/{s//Icon=user-home/;H};x}' "$file"
 fi
 
 file="/usr/share/applications/info.desktop"
