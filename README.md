@@ -1,18 +1,18 @@
 # Linux Desktop Script
 
+### Supported Systems
+* [Ubuntu - 20.04](https://ubuntu.com/)
+
 ### Supported Desktops
 * [GNOME - 3.34 ~ 3.36](https://www.gnome.org/)
-
-### Supported Systems
-* [Ubuntu - 19.10 ~ 20.04](https://ubuntu.com/)
 
 <br/>
 
 # Preparing to Run the Script
 
-### GNOME - Ubuntu
+### Ubuntu GNOME
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-software-plugin-snap gnome-software-plugin-flatpak gnome-tweaks chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors gnome-shell-extension-prefs -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
@@ -28,8 +28,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Screenshots
 
-### GNOME - Ubuntu
-![GNOME - Ubuntu](https://user-images.githubusercontent.com/29760411/67599980-8eadbc00-f747-11e9-87dd-6790acd5cb1d.png)
+### Ubuntu GNOME
+![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/67599980-8eadbc00-f747-11e9-87dd-6790acd5cb1d.png)
 
 <br/>
 
@@ -37,7 +37,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### GNOME Spices
 * Extensions
-  * [Unite - v39](https://extensions.gnome.org/extension/1287/unite/)
+  * [Unite - v40](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
   * [OpenWeather - v100](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)

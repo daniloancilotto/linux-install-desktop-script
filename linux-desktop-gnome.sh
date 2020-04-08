@@ -43,7 +43,7 @@ do
   if [ "$gnome_spice" == "extensions" ]
   then
     gnome_spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v39.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v100.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
