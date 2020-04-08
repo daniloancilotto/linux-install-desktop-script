@@ -84,6 +84,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/app-folders/folders/*
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
+  * /usr/share/applications/org.gnome.Nautilus.desktop
   * /usr/share/applications/info.desktop
 
 ### GNOME Appearances
