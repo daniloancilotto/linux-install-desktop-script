@@ -189,9 +189,10 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'org.gnome.Extensions.desktop',
   'org.gnome.tweaks.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizações"
+gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizadores"
 dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
   'org.gnome.Software.desktop',
+  'snap-store_ubuntu-software.desktop',
   'software-properties-drivers.desktop',
   'software-properties-gtk.desktop',
   'software-properties-livepatch.desktop',

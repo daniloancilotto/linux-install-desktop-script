@@ -4,7 +4,7 @@
 * [Ubuntu - 20.04](https://ubuntu.com/)
 
 ### Supported Desktops
-* [GNOME - 3.34 ~ 3.36](https://www.gnome.org/)
+* [GNOME - 3.36](https://www.gnome.org/)
 
 <br/>
 
