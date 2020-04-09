@@ -312,11 +312,19 @@ dconf write /org/gnome/settings-daemon/plugins/power/lid-close-ac-action "'nothi
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
-echo "file-roller -d \$@" > "$HOME/.local/share/nautilus/scripts/Comprimir"
-sudo chmod +x "$HOME/.local/share/nautilus/scripts/Comprimir"
+file="$HOME/.local/share/nautilus/scripts/Comprimir"
+echo "file-roller -d \$@" > "$file"
+sudo chmod +x "$file"
 
-echo "file-roller -h \$@" > "$HOME/.local/share/nautilus/scripts/Extrair aqui"
-sudo chmod +x "$HOME/.local/share/nautilus/scripts/Extrair aqui"
+file="$HOME/.local/share/nautilus/scripts/Extrair aqui"
+echo "file-roller -h \$@" > "$file"
+sudo chmod +x "$file"
+
+file="/etc/profile.d/60-cedilla.sh"
+if [ ! -f "$file" ]
+then
+  echo $'export GTK_IM_MODULE=cedilla\nexport QT_IM_MODULE=cedilla\n' | sudo tee "$file"
+fi
 
 file="/usr/share/X11/xkb/symbols/br"
 sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"

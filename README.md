@@ -117,7 +117,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * Script
-  * ~/.local/share/nautilus/scripts/Comprimir
-  * ~/.local/share/nautilus/scripts/Extrair aqui
+  * ~/.local/share/nautilus/scripts/*
+  * /etc/profile.d/60-cedilla.sh
 * X11
   * /usr/share/X11/xkb/symbols/br
