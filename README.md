@@ -101,6 +101,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/list-view/default-visible-columns
   * /org/gnome/nautilus/list-view/use-tree-view
   * /org/gnome/nautilus/preferences/default-folder-viewer
+  * /org/gnome/gedit/preferences/editor/bracket-matching
+  * /org/gnome/gedit/preferences/editor/highlight-current-line
+  * /org/gnome/gedit/preferences/editor/search-highlighting
 * List
   * ~/.config/gtk-3.0/bookmarks
 * Desktop

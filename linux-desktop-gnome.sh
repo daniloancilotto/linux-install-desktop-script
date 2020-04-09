@@ -291,6 +291,9 @@ dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
+dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
+dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
+dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
 file="/usr/share/applications/org.gnome.Nautilus.desktop"
 if [ -f "$file" ]
