@@ -114,8 +114,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/mutter/attach-modal-dialogs
   * /org/gnome/settings-daemon/plugins/power/lid-close-battery-action
   * /org/gnome/settings-daemon/plugins/power/lid-close-ac-action
-  * /org/gnome/nautilus/compression/default-compression-format
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
+* Script
+  * ~/.local/share/nautilus/scripts/Comprimir
+  * ~/.local/share/nautilus/scripts/Extrair aqui
 * X11
   * /usr/share/X11/xkb/symbols/br
