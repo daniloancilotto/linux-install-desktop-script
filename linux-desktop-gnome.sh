@@ -214,7 +214,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'htop.desktop',
   'im-config.desktop',
   'ipscan.desktop',
-  'nemo.desktop',
   'openjdk-8-policytool.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
@@ -239,12 +238,6 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Updaters',
   'Utilities'
 ]"
-
-file="/usr/share/applications/org.gnome.Nautilus.desktop"
-if [ -f "$file" ]
-then
-  sudo sed -i '/^Icon=/{h;s/=.*/=user-home/};${x;/^$/{s//Icon=user-home/;H};x}' "$file"
-fi
 
 file="/usr/share/applications/info.desktop"
 if [ -f "$file" ]
@@ -284,8 +277,6 @@ gnome_icon_name="Yaru"
 gnome_cursor_name="Yaru"
 gnome_theme_name="Yaru-dark"
 gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
-gnome_nemo_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
-gnome_nemo_search_columns="['name', 'size', 'detailed_type', 'where']"
 
 dconf write /org/gnome/shell/extensions/user-theme/name "'$gnome_theme_name'"
 dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
@@ -300,19 +291,12 @@ dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_
 dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
-dconf write /org/nemo/preferences/show-home-icon-toolbar "true"
-dconf write /org/nemo/preferences/show-reload-icon-toolbar "true"
-dconf write /org/nemo/preferences/show-open-in-terminal-toolbar "true"
-dconf write /org/nemo/window-state/sidebar-bookmark-breakpoint "$gnome_bookmarks_count"
-dconf write /org/nemo/window-state/sidebar-width "210"
-dconf write /org/nemo/icon-view/default-zoom-level "'small'"
-dconf write /org/nemo/list-view/default-zoom-level "'small'"
-dconf write /org/nemo/list-view/default-column-order "$gnome_nemo_columns"
-dconf write /org/nemo/list-view/default-visible-columns "$gnome_nemo_columns"
-dconf write /org/nemo/list-view/search-visible-columns "$gnome_nemo_search_columns"
-dconf write /org/nemo/preferences/date-format "'iso'"
-dconf write /org/nemo/preferences/default-folder-viewer "'list-view'"
-dconf write /org/nemo/preferences/ignore-view-metadata "true"
+
+file="/usr/share/applications/org.gnome.Nautilus.desktop"
+if [ -f "$file" ]
+then
+  sudo sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$file"
+fi
 
 echo "appearances have been configured"
 

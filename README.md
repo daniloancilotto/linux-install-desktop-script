@@ -12,7 +12,7 @@
 
 ### Ubuntu GNOME
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor nemo gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
@@ -84,7 +84,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/app-folders/folders/*
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
-  * /usr/share/applications/org.gnome.Nautilus.desktop
   * /usr/share/applications/info.desktop
 
 ### GNOME Appearances
@@ -102,21 +101,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/list-view/default-visible-columns
   * /org/gnome/nautilus/list-view/use-tree-view
   * /org/gnome/nautilus/preferences/default-folder-viewer
-  * /org/nemo/preferences/show-home-icon-toolbar
-  * /org/nemo/preferences/show-reload-icon-toolbar
-  * /org/nemo/preferences/show-open-in-terminal-toolbar
-  * /org/nemo/window-state/sidebar-bookmark-breakpoint
-  * /org/nemo/window-state/sidebar-width
-  * /org/nemo/icon-view/default-zoom-level
-  * /org/nemo/list-view/default-zoom-level
-  * /org/nemo/list-view/default-column-order
-  * /org/nemo/list-view/default-visible-columns
-  * /org/nemo/list-view/search-visible-columns
-  * /org/nemo/preferences/date-format
-  * /org/nemo/preferences/default-folder-viewer
-  * /org/nemo/preferences/ignore-view-metadata
 * List
   * ~/.config/gtk-3.0/bookmarks
+* Desktop
+  * /usr/share/applications/org.gnome.Nautilus.desktop
 
 ### GNOME Actions
 * Dconf
