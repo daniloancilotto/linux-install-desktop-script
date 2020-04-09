@@ -221,6 +221,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'org.gnome.Evince.desktop',
   'org.gnome.FileRoller.desktop',
   'org.gnome.font-viewer.desktop',
+  'org.gnome.Logs.desktop',
   'org.gnome.PowerStats.desktop',
   'org.gnome.seahorse.Application.desktop',
   'scrcpy.desktop',
