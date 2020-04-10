@@ -313,11 +313,11 @@ dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
 file="$HOME/.local/share/nautilus/scripts/Comprimir"
-echo "file-roller -d \$@" > "$file"
+echo "file-roller -d \"\$@\"" > "$file"
 sudo chmod +x "$file"
 
 file="$HOME/.local/share/nautilus/scripts/Extrair aqui"
-echo "file-roller -h \$@" > "$file"
+echo "file-roller -h \"\$@\"" > "$file"
 sudo chmod +x "$file"
 
 file="/etc/profile.d/60-cedilla.sh"
