@@ -138,7 +138,6 @@ dconf write /org/gnome/shell/favorite-apps "[
   'org.gnome.Nautilus.desktop',
   'google-chrome.desktop',
   'spotify_spotify.desktop',
-  'steam.desktop',
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',
