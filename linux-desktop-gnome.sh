@@ -49,7 +49,7 @@ do
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v38.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v28.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v29.shell-extension.zip" \
     )
     gnome_spice_items_names=( \
       "unite@hardpixel.eu" \

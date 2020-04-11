@@ -43,7 +43,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
   * [Lock Keys - v38](https://extensions.gnome.org/extension/36/lock-keys/)
   * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
-  * [Sound Input & Output Device Chooser - v28](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+  * [Sound Input & Output Device Chooser - v29](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
   * /org/gnome/shell/extensions/unite/extend-left-box
@@ -118,6 +118,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * Script
   * ~/.local/share/nautilus/scripts/*
-  * /etc/profile.d/60-cedilla.sh
+  * /etc/profile.d/im-module-cedilla.sh
 * X11
   * /usr/share/X11/xkb/symbols/br
