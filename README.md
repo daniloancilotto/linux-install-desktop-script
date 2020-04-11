@@ -104,7 +104,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/gedit/preferences/editor/bracket-matching
   * /org/gnome/gedit/preferences/editor/highlight-current-line
   * /org/gnome/gedit/preferences/editor/search-highlighting
-* List
+* Bookmarks
   * ~/.config/gtk-3.0/bookmarks
 * Desktop
   * /usr/share/applications/org.gnome.Nautilus.desktop
@@ -118,6 +118,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * Script
   * ~/.local/share/nautilus/scripts/*
+* Keyboard
   * /etc/profile.d/im-module-cedilla.sh
-* X11
   * /usr/share/X11/xkb/symbols/br
+* Desktop
+  * ~/.config/autostart/ignore-lid-switch-tweak.desktop

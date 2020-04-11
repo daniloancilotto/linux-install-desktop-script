@@ -28,6 +28,9 @@ printLine() {
 
 printLine "GNOME Spices"
 
+autostart_dir="$HOME/.config/autostart"
+mkdir -pv "$autostart_dir"
+
 gnome_spices_dir="$HOME/.local/share/gnome-shell"
 gnome_spices=( \
   "extensions" \
@@ -312,17 +315,23 @@ dconf write /org/gnome/settings-daemon/plugins/power/lid-close-ac-action "'nothi
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
-file="$HOME/.local/share/nautilus/scripts/Comprimir"
-desk=$'#!/bin/bash\n'
-desk+=$'file-roller -d "$@"\n'
-echo "$desk" > "$file"
-chmod +x "$file"
-
-file="$HOME/.local/share/nautilus/scripts/Extrair aqui"
-desk=$'#!/bin/bash\n'
-desk+=$'file-roller -h "$@"\n'
-echo "$desk" > "$file"
-chmod +x "$file"
+script_dir="$HOME/.local/share/nautilus/scripts"
+file="$script_dir/Comprimir"
+if [ ! -f "$file" ]
+then
+  desk=$'#!/bin/bash\n'
+  desk+=$'file-roller -d "$@"\n'
+  echo "$desk" > "$file"
+  chmod +x "$file"
+fi
+file="$script_dir/Extrair aqui"
+if [ ! -f "$file" ]
+then
+  desk=$'#!/bin/bash\n'
+  desk+=$'file-roller -h "$@"\n'
+  echo "$desk" > "$file"
+  chmod +x "$file"
+fi
 
 file="/etc/profile.d/im-module-cedilla.sh"
 if [ ! -f "$file" ]
@@ -333,9 +342,21 @@ then
   echo "$conf" | sudo tee "$file"
   sudo chmod +x "$file"
 fi
-
 file="/usr/share/X11/xkb/symbols/br"
-sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
+fi
+
+file="$autostart_dir/ignore-lid-switch-tweak.desktop"
+if [ ! -f "$file" ]
+then
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=ignore-lid-switch-tweak\n'
+  desk+=$'Exec=/usr/lib/gnome-tweak-tool/gnome-tweak-tool-lid-inhibitor\n'
+  desk+=$'Type=Application\n'
+  echo "$desk" > "$file"
+fi
 
 echo "actions have been configured"
 
