@@ -61,6 +61,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/openweather/unit
   * /org/gnome/shell/extensions/openweather/wind-speed-unit
   * /org/gnome/shell/extensions/lockkeys/notifications
+  * /org/gnome/shell/extensions/dash-to-dock/dock-fixed
+  * /org/gnome/shell/extensions/dash-to-dock/extend-height
   * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
   * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
   * /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme
