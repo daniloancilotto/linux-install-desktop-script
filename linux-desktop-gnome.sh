@@ -95,6 +95,7 @@ do
       'sound-output-device-chooser@kgshank.net'
     ]"
   fi
+
   dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
 
   let "i++"
@@ -313,17 +314,25 @@ dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
 file="$HOME/.local/share/nautilus/scripts/Comprimir"
-echo "file-roller -d \"\$@\"" > "$file"
-sudo chmod +x "$file"
+desk=$'#!/bin/bash\n'
+desk+=$'file-roller -d "$@"\n'
+echo "$desk" > "$file"
+chmod +x "$file"
 
 file="$HOME/.local/share/nautilus/scripts/Extrair aqui"
-echo "file-roller -h \"\$@\"" > "$file"
-sudo chmod +x "$file"
+desk=$'#!/bin/bash\n'
+desk+=$'file-roller -h "$@"\n'
+echo "$desk" > "$file"
+chmod +x "$file"
 
-file="/etc/profile.d/60-cedilla.sh"
+file="/etc/profile.d/im-module-cedilla.sh"
 if [ ! -f "$file" ]
 then
-  echo $'export GTK_IM_MODULE=cedilla\nexport QT_IM_MODULE=cedilla\n' | sudo tee "$file"
+  conf=$'#!/bin/bash\n'
+  conf+=$'export GTK_IM_MODULE=cedilla\n'
+  conf+=$'export QT_IM_MODULE=cedilla\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
 fi
 
 file="/usr/share/X11/xkb/symbols/br"
