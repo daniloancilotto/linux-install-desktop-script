@@ -203,12 +203,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'org.gnome.tweaks.desktop',
   'software-properties-gtk.desktop'
 ]"
-gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizadores"
-dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
-  'org.gnome.Software.desktop',
-  'snap-store_ubuntu-software.desktop',
-  'update-manager.desktop'
-]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilitários"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
@@ -228,15 +222,14 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'scrcpy.desktop',
   'yelp.desktop'
 ]"
-dconf write /org/gnome/desktop/app-folders/folders/Utilities/categories "[]"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
+dconf reset /org/gnome/desktop/app-folders/folders/Utilities/categories
 
 dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Development',
   'Internet',
   'LibreOffice',
   'Settings',
-  'Updaters',
   'Utilities'
 ]"
 
@@ -313,6 +306,12 @@ file="/usr/share/applications/org.gnome.Nautilus.desktop"
 if [ -f "$file" ]
 then
   sudo sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$file"
+fi
+file="/var/lib/snapd/desktop/applications/snap-store_ubuntu-software.desktop"
+if [ -f "$file" ]
+then
+  sudo sed -i '/^Name=/{h;s/=.*/=Snap Store/};${x;/^$/{s//Name=Snap Store/;H};x}' "$file"
+  sudo sed -i '/^Icon=/{h;s/=.*/=snap-store/};${x;/^$/{s//Icon=snap-store/;H};x}' "$file"
 fi
 
 echo "appearances have been configured"
