@@ -39,7 +39,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Extensions
   * [Unite - v40](https://extensions.gnome.org/extension/1287/unite/)
   * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
-  * [OpenWeather - v100](https://extensions.gnome.org/extension/750/openweather/)
+  * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
   * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
   * [Lock Keys - v38](https://extensions.gnome.org/extension/36/lock-keys/)
   * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
@@ -83,7 +83,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/search-providers/disable-external
   * /org/gnome/desktop/wm/preferences/num-workspaces
   * /org/gnome/mutter/dynamic-workspaces
-  * /org/gnome/desktop/app-folders/folders/*
+  * /org/gnome/desktop/app-folders/folders/Development
+  * /org/gnome/desktop/app-folders/folders/Internet
+  * /org/gnome/desktop/app-folders/folders/LibreOffice
+  * /org/gnome/desktop/app-folders/folders/Settings
+  * /org/gnome/desktop/app-folders/folders/Utilities
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
   * /usr/share/applications/htop.desktop
@@ -125,7 +129,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * Script
-  * ~/.local/share/nautilus/scripts/*
+  * ~/.local/share/nautilus/scripts/Comprimir
+  * ~/.local/share/nautilus/scripts/Extrair aqui
 * Keyboard
   * /etc/profile.d/im-module-cedilla.sh
   * /usr/share/X11/xkb/symbols/br
