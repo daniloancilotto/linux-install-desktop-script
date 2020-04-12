@@ -172,10 +172,12 @@ dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Internet/ name "Internet"
 dconf write /org/gnome/desktop/app-folders/folders/Internet/apps "[
   '4kvideodownloader.desktop',
+  'dropbox.desktop',
   'firefox.desktop',
   'freerapiddownloader.desktop',
   'google-chrome.desktop',
   'slack_slack.desktop',
+  'spotify_spotify.desktop',
   'transmission-gtk.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/LibreOffice/ name "LibreOffice"
@@ -192,34 +194,29 @@ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folder
 dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'ca.desrt.dconf-editor.desktop',
   'gnome-control-center.desktop',
+  'gnome-language-selector.desktop',
   'gnome-session-properties.desktop',
+  'im-config.desktop',
   'nvidia-settings.desktop',
   'org.gnome.Extensions.desktop',
-  'org.gnome.tweaks.desktop'
+  'org.gnome.seahorse.Application.desktop',
+  'org.gnome.tweaks.desktop',
+  'software-properties-gtk.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Updaters/ name "Atualizadores"
 dconf write /org/gnome/desktop/app-folders/folders/Updaters/apps "[
   'org.gnome.Software.desktop',
   'snap-store_ubuntu-software.desktop',
-  'software-properties-drivers.desktop',
-  'software-properties-gtk.desktop',
-  'software-properties-livepatch.desktop',
   'update-manager.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilitários"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
-  'dropbox.desktop',
   'eog.desktop',
-  'gnome-language-selector.desktop',
   'gnome-system-log.desktop',
-  'gnome-system-monitor.desktop',
   'gparted.desktop',
-  'htop.desktop',
-  'im-config.desktop',
   'ipscan.desktop',
-  'openjdk-8-policytool.desktop',
   'org.gnome.Characters.desktop',
   'org.gnome.DiskUtility.desktop',
   'org.gnome.eog.desktop',
@@ -228,14 +225,12 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'org.gnome.font-viewer.desktop',
   'org.gnome.Logs.desktop',
   'org.gnome.PowerStats.desktop',
-  'org.gnome.seahorse.Application.desktop',
   'scrcpy.desktop',
   'yelp.desktop'
 ]"
-dconf write /org/gnome/desktop/app-folders/folders/Utilities/excluded-apps "[
-  'org.gnome.Screenshot.desktop'
-]"
+dconf write /org/gnome/desktop/app-folders/folders/Utilities/categories "[]"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
+
 dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Development',
   'Internet',
@@ -245,11 +240,22 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Utilities'
 ]"
 
-file="/usr/share/applications/info.desktop"
-if [ -f "$file" ]
-then
-  sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
-fi
+hide_apps=( \
+  "/usr/share/applications/htop.desktop" \
+  "/usr/share/applications/info.desktop" \
+  "/usr/share/applications/openjdk-8-policytool.desktop" \
+  "/usr/share/applications/software-properties-drivers.desktop" \
+  "/usr/share/applications/software-properties-livepatch.desktop" \
+)
+i=0
+while [ $i != ${#hide_apps[@]} ]
+do
+  file="${hide_apps[$i]}"
+  if [ -f "$file" ]
+  then
+    sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
+  fi
+done
 
 echo "spices have been configured"
 

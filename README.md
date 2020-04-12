@@ -86,7 +86,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/app-folders/folders/*
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
+  * /usr/share/applications/htop.desktop
   * /usr/share/applications/info.desktop
+  * /usr/share/applications/openjdk-8-policytool.desktop
+  * /usr/share/applications/software-properties-drivers.desktop
+  * /usr/share/applications/software-properties-livepatch.desktop
 
 ### GNOME Appearances
 * Dconf
