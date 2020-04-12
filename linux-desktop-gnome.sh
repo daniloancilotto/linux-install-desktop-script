@@ -255,6 +255,8 @@ do
   then
     sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
   fi
+
+  let "i++"
 done
 
 echo "spices have been configured"
