@@ -209,6 +209,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'cpu-x.desktop',
   'eog.desktop',
   'gnome-system-log.desktop',
+  'gnome-system-monitor.desktop',
   'gparted.desktop',
   'ipscan.desktop',
   'org.gnome.Characters.desktop',
@@ -219,8 +220,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'org.gnome.font-viewer.desktop',
   'org.gnome.Logs.desktop',
   'org.gnome.PowerStats.desktop',
-  'scrcpy.desktop',
-  'yelp.desktop'
+  'scrcpy.desktop'
 ]"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/translate "false"
 dconf reset /org/gnome/desktop/app-folders/folders/Utilities/categories
@@ -239,6 +239,7 @@ hide_apps=( \
   "/usr/share/applications/openjdk-8-policytool.desktop" \
   "/usr/share/applications/software-properties-drivers.desktop" \
   "/usr/share/applications/software-properties-livepatch.desktop" \
+  "/usr/share/applications/yelp.desktop" \
 )
 i=0
 while [ $i != ${#hide_apps[@]} ]
