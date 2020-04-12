@@ -12,7 +12,7 @@
 
 ### Ubuntu GNOME
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-software gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
