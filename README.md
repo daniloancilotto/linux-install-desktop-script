@@ -29,7 +29,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Ubuntu GNOME
-![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/67599980-8eadbc00-f747-11e9-87dd-6790acd5cb1d.png)
+![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/79165085-cae9dd00-7db8-11ea-85f7-d10d779292e1.png)
 
 <br/>
 
