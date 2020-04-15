@@ -90,12 +90,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/desktop/app-folders/folders/Utilities
   * /org/gnome/desktop/app-folders/folder-children
 * Desktop
-  * /usr/share/applications/htop.desktop
-  * /usr/share/applications/info.desktop
-  * /usr/share/applications/openjdk-8-policytool.desktop
-  * /usr/share/applications/software-properties-drivers.desktop
-  * /usr/share/applications/software-properties-livepatch.desktop
-  * /usr/share/applications/yelp.desktop
+  * ~/.local/share/applications/htop.desktop
+  * ~/.local/share/applications/info.desktop
+  * ~/.local/share/applications/openjdk-8-policytool.desktop
+  * ~/.local/share/applications/software-properties-drivers.desktop
+  * ~/.local/share/applications/software-properties-livepatch.desktop
+  * ~/.local/share/applications/yelp.desktop
 
 ### GNOME Appearances
 * Dconf
@@ -118,8 +118,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Bookmarks
   * ~/.config/gtk-3.0/bookmarks
 * Desktop
-  * /usr/share/applications/org.gnome.Nautilus.desktop
-  * /var/lib/snapd/desktop/applications/snap-store_ubuntu-software.desktop
+  * ~/.local/share/applications/org.gnome.Nautilus.desktop
+  * ~/.local/share/applications/snap-store_ubuntu-software.desktop
 
 ### GNOME Actions
 * Dconf
@@ -128,11 +128,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/settings-daemon/plugins/power/lid-close-ac-action
   * /org/gnome/nautilus/preferences/executable-text-activation
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
+* Autostart
+  * ~/.config/autostart/ignore-lid-switch-tweak.desktop
 * Script
   * ~/.local/share/nautilus/scripts/Comprimir
   * ~/.local/share/nautilus/scripts/Extrair aqui
 * Keyboard
   * /etc/profile.d/im-module-cedilla.sh
   * /usr/share/X11/xkb/symbols/br
-* Desktop
-  * ~/.config/autostart/ignore-lid-switch-tweak.desktop

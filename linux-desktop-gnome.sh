@@ -28,6 +28,10 @@ printLine() {
 
 printLine "GNOME Spices"
 
+desktop_dir="$HOME/.local/share/applications"
+mkdir -pv "$desktop_dir"
+script_dir="$HOME/.local/share/nautilus/scripts"
+mkdir -pv "$script_dir"
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
 
@@ -233,21 +237,27 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Utilities'
 ]"
 
-hide_apps=( \
-  "/usr/share/applications/htop.desktop" \
-  "/usr/share/applications/info.desktop" \
-  "/usr/share/applications/openjdk-8-policytool.desktop" \
-  "/usr/share/applications/software-properties-drivers.desktop" \
-  "/usr/share/applications/software-properties-livepatch.desktop" \
-  "/usr/share/applications/yelp.desktop" \
+files=( \
+  "htop.desktop" \
+  "info.desktop" \
+  "openjdk-8-policytool.desktop" \
+  "software-properties-drivers.desktop" \
+  "software-properties-livepatch.desktop" \
+  "yelp.desktop" \
 )
 i=0
-while [ $i != ${#hide_apps[@]} ]
+while [ $i != ${#files[@]} ]
 do
-  file="${hide_apps[$i]}"
-  if [ -f "$file" ]
+  file="${files[$i]}"
+  origin_file="/usr/share/applications/$file"
+  target_file="$desktop_dir/$file"
+  if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
   then
-    sudo sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$file"
+    cp "$origin_file" "$target_file"
+  fi
+  if [ -f "$target_file" ]
+  then
+    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
   fi
 
   let "i++"
@@ -303,16 +313,29 @@ dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
-file="/usr/share/applications/org.gnome.Nautilus.desktop"
-if [ -f "$file" ]
+file="org.gnome.Nautilus.desktop"
+origin_file="/usr/share/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
 then
-  sudo sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$file"
+  cp "$origin_file" "$target_file"
 fi
-file="/var/lib/snapd/desktop/applications/snap-store_ubuntu-software.desktop"
-if [ -f "$file" ]
+if [ -f "$target_file" ]
 then
-  sudo sed -i '/^Name=/{h;s/=.*/=Snap Store/};${x;/^$/{s//Name=Snap Store/;H};x}' "$file"
-  sudo sed -i '/^Icon=/{h;s/=.*/=snap-store/};${x;/^$/{s//Icon=snap-store/;H};x}' "$file"
+  sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$target_file"
+fi
+
+file="snap-store_ubuntu-software.desktop"
+origin_file="/var/lib/snapd/desktop/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
+then
+  cp "$origin_file" "$target_file"
+fi
+if [ -f "$target_file" ]
+then
+  sed -i '/^Name=/{h;s/=.*/=Snap Store/};${x;/^$/{s//Name=Snap Store/;H};x}' "$target_file"
+  sed -i '/^Icon=/{h;s/=.*/=snap-store/};${x;/^$/{s//Icon=snap-store/;H};x}' "$target_file"
 fi
 
 echo "appearances have been configured"
@@ -325,7 +348,16 @@ dconf write /org/gnome/settings-daemon/plugins/power/lid-close-ac-action "'nothi
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
 
-script_dir="$HOME/.local/share/nautilus/scripts"
+file="$autostart_dir/ignore-lid-switch-tweak.desktop"
+if [ ! -f "$file" ]
+then
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Name=ignore-lid-switch-tweak\n'
+  desk+=$'Exec=/usr/lib/gnome-tweak-tool/gnome-tweak-tool-lid-inhibitor\n'
+  desk+=$'Type=Application\n'
+  echo "$desk" > "$file"
+fi
+
 file="$script_dir/Comprimir"
 if [ ! -f "$file" ]
 then
@@ -356,16 +388,6 @@ file="/usr/share/X11/xkb/symbols/br"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
-fi
-
-file="$autostart_dir/ignore-lid-switch-tweak.desktop"
-if [ ! -f "$file" ]
-then
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Name=ignore-lid-switch-tweak\n'
-  desk+=$'Exec=/usr/lib/gnome-tweak-tool/gnome-tweak-tool-lid-inhibitor\n'
-  desk+=$'Type=Application\n'
-  echo "$desk" > "$file"
 fi
 
 echo "actions have been configured"
