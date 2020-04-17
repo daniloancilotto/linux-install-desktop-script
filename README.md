@@ -44,7 +44,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [Lock Keys - v38](https://extensions.gnome.org/extension/36/lock-keys/)
   * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   * [Sound Input & Output Device Chooser - v29](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-  * [Applications Overview Tooltip - v7](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
+  * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
   * /org/gnome/shell/extensions/unite/extend-left-box
