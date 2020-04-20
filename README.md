@@ -50,6 +50,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/shell/extensions/unite/extend-left-box
   * /org/gnome/shell/extensions/unite/use-system-fonts
   * /org/gnome/shell/extensions/unite/window-buttons-theme
+  * /org/gnome/shell/extensions/unite/desktop-name-text
   * /org/gnome/shell/extensions/clock_override/override-string
   * /org/gnome/shell/extensions/vitals/alphabetize
   * /org/gnome/shell/extensions/vitals/position-in-panel

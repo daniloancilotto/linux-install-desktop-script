@@ -114,6 +114,7 @@ done
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
+dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
 dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
 dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
 dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
