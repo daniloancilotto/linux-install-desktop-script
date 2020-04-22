@@ -47,10 +47,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
 * Dconf
   * /org/gnome/shell/enabled-extensions
+  * /org/gnome/shell/extensions/unite/desktop-name-text
+  * /org/gnome/shell/extensions/unite/show-window-title
+  * /org/gnome/shell/extensions/unite/window-buttons-placement
+  * /org/gnome/shell/extensions/unite/window-buttons-theme
   * /org/gnome/shell/extensions/unite/extend-left-box
   * /org/gnome/shell/extensions/unite/use-system-fonts
-  * /org/gnome/shell/extensions/unite/window-buttons-theme
-  * /org/gnome/shell/extensions/unite/desktop-name-text
   * /org/gnome/shell/extensions/clock_override/override-string
   * /org/gnome/shell/extensions/vitals/alphabetize
   * /org/gnome/shell/extensions/vitals/position-in-panel
