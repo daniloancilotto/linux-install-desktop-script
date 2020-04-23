@@ -26,13 +26,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 <br/>
 
-# Screenshots
-
-### Ubuntu GNOME
-![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/79165085-cae9dd00-7db8-11ea-85f7-d10d779292e1.png)
-
-<br/>
-
 # Installations and Configurations
 
 ### GNOME Spices
@@ -124,7 +117,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * ~/.config/gtk-3.0/bookmarks
 * Desktop
   * ~/.local/share/applications/org.gnome.Nautilus.desktop
-  * ~/.local/share/applications/snap-store_ubuntu-software.desktop
 
 ### GNOME Actions
 * Dconf
@@ -141,3 +133,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Keyboard
   * /etc/profile.d/im-module-cedilla.sh
   * /usr/share/X11/xkb/symbols/br
+
+<br/>
+
+# Screenshots
+
+### Ubuntu GNOME
+![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/79165085-cae9dd00-7db8-11ea-85f7-d10d779292e1.png)
