@@ -117,6 +117,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * ~/.config/gtk-3.0/bookmarks
 * Desktop
   * ~/.local/share/applications/org.gnome.Nautilus.desktop
+  * ~/.local/share/applications/snap-store_ubuntu-software.desktop
 
 ### GNOME Actions
 * Dconf

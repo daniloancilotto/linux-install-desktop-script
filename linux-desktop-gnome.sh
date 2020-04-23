@@ -175,7 +175,6 @@ dconf write /org/gnome/mutter/dynamic-workspaces "false"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'arduino-arduinoide.desktop',
-  'arduino-arduinoide-esp32.desktop',
   'code_code.desktop',
   'mysql-workbench.desktop',
   'postman_postman.desktop'
@@ -330,6 +329,19 @@ fi
 if [ -f "$target_file" ]
 then
   sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$target_file"
+fi
+
+file="snap-store_ubuntu-software.desktop"
+origin_file="/var/lib/snapd/desktop/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
+then
+  cp "$origin_file" "$target_file"
+fi
+if [ -f "$target_file" ]
+then
+  sed -i '/^Name=/{h;s/=.*/=Snap Store/};${x;/^$/{s//Name=Snap Store/;H};x}' "$target_file"
+  sed -i '/^Icon=/{h;s/=.*/=snap-store/};${x;/^$/{s//Icon=snap-store/;H};x}' "$target_file"
 fi
 
 echo "appearances have been configured"
