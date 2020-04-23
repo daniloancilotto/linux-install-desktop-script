@@ -12,7 +12,7 @@
 
 ### Ubuntu GNOME
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-software gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
@@ -117,7 +117,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * ~/.config/gtk-3.0/bookmarks
 * Desktop
   * ~/.local/share/applications/org.gnome.Nautilus.desktop
-  * ~/.local/share/applications/snap-store_ubuntu-software.desktop
 
 ### GNOME Actions
 * Dconf
