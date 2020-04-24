@@ -113,6 +113,7 @@ done
 
 dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
+dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-placement "'last'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
