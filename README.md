@@ -139,4 +139,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Ubuntu GNOME
-![Ubuntu GNOME](https://user-images.githubusercontent.com/29760411/79165085-cae9dd00-7db8-11ea-85f7-d10d779292e1.png)
+![2020-04-23 21-39-36](https://user-images.githubusercontent.com/29760411/80163261-ff754a00-85ab-11ea-807c-3b3247ab1491.png)
+![2020-04-23 21-39-50](https://user-images.githubusercontent.com/29760411/80163264-00a67700-85ac-11ea-9ee5-17345bb6b485.png)
+![2020-04-23 21-45-14](https://user-images.githubusercontent.com/29760411/80163265-013f0d80-85ac-11ea-8fee-5adff72572e5.png)
