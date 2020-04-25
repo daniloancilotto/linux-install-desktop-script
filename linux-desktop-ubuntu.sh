@@ -30,7 +30,7 @@ printLine() {
   echo ""
 }
 
-desktopHide() {
+desktopConf() {
   source_file="/usr/share/applications/$2"
   target_file="$1/$2"
   if [ -f "$source_file" ] && [ ! -f "$target_file" ]
@@ -39,7 +39,7 @@ desktopHide() {
   fi
   if [ -f "$target_file" ]
   then
-    crudini --set "$target_file" "Desktop Entry" "NoDisplay" "true"
+    crudini --set "$target_file" "Desktop Entry" "$3" "$4"
   fi
 }
 
@@ -302,10 +302,10 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Utilities'
 ]"
 
-desktopHide "$desktop_dir" "info.desktop"
-desktopHide "$desktop_dir" "software-properties-drivers.desktop"
-desktopHide "$desktop_dir" "software-properties-livepatch.desktop"
-desktopHide "$desktop_dir" "yelp.desktop"
+desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "software-properties-drivers.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "software-properties-livepatch.desktop" "NoDisplay" "true"
+desktopConf "$desktop_dir" "yelp.desktop" "NoDisplay" "true"
 
 echo "spices have been configured"
 
@@ -333,17 +333,7 @@ dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
-file="org.gnome.Nautilus.desktop"
-source_file="/usr/share/applications/$file"
-target_file="$desktop_dir/$file"
-if [ -f "$source_file" ] && [ ! -f "$target_file" ]
-then
-  cp "$source_file" "$target_file"
-fi
-if [ -f "$target_file" ]
-then
-  crudini --set "$target_file" "Desktop Entry" "Icon" "folder"
-fi
+desktopConf "$desktop_dir" "org.gnome.Nautilus.desktop" "Icon" "folder"
 
 IFS=$'\n'
 ignored_bookmarks=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
