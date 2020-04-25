@@ -35,7 +35,7 @@ mkdir -pv "$script_dir"
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
 
-printLine "GNOME Spices"
+printLine "Spices"
 
 gnome_spices_dir="$HOME/.local/share/gnome-shell"
 gnome_spices=( \
@@ -275,7 +275,7 @@ done
 
 echo "spices have been configured"
 
-printLine "GNOME Appearances"
+printLine "Appearances"
 
 gnome_icon_name="Yaru"
 gnome_cursor_name="Yaru"
@@ -353,7 +353,7 @@ fi
 
 echo "appearances have been configured"
 
-printLine "GNOME Actions"
+printLine "Actions"
 
 dconf write /org/gnome/mutter/attach-modal-dialogs "false"
 dconf write /org/gnome/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
