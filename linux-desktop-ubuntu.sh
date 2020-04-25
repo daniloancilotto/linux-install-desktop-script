@@ -58,11 +58,11 @@ mkdir -pv "$autostart_dir"
 printLine "Wget"
 sudo apt install wget -y
 
-printLine "Crudini"
-sudo apt install crudini -y
-
 printLine "Zip"
 sudo apt install zip unzip -y
+
+printLine "Crudini"
+sudo apt install crudini -y
 
 printLine "Gtop"
 sudo apt install gir1.2-gtop-2.0 -y
