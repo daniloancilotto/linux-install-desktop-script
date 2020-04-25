@@ -269,6 +269,7 @@ gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folder
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
   'cpu-x.desktop',
+  'cpu-x-root.desktop',
   'eog.desktop',
   'gnome-system-log.desktop',
   'gnome-system-monitor.desktop',
