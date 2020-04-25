@@ -1,35 +1,50 @@
 # Linux Desktop Script
 
+### Supported Envirionments
+* [GNOME Shell - 3.36](https://www.gnome.org/)
+
 ### Supported Systems
 * [Ubuntu - 20.04](https://ubuntu.com/)
 
-### Supported Desktops
-* [GNOME - 3.36](https://www.gnome.org/)
+### Supported Architectures
+* x86_64 (amd64)
 
 <br/>
 
 # Preparing to Run the Script
 
-### Ubuntu GNOME
+### Ubuntu
 ```bash
-sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs qt5ct chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl -y
 ```
 
 <br/>
 
 # Running the Script
 
-### GNOME
+### Ubuntu
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/linux-desktop-gnome.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/linux-desktop-ubuntu.sh | bash
 ```
 
 <br/>
 
 # Installations and Configurations
 
-### GNOME
-* Spices 
+### Ubuntu
+* Wget - Latest
+* Zip - Latest
+* Gtop - Latest
+* Lm Sensors - Latest
+* X11 Utils - Latest
+* Qt5 Settings - Latest
+* Dconf Editor - Latest
+* GNOME Tweaks - Latest
+* GNOME Extensions - Latest
+  * Integrations - Latest
+    * Google Chrome
+    * Mozilla Firefox
+* GNOME Spices 
   * Extensions
     * [Unite - v40](https://extensions.gnome.org/extension/1287/unite/)
     * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
@@ -96,7 +111,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * ~/.local/share/applications/software-properties-drivers.desktop
     * ~/.local/share/applications/software-properties-livepatch.desktop
     * ~/.local/share/applications/yelp.desktop
-* Appearances
+* GNOME Appearances
   * Dconf
     * /org/gnome/shell/extensions/user-theme/name
     * /org/gnome/desktop/interface/icon-theme
@@ -122,7 +137,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * ~/.config/qt5ct/qt5ct.conf
   * Environment
     * /etc/profile.d/qpa-platformtheme-qt5ct.sh
-* Actions
+* GNOME Actions
   * Dconf
     * /org/gnome/mutter/attach-modal-dialogs
     * /org/gnome/settings-daemon/plugins/power/lid-close-battery-action
@@ -143,7 +158,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Screenshots
 
-### Ubuntu GNOME
+### Ubuntu
 ![2020-04-23 21-39-36](https://user-images.githubusercontent.com/29760411/80163261-ff754a00-85ab-11ea-807c-3b3247ab1491.png)
 ![2020-04-23 21-39-50](https://user-images.githubusercontent.com/29760411/80163264-00a67700-85ac-11ea-9ee5-17345bb6b485.png)
 ![2020-04-23 21-52-12](https://user-images.githubusercontent.com/29760411/80163534-d608ee00-85ac-11ea-8d63-1d385c4ed6ef.png)

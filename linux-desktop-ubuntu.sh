@@ -1,9 +1,13 @@
 #!/bin/bash
+envirionment="`gnome-shell --version`"
 system="`lsb_release -sd`"
+architecture="`uname -m`"
 
-echo "LINUX DESKTOP (GNOME)"
+echo "LINUX DESKTOP (UBUNTU)"
 echo "Author: Danilo Ancilotto"
+echo "Envirionment: $envirionment"
 echo "System: $system"
+echo "Architecture: $architecture"
 echo "Home: $HOME"
 echo "User: $USER"
 
@@ -35,23 +39,54 @@ mkdir -pv "$script_dir"
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
 
-printLine "Spices"
+printLine "Update"
+sudo apt update
 
-gnome_spices_dir="$HOME/.local/share/gnome-shell"
-gnome_spices=( \
+printLine "Wget"
+sudo apt install wget -y
+
+printLine "Zip"
+sudo apt install zip unzip -y
+
+printLine "Gtop"
+sudo apt install gir1.2-gtop-2.0 -y
+
+printLine "Lm Sensors"
+sudo apt install lm-sensors -y
+
+printLine "X11 Utils"
+sudo apt install x11-utils -y
+
+printLine "Qt5 Settings"
+sudo apt install qt5ct -y
+
+printLine "Dconf Editor"
+sudo apt install dconf-editor dconf-cli -y
+
+printLine "GNOME Tweaks"
+sudo apt install gnome-tweaks -y
+
+printLine "GNOME Extensions"
+sudo apt install gnome-shell-extension-prefs -y
+sudo apt install chrome-gnome-shell -y
+
+printLine "GNOME Spices"
+
+spices_dir="$HOME/.local/share/gnome-shell"
+spices=( \
   "extensions" \
 )
 i=0
-while [ $i != ${#gnome_spices[@]} ]
+while [ $i != ${#spices[@]} ]
 do
-  gnome_spice="${gnome_spices[$i]}"
+  spice="${spices[$i]}"
 
-  gnome_spice_items_dir="$gnome_spices_dir/$gnome_spice"
-  gnome_spice_items=()
-  gnome_spice_items_names=()
-  if [ "$gnome_spice" == "extensions" ]
+  spice_items_dir="$spices_dir/$spice"
+  spice_items=()
+  spice_items_names=()
+  if [ "$spice" == "extensions" ]
   then
-    gnome_spice_items=( \
+    spice_items=( \
       "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
@@ -61,7 +96,7 @@ do
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v29.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
     )
-    gnome_spice_items_names=( \
+    spice_items_names=( \
       "unite@hardpixel.eu" \
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
@@ -73,30 +108,30 @@ do
     )
   fi
   j=0
-  while [ $j != ${#gnome_spice_items[@]} ]
+  while [ $j != ${#spice_items[@]} ]
   do
-    gnome_spice_item="${gnome_spice_items[$j]}"
+    spice_item="${spice_items[$j]}"
 
-    gnome_spice_item_file="${gnome_spice_item##*/}"
-    gnome_spice_item_name="${gnome_spice_items_names[$j]}"
-    if [ ! -d "$gnome_spice_items_dir/$gnome_spice_item_name" ]
+    spice_item_file="${spice_item##*/}"
+    spice_item_name="${spice_items_names[$j]}"
+    if [ ! -d "$spice_items_dir/$spice_item_name" ]
     then
-      mkdir -pv "$gnome_spice_items_dir"
-      file="$gnome_spice_items_dir/$gnome_spice_item_file"
-      wget -O "$file" "${gnome_spice_item}"
-      unzip -q "$file" -d "$gnome_spice_items_dir/$gnome_spice_item_name"
+      mkdir -pv "$spice_items_dir"
+      file="$spice_items_dir/$spice_item_file"
+      wget -O "$file" "${spice_item}"
+      unzip -q "$file" -d "$spice_items_dir/$spice_item_name"
       rm -fv "$file"
     else
-      echo "$gnome_spice_item_name is already installed"
+      echo "$spice_item_name is already installed"
     fi
 
     let "j++"
   done
 
-  gnome_spice_dconf="'[]'"
-  if [ "$gnome_spice" == "extensions" ]
+  spice_dconf="'[]'"
+  if [ "$spice" == "extensions" ]
   then
-    gnome_spice_dconf="[
+    spice_dconf="[
       'unite@hardpixel.eu',
       'clock-override@gnomeshell.kryogenix.org',
       'openweather-extension@jenslody.de',
@@ -108,7 +143,7 @@ do
     ]"
   fi
 
-  dconf write /org/gnome/shell/enabled-$gnome_spice "$gnome_spice_dconf"
+  dconf write /org/gnome/shell/enabled-$spice "$spice_dconf"
 
   let "i++"
 done
@@ -275,24 +310,24 @@ done
 
 echo "spices have been configured"
 
-printLine "Appearances"
+printLine "GNOME Appearances"
 
-gnome_icon_name="Yaru"
-gnome_cursor_name="Yaru"
-gnome_theme_name="Yaru-dark"
-gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
+icon_theme="Yaru"
+cursor_theme="Yaru"
+gtk_theme="Yaru-dark"
+nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 
-dconf write /org/gnome/shell/extensions/user-theme/name "'$gnome_theme_name'"
-dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
-dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
-dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
-dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
+dconf write /org/gnome/shell/extensions/user-theme/name "'$gtk_theme'"
+dconf write /org/gnome/desktop/interface/icon-theme "'$icon_theme'"
+dconf write /org/gnome/desktop/interface/cursor-theme "'$cursor_theme'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'$gtk_theme'"
+dconf write /org/gnome/desktop/wm/preferences/theme "'$gtk_theme'"
 dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
 dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
 dconf write /org/gnome/nautilus/list-view/default-zoom-level "'standard'"
-dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_columns"
-dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
+dconf write /org/gnome/nautilus/list-view/default-column-order "$nautilus_columns"
+dconf write /org/gnome/nautilus/list-view/default-visible-columns "$nautilus_columns"
 dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
 dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
@@ -312,21 +347,21 @@ then
 fi
 
 IFS=$'\n'
-gnome_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
-gnome_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
-gnome_bookmarks_list="$HOME/.config/gtk-3.0/bookmarks"
-cp /dev/null "$gnome_bookmarks_list"
+ignored_bookmarks=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
+bookmarks=(`ls -1 -d $HOME/*/ | sort`)
+bookmarks_file="$HOME/.config/gtk-3.0/bookmarks"
+cp /dev/null "$bookmarks_file"
 i=0
-while [ $i != ${#gnome_bookmarks[@]} ]
+while [ $i != ${#bookmarks[@]} ]
 do
-  gnome_bookmark=${gnome_bookmarks[$i]%/*}
+  bookmark=${bookmarks[$i]%/*}
 
-  if ! [[ "${gnome_bookmarks_ignored[@]}" =~ "$gnome_bookmark" ]]
+  if ! [[ "${ignored_bookmarks[@]}" =~ "$bookmark" ]]
   then
-    gnome_bookmark=${gnome_bookmark##*/}
-    gnome_bookmark="file://$HOME/${gnome_bookmark// /%20} $gnome_bookmark"
+    bookmark=${bookmark##*/}
+    bookmark="file://$HOME/${bookmark// /%20} $bookmark"
 
-    echo "$gnome_bookmark" >> "$gnome_bookmarks_list"
+    echo "$bookmark" >> "$bookmarks_file"
   fi
 
   let "i++"
@@ -338,7 +373,7 @@ if [ -f "$file" ]
 then
   sed -i '/^color_scheme_path=/{h;s/=.*/=\/usr\/share\/qt5ct\/colors\/darker.conf/};${x;/^$/{s//color_scheme_path=\/usr\/share\/qt5ct\/colors\/darker.conf/;H};x}' "$file"
   sed -i '/^custom_palette=/{h;s/=.*/=true/};${x;/^$/{s//custom_palette=true/;H};x}' "$file"
-  sed -i '/^icon_theme=/{h;s/=.*/='$gnome_icon_name'/};${x;/^$/{s//icon_theme='$gnome_icon_name'/;H};x}' "$file"
+  sed -i '/^icon_theme=/{h;s/=.*/='$icon_theme'/};${x;/^$/{s//icon_theme='$icon_theme'/;H};x}' "$file"
   sed -i '/^style=/{h;s/=.*/=Fusion/};${x;/^$/{s//style=Fusion/;H};x}' "$file"
 fi
 
@@ -353,7 +388,7 @@ fi
 
 echo "appearances have been configured"
 
-printLine "Actions"
+printLine "GNOME Actions"
 
 dconf write /org/gnome/mutter/attach-modal-dialogs "false"
 dconf write /org/gnome/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
