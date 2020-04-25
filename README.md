@@ -36,7 +36,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 * Zip - Latest
 * Crudini - Latest
 * Gtop - Latest
-* Lm Sensors - Latest
+* LM Sensors - Latest
 * X11 Utils - Latest
 * Qt5 Settings - Latest
 * Dconf Editor - Latest

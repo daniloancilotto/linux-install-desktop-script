@@ -67,7 +67,7 @@ sudo apt install crudini -y
 printLine "Gtop"
 sudo apt install gir1.2-gtop-2.0 -y
 
-printLine "Lm Sensors"
+printLine "LM Sensors"
 sudo apt install lm-sensors -y
 
 printLine "X11 Utils"
@@ -362,6 +362,8 @@ crudini --set "$file" "Appearance" "color_scheme_path" "/usr/share/qt5ct/colors/
 crudini --set "$file" "Appearance" "custom_palette" "true"
 crudini --set "$file" "Appearance" "icon_theme" "$icon_theme"
 crudini --set "$file" "Appearance" "style" "Fusion"
+crudini --set "$file" "Fonts" "fixed" "@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@*\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
+crudini --set "$file" "Fonts" "general" "@Variant(\0\0\0@\0\0\0\f\0U\0\x62\0u\0n\0t\0u@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
 
 file="/etc/profile.d/qpa-platformtheme-qt5ct.sh"
 if [ ! -f "$file" ]
