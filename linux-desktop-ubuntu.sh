@@ -58,6 +58,9 @@ mkdir -pv "$autostart_dir"
 printLine "Wget"
 sudo apt install wget -y
 
+printLine "Crudini"
+sudo apt install crudini -y
+
 printLine "Zip"
 sudo apt install zip unzip -y
 
@@ -72,6 +75,9 @@ sudo apt install x11-utils -y
 
 printLine "Qt5 Settings"
 sudo apt install qt5ct -y
+
+qt5ct_dir="$HOME/.config/qt5ct"
+mkdir -pv "$qt5ct_dir"
 
 printLine "Dconf Editor"
 sudo apt install dconf-editor dconf-cli -y
@@ -361,14 +367,11 @@ do
 done
 unset $IFS
 
-file="$HOME/.config/qt5ct/qt5ct.conf"
-if [ -f "$file" ]
-then
-  sed -i '/^color_scheme_path=/{h;s/=.*/=\/usr\/share\/qt5ct\/colors\/darker.conf/};${x;/^$/{s//color_scheme_path=\/usr\/share\/qt5ct\/colors\/darker.conf/;H};x}' "$file"
-  sed -i '/^custom_palette=/{h;s/=.*/=true/};${x;/^$/{s//custom_palette=true/;H};x}' "$file"
-  sed -i '/^icon_theme=/{h;s/=.*/='$icon_theme'/};${x;/^$/{s//icon_theme='$icon_theme'/;H};x}' "$file"
-  sed -i '/^style=/{h;s/=.*/=Fusion/};${x;/^$/{s//style=Fusion/;H};x}' "$file"
-fi
+file="$qt5ct_dir/qt5ct.conf"
+crudini --set "$file" "Appearance" "color_scheme_path" "/usr/share/qt5ct/colors/darker.conf"
+crudini --set "$file" "Appearance" "custom_palette" "true"
+crudini --set "$file" "Appearance" "icon_theme" "$icon_theme"
+crudini --set "$file" "Appearance" "style" "Fusion"
 
 file="/etc/profile.d/qpa-platformtheme-qt5ct.sh"
 if [ ! -f "$file" ]

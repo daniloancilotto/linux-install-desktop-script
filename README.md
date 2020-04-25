@@ -33,6 +33,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 ### Ubuntu
 * Wget - Latest
+* Crudini - Latest
 * Zip - Latest
 * Gtop - Latest
 * Lm Sensors - Latest
