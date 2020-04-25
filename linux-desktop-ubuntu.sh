@@ -39,7 +39,7 @@ desktopHide() {
   fi
   if [ -f "$target_file" ]
   then
-    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
+    crudini --set "$target_file" "Desktop Entry" "NoDisplay" "true"
   fi
 }
 
@@ -342,7 +342,7 @@ then
 fi
 if [ -f "$target_file" ]
 then
-  sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$target_file"
+  crudini --set "$target_file" "Desktop Entry" "Icon" "folder"
 fi
 
 IFS=$'\n'
