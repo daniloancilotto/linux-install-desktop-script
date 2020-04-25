@@ -299,13 +299,16 @@ dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
-file="$HOME/.config/qt5ct/qt5ct.conf"
-if [ -f "$file" ]
+file="org.gnome.Nautilus.desktop"
+origin_file="/usr/share/applications/$file"
+target_file="$desktop_dir/$file"
+if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
 then
-  sed -i '/^color_scheme_path=/{h;s/=.*/=\/usr\/share\/qt5ct\/colors\/darker.conf/};${x;/^$/{s//color_scheme_path=\/usr\/share\/qt5ct\/colors\/darker.conf/;H};x}' "$file"
-  sed -i '/^custom_palette=/{h;s/=.*/=true/};${x;/^$/{s//custom_palette=true/;H};x}' "$file"
-  sed -i '/^icon_theme=/{h;s/=.*/='$gnome_icon_name'/};${x;/^$/{s//icon_theme='$gnome_icon_name'/;H};x}' "$file"
-  sed -i '/^style=/{h;s/=.*/=Fusion/};${x;/^$/{s//style=Fusion/;H};x}' "$file"
+  cp "$origin_file" "$target_file"
+fi
+if [ -f "$target_file" ]
+then
+  sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$target_file"
 fi
 
 IFS=$'\n'
@@ -332,16 +335,22 @@ do
 done
 unset $IFS
 
-file="org.gnome.Nautilus.desktop"
-origin_file="/usr/share/applications/$file"
-target_file="$desktop_dir/$file"
-if [ -f "$origin_file" ] && [ ! -f "$target_file" ]
+file="$HOME/.config/qt5ct/qt5ct.conf"
+if [ -f "$file" ]
 then
-  cp "$origin_file" "$target_file"
+  sed -i '/^color_scheme_path=/{h;s/=.*/=\/usr\/share\/qt5ct\/colors\/darker.conf/};${x;/^$/{s//color_scheme_path=\/usr\/share\/qt5ct\/colors\/darker.conf/;H};x}' "$file"
+  sed -i '/^custom_palette=/{h;s/=.*/=true/};${x;/^$/{s//custom_palette=true/;H};x}' "$file"
+  sed -i '/^icon_theme=/{h;s/=.*/='$gnome_icon_name'/};${x;/^$/{s//icon_theme='$gnome_icon_name'/;H};x}' "$file"
+  sed -i '/^style=/{h;s/=.*/=Fusion/};${x;/^$/{s//style=Fusion/;H};x}' "$file"
 fi
-if [ -f "$target_file" ]
+
+file="/etc/profile.d/qpa-platformtheme-qt5ct.sh"
+if [ ! -f "$file" ]
 then
-  sed -i '/^Icon=/{h;s/=.*/=folder/};${x;/^$/{s//Icon=folder/;H};x}' "$target_file"
+  conf=$'#!/bin/bash\n'
+  conf+=$'export QT_QPA_PLATFORMTHEME=qt5ct\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
 fi
 
 echo "appearances have been configured"
@@ -381,6 +390,12 @@ then
   chmod +x "$file"
 fi
 
+file="/usr/share/X11/xkb/symbols/br"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
+fi
+
 file="/etc/profile.d/im-module-cedilla.sh"
 if [ ! -f "$file" ]
 then
@@ -389,11 +404,6 @@ then
   conf+=$'export QT_IM_MODULE=cedilla\n'
   echo "$conf" | sudo tee "$file"
   sudo chmod +x "$file"
-fi
-file="/usr/share/X11/xkb/symbols/br"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/ modifier_map Mod3   { Scroll_Lock };/ \/\/modifier_map Mod3   { Scroll_Lock };/g' "$file"
 fi
 
 echo "actions have been configured"

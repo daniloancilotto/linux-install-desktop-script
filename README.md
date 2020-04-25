@@ -114,12 +114,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/gedit/preferences/editor/bracket-matching
   * /org/gnome/gedit/preferences/editor/highlight-current-line
   * /org/gnome/gedit/preferences/editor/search-highlighting
-* Preferences
-  * ~/.config/qt5ct/qt5ct.conf
-* Bookmarks
-  * ~/.config/gtk-3.0/bookmarks
 * Desktop
   * ~/.local/share/applications/org.gnome.Nautilus.desktop
+* Bookmarks
+  * ~/.config/gtk-3.0/bookmarks
+* Preferences
+  * ~/.config/qt5ct/qt5ct.conf
+* Environment
+  * /etc/profile.d/qpa-platformtheme-qt5ct.sh
 
 ### GNOME Actions
 * Dconf
@@ -130,12 +132,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/terminal/legacy/menu-accelerator-enabled
 * Autostart
   * ~/.config/autostart/ignore-lid-switch-tweak.desktop
-* Script
+* Scripts
   * ~/.local/share/nautilus/scripts/Comprimir
   * ~/.local/share/nautilus/scripts/Extrair aqui
-* Keyboard
-  * /etc/profile.d/im-module-cedilla.sh
+* Symbols
   * /usr/share/X11/xkb/symbols/br
+* Environment
+  * /etc/profile.d/im-module-cedilla.sh
 
 <br/>
 
