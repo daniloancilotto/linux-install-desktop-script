@@ -274,7 +274,6 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilitários"
 dconf write /org/gnome/desktop/app-folders/folders/Utilities/apps "[
   'appimagekit-balena-etcher-electron.desktop',
-  'cpu-x.desktop',
   'cpu-x-root.desktop',
   'eog.desktop',
   'gnome-system-log.desktop',
@@ -364,6 +363,8 @@ crudini --set "$file" "Appearance" "icon_theme" "$icon_theme"
 crudini --set "$file" "Appearance" "style" "Fusion"
 crudini --set "$file" "Fonts" "fixed" "@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@*\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
 crudini --set "$file" "Fonts" "general" "@Variant(\0\0\0@\0\0\0\f\0U\0\x62\0u\0n\0t\0u@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
+crudini --set "$file" "Interface" "buttonbox_layout" "3"
+crudini --set "$file" "Interface" "stylesheets" "/usr/share/qt5ct/qss/fusion-fixes.qss, /usr/share/qt5ct/qss/tooltip-simple.qss"
 
 file="/etc/profile.d/qpa-platformtheme-qt5ct.sh"
 if [ ! -f "$file" ]
