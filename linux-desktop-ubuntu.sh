@@ -30,6 +30,22 @@ printLine() {
   echo ""
 }
 
+desktopHide() {
+  source_file="/usr/share/applications/$2"
+  target_file="$1/$2"
+  if [ -f "$source_file" ] && [ ! -f "$target_file" ]
+  then
+    cp "$source_file" "$target_file"
+  fi
+  if [ -f "$target_file" ]
+  then
+    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
+  fi
+}
+
+printLine "Update"
+sudo apt update
+
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
@@ -38,9 +54,6 @@ mkdir -pv "$script_dir"
 
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
-
-printLine "Update"
-sudo apt update
 
 printLine "Wget"
 sudo apt install wget -y
@@ -282,31 +295,10 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Utilities'
 ]"
 
-files=( \
-  "htop.desktop" \
-  "info.desktop" \
-  "openjdk-8-policytool.desktop" \
-  "software-properties-drivers.desktop" \
-  "software-properties-livepatch.desktop" \
-  "yelp.desktop" \
-)
-i=0
-while [ $i != ${#files[@]} ]
-do
-  file="${files[$i]}"
-  source_file="/usr/share/applications/$file"
-  target_file="$desktop_dir/$file"
-  if [ -f "$source_file" ] && [ ! -f "$target_file" ]
-  then
-    cp "$source_file" "$target_file"
-  fi
-  if [ -f "$target_file" ]
-  then
-    sed -i '/^NoDisplay=/{h;s/=.*/=true/};${x;/^$/{s//NoDisplay=true/;H};x}' "$target_file"
-  fi
-
-  let "i++"
-done
+desktopHide "$desktop_dir" "info.desktop"
+desktopHide "$desktop_dir" "software-properties-drivers.desktop"
+desktopHide "$desktop_dir" "software-properties-livepatch.desktop"
+desktopHide "$desktop_dir" "yelp.desktop"
 
 echo "spices have been configured"
 
@@ -442,5 +434,6 @@ fi
 echo "actions have been configured"
 
 printLine "Finished"
+notify-send "Done, please reboot your system."
 echo "Done, please reboot your system."
 echo ""
