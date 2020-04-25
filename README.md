@@ -118,6 +118,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/desktop/interface/gtk-theme
     * /org/gnome/desktop/wm/preferences/theme
     * /org/gnome/desktop/wm/preferences/button-layout
+    * /org/gnome/desktop/background/picture-uri
+    * /org/gnome/desktop/screensaver/picture-uri
     * /org/gnome/nautilus/window-state/sidebar-width
     * /org/gnome/nautilus/icon-view/default-zoom-level
     * /org/gnome/nautilus/list-view/default-zoom-level
@@ -128,6 +130,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/gedit/preferences/editor/bracket-matching
     * /org/gnome/gedit/preferences/editor/highlight-current-line
     * /org/gnome/gedit/preferences/editor/search-highlighting
+  * Wallpapers
+    * ~/.local/share/backgrounds/ubuntu-80s-glitch.jpg
   * Desktop
     * ~/.local/share/applications/org.gnome.Nautilus.desktop
   * Bookmarks

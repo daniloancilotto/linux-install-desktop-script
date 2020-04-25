@@ -49,6 +49,9 @@ sudo apt update
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
 
+wallpaper_dir="$HOME/.local/share/backgrounds"
+mkdir -pv "$wallpaper_dir"
+
 script_dir="$HOME/.local/share/nautilus/scripts"
 mkdir -pv "$script_dir"
 
@@ -313,6 +316,7 @@ printLine "GNOME Appearances"
 icon_theme="Yaru"
 cursor_theme="Yaru"
 gtk_theme="Yaru-dark"
+wallpaper_file="$wallpaper_dir/ubuntu-80s-glitch.jpg"
 nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
 
 dconf write /org/gnome/shell/extensions/user-theme/name "'$gtk_theme'"
@@ -321,6 +325,8 @@ dconf write /org/gnome/desktop/interface/cursor-theme "'$cursor_theme'"
 dconf write /org/gnome/desktop/interface/gtk-theme "'$gtk_theme'"
 dconf write /org/gnome/desktop/wm/preferences/theme "'$gtk_theme'"
 dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
+dconf write /org/gnome/desktop/background/picture-uri "'file://$wallpaper_file'"
+dconf write /org/gnome/desktop/screensaver/picture-uri "'file://$wallpaper_file'"
 dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
 dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
 dconf write /org/gnome/nautilus/list-view/default-zoom-level "'standard'"
@@ -331,6 +337,11 @@ dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
+
+if [ ! -f "$wallpaper_file" ]
+then
+  wget -O "$wallpaper_file" "https://www.dropbox.com/s/xh6yruntbsml5mz/ubuntu-80s-glitch.jpg"
+fi
 
 desktopConf "$desktop_dir" "org.gnome.Nautilus.desktop" "Icon" "folder"
 
