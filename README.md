@@ -12,7 +12,7 @@
 
 ### Ubuntu GNOME
 ```bash
-sudo apt install curl wget unzip p7zip-full dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
+sudo apt install curl wget unzip dconf-cli dconf-editor gnome-tweaks gnome-shell-extension-prefs qt5ct chrome-gnome-shell x11-utils gir1.2-gtop-2.0 lm-sensors -y
 ```
 
 <br/>
@@ -114,6 +114,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * /org/gnome/gedit/preferences/editor/bracket-matching
   * /org/gnome/gedit/preferences/editor/highlight-current-line
   * /org/gnome/gedit/preferences/editor/search-highlighting
+* Preferences
+  * ~/.config/qt5ct/qt5ct.conf
 * Bookmarks
   * ~/.config/gtk-3.0/bookmarks
 * Desktop

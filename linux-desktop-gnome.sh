@@ -1,7 +1,7 @@
 #!/bin/bash
 system="`lsb_release -sd`"
 
-echo "LINUX DESKTOP GNOME"
+echo "LINUX DESKTOP (GNOME)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Home: $HOME"
@@ -26,14 +26,16 @@ printLine() {
   echo ""
 }
 
-printLine "GNOME Spices"
-
 desktop_dir="$HOME/.local/share/applications"
 mkdir -pv "$desktop_dir"
+
 script_dir="$HOME/.local/share/nautilus/scripts"
 mkdir -pv "$script_dir"
+
 autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$autostart_dir"
+
+printLine "GNOME Spices"
 
 gnome_spices_dir="$HOME/.local/share/gnome-shell"
 gnome_spices=( \
@@ -212,6 +214,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'org.gnome.Extensions.desktop',
   'org.gnome.seahorse.Application.desktop',
   'org.gnome.tweaks.desktop',
+  'qt5ct.desktop',
   'software-properties-gtk.desktop'
 ]"
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Utilities/ name "Utilitários"
@@ -274,6 +277,37 @@ echo "spices have been configured"
 
 printLine "GNOME Appearances"
 
+gnome_icon_name="Yaru"
+gnome_cursor_name="Yaru"
+gnome_theme_name="Yaru-dark"
+gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
+
+dconf write /org/gnome/shell/extensions/user-theme/name "'$gnome_theme_name'"
+dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
+dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
+dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
+dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
+dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
+dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
+dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
+dconf write /org/gnome/nautilus/list-view/default-zoom-level "'standard'"
+dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_columns"
+dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
+dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
+dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
+dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
+dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
+dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
+
+file="$HOME/.config/qt5ct/qt5ct.conf"
+if [ -f "$file" ]
+then
+  sed -i '/^color_scheme_path=/{h;s/=.*/=\/usr\/share\/qt5ct\/colors\/darker.conf/};${x;/^$/{s//color_scheme_path=\/usr\/share\/qt5ct\/colors\/darker.conf/;H};x}' "$file"
+  sed -i '/^custom_palette=/{h;s/=.*/=true/};${x;/^$/{s//custom_palette=true/;H};x}' "$file"
+  sed -i '/^icon_theme=/{h;s/=.*/='$gnome_icon_name'/};${x;/^$/{s//icon_theme='$gnome_icon_name'/;H};x}' "$file"
+  sed -i '/^style=/{h;s/=.*/=Fusion/};${x;/^$/{s//style=Fusion/;H};x}' "$file"
+fi
+
 IFS=$'\n'
 gnome_bookmarks_ignored=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 gnome_bookmarks=(`ls -1 -d $HOME/*/ | sort`)
@@ -297,28 +331,6 @@ do
   let "i++"
 done
 unset $IFS
-
-gnome_icon_name="Yaru"
-gnome_cursor_name="Yaru"
-gnome_theme_name="Yaru-dark"
-gnome_nautilus_columns="['name', 'size', 'detailed_type', 'group', 'permissions', 'date_modified']"
-
-dconf write /org/gnome/shell/extensions/user-theme/name "'$gnome_theme_name'"
-dconf write /org/gnome/desktop/interface/icon-theme "'$gnome_icon_name'"
-dconf write /org/gnome/desktop/interface/cursor-theme "'$gnome_cursor_name'"
-dconf write /org/gnome/desktop/interface/gtk-theme "'$gnome_theme_name'"
-dconf write /org/gnome/desktop/wm/preferences/theme "'$gnome_theme_name'"
-dconf write /org/gnome/desktop/wm/preferences/button-layout "':minimize,maximize,close'"
-dconf write /org/gnome/nautilus/window-state/sidebar-width "210"
-dconf write /org/gnome/nautilus/icon-view/default-zoom-level "'small'"
-dconf write /org/gnome/nautilus/list-view/default-zoom-level "'standard'"
-dconf write /org/gnome/nautilus/list-view/default-column-order "$gnome_nautilus_columns"
-dconf write /org/gnome/nautilus/list-view/default-visible-columns "$gnome_nautilus_columns"
-dconf write /org/gnome/nautilus/list-view/use-tree-view "true"
-dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
-dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
-dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
-dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
 file="org.gnome.Nautilus.desktop"
 origin_file="/usr/share/applications/$file"
