@@ -3,7 +3,7 @@ environment="`gnome-shell --version`"
 system="`lsb_release -sd`"
 architecture="`uname -m`"
 
-echo "LINUX DESKTOP (UBUNTU)"
+echo "LINUX DESKTOP SCRIPT (UBUNTU)"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -444,6 +444,7 @@ fi
 echo "actions have been configured"
 
 printLine "Finished"
-notify-send "Please reboot your system."
 echo "Please reboot your system."
 echo ""
+
+notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "[Finished] Please reboot your system."
