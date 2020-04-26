@@ -1,6 +1,6 @@
 # Linux Desktop Script
 
-### Supported Envirionments
+### Supported Environments
 * [GNOME Shell - 3.36](https://www.gnome.org/)
 
 ### Supported Systems

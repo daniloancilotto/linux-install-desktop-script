@@ -1,11 +1,11 @@
 #!/bin/bash
-envirionment="`gnome-shell --version`"
+environment="`gnome-shell --version`"
 system="`lsb_release -sd`"
 architecture="`uname -m`"
 
 echo "LINUX DESKTOP (UBUNTU)"
 echo "Author: Danilo Ancilotto"
-echo "Envirionment: $envirionment"
+echo "Environment: $environment"
 echo "System: $system"
 echo "Architecture: $architecture"
 echo "Home: $HOME"
@@ -179,7 +179,7 @@ dconf write /org/gnome/shell/extensions/unite/window-buttons-placement "'last'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
-dconf write /org/gnome/shell/extensions/clock_override/override-string "'🕓  %d/%m/%Y  %H:%M:%S'"
+dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
 dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
 dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
