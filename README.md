@@ -58,6 +58,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Dconf
     * /org/gnome/shell/enabled-extensions
     * /org/gnome/shell/extensions/unite/desktop-name-text
+    * /org/gnome/shell/extensions/unite/hide-app-menu-icon
     * /org/gnome/shell/extensions/unite/show-window-title
     * /org/gnome/shell/extensions/unite/notifications-position
     * /org/gnome/shell/extensions/unite/window-buttons-placement
@@ -130,10 +131,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/gedit/preferences/editor/bracket-matching
     * /org/gnome/gedit/preferences/editor/highlight-current-line
     * /org/gnome/gedit/preferences/editor/search-highlighting
-  * Wallpapers
-    * ~/.local/share/backgrounds/ubuntu-80s-glitch.jpg
   * Desktop
     * ~/.local/share/applications/org.gnome.Nautilus.desktop
+  * Wallpapers
+    * ~/.local/share/backgrounds/ubuntu-80s-glitch.jpg
   * Bookmarks
     * ~/.config/gtk-3.0/bookmarks
   * Preferences

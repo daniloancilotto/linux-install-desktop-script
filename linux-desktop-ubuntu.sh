@@ -171,6 +171,7 @@ do
 done
 
 dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
+dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "false"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-placement "'last'"
@@ -338,12 +339,12 @@ dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
 
+desktopConf "$desktop_dir" "org.gnome.Nautilus.desktop" "Icon" "folder"
+
 if [ ! -f "$wallpaper_file" ]
 then
   wget -O "$wallpaper_file" "https://www.dropbox.com/s/xh6yruntbsml5mz/ubuntu-80s-glitch.jpg"
 fi
-
-desktopConf "$desktop_dir" "org.gnome.Nautilus.desktop" "Icon" "folder"
 
 IFS=$'\n'
 ignored_bookmarks=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
