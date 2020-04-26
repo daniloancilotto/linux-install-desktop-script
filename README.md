@@ -61,6 +61,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/shell/extensions/unite/hide-app-menu-icon
     * /org/gnome/shell/extensions/unite/show-window-title
     * /org/gnome/shell/extensions/unite/notifications-position
+    * /org/gnome/shell/extensions/unite/hide-aggregate-menu-arrow
     * /org/gnome/shell/extensions/unite/window-buttons-placement
     * /org/gnome/shell/extensions/unite/window-buttons-theme
     * /org/gnome/shell/extensions/unite/extend-left-box
