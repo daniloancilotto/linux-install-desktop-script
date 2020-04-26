@@ -171,7 +171,7 @@ do
 done
 
 dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
-dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "false"
+dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "true"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/hide-aggregate-menu-arrow "true"
@@ -179,7 +179,7 @@ dconf write /org/gnome/shell/extensions/unite/window-buttons-placement "'last'"
 dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
-dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
+dconf write /org/gnome/shell/extensions/clock_override/override-string "'🕓  %d/%m/%Y  %H:%M:%S'"
 dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
 dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
@@ -444,6 +444,6 @@ fi
 echo "actions have been configured"
 
 printLine "Finished"
-notify-send "Done, please reboot your system."
-echo "Done, please reboot your system."
+notify-send "Please reboot your system."
+echo "Please reboot your system."
 echo ""
