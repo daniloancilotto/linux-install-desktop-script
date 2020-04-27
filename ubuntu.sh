@@ -339,6 +339,29 @@ dconf write /org/gnome/nautilus/preferences/default-folder-viewer "'list-view'"
 dconf write /org/gnome/gedit/preferences/editor/bracket-matching "false"
 dconf write /org/gnome/gedit/preferences/editor/highlight-current-line "false"
 dconf write /org/gnome/gedit/preferences/editor/search-highlighting "false"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/visible-name "'$USER'"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-colors "false"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/use-theme-transparency "false"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/bold-is-bright "true"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/background-color "'#1E1E1E'"
+dconf write /org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9/palette "[
+  '#000000',
+  '#CD0000',
+  '#00CD00',
+  '#CDCD00',
+  '#0000EE',
+  '#CD00CD',
+  '#00CDCD',
+  '#E5E5E5',
+  '#7F7F7F',
+  '#FF0000',
+  '#00FF00',
+  '#FFFF00',
+  '#5C5CFF',
+  '#FF00FF',
+  '#00FFFF',
+  '#FFFFFF'
+]"
 
 desktopConf "$desktop_dir" "org.gnome.Nautilus.desktop" "Icon" "folder"
 
