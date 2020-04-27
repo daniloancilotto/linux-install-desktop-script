@@ -171,7 +171,7 @@ do
 done
 
 dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
-dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "false"
+dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "true"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
 dconf write /org/gnome/shell/extensions/unite/hide-aggregate-menu-arrow "true"
