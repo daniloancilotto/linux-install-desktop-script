@@ -195,7 +195,7 @@ dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
 dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
 dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
 dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
-dconf write /org/gnome/shell/extensions/lockkeys/notifications "false"
+dconf write /org/gnome/shell/extensions/lockkeys/notification-preferences "'off'"
 dconf write /org/gnome/shell/extensions/applications-overview-tooltip/borders "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height "true"
@@ -215,7 +215,6 @@ dconf write /org/gnome/shell/favorite-apps "[
   'org.gnome.Terminal.desktop',
   'org.gnome.Nautilus.desktop',
   'google-chrome.desktop',
-  'spotify_spotify.desktop',
   'virtualbox.desktop',
   'org.remmina.Remmina.desktop',
   'org.gnome.Screenshot.desktop',
