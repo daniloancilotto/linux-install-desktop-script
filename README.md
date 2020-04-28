@@ -51,7 +51,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
-    * [Lock Keys - v38](https://extensions.gnome.org/extension/36/lock-keys/)
+    * [Lock Keys - v39](https://extensions.gnome.org/extension/36/lock-keys/)
     * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
     * [Sound Input & Output Device Chooser - v29](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
@@ -147,6 +147,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   * Wallpapers
     * ~/.local/share/backgrounds/ubuntu-80s-glitch.jpg
   * Bookmarks
+    * ~/.hidden
     * ~/.config/gtk-3.0/bookmarks
   * Preferences
     * ~/.config/qt5ct/qt5ct.conf

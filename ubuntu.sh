@@ -113,7 +113,7 @@ do
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v38.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v39.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v29.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
