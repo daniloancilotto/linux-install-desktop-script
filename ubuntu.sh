@@ -380,8 +380,7 @@ cp /dev/null "$bookmarks_file"
 i=1
 while [ $i != ${#hidden_bookmarks[@]} ]
 do
-  bookmark=${hidden_bookmarks[$i]%/*}
-  bookmark=${bookmark##*/}
+  bookmark=${hidden_bookmarks[$i]##*/}
 
   echo "$bookmark" >> "$bookmarks_file"
 
