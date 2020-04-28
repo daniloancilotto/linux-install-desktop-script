@@ -374,8 +374,9 @@ then
 fi
 
 IFS=$'\n'
+desktop_bookmark="`xdg-user-dir DESKTOP`"
+ignore_bookmarks=("$desktop_bookmark" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 bookmarks=(`ls -1 -d $HOME/*/ | sort`)
-bookmarks_ignore=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 bookmarks_show="$HOME/.config/gtk-3.0/bookmarks"
 bookmarks_hide="$HOME/.hidden"
 cp /dev/null "$bookmarks_show"
@@ -385,13 +386,13 @@ while [ $i != ${#bookmarks[@]} ]
 do
   bookmark=${bookmarks[$i]%/*}
 
-  if ! [[ "${bookmarks_ignore[@]}" =~ "$bookmark" ]]
+  if ! [[ "${ignore_bookmarks[@]}" =~ "$bookmark" ]]
   then
     bookmark=${bookmark##*/}
     bookmark="file://$HOME/${bookmark// /%20} $bookmark"
 
     echo "$bookmark" >> "$bookmarks_show"
-  elif [ $i -gt 0 ]
+  elif [ "$bookmark" != "$desktop_bookmark" ]
   then
     bookmark=${bookmark##*/}
 
