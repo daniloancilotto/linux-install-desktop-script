@@ -374,29 +374,34 @@ then
 fi
 
 IFS=$'\n'
-desktop_bookmark="`xdg-user-dir DESKTOP`"
-ignore_bookmarks=("$desktop_bookmark" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
+hidden_bookmarks=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
+bookmarks_file="$HOME/.hidden"
+cp /dev/null "$bookmarks_file"
+i=1
+while [ $i != ${#hidden_bookmarks[@]} ]
+do
+  bookmark=${hidden_bookmarks[$i]%/*}
+  bookmark=${bookmark##*/}
+
+  echo "$bookmark" >> "$bookmarks_file"
+
+  let "i++"
+done
+
 bookmarks=(`ls -1 -d $HOME/*/ | sort`)
-bookmarks_show="$HOME/.config/gtk-3.0/bookmarks"
-bookmarks_hide="$HOME/.hidden"
-cp /dev/null "$bookmarks_show"
-cp /dev/null "$bookmarks_hide"
+bookmarks_file="$HOME/.config/gtk-3.0/bookmarks"
+cp /dev/null "$bookmarks_file"
 i=0
 while [ $i != ${#bookmarks[@]} ]
 do
   bookmark=${bookmarks[$i]%/*}
 
-  if ! [[ "${ignore_bookmarks[@]}" =~ "$bookmark" ]]
+  if ! [[ "${hidden_bookmarks[@]}" =~ "$bookmark" ]]
   then
     bookmark=${bookmark##*/}
     bookmark="file://$HOME/${bookmark// /%20} $bookmark"
 
-    echo "$bookmark" >> "$bookmarks_show"
-  elif [ "$bookmark" != "$desktop_bookmark" ]
-  then
-    bookmark=${bookmark##*/}
-
-    echo "$bookmark" >> "$bookmarks_hide"
+    echo "$bookmark" >> "$bookmarks_file"
   fi
 
   let "i++"
