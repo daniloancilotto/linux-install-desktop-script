@@ -374,21 +374,28 @@ then
 fi
 
 IFS=$'\n'
-ignored_bookmarks=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
 bookmarks=(`ls -1 -d $HOME/*/ | sort`)
-bookmarks_file="$HOME/.config/gtk-3.0/bookmarks"
-cp /dev/null "$bookmarks_file"
+bookmarks_ignore=("`xdg-user-dir DESKTOP`" "$HOME/GPUCache" "$HOME/portable" "$HOME/snap")
+bookmarks_show="$HOME/.config/gtk-3.0/bookmarks"
+bookmarks_hide="$HOME/.hidden"
+cp /dev/null "$bookmarks_show"
+cp /dev/null "$bookmarks_hide"
 i=0
 while [ $i != ${#bookmarks[@]} ]
 do
   bookmark=${bookmarks[$i]%/*}
 
-  if ! [[ "${ignored_bookmarks[@]}" =~ "$bookmark" ]]
+  if ! [[ "${bookmarks_ignore[@]}" =~ "$bookmark" ]]
   then
     bookmark=${bookmark##*/}
     bookmark="file://$HOME/${bookmark// /%20} $bookmark"
 
-    echo "$bookmark" >> "$bookmarks_file"
+    echo "$bookmark" >> "$bookmarks_show"
+  elif [ $i -gt 0 ]
+  then
+    bookmark=${bookmark##*/}
+
+    echo "$bookmark" >> "$bookmarks_hide"
   fi
 
   let "i++"
@@ -473,4 +480,4 @@ printLine "Finished"
 echo "Please reboot your system."
 echo ""
 
-notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "[Finished] Please reboot your system."
+notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "Please reboot your system."
