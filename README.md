@@ -47,7 +47,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * Mozilla Firefox
 * GNOME Spices 
   * Extensions
-    * [Unite - v40](https://extensions.gnome.org/extension/1287/unite/)
+    * [Unite - v41](https://extensions.gnome.org/extension/1287/unite/)
     * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
