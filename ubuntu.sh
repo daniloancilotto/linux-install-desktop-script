@@ -485,4 +485,7 @@ printLine "Finished"
 echo "Please reboot your system."
 echo ""
 
-notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "Please reboot your system."
+if [ ! -z "`notify-send --version`" ]
+then
+  notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "Please reboot your system."
+fi
