@@ -51,10 +51,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     * [Vitals - v31](https://extensions.gnome.org/extension/1460/vitals/)
-    * [Lock Keys - v39](https://extensions.gnome.org/extension/36/lock-keys/)
-    * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
+    * [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
     * [Sound Input & Output Device Chooser - v29](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
+    * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   * Dconf
     * /org/gnome/shell/enabled-extensions
     * /org/gnome/shell/extensions/unite/desktop-name-text
@@ -67,17 +67,19 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/shell/extensions/unite/extend-left-box
     * /org/gnome/shell/extensions/unite/use-system-fonts
     * /org/gnome/shell/extensions/clock_override/override-string
-    * /org/gnome/shell/extensions/vitals/alphabetize
-    * /org/gnome/shell/extensions/vitals/position-in-panel
-    * /org/gnome/shell/extensions/vitals/hot-sensors
-    * /org/gnome/shell/extensions/vitals/storage-path
     * /org/gnome/shell/extensions/openweather/city
     * /org/gnome/shell/extensions/openweather/days-forecast
     * /org/gnome/shell/extensions/openweather/decimal-places
     * /org/gnome/shell/extensions/openweather/pressure-unit
     * /org/gnome/shell/extensions/openweather/unit
     * /org/gnome/shell/extensions/openweather/wind-speed-unit
-    * /org/gnome/shell/extensions/lockkeys/notification-preferences
+    * /org/gnome/shell/extensions/vitals/alphabetize
+    * /org/gnome/shell/extensions/vitals/position-in-panel
+    * /org/gnome/shell/extensions/vitals/hot-sensors
+    * /org/gnome/shell/extensions/vitals/storage-path
+    * /org/gnome/shell/extensions/caffeine/enable-fullscreen
+    * /org/gnome/shell/extensions/caffeine/show-notifications
+    * /org/gnome/shell/extensions/caffeine/restore-state
     * /org/gnome/shell/extensions/applications-overview-tooltip/borders
     * /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     * /org/gnome/shell/extensions/dash-to-dock/extend-height

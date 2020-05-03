@@ -113,20 +113,20 @@ do
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v31.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/lockkeysvaina.lt.v39.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v35.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v29.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
     )
     spice_items_names=( \
       "unite@hardpixel.eu" \
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
-      "lockkeys@vaina.lt" \
-      "user-theme@gnome-shell-extensions.gcampax.github.com" \
+      "caffeine@patapon.info" \
       "sound-output-device-chooser@kgshank.net" \
       "applications-overview-tooltip@RaphaelRochet" \
+      "user-theme@gnome-shell-extensions.gcampax.github.com" \
     )
   fi
   j=0
@@ -158,10 +158,13 @@ do
       'clock-override@gnomeshell.kryogenix.org',
       'openweather-extension@jenslody.de',
       'Vitals@CoreCoding.com',
-      'lockkeys@vaina.lt',
-      'user-theme@gnome-shell-extensions.gcampax.github.com',
+      'caffeine@patapon.info',
       'sound-output-device-chooser@kgshank.net',
-      'applications-overview-tooltip@RaphaelRochet'
+      'applications-overview-tooltip@RaphaelRochet',                                                               
+      'user-theme@gnome-shell-extensions.gcampax.github.com',
+      'ubuntu-appindicators@ubuntu.com',
+      'ubuntu-dock@ubuntu.com',
+      'desktop-icons@csoriano'
     ]"
   fi
 
@@ -180,6 +183,12 @@ dconf write /org/gnome/shell/extensions/unite/window-buttons-theme "'yaru'"
 dconf write /org/gnome/shell/extensions/unite/extend-left-box "false"
 dconf write /org/gnome/shell/extensions/unite/use-system-fonts "false"
 dconf write /org/gnome/shell/extensions/clock_override/override-string "'%d/%m/%Y  %H:%M:%S'"
+dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
+dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
+dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
+dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
+dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
+dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
 dconf write /org/gnome/shell/extensions/vitals/alphabetize "false"
 dconf write /org/gnome/shell/extensions/vitals/position-in-panel "1"
 dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
@@ -189,13 +198,9 @@ dconf write /org/gnome/shell/extensions/vitals/hot-sensors "[
   '_storage_free_'
 ]"
 dconf write /org/gnome/shell/extensions/vitals/storage-path "'$HOME'"
-dconf write /org/gnome/shell/extensions/openweather/city "'-21.1328313,-51.1029422>Mirandópolis, BR>-1'"
-dconf write /org/gnome/shell/extensions/openweather/days-forecast "10"
-dconf write /org/gnome/shell/extensions/openweather/decimal-places "0"
-dconf write /org/gnome/shell/extensions/openweather/pressure-unit "'hPa'"
-dconf write /org/gnome/shell/extensions/openweather/unit "'celsius'"
-dconf write /org/gnome/shell/extensions/openweather/wind-speed-unit "'kph'"
-dconf write /org/gnome/shell/extensions/lockkeys/notification-preferences "'off'"
+dconf write /org/gnome/shell/extensions/caffeine/enable-fullscreen "false"
+dconf write /org/gnome/shell/extensions/caffeine/show-notifications "false"
+dconf write /org/gnome/shell/extensions/caffeine/restore-state "true"
 dconf write /org/gnome/shell/extensions/applications-overview-tooltip/borders "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height "true"
