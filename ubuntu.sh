@@ -114,7 +114,7 @@ do
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v33.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v35.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v30.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
     )

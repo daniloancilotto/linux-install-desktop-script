@@ -52,7 +52,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     * [Vitals - v33](https://extensions.gnome.org/extension/1460/vitals/)
     * [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
-    * [Sound Input & Output Device Chooser - v30](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    * [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   * Dconf
