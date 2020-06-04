@@ -83,6 +83,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/shell/extensions/caffeine/restore-state
     * /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings
     * /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites
+    * /org/gnome/shell/extensions/clipboard-indicator/preview-size
     * /org/gnome/shell/extensions/applications-overview-tooltip/borders
     * /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     * /org/gnome/shell/extensions/dash-to-dock/extend-height
