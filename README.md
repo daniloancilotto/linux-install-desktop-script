@@ -52,6 +52,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     * [Vitals - v33](https://extensions.gnome.org/extension/1460/vitals/)
     * [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
+    * [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     * [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     * [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     * [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
@@ -80,6 +81,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/shell/extensions/caffeine/enable-fullscreen
     * /org/gnome/shell/extensions/caffeine/show-notifications
     * /org/gnome/shell/extensions/caffeine/restore-state
+    * /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings
+    * /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites
     * /org/gnome/shell/extensions/applications-overview-tooltip/borders
     * /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     * /org/gnome/shell/extensions/dash-to-dock/extend-height

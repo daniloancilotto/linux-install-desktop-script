@@ -114,6 +114,7 @@ do
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v33.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v35.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
@@ -124,6 +125,7 @@ do
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
       "caffeine@patapon.info" \
+      "clipboard-indicator@tudmotu.com" \
       "sound-output-device-chooser@kgshank.net" \
       "applications-overview-tooltip@RaphaelRochet" \
       "user-theme@gnome-shell-extensions.gcampax.github.com" \
@@ -159,6 +161,7 @@ do
       'openweather-extension@jenslody.de',
       'Vitals@CoreCoding.com',
       'caffeine@patapon.info',
+      'clipboard-indicator@tudmotu.com',
       'sound-output-device-chooser@kgshank.net',
       'applications-overview-tooltip@RaphaelRochet',                                                               
       'user-theme@gnome-shell-extensions.gcampax.github.com',
@@ -201,6 +204,8 @@ dconf write /org/gnome/shell/extensions/vitals/storage-path "'$HOME'"
 dconf write /org/gnome/shell/extensions/caffeine/enable-fullscreen "false"
 dconf write /org/gnome/shell/extensions/caffeine/show-notifications "false"
 dconf write /org/gnome/shell/extensions/caffeine/restore-state "true"
+dconf write /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings "false"
+dconf write /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites "true"
 dconf write /org/gnome/shell/extensions/applications-overview-tooltip/borders "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height "true"
