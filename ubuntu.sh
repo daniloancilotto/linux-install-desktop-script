@@ -441,11 +441,12 @@ echo "appearances have been configured"
 
 printLine "GNOME Actions"
 
-dconf write /org/gnome/mutter/attach-modal-dialogs "false"
 dconf write /org/gnome/settings-daemon/plugins/power/lid-close-battery-action "'nothing'"
 dconf write /org/gnome/settings-daemon/plugins/power/lid-close-ac-action "'nothing'"
 dconf write /org/gnome/nautilus/preferences/executable-text-activation "'ask'"
 dconf write /org/gnome/terminal/legacy/menu-accelerator-enabled "false"
+dconf write /org/gnome/mutter/center-new-windows "true"
+dconf write /org/gnome/mutter/attach-modal-dialogs "false"
 
 file="$autostart_dir/ignore-lid-switch-tweak.desktop"
 if [ ! -f "$file" ]

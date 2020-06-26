@@ -161,11 +161,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /etc/profile.d/qpa-platformtheme-qt5ct.sh
 * GNOME Actions
   * Dconf
-    * /org/gnome/mutter/attach-modal-dialogs
     * /org/gnome/settings-daemon/plugins/power/lid-close-battery-action
     * /org/gnome/settings-daemon/plugins/power/lid-close-ac-action
     * /org/gnome/nautilus/preferences/executable-text-activation
     * /org/gnome/terminal/legacy/menu-accelerator-enabled
+    * /org/gnome/mutter/center-new-windows
+    * /org/gnome/mutter/attach-modal-dialogs
   * Autostart
     * ~/.config/autostart/ignore-lid-switch-tweak.desktop
   * Scripts
