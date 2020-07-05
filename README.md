@@ -88,12 +88,18 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     * /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     * /org/gnome/shell/extensions/dash-to-dock/dock-position
     * /org/gnome/shell/extensions/dash-to-dock/extend-height
+    * /org/gnome/shell/extensions/dash-to-dock/height-fraction
     * /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
     * /org/gnome/shell/extensions/dash-to-dock/animate-show-apps
     * /org/gnome/shell/extensions/dash-to-dock/apply-custom-theme
+    * /org/gnome/shell/extensions/dash-to-dock/custom-theme-shrink
+    * /org/gnome/shell/extensions/dash-to-dock/transparency-mode
     * /org/gnome/shell/extensions/dash-to-dock/background-opacity
+    * /org/gnome/shell/extensions/dash-to-dock/icon-size-fixed
     * /org/gnome/shell/extensions/dash-to-dock/dash-max-icon-size
+    * /org/gnome/shell/extensions/dash-to-dock/running-indicator-style
     * /org/gnome/shell/extensions/dash-to-dock/click-action
+    * /org/gnome/shell/extensions/dash-to-dock/shift-click-action
     * /org/gnome/shell/extensions/dash-to-dock/scroll-action
     * /org/gnome/shell/extensions/dash-to-dock/show-delay
     * /org/gnome/shell/extensions/dash-to-dock/hide-delay
