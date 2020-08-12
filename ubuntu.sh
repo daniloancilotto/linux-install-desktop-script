@@ -341,9 +341,9 @@ background_file="$background_subdir/mojave_dynamic-timed.xml"
 if [ ! -d "$background_subdir" ]
 then
   file="$background_subdir.zip"
-  wget -O "$file" "https://www.dropbox.com/s/pvul84imc65272e/mojave_dynamic.zip"
-  unzip -q "$file" -d "$background_dir"
-  rm -fv "$file"
+  sudo wget -O "$file" "https://www.dropbox.com/s/pvul84imc65272e/mojave_dynamic.zip"
+  sudo unzip -q "$file" -d "$background_dir"
+  sudo rm -fv "$file"
 fi
 
 icon_theme="Yaru"
