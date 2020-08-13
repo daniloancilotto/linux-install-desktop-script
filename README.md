@@ -191,8 +191,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Screenshots
 
 ### Ubuntu
-![Ubuntu](https://user-images.githubusercontent.com/29760411/86251670-8cc6b300-bb88-11ea-9342-071f6b0aff90.png)
 
-![Ubuntu](https://user-images.githubusercontent.com/29760411/86251876-d4e5d580-bb88-11ea-8a89-0eaf3cce130c.png)
+Desktop
+![Desktop](https://user-images.githubusercontent.com/29760411/90084101-df989c00-dcea-11ea-9682-b1372afd78c3.png)
 
-![Ubuntu](https://user-images.githubusercontent.com/29760411/86252018-08c0fb00-bb89-11ea-8ed5-7f71bac81c43.png)
+Overview
+![Overview](https://user-images.githubusercontent.com/29760411/90084104-e0c9c900-dcea-11ea-9178-53b0ba711a55.png)
+
+Nautilus
+![Nautilus](https://user-images.githubusercontent.com/29760411/90084107-e1625f80-dcea-11ea-84b9-e3295752d088.png)
