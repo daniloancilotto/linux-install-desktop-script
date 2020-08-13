@@ -54,6 +54,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
     - [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   - Dconf
@@ -84,6 +85,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings
     - /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites
     - /org/gnome/shell/extensions/clipboard-indicator/preview-size
+    - /org/gnome/shell/extensions/bluetooth-quick-connect/keep-menu-on-toggle
     - /org/gnome/shell/extensions/applications-overview-tooltip/borders
     - /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     - /org/gnome/shell/extensions/dash-to-dock/dock-position
