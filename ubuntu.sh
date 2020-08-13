@@ -179,7 +179,9 @@ do
   let "i++"
 done
 
-dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$system'"
+desktop_name="`lsb_release -si` `lsb_release -sr`"
+
+dconf write /org/gnome/shell/extensions/unite/desktop-name-text "'$desktop_name'"
 dconf write /org/gnome/shell/extensions/unite/hide-app-menu-icon "false"
 dconf write /org/gnome/shell/extensions/unite/show-window-title "'always'"
 dconf write /org/gnome/shell/extensions/unite/notifications-position "'center'"
