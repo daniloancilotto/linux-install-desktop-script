@@ -263,6 +263,12 @@ dconf write /org/gnome/desktop/search-providers/disable-external "true"
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
 dconf write /org/gnome/mutter/dynamic-workspaces "false"
 
+file="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css"
+if [ -f "$file" ]
+then
+  sed -i ':a;N;$!ba;s/border:1px;/border:0px;/g' "$file"
+fi
+
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'arduino-arduinoide.desktop',

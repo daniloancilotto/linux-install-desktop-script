@@ -127,6 +127,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /org/gnome/desktop/app-folders/folders/Settings
     - /org/gnome/desktop/app-folders/folders/Utilities
     - /org/gnome/desktop/app-folders/folder-children
+  - Stylesheet
+    - ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css
   - Desktop
     - ~/.local/share/applications/info.desktop
     - ~/.local/share/applications/software-properties-drivers.desktop
