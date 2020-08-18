@@ -55,6 +55,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
+    - [Dash to Dock - v68](https://extensions.gnome.org/extension/307/dash-to-dock/)
     - [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   - Dconf
@@ -86,7 +87,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites
     - /org/gnome/shell/extensions/clipboard-indicator/preview-size
     - /org/gnome/shell/extensions/bluetooth-quick-connect/keep-menu-on-toggle
-    - /org/gnome/shell/extensions/applications-overview-tooltip/borders
     - /org/gnome/shell/extensions/dash-to-dock/dock-fixed
     - /org/gnome/shell/extensions/dash-to-dock/dock-position
     - /org/gnome/shell/extensions/dash-to-dock/extend-height
@@ -106,6 +106,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /org/gnome/shell/extensions/dash-to-dock/show-delay
     - /org/gnome/shell/extensions/dash-to-dock/hide-delay
     - /org/gnome/shell/extensions/dash-to-dock/show-trash
+    - /org/gnome/shell/extensions/applications-overview-tooltip/borders
     - /org/gnome/shell/extensions/desktop-icons/icon-size
     - /org/gnome/shell/extensions/desktop-icons/show-home
     - /org/gnome/shell/extensions/desktop-icons/show-trash

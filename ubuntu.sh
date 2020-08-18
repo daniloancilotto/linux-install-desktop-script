@@ -117,6 +117,7 @@ do
       "https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v13.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
     )
@@ -129,6 +130,7 @@ do
       "clipboard-indicator@tudmotu.com" \
       "sound-output-device-chooser@kgshank.net" \
       "bluetooth-quick-connect@bjarosze.gmail.com" \
+      "dash-to-dock@micxgx.gmail.com" \
       "applications-overview-tooltip@RaphaelRochet" \
       "user-theme@gnome-shell-extensions.gcampax.github.com" \
     )
@@ -166,10 +168,10 @@ do
       'clipboard-indicator@tudmotu.com',
       'sound-output-device-chooser@kgshank.net',
       'bluetooth-quick-connect@bjarosze.gmail.com',
+      'dash-to-dock@micxgx.gmail.com',
       'applications-overview-tooltip@RaphaelRochet',
       'user-theme@gnome-shell-extensions.gcampax.github.com',
       'ubuntu-appindicators@ubuntu.com',
-      'ubuntu-dock@ubuntu.com',
       'desktop-icons@csoriano'
     ]"
   fi
@@ -213,7 +215,6 @@ dconf write /org/gnome/shell/extensions/clipboard-indicator/enable-keybindings "
 dconf write /org/gnome/shell/extensions/clipboard-indicator/cache-only-favorites "true"
 dconf write /org/gnome/shell/extensions/clipboard-indicator/preview-size "100"
 dconf write /org/gnome/shell/extensions/bluetooth-quick-connect/keep-menu-on-toggle "true"
-dconf write /org/gnome/shell/extensions/applications-overview-tooltip/borders "false"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-fixed "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/dock-position "'BOTTOM'"
 dconf write /org/gnome/shell/extensions/dash-to-dock/extend-height "false"
@@ -233,6 +234,7 @@ dconf write /org/gnome/shell/extensions/dash-to-dock/scroll-action "'cycle-windo
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-delay "0.0"
 dconf write /org/gnome/shell/extensions/dash-to-dock/hide-delay "0.0"
 dconf write /org/gnome/shell/extensions/dash-to-dock/show-trash "true"
+dconf write /org/gnome/shell/extensions/applications-overview-tooltip/borders "false"
 dconf write /org/gnome/shell/extensions/desktop-icons/icon-size "'small'"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-home "false"
 dconf write /org/gnome/shell/extensions/desktop-icons/show-trash "false"
