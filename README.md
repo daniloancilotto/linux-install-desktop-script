@@ -42,9 +42,11 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Dconf Editor - Latest
 - GNOME Tweaks - Latest
 - GNOME Extensions - Latest
-  - Integrations - Latest
+  - Install
     - Google Chrome
     - Mozilla Firefox
+  - Remove
+    - Ubuntu Dock
 - GNOME Spices 
   - Extensions
     - [Unite - v41](https://extensions.gnome.org/extension/1287/unite/)
