@@ -91,6 +91,7 @@ sudo apt install gnome-tweaks -y
 printLine "GNOME Extensions"
 sudo apt install gnome-shell-extension-prefs -y
 sudo apt install chrome-gnome-shell -y
+gnome-extensions disable ubuntu-dock@ubuntu.com
 
 printLine "GNOME Spices"
 

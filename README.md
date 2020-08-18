@@ -45,6 +45,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Integrations
     - Google Chrome
     - Mozilla Firefox
+  - Disable
+    - Ubuntu Dock
 - GNOME Spices 
   - Extensions
     - [Unite - v41](https://extensions.gnome.org/extension/1287/unite/)
