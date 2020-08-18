@@ -88,7 +88,7 @@ sudo apt install dconf-editor dconf-cli -y
 printLine "GNOME Tweaks"
 sudo apt install gnome-tweaks -y
 
-printLine "GNOME Extensions"
+printLine "GNOME Integrations"
 sudo apt install gnome-shell-extension-prefs -y
 sudo apt install chrome-gnome-shell -y
 gnome-extensions disable ubuntu-dock@ubuntu.com

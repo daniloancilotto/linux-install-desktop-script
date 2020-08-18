@@ -41,8 +41,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Qt5 Settings - Latest
 - Dconf Editor - Latest
 - GNOME Tweaks - Latest
-- GNOME Extensions - Latest
-  - Integrations
+- GNOME Integrations - Latest
+  - Enable
     - Google Chrome
     - Mozilla Firefox
   - Disable
