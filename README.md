@@ -52,13 +52,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Unite - v41](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
-    - [Vitals - v33](https://extensions.gnome.org/extension/1460/vitals/)
+    - [Vitals - v35](https://extensions.gnome.org/extension/1460/vitals/)
     - [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
     - [Dash to Dock - v68](https://extensions.gnome.org/extension/307/dash-to-dock/)
-    - [Applications Overview Tooltip - v8](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
+    - [Applications Overview Tooltip - v9](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   - Dconf
     - /org/gnome/shell/enabled-extensions

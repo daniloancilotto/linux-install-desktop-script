@@ -113,13 +113,13 @@ do
       "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v41.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v33.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v35.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v35.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v31.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v13.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v8.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v9.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
     )
     spice_items_names=( \
@@ -263,12 +263,6 @@ dconf write /org/gnome/desktop/search-providers/disable-external "true"
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
 dconf write /org/gnome/mutter/dynamic-workspaces "false"
 
-file="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css"
-if [ -f "$file" ]
-then
-  sed -i ':a;N;$!ba;s/border:1px;/border:0px;/g' "$file"
-fi
-
 gsettings set org.gnome.desktop.app-folders.folder:/org/gnome/desktop/app-folders/folders/Development/ name "Desenvolvimento"
 dconf write /org/gnome/desktop/app-folders/folders/Development/apps "[
   'arduino-arduinoide.desktop',
@@ -340,6 +334,12 @@ dconf write /org/gnome/desktop/app-folders/folder-children "[
   'Settings',
   'Utilities'
 ]"
+
+file="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css"
+if [ -f "$file" ]
+then
+  sed -i ':a;N;$!ba;s/border:1px;/border:0px;/g' "$file"
+fi
 
 desktopConf "$desktop_dir" "info.desktop" "NoDisplay" "true"
 desktopConf "$desktop_dir" "software-properties-drivers.desktop" "NoDisplay" "true"
