@@ -1,13 +1,13 @@
 # Linux Desktop Script
 
-### Supported Environments
-- [GNOME Shell - 3.36](https://www.gnome.org/)
-
 ### Supported Systems
 - [Ubuntu - 20.04](https://ubuntu.com/)
 
 ### Supported Architectures
 - x86_64 (amd64)
+
+### Supported Environments
+- [GNOME - 3.36](https://www.gnome.org/)
 
 <br/>
 
@@ -22,16 +22,16 @@ sudo apt install curl -y
 
 # Running the Script
 
-### Ubuntu
+### Ubuntu - GNOME
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-gnome.sh | bash
 ```
 
 <br/>
 
 # Installations and Configurations
 
-### Ubuntu
+### Ubuntu - GNOME
 - Wget - Latest
 - Zip - Latest
 - Crudini - Latest
@@ -197,7 +197,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 
 # Screenshots
 
-### Ubuntu
+### Ubuntu - GNOME
 
 Desktop
 ![Desktop](https://user-images.githubusercontent.com/29760411/91375369-d3373780-e7f0-11ea-92e4-ad8d330256d6.png)

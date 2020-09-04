@@ -1,13 +1,13 @@
 #!/bin/bash
-environment="`gnome-shell --version`"
 system="`lsb_release -sd`"
 architecture="`uname -m`"
+environment="`gnome-shell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU)"
 echo "Author: Danilo Ancilotto"
-echo "Environment: $environment"
 echo "System: $system"
 echo "Architecture: $architecture"
+echo "Environment: $environment"
 echo "Home: $HOME"
 echo "User: $USER"
 
@@ -302,6 +302,7 @@ dconf write /org/gnome/desktop/app-folders/folders/Settings/apps "[
   'org.gnome.Extensions.desktop',
   'org.gnome.seahorse.Application.desktop',
   'org.gnome.tweaks.desktop',
+  'org.kde.kwalletmanager5.desktop',
   'qt5ct.desktop',
   'software-properties-gtk.desktop'
 ]"
