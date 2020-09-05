@@ -3,7 +3,7 @@ system="`lsb_release -sd`"
 architecture="`uname -m`"
 environment="`gnome-shell --version`"
 
-echo "LINUX DESKTOP SCRIPT (UBUNTU)"
+echo "LINUX DESKTOP SCRIPT (UBUNTU - GNOME)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $architecture"
