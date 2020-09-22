@@ -110,7 +110,7 @@ do
   if [ "$spice" == "extensions" ]
   then
     spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v41.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v42.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v35.shell-extension.zip" \

@@ -1,7 +1,7 @@
 # Linux Desktop Script
 
 ### Supported Systems
-- [Ubuntu - 20.04](https://ubuntu.com/)
+- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
@@ -49,7 +49,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - Ubuntu Dock
 - GNOME Spices 
   - Extensions
-    - [Unite - v41](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v42](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v35](https://extensions.gnome.org/extension/1460/vitals/)
