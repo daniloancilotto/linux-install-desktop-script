@@ -527,8 +527,3 @@ echo "actions have been configured"
 printLine "Finished"
 echo "Please reboot your system."
 echo ""
-
-if [ ! -z "`notify-send --version`" ]
-then
-  notify-send "LINUX DESKTOP SCRIPT (UBUNTU - GNOME)" "Please reboot your system."
-fi
