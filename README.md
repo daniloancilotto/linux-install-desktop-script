@@ -8,6 +8,7 @@
 
 ### Supported Environments
 - [GNOME - 3.36](https://www.gnome.org/)
+- [Plasma - 5.18](https://kde.org/plasma-desktop/)
 
 <br/>
 
@@ -27,27 +28,32 @@ sudo apt install curl -y
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-gnome.sh | bash
 ```
 
+### Ubuntu - Plasma
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-plasma.sh | bash
+```
+
 <br/>
 
 # Installations and Configurations
 
 ### Ubuntu - GNOME
-- Wget - Latest
-- Zip - Latest
-- Crudini - Latest
-- Gtop - Latest
-- LM Sensors - Latest
-- X11 Utils - Latest
-- Qt5 Settings - Latest
-- Dconf Editor - Latest
-- GNOME Tweaks - Latest
-- GNOME Integrations - Latest
+- Wget - Latest (Repository)
+- Zip - Latest (Repository)
+- Crudini - Latest (Repository)
+- Gtop - Latest (Repository)
+- LM Sensors - Latest (Repository)
+- X11 Utils - Latest (Repository)
+- Qt5 Settings - Latest (Repository)
+- Dconf Editor - Latest (Repository)
+- GNOME Tweaks - Latest (Repository)
+- GNOME Integrations - Latest (Repository)
   - Enable
     - Google Chrome
     - Mozilla Firefox
   - Disable
     - Ubuntu Dock
-- GNOME Spices 
+- GNOME Spices
   - Extensions
     - [Unite - v42](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
@@ -192,6 +198,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /usr/share/X11/xkb/symbols/br
   - Environment
     - /etc/profile.d/im-module-cedilla.sh
+
+### Ubuntu - Plasma
+- Elisa - Latest (Repository)
+- Kate - Latest (Repository)
+- Kvantum Manager - Latest (Repository)
+- Latte - Latest (Repository)
 
 <br/>
 

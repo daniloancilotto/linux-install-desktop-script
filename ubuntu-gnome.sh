@@ -530,5 +530,5 @@ echo ""
 
 if [ ! -z "`notify-send --version`" ]
 then
-  notify-send "LINUX DESKTOP SCRIPT (UBUNTU)" "Please reboot your system."
+  notify-send "LINUX DESKTOP SCRIPT (UBUNTU - GNOME)" "Please reboot your system."
 fi
