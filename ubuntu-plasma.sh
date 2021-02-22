@@ -146,6 +146,8 @@ portable_version="c33da19"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
+  plasmapkg2 -r "org.kde.windowtitle"
+
   rm -rf "$portable_subdir"
 fi
 
