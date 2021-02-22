@@ -138,6 +138,36 @@ else
   echo "$portable_name is already installed"
 fi
 
+portable_name="window-title-applet"
+portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_fversion="c33da193b3e13c6c01fab79b467d24b021a556fd"
+portable_version="c33da19"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  rm -rf "$portable_subdir"
+fi
+
+if [ ! -d "$portable_subdir" ]
+then
+  file="$portable_dir/$portable_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$portable_fversion.zip"
+  unzip -q "$file" -d "$portable_dir"
+  rm -fv "$file"
+
+  mv -fv "$portable_dir/applet-window-title-$portable_fversion" "$portable_subdir"
+
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  plasmapkg2 -i "$portable_subdir"
+  cd "$current_dir"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
+else
+  echo "$portable_name is already installed"
+fi
+
 printLine "Finished"
 echo "Please reboot your system."
 echo ""

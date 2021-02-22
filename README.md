@@ -207,8 +207,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
 - Plasma Widgets
-  - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
-  - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
+  - [Window AppMenu Applet - d77d038 (GitHub)](https://github.com/psifidotos/applet-window-appmenu)
+  - [Window Buttons Applet - 16c66e9 (GitHub)](https://github.com/psifidotos/applet-window-buttons)
+  - [Window Title Applet - c33da19 (GitHub)](https://github.com/psifidotos/applet-window-title)
 
 <br/>
 
