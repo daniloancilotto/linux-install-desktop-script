@@ -33,6 +33,15 @@ printLine() {
 printLine "Update"
 sudo apt update
 
+portable_dir="$HOME/Applications"
+mkdir -pv "$portable_dir"
+
+printLine "Wget"
+sudo apt install wget -y
+
+printLine "Zip"
+sudo apt install zip unzip -y
+
 printLine "Elisa"
 sudo apt install elisa -y
 
@@ -45,6 +54,71 @@ sudo apt install qt5-style-kvantum -y
 
 printLine "Latte"
 sudo apt install latte-dock -y
+
+printLine "Plasma Widgets"
+
+portable_name="window-appmenu-applet"
+portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_fversion="d77d03879fc032066ec00d30878742cc7aa83767"
+portable_version="d77d038"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  "$portable_subdir/uninstall.sh"
+
+  rm -rf "$portable_subdir"
+fi
+
+if [ ! -d "$portable_subdir" ]
+then
+  file="$portable_dir/$portable_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$portable_fversion.zip"
+  unzip -q "$file" -d "$portable_dir"
+  rm -fv "$file"
+
+  mv -fv "$portable_dir/applet-window-appmenu-$portable_fversion" "$portable_subdir"
+
+  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ \
+  libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
+  "$portable_subdir/install.sh"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
+else
+  echo "$portable_name is already installed"
+fi
+
+portable_name="window-buttons-applet"
+portable_subdir="$portable_dir/$portable_name"
+portable_cversion="`cat "$portable_subdir/version.txt"`"
+portable_fversion="16c66e9b70ad3fd19dede1dd73d1b9ad1c28183b"
+portable_version="16c66e9"
+
+if [ "$portable_cversion" != "$portable_version" ]
+then
+  "$portable_subdir/uninstall.sh"
+
+  rm -rf "$portable_subdir"
+fi
+
+if [ ! -d "$portable_subdir" ]
+then
+  file="$portable_dir/$portable_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$portable_fversion.zip"
+  unzip -q "$file" -d "$portable_dir"
+  rm -fv "$file"
+
+  mv -fv "$portable_dir/applet-window-buttons-$portable_fversion" "$portable_subdir"
+
+  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ \
+  libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev \ 
+  qtbase5-dev libkf5declarative-dev gettext -y
+  "$portable_subdir/install.sh"
+
+  echo "$portable_version" > "$portable_subdir/version.txt"
+else
+  echo "$portable_name is already installed"
+fi
 
 printLine "Finished"
 echo "Please reboot your system."

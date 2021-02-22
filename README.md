@@ -200,10 +200,15 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /etc/profile.d/im-module-cedilla.sh
 
 ### Ubuntu - Plasma
+- Wget - Latest (Repository)
+- Zip - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kate - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
+- Plasma Widgets
+  - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
+  - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
 
 <br/>
 
