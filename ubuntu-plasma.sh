@@ -65,7 +65,11 @@ portable_version="d77d038"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  sudo chmod +x "$portable_subdir/uninstall.sh"
   "$portable_subdir/uninstall.sh"
+  cd "$current_dir"
 
   rm -rf "$portable_subdir"
 fi
@@ -79,9 +83,14 @@ then
 
   mv -fv "$portable_dir/applet-window-appmenu-$portable_fversion" "$portable_subdir"
 
-  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ \
-  libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
+  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ libsm-dev -y
+  sudo apt install libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
+
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  sudo chmod +x "$portable_subdir/install.sh"
   "$portable_subdir/install.sh"
+  cd "$current_dir"
 
   echo "$portable_version" > "$portable_subdir/version.txt"
 else
@@ -96,7 +105,11 @@ portable_version="16c66e9"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  sudo chmod +x "$portable_subdir/uninstall.sh"
   "$portable_subdir/uninstall.sh"
+  cd "$current_dir"
 
   rm -rf "$portable_subdir"
 fi
@@ -110,10 +123,15 @@ then
 
   mv -fv "$portable_dir/applet-window-buttons-$portable_fversion" "$portable_subdir"
 
-  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ \
-  libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev \ 
-  qtbase5-dev libkf5declarative-dev gettext -y
+  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ libsm-dev -y
+  sudo apt install libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
+  sudo apt install qtbase5-dev libkf5declarative-dev gettext -y
+
+  current_dir="`pwd`"
+  cd "$portable_subdir"
+  sudo chmod +x "$portable_subdir/install.sh"
   "$portable_subdir/install.sh"
+  cd "$current_dir"
 
   echo "$portable_version" > "$portable_subdir/version.txt"
 else
