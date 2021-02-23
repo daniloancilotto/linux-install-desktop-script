@@ -86,6 +86,7 @@ then
 
   mv -fv "$portable_dir/applet-window-appmenu-$portable_fversion" "$portable_subdir"
 
+  sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
   sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ libsm-dev -y
   sudo apt install libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
 
