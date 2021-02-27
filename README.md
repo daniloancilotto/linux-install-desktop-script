@@ -7,8 +7,8 @@
 - x86_64 (amd64)
 
 ### Supported Environments
-- [GNOME - 3.36](https://www.gnome.org/)
 - [Plasma - 5.18](https://kde.org/plasma-desktop/)
+- [GNOME - 3.36](https://www.gnome.org/)
 
 <br/>
 
@@ -23,19 +23,31 @@ sudo apt install curl -y
 
 # Running the Script
 
-### Ubuntu - GNOME
-```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-gnome.sh | bash
-```
-
 ### Ubuntu - Plasma
 ```bash
 curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-plasma.sh | bash
 ```
 
+### Ubuntu - GNOME
+```bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/ubuntu-gnome.sh | bash
+```
+
 <br/>
 
 # Installations and Configurations
+
+### Ubuntu - Plasma
+- Wget - Latest (Repository)
+- Zip - Latest (Repository)
+- Elisa - Latest (Repository)
+- Kate - Latest (Repository)
+- Kvantum Manager - Latest (Repository)
+- Latte - Latest (Repository)
+- Plasma Widgets
+  - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
+  - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
+  - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)
@@ -198,18 +210,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /usr/share/X11/xkb/symbols/br
   - Environment
     - /etc/profile.d/im-module-cedilla.sh
-
-### Ubuntu - Plasma
-- Wget - Latest (Repository)
-- Zip - Latest (Repository)
-- Elisa - Latest (Repository)
-- Kate - Latest (Repository)
-- Kvantum Manager - Latest (Repository)
-- Latte - Latest (Repository)
-- Plasma Widgets
-  - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
-  - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
-  - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
 
 <br/>
 
