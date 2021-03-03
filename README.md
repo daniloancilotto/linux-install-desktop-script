@@ -87,6 +87,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
     - [Dash to Dock - v69](https://extensions.gnome.org/extension/307/dash-to-dock/)
   - Preferences
+    - dconf://org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
     - dconf://org/gnome/shell/extensions/dash-to-dock/animate-show-apps
   - Styles
     - ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css

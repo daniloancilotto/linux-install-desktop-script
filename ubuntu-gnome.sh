@@ -174,6 +174,7 @@ do
   let "i++"
 done
 
+dconf write /org/gnome/shell/extensions/dash-to-dock/show-apps-at-top "true"
 dconf write /org/gnome/shell/extensions/dash-to-dock/animate-show-apps "false"
 
 file="$HOME/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css"
