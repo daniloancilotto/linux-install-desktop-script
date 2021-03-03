@@ -45,9 +45,10 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
 - Plasma Widgets
-  - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
-  - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
-  - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
+  - Applets
+    - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)
@@ -67,15 +68,15 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - Ubuntu Dock
 - GNOME Spices
   - Extensions
-    - [Unite - v42](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v45](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
-    - [OpenWeather - v102](https://extensions.gnome.org/extension/750/openweather/)
-    - [Vitals - v35](https://extensions.gnome.org/extension/1460/vitals/)
-    - [Caffeine - v35](https://extensions.gnome.org/extension/517/caffeine/)
+    - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
+    - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
+    - [Caffeine - v37](https://extensions.gnome.org/extension/517/caffeine/)
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
-    - [Sound Input & Output Device Chooser - v31](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    - [Sound Input & Output Device Chooser - v34](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-    - [Dash to Dock - v68](https://extensions.gnome.org/extension/307/dash-to-dock/)
+    - [Dash to Dock - v69](https://extensions.gnome.org/extension/307/dash-to-dock/)
     - [Applications Overview Tooltip - v9](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
   - Dconf

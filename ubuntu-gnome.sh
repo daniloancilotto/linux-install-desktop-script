@@ -110,15 +110,15 @@ do
   if [ "$spice" == "extensions" ]
   then
     spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v42.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v45.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v102.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v35.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v35.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v105.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v39.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v37.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v34.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v31.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v13.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v68.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/dash-to-dockmicxgx.gmail.com.v69.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/applications-overview-tooltipRaphaelRochet.v9.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/user-themegnome-shell-extensions.gcampax.github.com.v40.shell-extension.zip" \
     )
