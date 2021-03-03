@@ -10,6 +10,7 @@ echo "Architecture: $architecture"
 echo "Environment: $environment"
 echo "Home: $HOME"
 echo "User: $USER"
+sudo echo -n ""
 
 printLine() {
   text="$1"
