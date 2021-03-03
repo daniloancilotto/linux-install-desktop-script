@@ -104,7 +104,7 @@ dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
 dconf write /org/gnome/desktop/search-providers/disable-external "true"
 dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
 dconf write /org/gnome/mutter/dynamic-workspaces "false"
-dconf write /org/gnome/desktop/app-folders/folder-children "[]"
+dconf write /org/gnome/desktop/app-folders/folder-children "'[]'"
 
 echo "appgrid have been configured"
 
