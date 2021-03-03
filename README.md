@@ -66,7 +66,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GNOME Tweaks - Latest (Repository)
 - GNOME Extensions - Latest (Repository)
 - GNOME Browser Integration - Latest (Repository)
-- GNOME App Grid
+- GNOME AppGrid
   - Preferences
     - dconf://org/gnome/desktop/privacy/remember-app-usage
     - dconf://org/gnome/desktop/privacy/remember-recent-files
@@ -80,7 +80,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
-    - [Caffeine - v37](https://extensions.gnome.org/extension/517/caffeine/)
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
     - [Sound Input & Output Device Chooser - v34](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)

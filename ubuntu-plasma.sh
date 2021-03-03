@@ -30,14 +30,14 @@ printLine() {
   echo ""
 }
 
-printLine "Update"
-sudo apt update
+plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
+mkdir -pv "$plasmoid_dir"
 
 portable_dir="$HOME/Applications"
 mkdir -pv "$portable_dir"
 
-plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
-mkdir -pv "$plasmoid_dir"
+printLine "Update"
+sudo apt update
 
 printLine "Wget"
 sudo apt install wget -y
@@ -50,7 +50,6 @@ sudo apt install elisa -y
 
 printLine "Kate"
 sudo apt install kate -y
-sudo apt purge kwrite -y
 
 printLine "Kvantum Manager"
 sudo apt install qt5-style-kvantum -y

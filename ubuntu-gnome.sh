@@ -97,7 +97,7 @@ sudo apt install gnome-shell-extension-prefs -y
 printLine "GNOME Browser Integration"
 sudo apt install chrome-gnome-shell -y
 
-printLine "GNOME App Grid"
+printLine "GNOME AppGrid"
 
 dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
 dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
@@ -106,7 +106,7 @@ dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
 dconf write /org/gnome/mutter/dynamic-workspaces "false"
 dconf write /org/gnome/desktop/app-folders/folder-children "[]"
 
-echo "app-grid have been configured"
+echo "appgrid have been configured"
 
 printLine "GNOME Widgets"
 
@@ -129,7 +129,6 @@ do
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v105.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v39.shell-extension.zip" \
-      "https://extensions.gnome.org/extension-data/caffeinepatapon.info.v37.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clipboard-indicatortudmotu.com.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/sound-output-device-chooserkgshank.net.v34.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/bluetooth-quick-connectbjarosze.gmail.com.v13.shell-extension.zip" \
@@ -142,7 +141,6 @@ do
       "clock-override@gnomeshell.kryogenix.org" \
       "openweather-extension@jenslody.de" \
       "Vitals@CoreCoding.com" \
-      "caffeine@patapon.info" \
       "clipboard-indicator@tudmotu.com" \
       "sound-output-device-chooser@kgshank.net" \
       "bluetooth-quick-connect@bjarosze.gmail.com" \
@@ -187,10 +185,12 @@ echo "widgets have been configured"
 printLine "GNOME Appearances"
 
 background_subdir="$background_dir/mojave_dynamic"
+background_dropbox_path="pvul84imc65272e"
+
 if [ ! -d "$background_subdir" ]
 then
   file="$background_subdir.zip"
-  sudo wget -O "$file" "https://www.dropbox.com/s/pvul84imc65272e/mojave_dynamic.zip"
+  sudo wget -O "$file" "https://www.dropbox.com/s/$background_dropbox_path/mojave_dynamic.zip"
   sudo unzip -q "$file" -d "$background_dir"
   sudo rm -fv "$file"
 else
