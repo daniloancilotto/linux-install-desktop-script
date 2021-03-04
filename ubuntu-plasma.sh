@@ -46,6 +46,27 @@ sudo apt install wget -y
 printLine "Zip"
 sudo apt install zip unzip -y
 
+printLine "G++"
+sudo apt install g++ -y
+
+printLine "Make"
+sudo apt install make cmake extra-cmake-modules -y
+
+printLine "Get Text"
+sudo apt install gettext -y
+
+printLine "X11 Libraries"
+sudo apt install libsm-dev libxcb-randr0-dev -y
+
+printLine "Qt5 Libraries"
+sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev -y
+
+printLine "Plasma Libraries"
+sudo apt install plasma-workspace-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev libkdecorations2-dev -y
+
+printLine "AppMenu Gtk Modules"
+sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
+
 printLine "Elisa"
 sudo apt install elisa -y
 
@@ -86,10 +107,6 @@ then
 
   mv -fv "$portable_dir/applet-window-appmenu-$portable_fversion" "$portable_subdir"
 
-  sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
-  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ libsm-dev -y
-  sudo apt install libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
-
   current_dir="`pwd`"
   cd "$portable_subdir"
   sudo chmod +x "$portable_subdir/install.sh"
@@ -126,10 +143,6 @@ then
   rm -fv "$file"
 
   mv -fv "$portable_dir/applet-window-buttons-$portable_fversion" "$portable_subdir"
-
-  sudo apt install make cmake extra-cmake-modules qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev g++ libsm-dev -y
-  sudo apt install libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
-  sudo apt install qtbase5-dev libkf5declarative-dev gettext -y
 
   current_dir="`pwd`"
   cd "$portable_subdir"

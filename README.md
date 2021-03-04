@@ -40,6 +40,13 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 ### Ubuntu - Plasma
 - Wget - Latest (Repository)
 - Zip - Latest (Repository)
+- G++ - Latest (Repository)
+- Make - Latest (Repository)
+- Get Text - Latest (Repository)
+- X11 Libraries - Latest (Repository)
+- Qt5 Libraries - Latest (Repository)
+- Plasma Libraries - Latest (Repository)
+- AppMenu Gtk Modules - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kate - Latest (Repository)
 - Kvantum Manager - Latest (Repository)

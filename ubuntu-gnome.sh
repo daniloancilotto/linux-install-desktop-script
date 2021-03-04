@@ -68,7 +68,6 @@ sudo apt install qt5ct -y
 file="$qt5ct_dir/qt5ct.conf"
 crudini --set "$file" "Appearance" "color_scheme_path" "/usr/share/qt5ct/colors/darker.conf"
 crudini --set "$file" "Appearance" "custom_palette" "true"
-# crudini --set "$file" "Appearance" "icon_theme" "Yaru"
 crudini --set "$file" "Appearance" "style" "Fusion"
 crudini --set "$file" "Fonts" "fixed" "@Variant(\0\0\0@\0\0\0\x16\0U\0\x62\0u\0n\0t\0u\0 \0M\0o\0n\0o@*\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
 crudini --set "$file" "Fonts" "general" "@Variant(\0\0\0@\0\0\0\f\0U\0\x62\0u\0n\0t\0u@&\0\0\0\0\0\0\xff\xff\xff\xff\x5\x1\0\x32\x10)"
