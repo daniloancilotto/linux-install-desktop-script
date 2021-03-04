@@ -88,6 +88,9 @@ echo "qt5ct have been configured"
 printLine "Dconf Editor"
 sudo apt install dconf-editor dconf-cli -y
 
+printLine "LibreOffice GNOME"
+sudo apt install libreoffice-gnome -y
+
 printLine "GNOME Tweaks"
 sudo apt install gnome-tweaks -y
 

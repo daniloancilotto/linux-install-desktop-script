@@ -49,6 +49,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - AppMenu Gtk Modules - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kate - Latest (Repository)
+- LibreOffice KDE - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
 - Plasma Widgets
@@ -72,6 +73,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
   - Environment
     - /etc/profile.d/qpa-platformtheme-qt5ct.sh
 - Dconf Editor - Latest (Repository)
+- LibreOffice GNOME - Latest (Repository)
 - GNOME Tweaks - Latest (Repository)
 - GNOME Extensions - Latest (Repository)
 - GNOME Browser Integration - Latest (Repository)

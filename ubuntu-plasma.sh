@@ -73,6 +73,9 @@ sudo apt install elisa -y
 printLine "Kate"
 sudo apt install kate -y
 
+printLine "LibreOffice KDE"
+sudo apt install libreoffice-kde -y
+
 printLine "Kvantum Manager"
 sudo apt install qt5-style-kvantum -y
 
