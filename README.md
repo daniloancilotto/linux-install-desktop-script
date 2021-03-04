@@ -46,7 +46,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - X11 Libraries - Latest (Repository)
 - Qt5 Libraries - Latest (Repository)
 - Plasma Libraries - Latest (Repository)
-- AppMenu Gtk Modules - Latest (Repository)
+- AppMenu GTK Modules - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kate - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)

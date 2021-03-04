@@ -64,7 +64,7 @@ sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev -y
 printLine "Plasma Libraries"
 sudo apt install plasma-workspace-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev libkdecorations2-dev -y
 
-printLine "AppMenu Gtk Modules"
+printLine "AppMenu GTK Modules"
 sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
 
 printLine "Elisa"
