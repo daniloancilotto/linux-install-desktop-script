@@ -190,7 +190,7 @@ fi
 file="/usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"
 if [ -f "$file" ]
 then
-  sed -i ':a;N;$!ba;s/                width: 1/                width: 0/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/                width: 1/                width: 0/g' "$file"
 fi
 
 echo "widgets have been configured"
