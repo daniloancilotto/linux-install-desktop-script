@@ -56,6 +56,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
+  - Styles
+    - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)
