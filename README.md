@@ -54,7 +54,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Latte - Latest (Repository)
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - d77d038](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window AppMenu Applet - 879a6dc](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
   - Styles

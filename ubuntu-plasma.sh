@@ -87,8 +87,8 @@ printLine "Plasma Widgets"
 portable_name="window-appmenu-applet"
 portable_subdir="$portable_dir/$portable_name"
 portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_fversion="d77d03879fc032066ec00d30878742cc7aa83767"
-portable_version="d77d038"
+portable_fversion="879a6dc042f0b012f91b912a3bcc95dd9317e790"
+portable_version="879a6dc"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
