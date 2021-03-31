@@ -31,8 +31,8 @@ printLine() {
   echo ""
 }
 
-root_background_dir="/usr/share/backgrounds"
-sudo mkdir -pv "$root_background_dir"
+default_background_dir="/usr/share/backgrounds"
+sudo mkdir -pv "$default_background_dir"
 
 home_qt5ct_dir="$HOME/.config/qt5ct"
 mkdir -pv "$home_qt5ct_dir"
@@ -187,14 +187,14 @@ echo "widgets have been configured"
 
 printLine "GNOME Appearances"
 
-root_background_subdir="$root_background_dir/mojave_dynamic"
-root_background_dropbox_path="pvul84imc65272e"
+default_background_subdir="$default_background_dir/mojave_dynamic"
+default_background_dropbox_path="pvul84imc65272e"
 
-if [ ! -d "$root_background_subdir" ]
+if [ ! -d "$default_background_subdir" ]
 then
-  file="$root_background_subdir.zip"
-  sudo wget -O "$file" "https://www.dropbox.com/s/$root_background_dropbox_path/mojave_dynamic.zip"
-  sudo unzip -q "$file" -d "$root_background_dir"
+  file="$default_background_subdir.zip"
+  sudo wget -O "$file" "https://www.dropbox.com/s/$default_background_dropbox_path/mojave_dynamic.zip"
+  sudo unzip -q "$file" -d "$default_background_dir"
   sudo rm -fv "$file"
 else
   echo "mojave_dynamic is already installed"
