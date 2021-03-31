@@ -31,6 +31,9 @@ printLine() {
   echo ""
 }
 
+root_plasmoid_dir="/usr/share/plasma/plasmoids"
+sudo mkdir -pv "$root_plasmoid_dir"
+
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
@@ -190,7 +193,7 @@ else
   echo "$portable_name is already installed"
 fi
 
-file="/usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"
+file="$root_plasmoid_dir/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/                width: 1/                width: 0/g' "$file"
