@@ -37,9 +37,6 @@ sudo mkdir -pv "$root_plasmoid_dir"
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
-home_plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
-mkdir -pv "$home_plasmoid_dir"
-
 printLine "Update"
 sudo apt update
 
@@ -169,7 +166,7 @@ home_app_version="c33da19"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
-  plasmapkg2 -r "$home_plasmoid_dir/org.kde.windowtitle"
+  sudo plasmapkg2 -r "$root_plasmoid_dir/org.kde.windowtitle"
 
   rm -rf "$home_app_subdir"
 fi
@@ -185,7 +182,7 @@ then
 
   current_dir="`pwd`"
   cd "$home_app_subdir"
-  plasmapkg2 -i "$home_app_subdir"
+  sudo plasmapkg2 -i "$home_app_subdir"
   cd "$current_dir"
 
   echo "$home_app_version" > "$home_app_subdir/version.txt"
