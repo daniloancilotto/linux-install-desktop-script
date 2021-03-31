@@ -18,12 +18,12 @@ printLine() {
   then
     text="$text "
   fi
-  lenght=${#text}
+  length=${#text}
   sudo echo ""
   echo -n "$text"
   for i in {1..80}
   do
-    if [ $i -gt $lenght ]
+    if [ $i -gt $length ]
     then
       echo -n "="
     fi
@@ -151,46 +151,46 @@ then
   mv -fv "$home_app_dir/applet-window-buttons-$home_app_fversion" "$home_app_subdir"
 
   current_dir="`pwd`"
-  cd "$portable_subdir"
-  sudo chmod +x "$portable_subdir/install.sh"
-  "$portable_subdir/install.sh"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/install.sh"
+  "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
-portable_name="window-title-applet"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_fversion="c33da193b3e13c6c01fab79b467d24b021a556fd"
-portable_version="c33da19"
+home_app_name="window-title-applet"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_fversion="c33da193b3e13c6c01fab79b467d24b021a556fd"
+home_app_version="c33da19"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
   plasmapkg2 -r "$home_plasmoid_dir/org.kde.windowtitle"
 
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/$portable_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$portable_fversion.zip"
-  unzip -q "$file" -d "$portable_dir"
+  file="$home_app_dir/$home_app_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$home_app_fversion.zip"
+  unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$portable_dir/applet-window-title-$portable_fversion" "$portable_subdir"
+  mv -fv "$home_app_dir/applet-window-title-$home_app_fversion" "$home_app_subdir"
 
   current_dir="`pwd`"
-  cd "$portable_subdir"
-  plasmapkg2 -i "$portable_subdir"
+  cd "$home_app_subdir"
+  plasmapkg2 -i "$home_app_subdir"
   cd "$current_dir"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
 file="$root_plasmoid_dir/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"

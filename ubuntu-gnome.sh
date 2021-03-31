@@ -18,12 +18,12 @@ printLine() {
   then
     text="$text "
   fi
-  lenght=${#text}
+  length=${#text}
   sudo echo ""
   echo -n "$text"
   for i in {1..80}
   do
-    if [ $i -gt $lenght ]
+    if [ $i -gt $length ]
     then
       echo -n "="
     fi
