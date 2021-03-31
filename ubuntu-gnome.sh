@@ -31,14 +31,11 @@ printLine() {
   echo ""
 }
 
-background_dir="/usr/share/backgrounds"
-sudo mkdir -pv "$background_dir"
+root_background_dir="/usr/share/backgrounds"
+sudo mkdir -pv "$root_background_dir"
 
-autostart_dir="$HOME/.config/autostart"
-mkdir -pv "$autostart_dir"
-
-qt5ct_dir="$HOME/.config/qt5ct"
-mkdir -pv "$qt5ct_dir"
+home_qt5ct_dir="$HOME/.config/qt5ct"
+mkdir -pv "$home_qt5ct_dir"
 
 printLine "Update"
 sudo apt update
@@ -65,7 +62,7 @@ printLine "Qt5 Settings"
 
 sudo apt install qt5ct -y
 
-file="$qt5ct_dir/qt5ct.conf"
+file="$home_qt5ct_dir/qt5ct.conf"
 crudini --set "$file" "Appearance" "color_scheme_path" "/usr/share/qt5ct/colors/darker.conf"
 crudini --set "$file" "Appearance" "custom_palette" "true"
 crudini --set "$file" "Appearance" "style" "Fusion"
@@ -190,14 +187,14 @@ echo "widgets have been configured"
 
 printLine "GNOME Appearances"
 
-background_subdir="$background_dir/mojave_dynamic"
-background_dropbox_path="pvul84imc65272e"
+root_background_subdir="$root_background_dir/mojave_dynamic"
+root_background_dropbox_path="pvul84imc65272e"
 
-if [ ! -d "$background_subdir" ]
+if [ ! -d "$root_background_subdir" ]
 then
-  file="$background_subdir.zip"
-  sudo wget -O "$file" "https://www.dropbox.com/s/$background_dropbox_path/mojave_dynamic.zip"
-  sudo unzip -q "$file" -d "$background_dir"
+  file="$root_background_subdir.zip"
+  sudo wget -O "$file" "https://www.dropbox.com/s/$root_background_dropbox_path/mojave_dynamic.zip"
+  sudo unzip -q "$file" -d "$root_background_dir"
   sudo rm -fv "$file"
 else
   echo "mojave_dynamic is already installed"

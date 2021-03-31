@@ -31,11 +31,11 @@ printLine() {
   echo ""
 }
 
-plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
-mkdir -pv "$plasmoid_dir"
+home_app_dir="$HOME/Applications"
+mkdir -pv "$home_app_dir"
 
-portable_dir="$HOME/Applications"
-mkdir -pv "$portable_dir"
+home_plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
+mkdir -pv "$home_plasmoid_dir"
 
 printLine "Update"
 sudo apt update
@@ -84,68 +84,68 @@ sudo apt install latte-dock -y
 
 printLine "Plasma Widgets"
 
-portable_name="window-appmenu-applet"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_fversion="879a6dc042f0b012f91b912a3bcc95dd9317e790"
-portable_version="879a6dc"
+home_app_name="window-appmenu-applet"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_fversion="879a6dc042f0b012f91b912a3bcc95dd9317e790"
+home_app_version="879a6dc"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
   current_dir="`pwd`"
-  cd "$portable_subdir"
-  sudo chmod +x "$portable_subdir/uninstall.sh"
-  "$portable_subdir/uninstall.sh"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/uninstall.sh"
+  "$home_app_subdir/uninstall.sh"
   cd "$current_dir"
 
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/$portable_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$portable_fversion.zip"
-  unzip -q "$file" -d "$portable_dir"
+  file="$home_app_dir/$home_app_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$home_app_fversion.zip"
+  unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$portable_dir/applet-window-appmenu-$portable_fversion" "$portable_subdir"
+  mv -fv "$home_app_dir/applet-window-appmenu-$home_app_fversion" "$home_app_subdir"
 
   current_dir="`pwd`"
-  cd "$portable_subdir"
-  sudo chmod +x "$portable_subdir/install.sh"
-  "$portable_subdir/install.sh"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/install.sh"
+  "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  echo "$portable_version" > "$portable_subdir/version.txt"
+  echo "$home_app_version" > "$home_app_subdir/version.txt"
 else
-  echo "$portable_name is already installed"
+  echo "$home_app_name is already installed"
 fi
 
-portable_name="window-buttons-applet"
-portable_subdir="$portable_dir/$portable_name"
-portable_cversion="`cat "$portable_subdir/version.txt"`"
-portable_fversion="16c66e9b70ad3fd19dede1dd73d1b9ad1c28183b"
-portable_version="16c66e9"
+home_app_name="window-buttons-applet"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_cversion="`cat "$home_app_subdir/version.txt"`"
+home_app_fversion="16c66e9b70ad3fd19dede1dd73d1b9ad1c28183b"
+home_app_version="16c66e9"
 
-if [ "$portable_cversion" != "$portable_version" ]
+if [ "$home_app_cversion" != "$home_app_version" ]
 then
   current_dir="`pwd`"
-  cd "$portable_subdir"
-  sudo chmod +x "$portable_subdir/uninstall.sh"
-  "$portable_subdir/uninstall.sh"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/uninstall.sh"
+  "$home_app_subdir/uninstall.sh"
   cd "$current_dir"
 
-  rm -rf "$portable_subdir"
+  rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$portable_subdir" ]
+if [ ! -d "$home_app_subdir" ]
 then
-  file="$portable_dir/$portable_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$portable_fversion.zip"
-  unzip -q "$file" -d "$portable_dir"
+  file="$home_app_dir/$home_app_name.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$home_app_fversion.zip"
+  unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$portable_dir/applet-window-buttons-$portable_fversion" "$portable_subdir"
+  mv -fv "$home_app_dir/applet-window-buttons-$home_app_fversion" "$home_app_subdir"
 
   current_dir="`pwd`"
   cd "$portable_subdir"
@@ -166,7 +166,7 @@ portable_version="c33da19"
 
 if [ "$portable_cversion" != "$portable_version" ]
 then
-  plasmapkg2 -r "$plasmoid_dir/org.kde.windowtitle"
+  plasmapkg2 -r "$home_plasmoid_dir/org.kde.windowtitle"
 
   rm -rf "$portable_subdir"
 fi
