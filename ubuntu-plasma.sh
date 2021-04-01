@@ -34,6 +34,9 @@ printLine() {
 default_plasmoid_dir="/usr/share/plasma/plasmoids"
 sudo mkdir -pv "$default_plasmoid_dir"
 
+root_app_dir="/root/Applications"
+sudo mkdir -pv "$root_app_dir"
+
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
@@ -87,14 +90,20 @@ sudo apt install latte-dock -y
 
 printLine "Plasma Widgets"
 
+root_app_name="window-appmenu-applet"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="879a6dc"
+
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_fversion="879a6dc042f0b012f91b912a3bcc95dd9317e790"
-home_app_version="879a6dc"
+home_app_github_file="879a6dc042f0b012f91b912a3bcc95dd9317e790"
 
-if [ "$home_app_cversion" != "$home_app_version" ]
+if [ "$root_app_cversion" != "$root_app_version" ]
 then
+  sudo mv -fv "$root_app_subdir" "$home_app_subdir"
+  sudo chown $USER:$USER -R "$home_app_subdir"
+
   current_dir="`pwd`"
   cd "$home_app_subdir"
   sudo chmod +x "$home_app_subdir/uninstall.sh"
@@ -104,14 +113,14 @@ then
   rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$home_app_subdir" ]
+if ! sudo test -d "$root_app_subdir"
 then
   file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$home_app_fversion.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$home_app_github_file.zip"
   unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$home_app_dir/applet-window-appmenu-$home_app_fversion" "$home_app_subdir"
+  mv -fv "$home_app_dir/applet-window-appmenu-$home_app_github_file" "$home_app_subdir"
 
   current_dir="`pwd`"
   cd "$home_app_subdir"
@@ -119,19 +128,26 @@ then
   "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  sudo mv -fv "$home_app_subdir" "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
-  echo "$home_app_name is already installed"
+  echo "$root_app_name is already installed"
 fi
+
+root_app_name="window-buttons-applet"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="c516a50"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_fversion="16c66e9b70ad3fd19dede1dd73d1b9ad1c28183b"
-home_app_version="16c66e9"
+home_app_github_file="c516a507185d352fe55340c2a97aa3319a43a55d"
 
-if [ "$home_app_cversion" != "$home_app_version" ]
+if [ "$root_app_cversion" != "$root_app_version" ]
 then
+  sudo mv -fv "$root_app_subdir" "$home_app_subdir"
+  sudo chown $USER:$USER -R "$home_app_subdir"
+
   current_dir="`pwd`"
   cd "$home_app_subdir"
   sudo chmod +x "$home_app_subdir/uninstall.sh"
@@ -141,14 +157,14 @@ then
   rm -rf "$home_app_subdir"
 fi
 
-if [ ! -d "$home_app_subdir" ]
+if ! sudo test -d "$root_app_subdir"
 then
   file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$home_app_fversion.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$home_app_github_file.zip"
   unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$home_app_dir/applet-window-buttons-$home_app_fversion" "$home_app_subdir"
+  mv -fv "$home_app_dir/applet-window-buttons-$home_app_github_file" "$home_app_subdir"
 
   current_dir="`pwd`"
   cd "$home_app_subdir"
@@ -156,16 +172,17 @@ then
   "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  sudo mv -fv "$home_app_subdir" "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
-  echo "$home_app_name is already installed"
+  echo "$root_app_name is already installed"
 fi
 
 home_app_name="window-title-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_fversion="c33da193b3e13c6c01fab79b467d24b021a556fd"
 home_app_version="c33da19"
+home_app_github_file="c33da193b3e13c6c01fab79b467d24b021a556fd"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -177,11 +194,11 @@ fi
 if [ ! -d "$home_app_subdir" ]
 then
   file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$home_app_fversion.zip"
+  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$home_app_github_file.zip"
   unzip -q "$file" -d "$home_app_dir"
   rm -fv "$file"
 
-  mv -fv "$home_app_dir/applet-window-title-$home_app_fversion" "$home_app_subdir"
+  mv -fv "$home_app_dir/applet-window-title-$home_app_github_file" "$home_app_subdir"
 
   current_dir="`pwd`"
   cd "$home_app_subdir"
