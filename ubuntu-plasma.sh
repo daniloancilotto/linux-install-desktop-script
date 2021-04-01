@@ -101,7 +101,7 @@ home_app_github_file="879a6dc042f0b012f91b912a3bcc95dd9317e790"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
-  sudo mv -fv "$root_app_subdir" "$home_app_subdir"
+  sudo mv -f "$root_app_subdir" "$home_app_subdir"
   sudo chown $USER:$USER -R "$home_app_subdir"
 
   current_dir="`pwd`"
@@ -128,7 +128,7 @@ then
   "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  sudo mv -fv "$home_app_subdir" "$root_app_subdir"
+  sudo mv -f "$home_app_subdir" "$root_app_subdir"
   echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
   echo "$root_app_name is already installed"
@@ -145,7 +145,7 @@ home_app_github_file="c516a507185d352fe55340c2a97aa3319a43a55d"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
-  sudo mv -fv "$root_app_subdir" "$home_app_subdir"
+  sudo mv -f "$root_app_subdir" "$home_app_subdir"
   sudo chown $USER:$USER -R "$home_app_subdir"
 
   current_dir="`pwd`"
@@ -172,7 +172,7 @@ then
   "$home_app_subdir/install.sh"
   cd "$current_dir"
 
-  sudo mv -fv "$home_app_subdir" "$root_app_subdir"
+  sudo mv -f "$home_app_subdir" "$root_app_subdir"
   echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
 else
   echo "$root_app_name is already installed"
