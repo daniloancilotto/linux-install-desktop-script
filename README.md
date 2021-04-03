@@ -49,13 +49,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - AppMenu GTK Modules - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kate - Latest (Repository)
-- LibreOffice KDE - Latest (Repository)
+- KColorChooser - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
+- LibreOffice KDE - Latest (Repository)
 - Plasma Widgets
   - Applets
     - [Window AppMenu Applet - 879a6dc](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - 16c66e9](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Buttons Applet - c516a50](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml

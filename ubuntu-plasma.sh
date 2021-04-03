@@ -79,14 +79,17 @@ sudo apt install elisa -y
 printLine "Kate"
 sudo apt install kate -y
 
-printLine "LibreOffice KDE"
-sudo apt install libreoffice-kde -y
+printLine "KColorChooser"
+sudo apt install kcolorchooser -y
 
 printLine "Kvantum Manager"
 sudo apt install qt5-style-kvantum -y
 
 printLine "Latte"
 sudo apt install latte-dock -y
+
+printLine "LibreOffice KDE"
+sudo apt install libreoffice-kde -y
 
 printLine "Plasma Widgets"
 
