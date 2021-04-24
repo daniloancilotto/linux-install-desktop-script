@@ -1,14 +1,14 @@
 # Linux Desktop Script
 
 ### Supported Systems
-- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 20.04 ~ 21.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
 
 ### Supported Environments
-- [Plasma - 5.18](https://kde.org/plasma-desktop/)
-- [GNOME - 3.36](https://www.gnome.org/)
+- [Plasma - 5.18 ~ 5.21](https://kde.org/plasma-desktop/)
+- [GNOME - 3.36 ~ 3.38](https://www.gnome.org/)
 
 <br/>
 
@@ -56,7 +56,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Plasma Widgets
   - Applets
     - [Window AppMenu Applet - 879a6dc](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - c516a50](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Buttons Applet - 8609f1d](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - c33da19](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
@@ -88,12 +88,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - dconf://org/gnome/desktop/app-folders/folder-children
 - GNOME Widgets
   - Extensions
-    - [Unite - v45](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v52](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
     - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
-    - [Sound Input & Output Device Chooser - v34](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    - [Sound Input & Output Device Chooser - v38](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
     - [Applications Overview Tooltip - v9](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)

@@ -1,12 +1,13 @@
 #!/bin/bash
 system="`lsb_release -sd`"
-architecture="`uname -m`"
+system_release="`lsb_release -sr`"
+system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
-echo "Architecture: $architecture"
+echo "Architecture: $system_architecture"
 echo "Environment: $environment"
 echo "Home: $HOME"
 echo "User: $USER"
@@ -140,11 +141,11 @@ fi
 root_app_name="window-buttons-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="c516a50"
+root_app_version="8609f1d"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="c516a507185d352fe55340c2a97aa3319a43a55d"
+home_app_github_file="8609f1d3706b796c790345c78bfce76f10e126fa"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
