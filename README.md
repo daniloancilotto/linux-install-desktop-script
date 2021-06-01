@@ -55,9 +55,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - LibreOffice KDE - Latest (Repository)
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - 6b2410f](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - c3a06d2](https://github.com/psifidotos/applet-window-buttons)
-    - [Window Title Applet - 868899d](https://github.com/psifidotos/applet-window-title)
+    - [Window AppMenu Applet - 757209d](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window Buttons Applet - 9910320](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Title Applet - ba2b24b](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
 

@@ -97,11 +97,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="6b2410f"
+root_app_version="757209d"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="6b2410f8c4129f5e6af9c50dbf4e7e35eca6ecdd"
+home_app_github_file="757209d630f7dcb755ba28f39bef4b8e11e75243"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -141,11 +141,11 @@ fi
 root_app_name="window-buttons-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="c3a06d2"
+root_app_version="9910320"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="c3a06d2d22f2c8ec43c5adf4988118bffe289455"
+home_app_github_file="9910320f3e91fc9c3dba6ecf3c173bf5f94d4a86"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -185,8 +185,8 @@ fi
 home_app_name="window-title-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="868899d"
-home_app_github_file="868899d7b306176cc9c4b96b7ae77c22458687b9"
+home_app_version="ba2b24b"
+home_app_github_file="ba2b24ba7fd1cad9893e37853165ff27fb920ac7"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
