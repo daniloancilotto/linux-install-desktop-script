@@ -55,7 +55,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - LibreOffice KDE - Latest (Repository)
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - 757209d](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window AppMenu Applet - 2e953f8](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Buttons Applet - 9910320](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - ba2b24b](https://github.com/psifidotos/applet-window-title)
   - Styles

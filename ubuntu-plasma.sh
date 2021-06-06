@@ -97,11 +97,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="757209d"
+root_app_version="2e953f8"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="757209d630f7dcb755ba28f39bef4b8e11e75243"
+home_app_github_file="2e953f8e4222ae82434a73ce44b03d2a0ac65242"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
