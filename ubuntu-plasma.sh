@@ -74,11 +74,14 @@ sudo apt install plasma-workspace-dev libkf5plasma-dev libkf5wayland-dev libkf5d
 printLine "AppMenu GTK Modules"
 sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
 
+printLine "Driver Manager"
+sudo apt install kubuntu-driver-manager -y
+
+printLine "Partition Manager"
+sudo apt install partitionmanager -y
+
 printLine "Elisa"
 sudo apt install elisa -y
-
-printLine "Kate"
-sudo apt install kate -y
 
 printLine "KColorChooser"
 sudo apt install kcolorchooser -y

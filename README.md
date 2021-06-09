@@ -7,7 +7,7 @@
 - x86_64 (amd64)
 
 ### Supported Environments
-- [Plasma - 5.18 ~ 5.21](https://kde.org/plasma-desktop/)
+- [Plasma - 5.18 ~ 5.22](https://kde.org/plasma-desktop/)
 - [GNOME - 3.36 ~ 3.38](https://www.gnome.org/)
 
 <br/>
@@ -47,8 +47,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Qt5 Libraries - Latest (Repository)
 - Plasma Libraries - Latest (Repository)
 - AppMenu GTK Modules - Latest (Repository)
+- Driver Manager - Latest (Repository)
+- Partition Manager - Latest (Repository)
 - Elisa - Latest (Repository)
-- Kate - Latest (Repository)
 - KColorChooser - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
