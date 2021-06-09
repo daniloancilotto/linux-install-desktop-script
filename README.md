@@ -47,7 +47,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Qt5 Libraries - Latest (Repository)
 - Plasma Libraries - Latest (Repository)
 - AppMenu GTK Modules - Latest (Repository)
-- Driver Manager - Latest (Repository)
+- Software & Updates - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Elisa - Latest (Repository)
 - KColorChooser - Latest (Repository)
