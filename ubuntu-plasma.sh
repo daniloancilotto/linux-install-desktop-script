@@ -77,6 +77,9 @@ sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
 printLine "Software & Updates"
 sudo apt install software-properties-qt -y
 
+printLine "Network File Sharing"
+sudo apt install kdenetwork-filesharing -y
+
 printLine "Partition Manager"
 sudo apt install partitionmanager -y
 
