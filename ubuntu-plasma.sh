@@ -86,9 +86,6 @@ sudo apt install partitionmanager -y
 printLine "Elisa"
 sudo apt install elisa -y
 
-printLine "KColorChooser"
-sudo apt install kcolorchooser -y
-
 printLine "Kvantum Manager"
 sudo apt install qt5-style-kvantum -y
 

@@ -51,7 +51,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Network File Sharing - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Elisa - Latest (Repository)
-- KColorChooser - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)
