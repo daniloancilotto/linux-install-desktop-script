@@ -41,11 +41,30 @@ sudo mkdir -pv "$root_app_dir"
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
+home_autostart_dir="$HOME/.config/autostart"
+mkdir -pv "$home_autostart_dir"
+
+home_autostart_scripts_dir="$HOME/.config/autostart-scripts"
+mkdir -pv "$home_autostart_scripts_dir"
+
 home_plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
 mkdir -pv "$home_plasmoid_dir"
 
 printLine "Update"
 sudo apt update
+
+printLine "NVIDIA X Server Settings"
+
+file="$home_autostart_scripts_dir/nvidia-settings.sh"
+if [ ! -f "$file" ]
+then
+  conf=$'#!/bin/bash\n'
+  conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
+fi
+
+echo "nvidia-settings have been configured"
 
 printLine "Wget"
 sudo apt install wget -y
@@ -71,17 +90,30 @@ sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev -y
 printLine "Plasma Libraries"
 sudo apt install plasma-workspace-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev libkdecorations2-dev -y
 
+printLine "Kssh Askpass"
+
+sudo apt install ksshaskpass -y
+
+file="$home_autostart_scripts_dir/ssh-askpass.sh"
+if [ ! -f "$file" ]
+then
+  conf=$'#!/bin/bash\n'
+  conf+=$'export SSH_ASKPASS=/usr/bin/ksshaskpass\n'
+  conf+=$'/usr/bin/ssh-add </dev/null\n'
+  echo "$conf" | sudo tee "$file"
+  sudo chmod +x "$file"
+fi
+
+echo "ksshaskpass have been configured"
+
 printLine "AppMenu GTK Modules"
 sudo apt install appmenu-gtk2-module appmenu-gtk3-module -y
-
-printLine "Software & Updates"
-sudo apt install software-properties-qt -y
 
 printLine "Network File Sharing"
 sudo apt install kdenetwork-filesharing -y
 
-printLine "Partition Manager"
-sudo apt install partitionmanager -y
+printLine "Software & Updates"
+sudo apt install software-properties-qt -y
 
 printLine "Elisa"
 sudo apt install elisa -y
@@ -94,6 +126,34 @@ sudo apt install latte-dock -y
 
 printLine "LibreOffice KDE"
 sudo apt install libreoffice-kde -y
+
+printLine "Partition Manager"
+sudo apt install partitionmanager -y
+
+printLine "Seahorse"
+
+sudo apt install seahorse -y
+
+file="$home_autostart_dir/gnome-keyring-pkcs11.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$home_autostart_dir/gnome-keyring-secrets.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$home_autostart_dir/gnome-keyring-ssh.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+
+echo "seahorse have been configured"
 
 printLine "Plasma Widgets"
 

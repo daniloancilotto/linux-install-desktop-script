@@ -38,6 +38,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Ubuntu - Plasma
+- NVIDIA X Server Settings (Configuration Only)
+  - Autostart Scripts
+    - ~/.config/autostart-scripts/nvidia-settings.sh
 - Wget - Latest (Repository)
 - Zip - Latest (Repository)
 - G++ - Latest (Repository)
@@ -46,14 +49,22 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - X11 Libraries - Latest (Repository)
 - Qt5 Libraries - Latest (Repository)
 - Plasma Libraries - Latest (Repository)
+- Kssh Askpass - Latest (Repository)
+  - Autostart Scripts
+    - ~/.config/autostart-scripts/ssh-askpass.sh
 - AppMenu GTK Modules - Latest (Repository)
-- Software & Updates - Latest (Repository)
 - Network File Sharing - Latest (Repository)
-- Partition Manager - Latest (Repository)
+- Software & Updates - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
 - Latte - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)
+- Partition Manager - Latest (Repository)
+- Seahorse - Latest (Repository)
+  - Autostart
+    - ~/.config/autostart/gnome-keyring-pkcs11.desktop
+    - ~/.config/autostart/gnome-keyring-secrets.desktop
+    - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
     - [Window AppMenu Applet - 2e953f8](https://github.com/psifidotos/applet-window-appmenu)
@@ -69,24 +80,22 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Gtop - Latest (Repository)
 - LM Sensors - Latest (Repository)
 - X11 Utils - Latest (Repository)
+- Dconf Editor - Latest (Repository)
+- GNOME Browser Integration - Latest (Repository)
+- GNOME Extensions - Latest (Repository)
+- GNOME Tweaks - Latest (Repository)
+- Gparted - Latest (Repository)
+- LibreOffice GNOME - Latest (Repository)
 - Qt5 Settings - Latest (Repository)
   - Preferences
     - ~/.config/qt5ct/qt5ct.conf
   - Environment
     - /etc/profile.d/qpa-platformtheme-qt5ct.sh
-- Dconf Editor - Latest (Repository)
-- LibreOffice GNOME - Latest (Repository)
-- GNOME Tweaks - Latest (Repository)
-- GNOME Extensions - Latest (Repository)
-- GNOME Browser Integration - Latest (Repository)
-- GNOME AppGrid
-  - Preferences
-    - dconf://org/gnome/desktop/privacy/remember-app-usage
-    - dconf://org/gnome/desktop/privacy/remember-recent-files
-    - dconf://org/gnome/desktop/search-providers/disable-external
-    - dconf://org/gnome/desktop/wm/preferences/num-workspaces
-    - dconf://org/gnome/mutter/dynamic-workspaces
-    - dconf://org/gnome/desktop/app-folders/folder-children
+- Seahorse - Latest (Repository)
+  - Autostart
+    - ~/.config/autostart/gnome-keyring-pkcs11.desktop
+    - ~/.config/autostart/gnome-keyring-secrets.desktop
+    - ~/.config/autostart/gnome-keyring-ssh.desktop
 - GNOME Widgets
   - Extensions
     - [Unite - v52](https://extensions.gnome.org/extension/1287/unite/)
@@ -104,6 +113,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - dconf://org/gnome/shell/extensions/dash-to-dock/animate-show-apps
   - Styles
     - ~/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com/stylesheet.css
+- GNOME Desktop
+  - Preferences
+    - dconf://org/gnome/desktop/privacy/remember-app-usage
+    - dconf://org/gnome/desktop/privacy/remember-recent-files
+    - dconf://org/gnome/desktop/search-providers/disable-external
+    - dconf://org/gnome/desktop/wm/preferences/num-workspaces
+    - dconf://org/gnome/mutter/dynamic-workspaces
+    - dconf://org/gnome/desktop/app-folders/folder-children
 - GNOME Appearances
   - Backgrounds
     - /usr/share/backgrounds/mojave_dynamic

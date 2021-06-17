@@ -34,6 +34,9 @@ printLine() {
 default_background_dir="/usr/share/backgrounds"
 sudo mkdir -pv "$default_background_dir"
 
+home_autostart_dir="$HOME/.config/autostart"
+mkdir -pv "$home_autostart_dir"
+
 home_qt5ct_dir="$HOME/.config/qt5ct"
 mkdir -pv "$home_qt5ct_dir"
 
@@ -57,6 +60,24 @@ sudo apt install lm-sensors -y
 
 printLine "X11 Utils"
 sudo apt install x11-utils -y
+
+printLine "Dconf Editor"
+sudo apt install dconf-editor dconf-cli -y
+
+printLine "GNOME Browser Integration"
+sudo apt install chrome-gnome-shell -y
+
+printLine "GNOME Extensions"
+sudo apt install gnome-shell-extension-prefs -y
+
+printLine "GNOME Tweaks"
+sudo apt install gnome-tweaks -y
+
+printLine "Gparted"
+sudo apt install gparted -y
+
+printLine "LibreOffice GNOME"
+sudo apt install libreoffice-gnome -y
 
 printLine "Qt5 Settings"
 
@@ -82,31 +103,30 @@ fi
 
 echo "qt5ct have been configured"
 
-printLine "Dconf Editor"
-sudo apt install dconf-editor dconf-cli -y
+printLine "Seahorse"
 
-printLine "LibreOffice GNOME"
-sudo apt install libreoffice-gnome -y
+sudo apt install seahorse -y
 
-printLine "GNOME Tweaks"
-sudo apt install gnome-tweaks -y
+file="$home_autostart_dir/gnome-keyring-pkcs11.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-pkcs11.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$home_autostart_dir/gnome-keyring-secrets.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-secrets.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
+file="$home_autostart_dir/gnome-keyring-ssh.desktop"
+if [ ! -f "$file" ]
+then
+  cp "/etc/xdg/autostart/gnome-keyring-ssh.desktop" "$home_autostart_dir"
+  sed -i '/^OnlyShowIn.*$/d' "$file"
+fi
 
-printLine "GNOME Extensions"
-sudo apt install gnome-shell-extension-prefs -y
-
-printLine "GNOME Browser Integration"
-sudo apt install chrome-gnome-shell -y
-
-printLine "GNOME AppGrid"
-
-dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
-dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
-dconf write /org/gnome/desktop/search-providers/disable-external "true"
-dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
-dconf write /org/gnome/mutter/dynamic-workspaces "false"
-dconf write /org/gnome/desktop/app-folders/folder-children "'[]'"
-
-echo "appgrid have been configured"
+echo "seahorse have been configured"
 
 printLine "GNOME Widgets"
 
@@ -184,6 +204,17 @@ then
 fi
 
 echo "widgets have been configured"
+
+printLine "GNOME Desktop"
+
+dconf write /org/gnome/desktop/privacy/remember-app-usage "false"
+dconf write /org/gnome/desktop/privacy/remember-recent-files "false"
+dconf write /org/gnome/desktop/search-providers/disable-external "true"
+dconf write /org/gnome/desktop/wm/preferences/num-workspaces "1"
+dconf write /org/gnome/mutter/dynamic-workspaces "false"
+dconf write /org/gnome/desktop/app-folders/folder-children "'[]'"
+
+echo "desktop have been configured"
 
 printLine "GNOME Appearances"
 
