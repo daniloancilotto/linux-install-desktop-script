@@ -73,7 +73,7 @@ sudo apt install gnome-shell-extension-prefs -y
 printLine "GNOME Tweaks"
 sudo apt install gnome-tweaks -y
 
-printLine "Gparted"
+printLine "GParted"
 sudo apt install gparted -y
 
 printLine "LibreOffice GNOME"
@@ -145,7 +145,7 @@ do
   if [ "$spice" == "extensions" ]
   then
     spice_items=( \
-      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v52.shell-extension.zip" \
+      "https://extensions.gnome.org/extension-data/unitehardpixel.eu.v54.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/clock-overridegnomeshell.kryogenix.org.v12.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/openweather-extensionjenslody.de.v105.shell-extension.zip" \
       "https://extensions.gnome.org/extension-data/VitalsCoreCoding.com.v39.shell-extension.zip" \

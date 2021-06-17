@@ -84,7 +84,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - GNOME Browser Integration - Latest (Repository)
 - GNOME Extensions - Latest (Repository)
 - GNOME Tweaks - Latest (Repository)
-- Gparted - Latest (Repository)
+- GParted - Latest (Repository)
 - LibreOffice GNOME - Latest (Repository)
 - Qt5 Settings - Latest (Repository)
   - Preferences
@@ -98,7 +98,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - GNOME Widgets
   - Extensions
-    - [Unite - v52](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v54](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
