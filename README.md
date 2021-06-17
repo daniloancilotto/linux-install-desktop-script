@@ -91,6 +91,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/qt5ct/qt5ct.conf
   - Environment
     - /etc/profile.d/qpa-platformtheme-qt5ct.sh
+- Rhythmbox - Latest (Repository)
 - Seahorse - Latest (Repository)
   - Autostart
     - ~/.config/autostart/gnome-keyring-pkcs11.desktop

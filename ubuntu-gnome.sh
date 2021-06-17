@@ -103,6 +103,9 @@ fi
 
 echo "qt5ct have been configured"
 
+printLine "Rhythmbox"
+sudo apt install rhythmbox -y
+
 printLine "Seahorse"
 
 sudo apt install seahorse -y
