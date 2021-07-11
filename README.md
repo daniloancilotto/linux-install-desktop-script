@@ -67,9 +67,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - 2e953f8](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window AppMenu Applet - 941effc](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Buttons Applet - 9910320](https://github.com/psifidotos/applet-window-buttons)
-    - [Window Title Applet - ba2b24b](https://github.com/psifidotos/applet-window-title)
+    - [Window Title Applet - a6197ee](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
 
