@@ -72,11 +72,11 @@ sudo apt install wget -y
 printLine "Zip"
 sudo apt install zip unzip -y
 
-printLine "G++"
-sudo apt install g++ -y
+printLine "Build Essential"
+sudo apt install build-essential -y
 
-printLine "Make"
-sudo apt install make cmake extra-cmake-modules -y
+printLine "CMake"
+sudo apt install cmake extra-cmake-modules -y
 
 printLine "Get Text"
 sudo apt install gettext -y

@@ -43,8 +43,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart-scripts/nvidia-settings.sh
 - Wget - Latest (Repository)
 - Zip - Latest (Repository)
-- G++ - Latest (Repository)
-- Make - Latest (Repository)
+- Build Essential - Latest (Repository)
+- CMake - Latest (Repository)
 - Get Text - Latest (Repository)
 - X11 Libraries - Latest (Repository)
 - Qt5 Libraries - Latest (Repository)
