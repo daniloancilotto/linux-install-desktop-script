@@ -67,7 +67,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - 941effc](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window AppMenu Applet - d440d24](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Buttons Applet - 9910320](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - a6197ee](https://github.com/psifidotos/applet-window-title)
   - Styles
@@ -99,7 +99,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - GNOME Widgets
   - Extensions
-    - [Unite - v54](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v55](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
