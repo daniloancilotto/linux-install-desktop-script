@@ -43,6 +43,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart-scripts/nvidia-settings.sh
 - Wget - Latest (Repository)
 - Zip - Latest (Repository)
+- Git - Latest (Repository)
 - Build Essential - Latest (Repository)
 - CMake - Latest (Repository)
 - Get Text - Latest (Repository)
@@ -57,7 +58,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Software & Updates - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
-- Latte - Latest (Repository)
+- [Latte Dock - 53674a6 (Script)](https://github.com/KDE/latte-dock)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
@@ -67,9 +68,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - d440d24](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - 9910320](https://github.com/psifidotos/applet-window-buttons)
-    - [Window Title Applet - a6197ee](https://github.com/psifidotos/applet-window-title)
+    - [Window AppMenu Applet - d440d24 (Script)](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window Buttons Applet - 9910320 (Script)](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Title Applet - a6197ee (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
 
@@ -99,16 +100,16 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - GNOME Widgets
   - Extensions
-    - [Unite - v55](https://extensions.gnome.org/extension/1287/unite/)
-    - [Clock Override - v12](https://extensions.gnome.org/extension/1206/clock-override/)
-    - [OpenWeather - v105](https://extensions.gnome.org/extension/750/openweather/)
-    - [Vitals - v39](https://extensions.gnome.org/extension/1460/vitals/)
-    - [Clipboard Indicator - v34](https://extensions.gnome.org/extension/779/clipboard-indicator/)
-    - [Sound Input & Output Device Chooser - v38](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
-    - [Bluetooth quick connect - v13](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
-    - [Applications Overview Tooltip - v9](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
-    - [User Themes - v40](https://extensions.gnome.org/extension/19/user-themes/)
-    - [Dash to Dock - v69](https://extensions.gnome.org/extension/307/dash-to-dock/)
+    - [Unite - v55 (Pack)](https://extensions.gnome.org/extension/1287/unite/)
+    - [Clock Override - v12 (Pack)](https://extensions.gnome.org/extension/1206/clock-override/)
+    - [OpenWeather - v105 (Pack)](https://extensions.gnome.org/extension/750/openweather/)
+    - [Vitals - v39 (Pack)](https://extensions.gnome.org/extension/1460/vitals/)
+    - [Clipboard Indicator - v34 (Pack)](https://extensions.gnome.org/extension/779/clipboard-indicator/)
+    - [Sound Input & Output Device Chooser - v38 (Pack)](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    - [Bluetooth quick connect - v13 (Pack)](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
+    - [Applications Overview Tooltip - v9 (Pack)](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
+    - [User Themes - v40 (Pack)](https://extensions.gnome.org/extension/19/user-themes/)
+    - [Dash to Dock - v69 (Pack)](https://extensions.gnome.org/extension/307/dash-to-dock/)
   - Preferences
     - dconf://org/gnome/shell/extensions/dash-to-dock/show-apps-at-top
     - dconf://org/gnome/shell/extensions/dash-to-dock/animate-show-apps

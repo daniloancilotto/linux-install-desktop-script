@@ -72,6 +72,9 @@ sudo apt install wget -y
 printLine "Zip"
 sudo apt install zip unzip -y
 
+printLine "Git"
+sudo apt install git -y
+
 printLine "Build Essential"
 sudo apt install build-essential -y
 
@@ -82,13 +85,14 @@ printLine "Get Text"
 sudo apt install gettext -y
 
 printLine "X11 Libraries"
-sudo apt install libsm-dev libxcb-randr0-dev -y
+sudo apt install libx11-dev libx11-xcb-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-util-dev libxcb-util0-dev libsm-dev -y
 
 printLine "Qt5 Libraries"
-sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev -y
+sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev kirigami2-dev -y
 
 printLine "Plasma Libraries"
-sudo apt install plasma-workspace-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev libkdecorations2-dev -y
+sudo apt install plasma-workspace-dev libkdecorations2-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev -y
+sudo apt install libkf5windowsystem-dev libkf5iconthemes-dev libkf5archive-dev libkf5notifications-dev libkf5crash-dev libkf5newstuff-dev -y
 
 printLine "Kssh Askpass"
 
@@ -121,8 +125,51 @@ sudo apt install elisa -y
 printLine "Kvantum Manager"
 sudo apt install qt5-style-kvantum -y
 
-printLine "Latte"
-sudo apt install latte-dock -y
+printLine "Latte Dock"
+
+root_app_name="latte-dock"
+root_app_subdir="$root_app_dir/$root_app_name"
+root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
+root_app_version="53674a6"
+
+home_app_name="latte-dock"
+home_app_subdir="$home_app_dir/$home_app_name"
+home_app_github_file="53674a65e117a0c938237577fe5503090a9cab76"
+
+if [ "$root_app_cversion" != "$root_app_version" ]
+then
+  sudo mv -f "$root_app_subdir" "$home_app_subdir"
+  sudo chown $USER:$USER -R "$home_app_subdir"
+
+  current_dir="`pwd`"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/uninstall.sh"
+  "$home_app_subdir/uninstall.sh"
+  cd "$current_dir"
+
+  rm -rf "$home_app_subdir"
+fi
+
+if ! sudo test -d "$root_app_subdir"
+then
+  file="$home_app_dir/$home_app_name.zip"
+  wget -O "$file" "https://github.com/KDE/latte-dock/archive/$home_app_github_file.zip"
+  unzip -q "$file" -d "$home_app_dir"
+  rm -fv "$file"
+
+  mv -fv "$home_app_dir/latte-dock-$home_app_github_file" "$home_app_subdir"
+
+  current_dir="`pwd`"
+  cd "$home_app_subdir"
+  sudo chmod +x "$home_app_subdir/install.sh"
+  "$home_app_subdir/install.sh"
+  cd "$current_dir"
+
+  sudo mv -f "$home_app_subdir" "$root_app_subdir"
+  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+else
+  echo "$root_app_name is already installed"
+fi
 
 printLine "LibreOffice KDE"
 sudo apt install libreoffice-kde -y
