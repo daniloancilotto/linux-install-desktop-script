@@ -91,8 +91,8 @@ printLine "Qt5 Libraries"
 sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev kirigami2-dev -y
 
 printLine "Plasma Libraries"
-sudo apt install plasma-workspace-dev libkdecorations2-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5configwidgets-dev -y
-sudo apt install libkf5windowsystem-dev libkf5iconthemes-dev libkf5archive-dev libkf5notifications-dev libkf5crash-dev libkf5newstuff-dev -y
+sudo apt install plasma-workspace-dev libkdecorations2-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5xmlgui-dev libkf5configwidgets-dev -y
+sudo apt install libkf5windowsystem-dev libkf5iconthemes-dev libkf5archive-dev libkf5activities-dev libkf5notifications-dev libkf5crash-dev libkf5newstuff-dev -y
 
 printLine "Kssh Askpass"
 
