@@ -130,11 +130,11 @@ printLine "Latte Dock"
 root_app_name="latte-dock"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="53674a6"
+root_app_version="c86878f"
 
 home_app_name="latte-dock"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="53674a65e117a0c938237577fe5503090a9cab76"
+home_app_github_file="c86878f6c73a3c40ec877fe0c3663279623b39b9"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
