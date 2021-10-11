@@ -130,11 +130,11 @@ printLine "Latte Dock"
 root_app_name="latte-dock"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="c86878f"
+root_app_version="d354cc4"
 
 home_app_name="latte-dock"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="c86878f6c73a3c40ec877fe0c3663279623b39b9"
+home_app_github_file="d354cc45135d8ec41f96072dad493ccfa530e379"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -251,11 +251,11 @@ fi
 root_app_name="window-buttons-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="9910320"
+root_app_version="a8010fe"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="9910320f3e91fc9c3dba6ecf3c173bf5f94d4a86"
+home_app_github_file="a8010fe9bf58bd59e957a82bd6bcad938ea0a3f4"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then

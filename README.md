@@ -58,7 +58,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Software & Updates - Latest (Repository)
 - Elisa - Latest (Repository)
 - Kvantum Manager - Latest (Repository)
-- [Latte Dock - c86878f (Script)](https://github.com/KDE/latte-dock)
+- [Latte Dock - d354cc4 (Script)](https://github.com/KDE/latte-dock)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
@@ -69,7 +69,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Plasma Widgets
   - Applets
     - [Window AppMenu Applet - d440d24 (Script)](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - 9910320 (Script)](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Buttons Applet - a8010fe (Script)](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - a6197ee (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
