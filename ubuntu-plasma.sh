@@ -122,9 +122,6 @@ sudo apt install software-properties-qt -y
 printLine "Elisa"
 sudo apt install elisa -y
 
-printLine "Kvantum Manager"
-sudo apt install qt5-style-kvantum -y
-
 printLine "Latte Dock"
 
 root_app_name="latte-dock"

@@ -57,7 +57,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Network File Sharing - Latest (Repository)
 - Software & Updates - Latest (Repository)
 - Elisa - Latest (Repository)
-- Kvantum Manager - Latest (Repository)
 - [Latte Dock - d354cc4 (Script)](https://github.com/KDE/latte-dock)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
