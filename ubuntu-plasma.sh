@@ -127,11 +127,11 @@ printLine "Latte Dock"
 root_app_name="latte-dock"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="c9515a0"
+root_app_version="55e893b"
 
 home_app_name="latte-dock"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="c9515a0353e39eac610508f2c3c8e513a6a5e651"
+home_app_github_file="55e893b43b442950cf156ad54513090d003ceb96"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -204,11 +204,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="d440d24"
+root_app_version="a673b19"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="d440d2474b0dd05211ad50aaf1cfdc9109cb9f9e"
+home_app_github_file="a673b19a45a66205fc8aea7b09301f8e122fa2af"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -248,11 +248,11 @@ fi
 root_app_name="window-buttons-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="a8010fe"
+root_app_version="e2db5c0"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="a8010fe9bf58bd59e957a82bd6bcad938ea0a3f4"
+home_app_github_file="e2db5c0ccaba2553338465d9d3924c7aca57f969"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then

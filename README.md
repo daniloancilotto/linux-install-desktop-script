@@ -7,7 +7,7 @@
 - x86_64 (amd64)
 
 ### Supported Environments
-- [Plasma - 5.18 ~ 5.22](https://kde.org/plasma-desktop/)
+- [Plasma - 5.23](https://kde.org/plasma-desktop/)
 - [GNOME - 3.36 ~ 3.38](https://www.gnome.org/)
 
 <br/>
@@ -57,7 +57,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Network File Sharing - Latest (Repository)
 - Software & Updates - Latest (Repository)
 - Elisa - Latest (Repository)
-- [Latte Dock - c9515a0 (Script)](https://github.com/KDE/latte-dock)
+- [Latte Dock - 55e893b (Script)](https://github.com/KDE/latte-dock)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
@@ -67,8 +67,8 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - d440d24 (Script)](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - a8010fe (Script)](https://github.com/psifidotos/applet-window-buttons)
+    - [Window AppMenu Applet - a673b19 (Script)](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window Buttons Applet - e2db5c0 (Script)](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - a6197ee (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
