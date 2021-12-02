@@ -99,12 +99,12 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - GNOME Widgets
   - Extensions
-    - [Unite - v55 (Pack)](https://extensions.gnome.org/extension/1287/unite/)
+    - [Unite - v59 (Pack)](https://extensions.gnome.org/extension/1287/unite/)
     - [Clock Override - v12 (Pack)](https://extensions.gnome.org/extension/1206/clock-override/)
     - [OpenWeather - v105 (Pack)](https://extensions.gnome.org/extension/750/openweather/)
     - [Vitals - v39 (Pack)](https://extensions.gnome.org/extension/1460/vitals/)
     - [Clipboard Indicator - v34 (Pack)](https://extensions.gnome.org/extension/779/clipboard-indicator/)
-    - [Sound Input & Output Device Chooser - v38 (Pack)](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
+    - [Sound Input & Output Device Chooser - v40 (Pack)](https://extensions.gnome.org/extension/906/sound-output-device-chooser/)
     - [Bluetooth quick connect - v13 (Pack)](https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/)
     - [Applications Overview Tooltip - v9 (Pack)](https://extensions.gnome.org/extension/1071/applications-overview-tooltip/)
     - [User Themes - v40 (Pack)](https://extensions.gnome.org/extension/19/user-themes/)
