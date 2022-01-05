@@ -1,14 +1,14 @@
 # Linux Desktop Script
 
 ### Supported Systems
-- [Ubuntu - 20.04 ~ 21.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
 
 ### Supported Environments
 - [Plasma - 5.23](https://kde.org/plasma-desktop/)
-- [GNOME - 3.36 ~ 3.38](https://www.gnome.org/)
+- [GNOME - 3.36](https://www.gnome.org/)
 
 <br/>
 
