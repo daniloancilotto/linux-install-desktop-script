@@ -293,7 +293,8 @@ fi
 file="$default_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/Padding: 0/Padding: 1/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/topPadding: 0/topPadding: 1/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
 fi
 
 echo "widgets have been configured"
