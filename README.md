@@ -71,8 +71,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Window Buttons Applet - 4eb9303 (Script)](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - a6197ee (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
-    - /usr/share/plasma/plasmoids/org.kde.plasma.trash/contents/ui/main.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
+    - /usr/share/plasma/plasmoids/org.kde.plasma.trash/contents/ui/main.qml
+    - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)

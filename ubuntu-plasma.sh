@@ -278,16 +278,22 @@ else
   echo "$home_app_name is already installed"
 fi
 
+file="$default_plasmoid_dir/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/                width: 1/                width: 0/g' "$file"
+fi
+
 file="$default_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/inPanel ? 16 : -1/g' "$file"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml"
+file="$default_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/                width: 1/                width: 0/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/Padding: 0/Padding: 1/g' "$file"
 fi
 
 echo "widgets have been configured"
