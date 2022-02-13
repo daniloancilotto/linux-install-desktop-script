@@ -300,7 +300,7 @@ fi
 file="$default_plasmoid_dir/org.kde.plasma.colorpicker/contents/ui/main.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/opacity: 0.6/opacity: 0.3/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/opacity: 0.6/opacity: 0.2/g' "$file"
 fi
 
 echo "widgets have been configured"
