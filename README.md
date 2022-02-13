@@ -67,13 +67,14 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - a673b19 (Script)](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - 4eb9303 (Script)](https://github.com/psifidotos/applet-window-buttons)
-    - [Window Title Applet - a6197ee (Script)](https://github.com/psifidotos/applet-window-title)
+    - [Window AppMenu Applet - a067154 (Script)](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window Buttons Applet - 90e3750 (Script)](https://github.com/psifidotos/applet-window-buttons)
+    - [Window Title Applet - 45a5d75 (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.digitalclock/contents/ui/DigitalClock.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.trash/contents/ui/main.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
+    - /usr/share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/main.qml
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)

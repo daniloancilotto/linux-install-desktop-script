@@ -161,11 +161,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="a673b19"
+root_app_version="a067154"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="a673b19a45a66205fc8aea7b09301f8e122fa2af"
+home_app_github_file="a067154b59202018dc461ce326bb880772cfa5c8"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -205,11 +205,11 @@ fi
 root_app_name="window-buttons-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="4eb9303"
+root_app_version="90e3750"
 
 home_app_name="window-buttons-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="4eb9303082e5805b914cb2062c71d5c8829dca4d"
+home_app_github_file="90e37501871a7797e2befc4c524e56f320170780"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -249,8 +249,8 @@ fi
 home_app_name="window-title-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="a6197ee"
-home_app_github_file="a6197ee02fe5c5a9287d7679b85e77f06a7ba81e"
+home_app_version="45a5d75"
+home_app_github_file="45a5d751b214aa19da51ecfe1f30acd2de2fe700"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -295,6 +295,12 @@ if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/topPadding: 0/topPadding: 1/g' "$file"
   sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
+fi
+
+file="$default_plasmoid_dir/org.kde.plasma.colorpicker/contents/ui/main.qml"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/opacity: 0.6/opacity: 0.3/g' "$file"
 fi
 
 echo "widgets have been configured"
