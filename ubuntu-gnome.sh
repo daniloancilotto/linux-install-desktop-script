@@ -4,6 +4,7 @@ architecture="`uname -m`"
 environment="`gnome-shell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - GNOME)"
+echo "Version: 2021.12.2-2000"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $architecture"

@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
-echo "Version: 2022.2.23-2000"
+echo "Version: 2022.2.23-2030"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -301,7 +301,7 @@ fi
 file="$default_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing * 2/int cellSpacing: 7/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing \* 2/int cellSpacing: 7/g' "$file"
 fi
 
 echo "widgets have been configured"
