@@ -297,6 +297,12 @@ then
   sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
 fi
 
+file="$default_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.qml"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing * 2/int cellSpacing: 7/g' "$file"
+fi
+
 echo "widgets have been configured"
 
 printLine "Finished"
