@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
-echo "Version: 2022.4.5-1530"
+echo "Version: 2022.4.5-1540"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -316,7 +316,7 @@ then
   file_translated="$home_plasmoid_dir/menu11/translate/translated.txt"
   if [ ! -f "$file_translated" ]
   then
-    sudo "$file"
+    sudo "$file" --restartplasma
     touch "$file_translated"
   fi
 fi
