@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
-echo "Version: 2022.4.5-1550"
+echo "Version: 2022.4.5-1600"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -313,11 +313,15 @@ fi
 file="$home_plasmoid_dir/menu11/translate/build"
 if [ -f "$file" ]
 then
-  file_translated="$home_plasmoid_dir/menu11/translate/translated.txt"
-  if [ ! -f "$file_translated" ]
+  file="$home_plasmoid_dir/menu11/translate/translated.txt"
+  if [ ! -f "$file" ]
   then
-    sudo sh "$file" --restartplasma
-    touch "$file_translated"
+    current_dir="`pwd`"
+    cd "$home_plasmoid_dir/menu11/translate"
+    sudo sh ./build
+    cd "$current_dir"
+
+    touch "$file"
   fi
 fi
 
