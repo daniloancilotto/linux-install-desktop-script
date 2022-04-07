@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
-echo "Version: 2022.4.5-1600"
+echo "Version: 2022.4.6-2210"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -302,27 +302,6 @@ file="$default_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.q
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing \* 2/int cellSpacing: 7/g' "$file"
-fi
-
-file="$home_plasmoid_dir/menu11/contents/ui/ItemGridDelegate.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/  font.pointSize: 9/\/\/font.pointSize: 9/g' "$file"
-fi
-
-file="$home_plasmoid_dir/menu11/translate/build"
-if [ -f "$file" ]
-then
-  file="$home_plasmoid_dir/menu11/translate/translated.txt"
-  if [ ! -f "$file" ]
-  then
-    current_dir="`pwd`"
-    cd "$home_plasmoid_dir/menu11/translate"
-    sudo sh ./build
-    cd "$current_dir"
-
-    touch "$file"
-  fi
 fi
 
 echo "widgets have been configured"

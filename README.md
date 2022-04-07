@@ -75,8 +75,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /usr/share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/main.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml
-    - ~/.local/share/plasma/plasmoids/menu11/contents/ui/ItemGridDelegate.qml
-    - ~/.local/share/plasma/plasmoids/menu11/translate/build
 
 ### Ubuntu - GNOME
 - Wget - Latest (Repository)
