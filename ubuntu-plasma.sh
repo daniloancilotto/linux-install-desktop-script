@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - PLASMA)"
-echo "Version: 2022.4.6-2210"
+echo "Version: 2022.5.13-1900"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $system_architecture"
@@ -119,9 +119,6 @@ sudo apt install kdenetwork-filesharing -y
 
 printLine "Software & Updates"
 sudo apt install software-properties-qt -y
-
-printLine "Elisa"
-sudo apt install elisa -y
 
 printLine "Latte Dock"
 sudo apt install latte-dock -y

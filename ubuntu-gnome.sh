@@ -4,7 +4,7 @@ architecture="`uname -m`"
 environment="`gnome-shell --version`"
 
 echo "LINUX DESKTOP SCRIPT (UBUNTU - GNOME)"
-echo "Version: 2021.12.2-2000"
+echo "Version: 2022.5.13-1900"
 echo "Author: Danilo Ancilotto"
 echo "System: $system"
 echo "Architecture: $architecture"
@@ -103,9 +103,6 @@ then
 fi
 
 echo "qt5ct have been configured"
-
-printLine "Rhythmbox"
-sudo apt install rhythmbox -y
 
 printLine "Seahorse"
 
