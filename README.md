@@ -61,7 +61,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Plasma Widgets
   - Applets
     - [Window AppMenu Applet - a067154 (Script)](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Buttons Applet - 90e3750 (Script)](https://github.com/psifidotos/applet-window-buttons)
     - [Window Title Applet - 45a5d75 (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.trash/contents/ui/main.qml

@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.5.13-1900"
+echo "Version: 2022.5.13-2000"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -187,50 +187,6 @@ then
   rm -fv "$file"
 
   mv -fv "$home_app_dir/applet-window-appmenu-$home_app_github_file" "$home_app_subdir"
-
-  current_dir="`pwd`"
-  cd "$home_app_subdir"
-  sudo chmod +x "$home_app_subdir/install.sh"
-  "$home_app_subdir/install.sh"
-  cd "$current_dir"
-
-  sudo mv -f "$home_app_subdir" "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
-else
-  echo "$root_app_name is already installed"
-fi
-
-root_app_name="window-buttons-applet"
-root_app_subdir="$root_app_dir/$root_app_name"
-root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="90e3750"
-
-home_app_name="window-buttons-applet"
-home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="90e37501871a7797e2befc4c524e56f320170780"
-
-if [ "$root_app_cversion" != "$root_app_version" ]
-then
-  sudo mv -f "$root_app_subdir" "$home_app_subdir"
-  sudo chown $USER:$USER -R "$home_app_subdir"
-
-  current_dir="`pwd`"
-  cd "$home_app_subdir"
-  sudo chmod +x "$home_app_subdir/uninstall.sh"
-  "$home_app_subdir/uninstall.sh"
-  cd "$current_dir"
-
-  rm -rf "$home_app_subdir"
-fi
-
-if ! sudo test -d "$root_app_subdir"
-then
-  file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-buttons/archive/$home_app_github_file.zip"
-  unzip -q "$file" -d "$home_app_dir"
-  rm -fv "$file"
-
-  mv -fv "$home_app_dir/applet-window-buttons-$home_app_github_file" "$home_app_subdir"
 
   current_dir="`pwd`"
   cd "$home_app_subdir"
