@@ -13,7 +13,7 @@
 
 # Preparing to Run the Script
 
-### Ubuntu
+### Plasma - Ubuntu
 ```bash
 sudo apt install curl -y
 ```
