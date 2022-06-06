@@ -159,11 +159,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="a067154"
+root_app_version="283f317"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="a067154b59202018dc461ce326bb880772cfa5c8"
+home_app_github_file="283f31725ec916b5011c5eec6171068b2c3c0bd2"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then
@@ -203,8 +203,8 @@ fi
 home_app_name="window-title-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="45a5d75"
-home_app_github_file="45a5d751b214aa19da51ecfe1f30acd2de2fe700"
+home_app_version="816a2cf"
+home_app_github_file="816a2cfd9764af2e14d5544679f5c4b8c7660017"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
