@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.5.13-2000"
+echo "Version: 2022.6.6-1910"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
