@@ -67,3 +67,4 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /usr/share/plasma/plasmoids/org.kde.plasma.colorpicker/contents/ui/main.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml
+    - /usr/share/plasma/plasmoids/org.kde.plasma.userswitcher/contents/ui/main.qml
