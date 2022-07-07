@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.6.14-1510"
+echo "Version: 2022.7.7-1240"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -159,11 +159,11 @@ printLine "Plasma Widgets"
 root_app_name="window-appmenu-applet"
 root_app_subdir="$root_app_dir/$root_app_name"
 root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="283f317"
+root_app_version="1de99c9"
 
 home_app_name="window-appmenu-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="283f31725ec916b5011c5eec6171068b2c3c0bd2"
+home_app_github_file="1de99c93b0004b80898081a1acfd1e0be807326a"
 
 if [ "$root_app_cversion" != "$root_app_version" ]
 then

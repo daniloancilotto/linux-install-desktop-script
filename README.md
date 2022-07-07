@@ -1,7 +1,7 @@
 # Linux Desktop Script
 
 ### Supported Environments
-- [Plasma - 5.24](https://kde.org/plasma-desktop/)
+- [Plasma - 5.25](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
 - [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
@@ -60,7 +60,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-ssh.desktop
 - Plasma Widgets
   - Applets
-    - [Window AppMenu Applet - 283f317 (Script)](https://github.com/psifidotos/applet-window-appmenu)
+    - [Window AppMenu Applet - 1de99c9 (Script)](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Title Applet - 816a2cf (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
     - /usr/share/plasma/plasmoids/org.kde.plasma.trash/contents/ui/main.qml
