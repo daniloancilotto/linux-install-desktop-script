@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.7.7-1240"
+echo "Version: 2022.7.15-1830"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -73,27 +73,11 @@ sudo apt install wget -y
 printLine "Zip"
 sudo apt install zip unzip -y
 
-printLine "Git"
-sudo apt install git -y
-
 printLine "Build Essential"
 sudo apt install build-essential -y
 
 printLine "CMake"
 sudo apt install cmake extra-cmake-modules -y
-
-printLine "Get Text"
-sudo apt install gettext -y
-
-printLine "X11 Libraries"
-sudo apt install libx11-dev libx11-xcb-dev libxcb-randr0-dev libxcb-shape0-dev libxcb-util-dev libxcb-util0-dev libsm-dev -y
-
-printLine "Qt5 Libraries"
-sudo apt install qtbase5-dev qtdeclarative5-dev libqt5x11extras5-dev kirigami2-dev -y
-
-printLine "Plasma Libraries"
-sudo apt install plasma-workspace-dev libkdecorations2-dev libkf5plasma-dev libkf5wayland-dev libkf5declarative-dev libkf5xmlgui-dev libkf5configwidgets-dev -y
-sudo apt install libkf5windowsystem-dev libkf5iconthemes-dev libkf5archive-dev libkf5activities-dev libkf5notifications-dev libkf5crash-dev libkf5newstuff-dev -y
 
 printLine "Kssh Askpass"
 
@@ -181,6 +165,8 @@ fi
 
 if ! sudo test -d "$root_app_subdir"
 then
+  sudo apt install qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
+
   file="$home_app_dir/$home_app_name.zip"
   wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$home_app_github_file.zip"
   unzip -q "$file" -d "$home_app_dir"
