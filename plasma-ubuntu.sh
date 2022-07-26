@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.7.15-1830"
+echo "Version: 2022.7.26-1330"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -33,11 +33,11 @@ printLine() {
   echo ""
 }
 
-default_plasmoid_dir="/usr/share/plasma/plasmoids"
-sudo mkdir -pv "$default_plasmoid_dir"
-
 root_app_dir="/root/Applications"
 sudo mkdir -pv "$root_app_dir"
+
+root_plasmoid_dir="/usr/share/plasma/plasmoids"
+sudo mkdir -pv "$root_plasmoid_dir"
 
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
@@ -181,7 +181,12 @@ then
   cd "$current_dir"
 
   sudo mv -f "$home_app_subdir" "$root_app_subdir"
-  echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+  sudo chown root:root -R "$root_app_subdir"
+
+  if [ -f "$root_plasmoid_dir/org.kde.windowappmenu/metadata.desktop" ]
+  then
+    echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
+  fi
 else
   echo "$root_app_name is already installed"
 fi
@@ -213,37 +218,40 @@ then
   plasmapkg2 -i "$home_app_subdir"
   cd "$current_dir"
 
-  echo "$home_app_version" > "$home_app_subdir/version.txt"
+  if [ -f "$home_plasmoid_dir/org.kde.windowtitle/metadata.desktop" ]
+  then
+    echo "$home_app_version" > "$home_app_subdir/version.txt"
+  fi
 else
   echo "$home_app_name is already installed"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
+file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/inPanel ? 16 : -1/g' "$file"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.colorpicker/contents/ui/main.qml"
+file="$root_plasmoid_dir/org.kde.plasma.colorpicker/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/opacity: 0.6/opacity: 0.2/g' "$file"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
+file="$root_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/topPadding: 0/topPadding: 1/g' "$file"
   sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.qml"
+file="$root_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing \* (Kirigami.Settings.tabletMode ? 6 : Plasmoid.configuration.iconSpacing)/int cellSpacing: 7/g' "$file"
 fi
 
-file="$default_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
+file="$root_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/height: compactRoot.height - PlasmaCore.Units.smallSpacing \* 2/height: compactRoot.height - 2/g' "$file"
