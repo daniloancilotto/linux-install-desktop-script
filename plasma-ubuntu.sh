@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.7.26-1330"
+echo "Version: 2022.8.3-1800"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -103,9 +103,6 @@ sudo apt install kdenetwork-filesharing -y
 
 printLine "Software & Updates"
 sudo apt install software-properties-qt -y
-
-printLine "Latte Dock"
-sudo apt install latte-dock -y
 
 printLine "LibreOffice KDE"
 sudo apt install libreoffice-kde -y
@@ -255,6 +252,12 @@ file="$root_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/height: compactRoot.height - PlasmaCore.Units.smallSpacing \* 2/height: compactRoot.height - 2/g' "$file"
+fi
+
+file="$home_plasmoid_dir/org.kde.windowtitle/contents/ui/main.qml"
+if [ -f "$file" ]
+then
+  sudo sed -i ':a;N;$!ba;s/active: text !== ""/active: false/g' "$file"
 fi
 
 echo "widgets have been configured"

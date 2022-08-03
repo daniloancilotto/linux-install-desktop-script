@@ -50,7 +50,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - AppMenu GTK Modules - Latest (Repository)
 - Network File Sharing - Latest (Repository)
 - Software & Updates - Latest (Repository)
-- Latte Dock - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
@@ -68,3 +67,4 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.private.systemtray/contents/ui/main.qml
     - /usr/share/plasma/plasmoids/org.kde.plasma.userswitcher/contents/ui/main.qml
+    - ~/.local/share/plasma/plasmoids/org.kde.windowtitle/contents/ui/main.qml
