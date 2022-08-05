@@ -233,7 +233,7 @@ fi
 file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/maximumWidth: inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/maximumWidth: inPanel ? 16 : -1/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/maximumWidth: inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/maximumWidth: inPanel ? 10 : -1/g' "$file"
 fi
 
 file="$root_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
