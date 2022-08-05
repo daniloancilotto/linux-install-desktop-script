@@ -223,18 +223,6 @@ else
   echo "$home_app_name is already installed"
 fi
 
-file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/inPanel ? 16 : -1/g' "$file"
-fi
-
-file="$root_plasmoid_dir/org.kde.plasma.colorpicker/contents/ui/main.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/opacity: 0.6/opacity: 0.2/g' "$file"
-fi
-
 file="$root_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
 if [ -f "$file" ]
 then
@@ -242,10 +230,10 @@ then
   sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
 fi
 
-file="$root_plasmoid_dir/org.kde.plasma.private.systemtray/contents/ui/main.qml"
+file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
 if [ -f "$file" ]
 then
-  sudo sed -i ':a;N;$!ba;s/int cellSpacing: PlasmaCore.Units.smallSpacing \* (Kirigami.Settings.tabletMode ? 6 : Plasmoid.configuration.iconSpacing)/int cellSpacing: 7/g' "$file"
+  sudo sed -i ':a;N;$!ba;s/maximumWidth: inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/maximumWidth: inPanel ? 14 : -1/g' "$file"
 fi
 
 file="$root_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
