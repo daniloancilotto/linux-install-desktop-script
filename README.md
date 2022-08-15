@@ -50,6 +50,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - AppMenu GTK Modules - Latest (Repository)
 - Network File Sharing - Latest (Repository)
 - Software & Updates - Latest (Repository)
+- Kate - Latest (Repository)
 - KColorChooser - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)

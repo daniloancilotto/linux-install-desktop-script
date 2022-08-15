@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.8.5-2120"
+echo "Version: 2022.8.15-1630"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -103,6 +103,9 @@ sudo apt install kdenetwork-filesharing -y
 
 printLine "Software & Updates"
 sudo apt install software-properties-qt -y
+
+printLine "Kate"
+sudo apt install kate -y
 
 printLine "KColorChooser"
 sudo apt install kcolorchooser -y
