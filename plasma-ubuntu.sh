@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.8.15-1630"
+echo "Version: 2022.10.11-1440"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -197,8 +197,8 @@ fi
 home_app_name="window-title-applet"
 home_app_subdir="$home_app_dir/$home_app_name"
 home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="816a2cf"
-home_app_github_file="816a2cfd9764af2e14d5544679f5c4b8c7660017"
+home_app_version="efa9e78"
+home_app_github_file="efa9e7860cd59e469b461e94a440d4e0a3f6aeb8"
 
 if [ "$home_app_cversion" != "$home_app_version" ]
 then
@@ -240,12 +240,6 @@ file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
 if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/maximumWidth: inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/maximumWidth: inPanel ? 14 : -1/g' "$file"
-fi
-
-file="$root_plasmoid_dir/org.kde.plasma.userswitcher/contents/ui/main.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/height: compactRoot.height - PlasmaCore.Units.smallSpacing \* 2/height: compactRoot.height - 2/g' "$file"
 fi
 
 file="$home_plasmoid_dir/org.kde.windowtitle/contents/ui/main.qml"
