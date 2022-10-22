@@ -1,10 +1,10 @@
 # Linux Desktop Script
 
 ### Supported Environments
-- [Plasma - 5.25](https://kde.org/plasma-desktop/)
+- [Plasma - 5.26](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
-- [Ubuntu - 20.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
