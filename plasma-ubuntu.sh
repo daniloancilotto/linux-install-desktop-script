@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.10.21-2110"
+echo "Version: 2022.10.26-1110"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -45,9 +45,6 @@ mkdir -pv "$home_app_dir"
 home_autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$home_autostart_dir"
 
-home_autostart_scripts_dir="$HOME/.config/autostart-scripts"
-mkdir -pv "$home_autostart_scripts_dir"
-
 home_plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
 mkdir -pv "$home_plasmoid_dir"
 
@@ -56,13 +53,25 @@ sudo apt update
 
 printLine "NVIDIA X Server Settings"
 
-file="$home_autostart_scripts_dir/nvidia-settings.sh"
+home_app_name="nvidia-settings"
+home_app_subdir="$home_app_dir/$home_app_name"
+
+file="$home_app_subdir/nvidia-settings.sh"
 if [ ! -f "$file" ]
 then
   conf=$'#!/bin/bash\n'
   conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
   echo "$conf" | sudo tee "$file"
   sudo chmod +x "$file"
+
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Exec='$file$'\n'
+  desk+=$'Icon=dialog-scripts\n'
+  desk+=$'Name=nvidia-settings.sh\n'
+  desk+=$'Path=\n'
+  desk+=$'Type=Application\n'
+  desk+=$'X-KDE-AutostartScript=true\n'
+  echo "$desk" > "$home_autostart_dir/nvidia-settings.sh.desktop"
 fi
 
 echo "nvidia-settings have been configured"
@@ -83,7 +92,10 @@ printLine "Kssh Askpass"
 
 sudo apt install ksshaskpass -y
 
-file="$home_autostart_scripts_dir/ssh-askpass.sh"
+home_app_name="ssh-askpass"
+home_app_subdir="$home_app_dir/$home_app_name"
+
+file="$home_app_subdir/ssh-askpass.sh"
 if [ ! -f "$file" ]
 then
   conf=$'#!/bin/bash\n'
@@ -91,6 +103,15 @@ then
   conf+=$'/usr/bin/ssh-add </dev/null\n'
   echo "$conf" | sudo tee "$file"
   sudo chmod +x "$file"
+
+  desk=$'[Desktop Entry]\n'
+  desk+=$'Exec='$file$'\n'
+  desk+=$'Icon=dialog-scripts\n'
+  desk+=$'Name=ssh-askpass.sh\n'
+  desk+=$'Path=\n'
+  desk+=$'Type=Application\n'
+  desk+=$'X-KDE-AutostartScript=true\n'
+  echo "$desk" > "$home_autostart_dir/ssh-askpass.sh.desktop"
 fi
 
 echo "ksshaskpass have been configured"
