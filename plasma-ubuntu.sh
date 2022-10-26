@@ -59,6 +59,8 @@ home_app_subdir="$home_app_dir/$home_app_name"
 file="$home_app_subdir/nvidia-settings.sh"
 if [ ! -f "$file" ]
 then
+  mkdir -pv "$home_app_subdir"
+
   conf=$'#!/bin/bash\n'
   conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
   echo "$conf" | sudo tee "$file"
@@ -98,6 +100,8 @@ home_app_subdir="$home_app_dir/$home_app_name"
 file="$home_app_subdir/ssh-askpass.sh"
 if [ ! -f "$file" ]
 then
+  mkdir -pv "$home_app_subdir"
+
   conf=$'#!/bin/bash\n'
   conf+=$'export SSH_ASKPASS=/usr/bin/ksshaskpass\n'
   conf+=$'/usr/bin/ssh-add </dev/null\n'
