@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.10.26-1110"
+echo "Version: 2022.10.26-1130"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -63,7 +63,7 @@ then
 
   conf=$'#!/bin/bash\n'
   conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
-  echo "$conf" | sudo tee "$file"
+  echo "$conf" > "$file"
   sudo chmod +x "$file"
 
   desk=$'[Desktop Entry]\n'
@@ -105,7 +105,7 @@ then
   conf=$'#!/bin/bash\n'
   conf+=$'export SSH_ASKPASS=/usr/bin/ksshaskpass\n'
   conf+=$'/usr/bin/ssh-add </dev/null\n'
-  echo "$conf" | sudo tee "$file"
+  echo "$conf" > "$file"
   sudo chmod +x "$file"
 
   desk=$'[Desktop Entry]\n'
