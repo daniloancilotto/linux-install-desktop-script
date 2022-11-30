@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.11.30-1410"
+echo "Version: 2022.11.30-1730"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -252,13 +252,6 @@ then
   fi
 else
   echo "$home_app_name is already installed"
-fi
-
-file="$root_plasmoid_dir/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/topPadding: 0/topPadding: 1/g' "$file"
-  sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
 fi
 
 file="$home_plasmoid_dir/org.kde.windowtitle/contents/ui/main.qml"

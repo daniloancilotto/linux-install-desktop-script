@@ -64,5 +64,4 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - [Window AppMenu Applet - 1de99c9 (Script)](https://github.com/psifidotos/applet-window-appmenu)
     - [Window Title Applet - efa9e78 (Script)](https://github.com/psifidotos/applet-window-title)
   - Styles
-    - /usr/share/plasma/plasmoids/org.kde.plasma.systemmonitor/contents/ui/CompactRepresentation.qml
     - ~/.local/share/plasma/plasmoids/org.kde.windowtitle/contents/ui/main.qml
