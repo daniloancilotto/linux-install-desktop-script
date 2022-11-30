@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.10.26-1130"
+echo "Version: 2022.11.30-1410"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -259,12 +259,6 @@ if [ -f "$file" ]
 then
   sudo sed -i ':a;N;$!ba;s/topPadding: 0/topPadding: 1/g' "$file"
   sudo sed -i ':a;N;$!ba;s/bottomPadding: 0/bottomPadding: 2/g' "$file"
-fi
-
-file="$root_plasmoid_dir/org.kde.plasma.trash/contents/ui/main.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/maximumWidth: inPanel ? PlasmaCore.Units.iconSizeHints.panel : -1/maximumWidth: inPanel ? 14 : -1/g' "$file"
 fi
 
 file="$home_plasmoid_dir/org.kde.windowtitle/contents/ui/main.qml"
