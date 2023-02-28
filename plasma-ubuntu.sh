@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2023.2.28-1630"
+echo "Version: 2023.2.28-1650"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -36,7 +36,7 @@ printLine() {
 menuConf() {
   source_file="/usr/share/applications/$2"
   target_file="$1/$2"
-  if [ -f "$source_file" ]
+  if [ -f "$source_file" ] && [ "$5" != "--no-replace-file" ]
   then
     cp -fv "$source_file" "$target_file"
   fi
@@ -149,7 +149,7 @@ printLine "Software & Updates"
 
 sudo apt install software-properties-qt -y
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false"
-menuConf "$home_menu_dir" "software-properties-qt.desktop" "Icon" "jockey"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Icon" "jockey" --no-replace-file
 
 echo "software-properties-qt have been configured"
 
