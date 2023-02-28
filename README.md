@@ -37,19 +37,17 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart-scripts/nvidia-settings.sh
 - Wget - Latest (Repository)
 - Zip - Latest (Repository)
-- Git - Latest (Repository)
+- Crudini - Latest (Repository)
 - Build Essential - Latest (Repository)
 - CMake - Latest (Repository)
-- Get Text - Latest (Repository)
-- X11 Libraries - Latest (Repository)
-- Qt5 Libraries - Latest (Repository)
-- Plasma Libraries - Latest (Repository)
 - Kssh Askpass - Latest (Repository)
   - Autostart Scripts
     - ~/.config/autostart-scripts/ssh-askpass.sh
 - AppMenu GTK Modules - Latest (Repository)
 - Network File Sharing - Latest (Repository)
 - Software & Updates - Latest (Repository)
+  - Menu
+    - ~/.local/share/applications/software-properties-qt.desktop
 - Kate - Latest (Repository)
 - KColorChooser - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)

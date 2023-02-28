@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2022.11.30-1730"
+echo "Version: 2023.2.28-1630"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -33,6 +33,19 @@ printLine() {
   echo ""
 }
 
+menuConf() {
+  source_file="/usr/share/applications/$2"
+  target_file="$1/$2"
+  if [ -f "$source_file" ]
+  then
+    cp -fv "$source_file" "$target_file"
+  fi
+  if [ -f "$target_file" ]
+  then
+    crudini --set "$target_file" "Desktop Entry" "$3" "$4"
+  fi
+}
+
 root_app_dir="/root/Applications"
 sudo mkdir -pv "$root_app_dir"
 
@@ -41,6 +54,9 @@ sudo mkdir -pv "$root_plasmoid_dir"
 
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
+
+home_menu_dir="$HOME/.local/share/applications"
+mkdir -pv "$home_menu_dir"
 
 home_autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$home_autostart_dir"
@@ -83,6 +99,9 @@ sudo apt install wget -y
 
 printLine "Zip"
 sudo apt install zip unzip -y
+
+printLine "Crudini"
+sudo apt install crudini -y
 
 printLine "Build Essential"
 sudo apt install build-essential -y
@@ -127,7 +146,12 @@ printLine "Network File Sharing"
 sudo apt install kdenetwork-filesharing -y
 
 printLine "Software & Updates"
+
 sudo apt install software-properties-qt -y
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Icon" "jockey"
+
+echo "software-properties-qt have been configured"
 
 printLine "Kate"
 sudo apt install kate -y
