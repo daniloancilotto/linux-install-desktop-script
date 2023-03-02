@@ -1,7 +1,7 @@
 # Linux Desktop Script
 
 ### Supported Environments
-- [Plasma - 5.26](https://kde.org/plasma-desktop/)
+- [Plasma - 5.27](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
 - [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)

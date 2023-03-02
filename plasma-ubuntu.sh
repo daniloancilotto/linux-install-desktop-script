@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2023.2.28-1650"
+echo "Version: 2023.3.2-940"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -149,7 +149,6 @@ printLine "Software & Updates"
 
 sudo apt install software-properties-qt -y
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false"
-menuConf "$home_menu_dir" "software-properties-qt.desktop" "Icon" "jockey" --no-replace-file
 
 echo "software-properties-qt have been configured"
 
