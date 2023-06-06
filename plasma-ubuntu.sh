@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2023.3.2-940"
+echo "Version: 2023.6.6-1120"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -46,12 +46,6 @@ menuConf() {
   fi
 }
 
-root_app_dir="/root/Applications"
-sudo mkdir -pv "$root_app_dir"
-
-root_plasmoid_dir="/usr/share/plasma/plasmoids"
-sudo mkdir -pv "$root_plasmoid_dir"
-
 home_app_dir="$HOME/Applications"
 mkdir -pv "$home_app_dir"
 
@@ -60,9 +54,6 @@ mkdir -pv "$home_menu_dir"
 
 home_autostart_dir="$HOME/.config/autostart"
 mkdir -pv "$home_autostart_dir"
-
-home_plasmoid_dir="$HOME/.local/share/plasma/plasmoids"
-mkdir -pv "$home_plasmoid_dir"
 
 printLine "Update"
 sudo apt update
@@ -188,102 +179,6 @@ then
 fi
 
 echo "seahorse have been configured"
-
-printLine "Plasma Widgets"
-
-root_app_name="window-appmenu-applet"
-root_app_subdir="$root_app_dir/$root_app_name"
-root_app_cversion="`sudo cat "$root_app_subdir/version.txt"`"
-root_app_version="1de99c9"
-
-home_app_name="window-appmenu-applet"
-home_app_subdir="$home_app_dir/$home_app_name"
-home_app_github_file="1de99c93b0004b80898081a1acfd1e0be807326a"
-
-if [ "$root_app_cversion" != "$root_app_version" ]
-then
-  sudo mv -f "$root_app_subdir" "$home_app_subdir"
-  sudo chown $USER:$USER -R "$home_app_subdir"
-
-  current_dir="`pwd`"
-  cd "$home_app_subdir"
-  sudo chmod +x "$home_app_subdir/uninstall.sh"
-  "$home_app_subdir/uninstall.sh"
-  cd "$current_dir"
-
-  rm -rf "$home_app_subdir"
-fi
-
-if ! sudo test -d "$root_app_subdir"
-then
-  sudo apt install qtdeclarative5-dev libkf5plasma-dev libqt5x11extras5-dev libsm-dev libkf5configwidgets-dev libkdecorations2-dev libxcb-randr0-dev libkf5wayland-dev plasma-workspace-dev -y
-
-  file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-appmenu/archive/$home_app_github_file.zip"
-  unzip -q "$file" -d "$home_app_dir"
-  rm -fv "$file"
-
-  mv -fv "$home_app_dir/applet-window-appmenu-$home_app_github_file" "$home_app_subdir"
-
-  current_dir="`pwd`"
-  cd "$home_app_subdir"
-  sudo chmod +x "$home_app_subdir/install.sh"
-  "$home_app_subdir/install.sh"
-  cd "$current_dir"
-
-  sudo mv -f "$home_app_subdir" "$root_app_subdir"
-  sudo chown root:root -R "$root_app_subdir"
-
-  if [ -f "$root_plasmoid_dir/org.kde.windowappmenu/metadata.desktop" ]
-  then
-    echo "$root_app_version" | sudo tee "$root_app_subdir/version.txt"
-  fi
-else
-  echo "$root_app_name is already installed"
-fi
-
-home_app_name="window-title-applet"
-home_app_subdir="$home_app_dir/$home_app_name"
-home_app_cversion="`cat "$home_app_subdir/version.txt"`"
-home_app_version="efa9e78"
-home_app_github_file="efa9e7860cd59e469b461e94a440d4e0a3f6aeb8"
-
-if [ "$home_app_cversion" != "$home_app_version" ]
-then
-  plasmapkg2 -r "$home_plasmoid_dir/org.kde.windowtitle"
-
-  rm -rf "$home_app_subdir"
-fi
-
-if [ ! -d "$home_app_subdir" ]
-then
-  file="$home_app_dir/$home_app_name.zip"
-  wget -O "$file" "https://github.com/psifidotos/applet-window-title/archive/$home_app_github_file.zip"
-  unzip -q "$file" -d "$home_app_dir"
-  rm -fv "$file"
-
-  mv -fv "$home_app_dir/applet-window-title-$home_app_github_file" "$home_app_subdir"
-
-  current_dir="`pwd`"
-  cd "$home_app_subdir"
-  plasmapkg2 -i "$home_app_subdir"
-  cd "$current_dir"
-
-  if [ -f "$home_plasmoid_dir/org.kde.windowtitle/metadata.desktop" ]
-  then
-    echo "$home_app_version" > "$home_app_subdir/version.txt"
-  fi
-else
-  echo "$home_app_name is already installed"
-fi
-
-file="$home_plasmoid_dir/org.kde.windowtitle/contents/ui/main.qml"
-if [ -f "$file" ]
-then
-  sudo sed -i ':a;N;$!ba;s/active: text !== ""/active: false/g' "$file"
-fi
-
-echo "widgets have been configured"
 
 printLine "Finished"
 echo "Please reboot your system."

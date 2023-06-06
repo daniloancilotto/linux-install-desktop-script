@@ -57,9 +57,3 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-pkcs11.desktop
     - ~/.config/autostart/gnome-keyring-secrets.desktop
     - ~/.config/autostart/gnome-keyring-ssh.desktop
-- Plasma Widgets
-  - Applets
-    - [Window AppMenu Applet - 1de99c9 (Script)](https://github.com/psifidotos/applet-window-appmenu)
-    - [Window Title Applet - efa9e78 (Script)](https://github.com/psifidotos/applet-window-title)
-  - Styles
-    - ~/.local/share/plasma/plasmoids/org.kde.windowtitle/contents/ui/main.qml
