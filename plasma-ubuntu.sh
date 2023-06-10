@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2023.6.6-1120"
+echo "Version: 2023.6.10-030"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -85,20 +85,8 @@ fi
 
 echo "nvidia-settings have been configured"
 
-printLine "Wget"
-sudo apt install wget -y
-
-printLine "Zip"
-sudo apt install zip unzip -y
-
 printLine "Crudini"
 sudo apt install crudini -y
-
-printLine "Build Essential"
-sudo apt install build-essential -y
-
-printLine "CMake"
-sudo apt install cmake extra-cmake-modules -y
 
 printLine "Kssh Askpass"
 
