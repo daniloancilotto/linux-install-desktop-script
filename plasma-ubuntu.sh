@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
-echo "Version: 2023.6.10-030"
+echo "Version: 2023.6.27-2150"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -136,6 +136,9 @@ sudo apt install kate -y
 
 printLine "KColorChooser"
 sudo apt install kcolorchooser -y
+
+printLine "KDE Connect"
+sudo apt install kdeconnect -y
 
 printLine "LibreOffice KDE"
 sudo apt install libreoffice-kde -y

@@ -46,6 +46,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.local/share/applications/software-properties-qt.desktop
 - Kate - Latest (Repository)
 - KColorChooser - Latest (Repository)
+- KDE Connect - Latest (Repository)
 - LibreOffice KDE - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
