@@ -1,4 +1,4 @@
-# Linux Desktop Script
+# Linux Install Desktop Script
 
 ### Supported Environments
 - [Plasma - 5.27](https://kde.org/plasma-desktop/)

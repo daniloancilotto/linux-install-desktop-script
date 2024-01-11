@@ -4,7 +4,7 @@ system_release="`lsb_release -sr`"
 system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
-echo "LINUX DESKTOP SCRIPT (PLASMA - UBUNTU)"
+echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
 echo "Version: 2023.6.27-2150"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
