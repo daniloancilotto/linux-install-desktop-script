@@ -1,7 +1,7 @@
 # Linux Install Desktop Script
 
 ### Supported Environments
-- [Plasma - 5.27](https://kde.org/plasma-desktop/)
+- [Plasma - 5.27 (Base)](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
 - [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
@@ -32,9 +32,6 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 # Installations and Configurations
 
 ### Plasma - Ubuntu
-- NVIDIA X Server Settings (Configuration Only)
-  - Autostart Scripts
-    - ~/.config/autostart-scripts/nvidia-settings.sh
 - Crudini - Latest (Repository)
 - Kssh Askpass - Latest (Repository)
   - Autostart Scripts

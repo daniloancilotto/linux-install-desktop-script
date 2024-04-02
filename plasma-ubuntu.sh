@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
-echo "Version: 2023.6.27-2150"
+echo "Version: 2024.4.2-1830"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -57,33 +57,6 @@ mkdir -pv "$home_autostart_dir"
 
 printLine "Update"
 sudo apt update
-
-printLine "NVIDIA X Server Settings"
-
-home_app_name="nvidia-settings"
-home_app_subdir="$home_app_dir/$home_app_name"
-
-file="$home_app_subdir/nvidia-settings.sh"
-if [ ! -f "$file" ]
-then
-  mkdir -pv "$home_app_subdir"
-
-  conf=$'#!/bin/bash\n'
-  conf+=$'/usr/bin/nvidia-settings -a [gpu:0]/GpuPowerMizerMode=1\n'
-  echo "$conf" > "$file"
-  sudo chmod +x "$file"
-
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Exec='$file$'\n'
-  desk+=$'Icon=dialog-scripts\n'
-  desk+=$'Name=nvidia-settings.sh\n'
-  desk+=$'Path=\n'
-  desk+=$'Type=Application\n'
-  desk+=$'X-KDE-AutostartScript=true\n'
-  echo "$desk" > "$home_autostart_dir/nvidia-settings.sh.desktop"
-fi
-
-echo "nvidia-settings have been configured"
 
 printLine "Crudini"
 sudo apt install crudini -y
