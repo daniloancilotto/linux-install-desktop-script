@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
-echo "Version: 2024.4.2-1830"
+echo "Version: 2024.6.17-1200"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -100,7 +100,8 @@ sudo apt install kdenetwork-filesharing -y
 printLine "Software & Updates"
 
 sudo apt install software-properties-qt -y
-menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Exec" "software-properties-qt --open-tab=4"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false" --no-replace-file
 
 echo "software-properties-qt have been configured"
 
@@ -143,6 +144,14 @@ then
 fi
 
 echo "seahorse have been configured"
+
+printLine "Discover"
+menuConf "$home_menu_dir" "org.kde.discover.desktop" "Exec" "plasma-discover %F --mode update"
+echo "plasma-discover have been configured"
+
+printLine "UserFeedback Console"
+menuConf "$home_menu_dir" "org.kde.kuserfeedback-console.desktop" "NoDisplay" "true"
+echo "userfeedbackconsole have been configured"
 
 printLine "Finished"
 echo "Please reboot your system."

@@ -1,7 +1,7 @@
 # Linux Install Desktop Script
 
 ### Supported Environments
-- [Plasma - 5.27 (Base)](https://kde.org/plasma-desktop/)
+- [Plasma - 6.0 (Base)](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
 - [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
@@ -51,3 +51,9 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-pkcs11.desktop
     - ~/.config/autostart/gnome-keyring-secrets.desktop
     - ~/.config/autostart/gnome-keyring-ssh.desktop
+- Discover (Configuration Only)
+  - Menu
+    - ~/.local/share/applications/org.kde.discover.desktop
+- UserFeedback Console (Configuration Only)
+  - Menu
+    - ~/.local/share/applications/org.kde.kuserfeedback-console.desktop
