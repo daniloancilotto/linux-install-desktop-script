@@ -24,7 +24,7 @@ sudo apt install curl -y
 
 ### Plasma - Ubuntu
 ```bash
-curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-desktop-script/master/plasma-ubuntu.sh | bash
+curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloancilotto/linux-install-desktop-script/master/plasma-ubuntu.sh | bash
 ```
 
 <br/>
