@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
-echo "Version: 2024.6.17-1200"
+echo "Version: 2024.10.15-2350"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"

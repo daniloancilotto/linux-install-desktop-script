@@ -1,10 +1,10 @@
 # Linux Install Desktop Script
 
 ### Supported Environments
-- [Plasma - 6.0 (Base)](https://kde.org/plasma-desktop/)
+- [Plasma - 6.2 (Base)](https://kde.org/plasma-desktop/)
 
 ### Supported Systems
-- [Ubuntu - 22.04 (Base)](https://ubuntu.com/download)
+- [Ubuntu - 24.04 (Base)](https://ubuntu.com/download)
 
 ### Supported Architectures
 - x86_64 (amd64)
