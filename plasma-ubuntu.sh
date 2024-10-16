@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
-echo "Version: 2024.10.15-2350"
+echo "Version: 2024.10.16-1600"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -114,8 +114,8 @@ sudo apt install kcolorchooser -y
 printLine "KDE Connect"
 sudo apt install kdeconnect -y
 
-printLine "LibreOffice KDE"
-sudo apt install libreoffice-kde -y
+printLine "LibreOffice Plasma"
+sudo apt install libreoffice-plasma -y
 
 printLine "Partition Manager"
 sudo apt install partitionmanager -y

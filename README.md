@@ -44,7 +44,7 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
 - Kate - Latest (Repository)
 - KColorChooser - Latest (Repository)
 - KDE Connect - Latest (Repository)
-- LibreOffice KDE - Latest (Repository)
+- LibreOffice Plasma - Latest (Repository)
 - Partition Manager - Latest (Repository)
 - Seahorse - Latest (Repository)
   - Autostart
