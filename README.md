@@ -51,9 +51,15 @@ curl -H 'Cache-Control: no-cache' -sSL https://raw.githubusercontent.com/daniloa
     - ~/.config/autostart/gnome-keyring-pkcs11.desktop
     - ~/.config/autostart/gnome-keyring-secrets.desktop
     - ~/.config/autostart/gnome-keyring-ssh.desktop
+- Anthy Dictionary Editor (Configuration Only)
+  - Menu
+    - ~/.local/share/applications/kasumi.desktop
 - Discover (Configuration Only)
   - Menu
     - ~/.local/share/applications/org.kde.discover.desktop
+- KRdp (Configuration Only)
+  - Menu
+    - ~/.local/share/applications/org.kde.krdp.desktop
 - UserFeedback Console (Configuration Only)
   - Menu
     - ~/.local/share/applications/org.kde.kuserfeedback-console.desktop
