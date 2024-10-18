@@ -5,7 +5,7 @@ system_architecture="`uname -m`"
 environment="`plasmashell --version`"
 
 echo "INSTALL DESKTOP APPS (PLASMA - UBUNTU)"
-echo "Version: 2024.10.17-1130"
+echo "Version: 2024.10.17-2310"
 echo "Author: Danilo Ancilotto"
 echo "Environment: $environment"
 echo "System: $system"
@@ -78,16 +78,16 @@ then
   conf+=$'/usr/bin/ssh-add </dev/null\n'
   echo "$conf" > "$file"
   sudo chmod +x "$file"
-
-  desk=$'[Desktop Entry]\n'
-  desk+=$'Exec='$file$'\n'
-  desk+=$'Icon=dialog-scripts\n'
-  desk+=$'Name=ssh-askpass.sh\n'
-  desk+=$'Path=\n'
-  desk+=$'Type=Application\n'
-  desk+=$'X-KDE-AutostartScript=true\n'
-  echo "$desk" > "$home_autostart_dir/ssh-askpass.sh.desktop"
 fi
+
+desk=$'[Desktop Entry]\n'
+desk+=$'Exec='$file$'\n'
+desk+=$'Icon=dialog-scripts\n'
+desk+=$'Name=ssh-askpass.sh\n'
+desk+=$'Path=\n'
+desk+=$'Type=Application\n'
+desk+=$'X-KDE-AutostartScript=true\n'
+echo "$desk" > "$home_autostart_dir/ssh-askpass.sh.desktop"
 
 echo "ksshaskpass have been configured"
 
@@ -100,8 +100,25 @@ sudo apt install kdenetwork-filesharing -y
 printLine "Software & Updates"
 
 sudo apt install software-properties-qt -y
-menuConf "$home_menu_dir" "software-properties-qt.desktop" "Exec" "software-properties-qt --open-tab=4"
+
+home_app_name="software-properties"
+home_app_subdir="$home_app_dir/$home_app_name"
+
+file="$home_app_subdir/software-properties.sh"
+if [ ! -f "$file" ]
+then
+  mkdir -pv "$home_app_subdir"
+
+  conf=$'#!/bin/bash\n'
+  conf+=$'sudo software-properties-qt --open-tab=4\n'
+  echo "$conf" > "$file"
+  sudo chmod +x "$file"
+fi
+
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Exec" "$file; echo "Closing in 5 seconds..."; sleep 5"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Terminal" "true" --no-replace-file
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false" --no-replace-file
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "X-KDE-SubstituteUID" "false" --no-replace-file
 
 echo "software-properties-qt have been configured"
 
