@@ -115,7 +115,7 @@ then
   sudo chmod +x "$file"
 fi
 
-menuConf "$home_menu_dir" "software-properties-qt.desktop" "Exec" "$file; echo "Closing in 5 seconds..."; sleep 5"
+menuConf "$home_menu_dir" "software-properties-qt.desktop" "Exec" "$file; echo \"Closing in 5 seconds...\"; sleep 5"
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "Terminal" "true" --no-replace-file
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "NoDisplay" "false" --no-replace-file
 menuConf "$home_menu_dir" "software-properties-qt.desktop" "X-KDE-SubstituteUID" "false" --no-replace-file
